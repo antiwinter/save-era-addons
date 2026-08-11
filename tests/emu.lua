@@ -1,12 +1,16 @@
+#!/usr/bin/env lua
 -- tests/emu.lua — off-client Monte Carlo evaluator.
 --
 -- Replays a plan against a simulated bag with random skill-up rolls, using the
 -- SAME db + planner that ship in-game. Reports whether the plan reaches target
 -- and how efficiently it spends materials.
 --
--- Usage: lua tests/emu.lua [prof] [target]      (run from the addon root)
+-- Usage: ./tests/emu.lua [prof] [target] [start]   (run from the addon root)
+--   run from the addon ROOT, not from tests/ — paths below are root-relative
 --   prof   : eng | tailor    (default eng)
 --   target : skill cap to reach (default 300)
+--   start  : starting skill level (default 1)
+-- The PLAN/BAG review text prints by default; set SKM_NOPLAN=1 to suppress it.
 
 package.path = "./?.lua;" .. package.path
 
@@ -16,6 +20,7 @@ local function dbg(...) if DEBUG then print(string.format(...)) end end
 -- Load shared data + planner exactly as the addon does, minus the .toc.
 local prof = arg[1] or "eng"
 local target = tonumber(arg[2]) or 300
+local startLvl = tonumber(arg[3]) or 1
 
 dofile("data/" .. prof .. ".lua")
 local raw = _G[prof .. "_data"]
@@ -24,8 +29,15 @@ assert(raw, "no data table for profession: " .. prof)
 local NewDB = dofile("data.lua").NewDB
 local db = NewDB(raw)
 local BuildPlan = dofile("planner.lua").BuildPlan
+local Format = dofile("format.lua")
 
-local actions, materials = BuildPlan(db, { start = 1, target = target, phase = 3 })
+local actions, materials = BuildPlan(db, { start = startLvl, target = target, phase = 3 })
+
+-- Human review of the plan, via the shared formatter (same text in-game).
+if os.getenv("SKM_NOPLAN") ~= "1" then
+	Format.Print(actions, materials)
+	print()
+end
 
 -- Simulated bag: defaults missing items to 0.
 local bag = setmetatable({}, { __index = function() return 0 end })

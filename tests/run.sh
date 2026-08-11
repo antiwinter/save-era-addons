@@ -12,7 +12,7 @@ SEED="${SKM_SEED:-1}"
 fail=0
 for prof in eng tailor; do
 	echo "== $prof =="
-	if ! SKM_SEED="$SEED" "$LUA" tests/emu.lua "$prof" 300; then
+	if ! SKM_SEED="$SEED" SKM_NOPLAN=1 "$LUA" tests/emu.lua "$prof" 300; then
 		echo "FAIL: $prof did not reach target" >&2
 		fail=1
 	fi

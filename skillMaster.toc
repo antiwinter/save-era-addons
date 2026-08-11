@@ -10,6 +10,7 @@ data\eng.lua
 data\tailor.lua
 data.lua
 planner.lua
+format.lua
 runtime.lua
 ui.lua
 debug.lua

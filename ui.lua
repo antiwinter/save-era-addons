@@ -52,6 +52,10 @@ SlashCmdList.SKILLMASTER = function(msg)
 	msg = (msg or ""):lower():gsub("^%s+", "")
 	if msg == "debug" then
 		if ns.Debug then ns.Debug() end
+	elseif msg == "plan" then
+		local R = ns.Runtime
+		if #R.plan == 0 then R:BuildPlan() end
+		ns.Format.Print(R.plan, R.material, function(line) print("|cff00b4ff[skm]|r " .. line) end)
 	elseif msg == "hide" then
 		panel:Hide()
 	else
