@@ -1,0 +1,17 @@
+# WoW-generated
+WTF/
+*.bak
+
+# Node data pipeline (scripts/)
+node_modules/
+yarn-error.log
+npm-debug.log*
+.yarn/
+
+# Scraper cache & intermediate scrape artifacts
+scripts/cache/
+scripts/*.json
+
+# OS
+.DS_Store
+Thumbs.db
