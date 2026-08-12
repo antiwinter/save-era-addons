@@ -1,9 +1,10 @@
 #!/usr/bin/env lua
--- tests/emu.lua — off-client Monte Carlo evaluator.
+-- tests/emu.lua — off-client driver for the REAL craft engine.
 --
--- Replays a plan against a simulated bag with random skill-up rolls, using the
--- SAME db + planner that ship in-game. Reports whether the plan reaches target
--- and how efficiently it spends materials.
+-- Instead of re-implementing crafting, this builds a simulated-world `host` and
+-- drives the same ns.Runtime that ships in-game: it fires OnTradeSkillUpdate /
+-- OnBagUpdate and clicks "DoAction" in a loop, exactly as the client does. So
+-- plan progression, batch sizing, and DoAction are all exercised here.
 --
 -- Usage: ./tests/emu.lua [prof] [target] [start]   (run from the addon root)
 --   run from the addon ROOT, not from tests/ — paths below are root-relative
@@ -17,7 +18,6 @@ package.path = "./?.lua;" .. package.path
 local DEBUG = os.getenv("SKM_DEBUG") == "1"
 local function dbg(...) if DEBUG then print(string.format(...)) end end
 
--- Load shared data + planner exactly as the addon does, minus the .toc.
 local prof = arg[1] or "eng"
 local target = tonumber(arg[2]) or 300
 local startLvl = tonumber(arg[3]) or 1
@@ -30,82 +30,124 @@ local NewDB = dofile("data.lua").NewDB
 local db = NewDB(raw)
 local BuildPlan = dofile("planner.lua").BuildPlan
 local Format = dofile("format.lua")
-
-local actions, materials = BuildPlan(db, { start = startLvl, target = target, phase = 3 })
-
--- Human review of the plan, via the shared formatter (same text in-game).
-if os.getenv("SKM_NOPLAN") ~= "1" then
-	Format.Print(actions, materials)
-	print()
-end
-
--- Simulated bag: defaults missing items to 0.
-local bag = setmetatable({}, { __index = function() return 0 end })
-local lvl = 1
-
--- Craft one `name`, recursively crafting missing craftable reagents. Returns
--- false if a reagent leaf is short (would be bought in-game) or skill too low.
-local function try_recipe(name)
-	local r = db[name]
-	if not r then return false end
-	if lvl < r.colors[1] then return false end
-	for _, rg in ipairs(r.recipe or {}) do
-		while bag[rg.name] < rg.count do
-			if not db[rg.name] then return false end -- leaf material exhausted
-			if not try_recipe(rg.name) then return false end
-		end
-	end
-	for _, rg in ipairs(r.recipe or {}) do
-		bag[rg.name] = bag[rg.name] - rg.count
-	end
-	bag[r.name] = bag[r.name] + (r.craft_count or 1)
-	local roll = math.random(100)
-	local up = (lvl < r.colors[2] and roll <= 100)
-		or (lvl < r.colors[3] and roll <= 75)
-		or (lvl < r.colors[4] and roll <= 25)
-		or false
-	if up then lvl = lvl + 1 end
-	return true
-end
+local Runtime = dofile("runtime.lua")
 
 math.randomseed(tonumber(os.getenv("SKM_SEED") or "") or os.time())
 
--- Stock the simulated bag with the planned shopping list, tracking budget.
-local budget = 0
-for name, count in pairs(materials) do
-	local c = math.ceil(count)
-	bag[name] = c
-	budget = budget + (db:price(name) or 0) * c
+local PROF_NAME = { eng = "Engineering", tailor = "Tailoring" }
+
+-- Simulated world: a bag, a skill level, and the recipe book. Implements the
+-- same 4-method host interface the in-game glue provides. This is the ONLY
+-- place craft mechanics (skill-up rolls, reagent consumption) live off-client.
+local world = {
+	skillName = PROF_NAME[prof] or prof,
+	lvl = startLvl,
+	cap = target,
+	bag = setmetatable({}, { __index = function() return 0 end }),
+	crafts = 0,
+}
+
+-- Recipe book keyed by name, mirroring GetTradeSkillInfo's index-based list.
+local book, order = {}, {}
+for i, r in ipairs(db.data) do
+	book[r.name] = { name = r.name, recipe = r.recipe, index = i }
+	order[i] = r.name
 end
 
-lvl = actions[1] and actions[1].from or 1
-local start_lvl = lvl
-local total_crafts = 0
+local host = {}
+function host:ReadSkill() return world.skillName, world.lvl, world.cap end
+function host:ReadRecipes() return book end
+function host:ReadBag()
+	local snap = {}
+	for k, v in pairs(world.bag) do if v ~= 0 then snap[k] = v end end
+	return snap
+end
 
-for _, ac in ipairs(actions) do
-	dbg("AC [%s]x%d [%d,%d]", ac.item, math.ceil(ac.count), ac.from, ac.to)
-	local crafted = 0
-	while crafted < math.ceil(ac.count) and lvl < ac.to do
-		if not try_recipe(ac.item) then break end
-		crafted = crafted + 1
-		total_crafts = total_crafts + 1
+-- The mechanics the in-game DoTradeSkill would trigger: consume reagents (auto-
+-- crafting any missing craftable sub-reagent), add output, roll for skill-up.
+local function craftOne(name)
+	local r = db[name]
+	if not r or world.lvl < r.colors[1] then return false end
+	for _, rg in ipairs(r.recipe or {}) do
+		while world.bag[rg.name] < rg.count do
+			if not db[rg.name] then return false end -- leaf material exhausted
+			if not craftOne(rg.name) then return false end
+		end
+	end
+	for _, rg in ipairs(r.recipe or {}) do
+		world.bag[rg.name] = world.bag[rg.name] - rg.count
+	end
+	world.bag[r.name] = world.bag[r.name] + (r.craft_count or 1)
+	local roll = math.random(100)
+	local up = (world.lvl < r.colors[2] and roll <= 100)
+		or (world.lvl < r.colors[3] and roll <= 75)
+		or (world.lvl < r.colors[4] and roll <= 25)
+		or false
+	if up then world.lvl = world.lvl + 1 end
+	world.crafts = world.crafts + 1
+	return true
+end
+
+function host:Craft(index, batch)
+	local name = order[index]
+	for _ = 1, batch do
+		if not craftOne(name) then break end
+	end
+end
+
+-- Build the runtime with the simulated host + real planner/data.
+local R = Runtime.new(host, {
+	planner = BuildPlan,
+	getDB = function() return db end,
+	getCfg = function() return { target = target, phase = 3 } end,
+})
+
+-- Boot the engine the way the client does: trade window opens, then plan.
+R:OnTradeSkillUpdate()
+R:BuildPlan()
+
+if os.getenv("SKM_NOPLAN") ~= "1" then
+	Format.Print(R.plan, R.material)
+	print()
+end
+
+-- Stock the bag with the planned shopping list, tracking budget, then re-scan.
+local budget = 0
+for name, count in pairs(R.material) do
+	local c = math.ceil(count)
+	world.bag[name] = c
+	budget = budget + (db:price(name) or 0) * c
+end
+R:OnBagUpdate()
+
+-- Drive: click "Craft next" until the plan is done or a craft makes no
+-- progress. After each batch, fire the events the client would receive.
+local start_lvl = world.lvl
+local guard = 0
+while world.lvl < target do
+	local before = world.lvl
+	local msg = R:DoAction()
+	dbg("%s | lvl=%d idx=%d", msg, world.lvl, R.idx)
+	if msg == "Plan complete" then break end
+	R:OnTradeSkillUpdate() -- skill/recipe rescan after crafting
+	R:OnBagUpdate()        -- bag changed
+	guard = guard + 1
+	if world.lvl == before and guard > 100000 then
+		print("STALL: no progress"); break
 	end
 end
 
 -- Tally leftover materials (waste) vs crafted value.
-local remain_val, crafted_val = 0, 0
-for k, c in pairs(bag) do
-	if c > 0 then
-		local p = db:price(k) or 0
-		if db[k] then crafted_val = crafted_val + p * c else remain_val = remain_val + p * c end
-	end
+local remain_val = 0
+for k, c in pairs(world.bag) do
+	if c > 0 and not db[k] then remain_val = remain_val + (db:price(k) or 0) * c end
 end
 
-local ok = lvl >= target
+local ok = world.lvl >= target
 local use_rate = budget > 0 and math.floor((budget - remain_val) / budget * 100) or 100
 
-print(string.format("prof=%s  %d -> %d/%d  %s", prof, start_lvl, lvl, target, ok and "OK" or "SHORT"))
+print(string.format("prof=%s  %d -> %d/%d  %s", prof, start_lvl, world.lvl, target, ok and "OK" or "SHORT"))
 print(string.format("crafts=%d  budget=%.2fg  waste=%.2fg  use_rate=%d%%",
-	total_crafts, budget / 10000, remain_val / 10000, use_rate))
+	world.crafts, budget / 10000, remain_val / 10000, use_rate))
 
 os.exit(ok and 0 or 1)
