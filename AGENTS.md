@@ -25,10 +25,11 @@ The prototype splits cleanly into three concerns; skillMaster keeps that split.
 2. Planner (pure Lua, ONE file used both in and out of game): given a
    profession's recipe table + a target level + a wishlist, produce an ordered
    action list and a shopping list.
-3. Runtime (in-client): scans the open trade-skill window and bags, tracks
-   progress against the plan, and crafts the next batch on demand (one click
-   per batch — player-initiated `DoTradeSkill`, no auto-fire, to stay clear of
-   action-blocking taint).
+3. Runtime (craft engine, dual-use via a host seam): tracks progress against
+   the plan and crafts the next batch on demand (one click per batch —
+   player-initiated `DoTradeSkill`, no auto-fire, to stay clear of
+   action-blocking taint). Reacts to events (skill-up, bag change, recipe
+   learned) rather than looping.
 
 ## The planner is a single dual-use file (load-bearing constraint)
 `planner.lua` is consumed unchanged by BOTH the in-game runtime AND the
@@ -47,6 +48,24 @@ Rules that keep it dual-use:
   `ns.Planner`; off-client `tests/emu.lua` grabs the returned table.
 - `data.lua` follows the same dual-loader pattern for recipe tables (in-game:
   loaded via the .toc; off-client: `dofile`d by the test).
+
+## The runtime is dual-use too, via a host seam
+`runtime.lua` is the event-driven craft engine and — like the planner — runs
+unchanged in-game and under the emulator. It never touches a WoW global
+directly; it reads the world and crafts through an injected `host`, and reacts
+to `OnTradeSkillUpdate` / `OnBagUpdate` entrypoints.
+
+- `host` is a 4-method interface: `ReadSkill()`, `ReadRecipes()`, `ReadBag()`,
+  `Craft(index, batch)`. In-game the host wraps the real
+  `GetTradeSkill*`/`GetContainer*`/`DoTradeSkill` APIs; in emu it is a
+  simulated world (the ONLY place off-client craft mechanics — skill-up rolls,
+  reagent consumption — live).
+- `Runtime.new(host, deps)` is pure; `deps` supplies `planner`, `getDB`,
+  `getCfg`, `onUpdate`. The in-game glue at the bottom of the file is guarded by
+  `if ns and CreateFrame`, so `dofile('runtime.lua')` stays clean off-client.
+- Why: the emulator drives the SAME engine the client runs — `DoAction`, batch
+  sizing, and plan progression are all under test, not re-implemented. Bugs in
+  ordering/advancement surface off-client instead of only in-game.
 
 # Debugging
 - In-game: `/skm debug` dumps planner + runtime state to SavedVariables; read
