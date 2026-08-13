@@ -729,6 +729,20 @@ end
 
 hooksecurefunc("ContainerFrameItemButton_OnModifiedClick", handleItemClick)
 
+-- Mark wares as soon as bags are opened, rather than waiting for the slow
+-- initial OnUpdate countdown (which is why coins only appeared after ~10-20s
+-- or after a manual ctrl+right-click forced a markWares on the first open
+-- following a /reload). The item buttons need a frame to populate, so defer.
+local function markWaresOnBagOpen()
+  C_Timer.After(0, markWares)
+end
+
+for _, funcName in ipairs({ "OpenAllBags", "ToggleAllBags", "OpenBackpack", "ToggleBackpack", "OpenBag" }) do
+  if _G[funcName] then
+    hooksecurefunc(funcName, markWaresOnBagOpen)
+  end
+end
+
 -- Quest Reward handling.
 --[[ 
 local listeningToRewards = {}
