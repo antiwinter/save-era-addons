@@ -1,27 +1,5 @@
 local addonName, ns = ...
 
--- runtime.lua — the craft engine. DUAL-USE like planner.lua: this exact file
--- runs in-game AND under the off-client emulator. It reads the world and crafts
--- ONLY through an injected `host`, and reacts to events via OnTradeSkillUpdate /
--- OnBagUpdate. It touches NO WoW global itself.
---
---   in-game : the glue block at the bottom builds a host that wraps the real
---             GetTradeSkill*/GetContainer*/DoTradeSkill APIs and wires a
---             CreateFrame to fire the event entrypoints.
---   emu     : tests/emu.lua builds a simulated-world host and calls the same
---             entrypoints + DoAction, so plan progression and batch sizing are
---             exercised by the real engine.
---
--- Crafting stays ONE CLICK PER BATCH: DoAction runs only from a player click
--- (ui.lua) or the emu driver, so host:Craft -> DoTradeSkill is player-initiated.
---
--- host interface (4 methods):
---   host:ReadSkill()   -> name, lvl, cap
---   host:ReadRecipes() -> { [name] = { name, recipe={{name,count}...}, index } }
---   host:ReadBag()     -> { [name] = count }
---   host:Craft(index, batch)
--- deps: { planner=BuildPlan, getDB=fn(key)->db, getCfg=fn()->cfg, onUpdate=fn(R) }
-
 local ns_ = ns -- nil under standalone lua
 
 local function makeBag(src)

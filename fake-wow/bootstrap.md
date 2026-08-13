@@ -1,0 +1,13 @@
+- get game phase
+- CreateFrame:RegisterEvent
+- f:RegisterEvent
+- GetTradeSkillLine
+- GM:SetTradeSkillLine # for emu
+- GetNumTradeSkills
+- GetTradeSkillInfo
+- GetTradeSkillNumReagents
+- GetTradeSkillReagentInfo
+- GetContainerNumSlots
+- GetContainerItemInfo
+- GetItemInfo
+- DoTradeSkill
