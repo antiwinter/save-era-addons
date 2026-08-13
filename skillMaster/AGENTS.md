@@ -10,9 +10,9 @@ Ported from a WeakAura prototype (`../../../../../Users/warits/code/murmur/wa/0t
 The WA proved the concept; skillMaster is the standalone-addon rewrite.
 
 # Related Projects
+See root `AGENTS.md` for shared references (wow-ui-source) and design principles.
 - WA prototype (source of the algorithm): `~/code/murmur/wa/0trash/professor-draft`
 - addon skeleton reference: `../whoaThickCC`
-- wow ui source: `~/src/wow-ui-source`
 
 # Architecture
 The prototype splits cleanly into three concerns; skillMaster keeps that split.
@@ -72,20 +72,6 @@ to `OnTradeSkillUpdate` / `OnBagUpdate` entrypoints.
   `WTF/Account/<ACCOUNT>/SavedVariables/skillMaster.lua`.
 - Off-client: `lua tests/emu.lua < fixture` replays a plan via Monte Carlo and
   reports budget / material use-rate / total crafts.
-
-# Design Principles
-1. Seek the elegant solution before implementing the obvious one.
-2. Reduce complexity instead of relocating it.
-3. One concept, one implementation, one source of truth.
-4. Eliminate special cases through better design.
-5. Prefer generic mechanisms over repeated code.
-6. Keep related logic together.
-7. Every abstraction must simplify the system.
-8. APIs should be orthogonal and composable.
-9. Optimize hot paths without compromising the design.
-10. Comments explain rationale and trade-offs, never restate the code.
-11. Delete obsolete code instead of preserving history.
-12. Continuously improve the architecture while implementing changes.
 
 # Conventions
 - The planner must not reference any WoW global (`CreateFrame`, `GetTradeSkill*`,
