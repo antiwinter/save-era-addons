@@ -1,0 +1,13 @@
+## Interface: 11507
+## Title: Whoa Thick |cFF0070FFCC|r
+## Notes: Minimal unit frame enhancer: health bar coloring and thicker frames.
+## Author: delabarra
+## Version: 1.0
+## SavedVariables: whoaThickCCDB
+
+core.lua
+color.lua
+frames.lua
+text.lua
+config.lua
+debug.lua
