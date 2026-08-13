@@ -1,0 +1,11 @@
+## Interface: 11507
+## Title: Bug |cFFFF4411Panel|r
+## Notes: Current-session Lua error viewer: collapsible list, copyable context.
+## Author: antiwinter
+## Version: 1.0
+## Dependencies: !BugGrabber
+## SavedVariables: BugPanelDB
+
+core.lua
+panel.lua
+minimap.lua

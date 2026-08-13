@@ -4,12 +4,14 @@ A collection of WoW Classic Era addons, each in its own subdirectory:
 - `Peddler` — auto-sell unwanted items at vendors.
 - `skillMaster` — half-automated trade-skill leveling assistant.
 - `whoaThickCC` — minimal rewrite of whoaThickFrames_Classic.
+- `BugPanel` — current-session Lua error viewer (reads !BugGrabber's DB).
 
 Each subproject has its own `AGENTS.md` with project-specific details. This
 file holds the conventions common to all of them.
 
 # Related Projects
 - wow ui source: `~/src/wow-ui-source`
+- $GAME_DIR: `/Applications/World of Warcraft/_classic_era_`
 
 # Design Principles
 1. Seek the elegant solution before implementing the obvious one.
