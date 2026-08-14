@@ -1,11 +1,6 @@
--- planner.lua — the craft-plan solver. DUAL-USE: this exact file is loaded by
--- the in-game runtime (via .toc, attaching to ns.Planner) AND by the off-client
--- test harness (which grabs the returned table). See AGENTS.md.
---
--- Hard rules (do not break, or the tests stop matching in-game behavior):
---   * no WoW globals (CreateFrame, GetTradeSkill*, wipe, WeakAuras, ...)
---   * no top-level dofile/require of data — the caller passes `db` in
---   * export both ways: ns.Planner in-game, `return M` off-client
+-- planner.lua — the craft-plan solver. Pure Lua: no WoW globals, and the caller
+-- passes `db` in (no dofile/require of data). Runs identically in-game and under
+-- fake-wow, so tests exercise the shipped algorithm. See AGENTS.md.
 --
 -- BuildPlan(db, opts) -> actions, materials
 --   db       : a db object from data.lua (NewDB)
@@ -13,7 +8,7 @@
 --   actions  : ordered list of { item, count, from, to }
 --   materials: map of reagent name -> count to buy (non-craftable leaves)
 
-local ns = select(2, ...) -- nil under standalone lua
+local _, ns = ...
 
 local sqrt, floor, ceil, pow = math.sqrt, math.floor, math.ceil, function(a, b) return a ^ b end
 
@@ -29,7 +24,7 @@ local function rolls(a, b, p)
 	return n + n * (1 - p) / p + 2 * sqrt(n * (1 - p)) / p
 end
 
-function BuildPlan(db, opts)
+local function BuildPlan(db, opts)
 	opts = opts or {}
 	local START = opts.start or 1
 	local PHASE = opts.phase or 3
@@ -207,6 +202,4 @@ function BuildPlan(db, opts)
 	return gen_plan(), material
 end
 
-local M = { BuildPlan = BuildPlan, rolls = rolls }
-if ns then ns.Planner = M end
-return M
+ns.Planner = { BuildPlan = BuildPlan, rolls = rolls }

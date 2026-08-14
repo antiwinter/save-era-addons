@@ -5,12 +5,11 @@
 ## Version: 0.1
 ## SavedVariables: skillMasterDB
 
-core.lua
 data\eng.lua
 data\tailor.lua
 data.lua
 planner.lua
 format.lua
-runtime.lua
+core.lua
 ui.lua
 debug.lua

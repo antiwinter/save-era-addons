@@ -1,13 +1,12 @@
--- format.lua — shared plan formatter. DUAL-USE like planner.lua: pure Lua, no
--- WoW globals, so both tests/emu.lua and the in-game engine render the SAME
--- human-readable plan text. Takes the structured plan from ns.Planner.BuildPlan
--- and returns lines; printing is left to the caller (print off-client, a chat
--- frame in-game).
+-- format.lua — shared plan formatter. Pure Lua, no WoW globals, so both the
+-- emulator and the in-game engine render the SAME human-readable plan text.
+-- Takes the structured plan from ns.Planner.BuildPlan and returns lines;
+-- printing is left to the caller (print off-client, a chat frame in-game).
 --
 --   Lines(actions, materials) -> { "PLAN", "item, count, from, to", ..., "BAG", ... }
 --   Print(actions, materials, printer)   printer defaults to print
 
-local ns = select(2, ...) -- nil under standalone lua
+local _, ns = ...
 
 local ceil = math.ceil
 
@@ -39,6 +38,4 @@ local function Print(actions, materials, printer)
 	end
 end
 
-local M = { Lines = Lines, Print = Print }
-if ns then ns.Format = M end
-return M
+ns.Format = { Lines = Lines, Print = Print }

@@ -22,61 +22,62 @@ The prototype splits cleanly into three concerns; skillMaster keeps that split.
    generated artifacts; regenerated with the pipeline in `scripts/`. The
    architecture supports all 8 professions dl.js knows; only ENG and Tailoring
    data are fine-tuned for now.
-2. Planner (pure Lua, ONE file used both in and out of game): given a
-   profession's recipe table + a target level + a wishlist, produce an ordered
-   action list and a shopping list.
-3. Runtime (craft engine, dual-use via a host seam): tracks progress against
-   the plan and crafts the next batch on demand (one click per batch —
-   player-initiated `DoTradeSkill`, no auto-fire, to stay clear of
-   action-blocking taint). Reacts to events (skill-up, bag change, recipe
-   learned) rather than looping.
+2. Planner (pure Lua): given a profession's recipe table + a target level + a
+   wishlist, produce an ordered action list and a shopping list. Zero WoW
+   globals — the caller passes `db`.
+3. Runtime (craft engine in `core.lua`): tracks progress against the plan and
+   crafts the next batch on demand (one click per batch — player-initiated
+   `DoTradeSkill`, no auto-fire, to stay clear of action-blocking taint).
+   Reacts to events (skill-up, bag change, recipe learned) rather than looping.
 
-## The planner is a single dual-use file (load-bearing constraint)
-`planner.lua` is consumed unchanged by BOTH the in-game runtime AND the
-off-client test harness. This is deliberate and must be preserved:
+## The shared core runs in both worlds
+`data.lua`, `planner.lua`, `format.lua`, and `core.lua` are loaded by BOTH the
+in-game runtime (via .toc) AND the off-client emulator (via fake-wow's loader).
+They call WoW globals directly (`GetTradeSkillLine`, `DoTradeSkill`, ...);
+in-game those are real, off-client they're supplied by `fake-wow/`. This is
+deliberate and must be preserved:
 - No duplication: the algorithm lives in exactly one place.
 - Verified out-of-game ⇒ mostly-correct in-game: `tests/` exercises the same
   bytes that ship in the addon, so the Monte Carlo emulator is a real
   regression gate for live behavior.
 
 Rules that keep it dual-use:
-- Zero WoW globals in `planner.lua` (`CreateFrame`, `GetTradeSkill*`, `wipe`,
-  `WeakAuras`, …). Anything client-specific is passed in as an argument.
-- No top-level `dofile`/`require` of data — the caller supplies `db`.
-- Export both ways: read the `local _, ns = ...` vararg (nil under standalone
-  `lua`) and, when absent, `return` the module table. In-game it attaches to
-  `ns.Planner`; off-client `tests/emu.lua` grabs the returned table.
-- `data.lua` follows the same dual-loader pattern for recipe tables (in-game:
-  loaded via the .toc; off-client: `dofile`d by the test).
+- Core files (`data`, `planner`, `format`, `core`) never branch on "am I
+  in-game or off-client?" They just call `CreateFrame`, `GetTradeSkillLine`, etc.
+- Off-client those globals are supplied by `fake-wow/` (a generic, reusable Lua
+  client shell + trade-skill domain).
+- The .toc loader in `fake-wow/init.lua` runs each file with the same
+  `(addonName, ns)` varargs the client uses, so `local _, ns = ...` works
+  identically in both worlds.
+- No top-level `dofile`/`require` of data — the generated `<prof>_data` globals
+  are set by the .toc load order (both in-game and via fake-wow's loader).
 
-## The runtime is dual-use too, via a host seam
-`runtime.lua` is the event-driven craft engine and — like the planner — runs
-unchanged in-game and under the emulator. It never touches a WoW global
-directly; it reads the world and crafts through an injected `host`, and reacts
-to `OnTradeSkillUpdate` / `OnBagUpdate` entrypoints.
+## fake-wow: the simulated client
+`fake-wow/` is a **repo-shared** fake WoW environment, structured so other
+addons (BugPanel, Peddler, whoaThickCC) can reuse the generic client shell.
+Currently it only implements what skillMaster needs (~15 APIs), but the
+architecture supports growth. See `ARCH.md` for file roles.
 
-- `host` is a 4-method interface: `ReadSkill()`, `ReadRecipes()`, `ReadBag()`,
-  `Craft(index, batch)`. In-game the host wraps the real
-  `GetTradeSkill*`/`GetContainer*`/`DoTradeSkill` APIs; in emu it is a
-  simulated world (the ONLY place off-client craft mechanics — skill-up rolls,
-  reagent consumption — live).
-- `Runtime.new(host, deps)` is pure; `deps` supplies `planner`, `getDB`,
-  `getCfg`, `onUpdate`. The in-game glue at the bottom of the file is guarded by
-  `if ns and CreateFrame`, so `dofile('runtime.lua')` stays clean off-client.
-- Why: the emulator drives the SAME engine the client runs — `DoAction`, batch
-  sizing, and plan progression are all under test, not re-implemented. Bugs in
-  ordering/advancement surface off-client instead of only in-game.
+The emulator (`tests/emu.lua`) loads fake-wow, loads the addon from its .toc,
+seeds the world via `GM.SetTradeSkillLine` / `GM.LoadRecipes` / `GM.SetBag`,
+fires `TRADE_SKILL_SHOW`, then clicks `DoAction` in a loop. fake-wow's
+`DoTradeSkill` handles craft mechanics (skill-up rolls, recursive sub-reagent
+crafting, reagent consumption) and fires `TRADE_SKILL_UPDATE` + `BAG_UPDATE`
+synchronously, so the addon's own event frame drives the refresh — same path as
+live.
 
 # Debugging
 - In-game: `/skm debug` dumps planner + runtime state to SavedVariables; read
   `WTF/Account/<ACCOUNT>/SavedVariables/skillMaster.lua`.
-- Off-client: `lua tests/emu.lua < fixture` replays a plan via Monte Carlo and
-  reports budget / material use-rate / total crafts.
+- Off-client: `lua tests/emu.lua <prof> <target>` replays a plan via Monte
+  Carlo and reports budget / material use-rate / total crafts.
+- Regression gate: `./tests/run.sh` runs the emulator over eng + tailor at a
+  fixed seed; fails if any plan comes up SHORT.
 
 # Conventions
-- The planner must not reference any WoW global (`CreateFrame`, `GetTradeSkill*`,
-  etc.). If it needs client data, take it as a function argument so tests can
-  supply a fixture.
+- Core files (`data`, `planner`, `format`, `core`) call WoW globals directly
+  but never branch on "am I in-game?" If they need client state, read it from
+  the WoW API (fake-wow provides stubs off-client).
 - Recipe data files (`data/*.lua`) are generated. Do not hand-edit; change the
   scraper in `scripts/` and regenerate.
 - Skill-up color convention throughout: `colors = {orange, yellow, green, gray}`

@@ -6,7 +6,7 @@
 --
 -- No WoW globals here — keep it loadable under a plain `lua` interpreter.
 
-local ns = select(2, ...) -- nil under standalone lua
+local _, ns = ...
 
 -- Wrap a raw recipe array (as emitted by scripts/dl.js) into a db object:
 --   db[name|id]  -> recipe table (nil if unknown or has no color thresholds)
@@ -43,15 +43,9 @@ local function NewDB(data)
 	return db
 end
 
-local M = { NewDB = NewDB }
-
-if ns then
-	ns.NewDB = NewDB
-	ns.db = ns.db or {}
-	-- Generated tables are loaded before this file (see .toc) and expose
-	-- <prof>_data globals; register whichever ones shipped in this build.
-	if eng_data then ns.db.eng = NewDB(eng_data) end
-	if tailor_data then ns.db.tailor = NewDB(tailor_data) end
-end
-
-return M
+ns.NewDB = NewDB
+ns.db = ns.db or {}
+-- Generated tables are loaded before this file (see .toc) and expose
+-- <prof>_data globals; register whichever ones shipped in this build.
+if eng_data then ns.db.eng = NewDB(eng_data) end
+if tailor_data then ns.db.tailor = NewDB(tailor_data) end
