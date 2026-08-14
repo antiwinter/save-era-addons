@@ -63,6 +63,11 @@ local function install(env)
 
 	env.UIParent = CreateFrame("Frame", "UIParent")
 
+	-- The GM console table. Domain modules (tradeskill.lua, ...) attach their own
+	-- setup knobs to it; only truly generic ones live here.
+	env.GM = env.GM or {}
+	function env.GM.SetSeed(seed) math.randomseed(seed) end
+
 	-- Slash-command registry: addons set SLASH_FOO1 = "/foo" and
 	-- SlashCmdList.FOO = handler. env.__slash("/foo bar") dispatches.
 	env.SlashCmdList = {}

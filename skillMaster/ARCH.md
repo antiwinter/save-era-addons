@@ -49,9 +49,8 @@ architecture supports growth.
 | File | Role |
 |------|------|
 | `init.lua` | Entry point: installs globals into `_G`, provides a .toc loader that runs an addon exactly as the game would (each file gets `(addonName, ns)` varargs, backslashes are normalized, `ADDON_LOADED` fires after all files load), and exposes `GM.*` for test setup. |
-| `client.lua` | Generic client shell: `CreateFrame` + widget stubs, event registration + dispatch, slash commands, `UIParent`. The **reusable** part, no trade-skill specifics. |
-| `tradeskill.lua` | Trade-skill world state + C-APIs: `GetTradeSkillLine`, `GetNumTradeSkills`, `GetTradeSkillInfo`, `GetTradeSkillNumReagents`, `GetTradeSkillReagentInfo`, `DoTradeSkill`, `GetContainerNumSlots`, `GetContainerItemInfo`, `GetItemInfo`, `GetBuildInfo`, `date`. This is where craft **mechanics** (skill-up rolls, recursive sub-reagent crafting, reagent consumption) live off-client. In-game those are the client's job; here they are ours. |
-| `gm.lua` | The "game master" console for tests: `GM.SetTradeSkillLine(name, lvl, cap)`, `GM.LoadRecipes(raw)`, `GM.SetBag(name, count)`, `GM.SetSeed(n)`. NOT a WoW API — it's the knob tests turn to seed the world before loading an addon. |
+| `client.lua` | Generic client shell: `CreateFrame` + widget stubs, event registration + dispatch, slash commands, `UIParent`, and the shared `GM` table (with generic `GM.SetSeed`). The **reusable** part, no trade-skill specifics. |
+| `tradeskill.lua` | Trade-skill world state + C-APIs: `GetTradeSkillLine`, `GetNumTradeSkills`, `GetTradeSkillInfo`, `GetTradeSkillNumReagents`, `GetTradeSkillReagentInfo`, `DoTradeSkill`, `GetContainerNumSlots`, `GetContainerItemInfo`, `GetItemInfo`, `GetBuildInfo`, `date`. This is where craft **mechanics** (skill-up rolls, recursive sub-reagent crafting, reagent consumption) live off-client. It also attaches its own GM knobs (`GM.SetTradeSkillLine`, `GM.LoadRecipes`, `GM.SetBag`, `GM.ResetProgress`) — setup helpers live with the domain they mutate, not in a catch-all. |
 
 `DoTradeSkill` in fake-wow fires `TRADE_SKILL_UPDATE` + `BAG_UPDATE`
 synchronously, so the addon's own event frame drives the refresh in both worlds.

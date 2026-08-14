@@ -20,9 +20,10 @@ local dir = (src:match("^(.*)/[^/]*$") or ".") .. "/"
 local world = {}
 local env = _G
 
+-- client.lua first: it seeds the generic env (incl. the shared GM table).
+-- Domain modules then attach their own C-APIs + GM knobs to that same env.
 dofile(dir .. "client.lua").install(env)
 dofile(dir .. "tradeskill.lua").install(env, world)
-dofile(dir .. "gm.lua").install(env, world)
 
 -- Parse a .toc for its ordered .lua file list (ignores ## directives + blanks),
 -- resolving paths relative to the .toc's own directory and normalizing the

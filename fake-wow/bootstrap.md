@@ -30,12 +30,14 @@ Widget methods: `SetSize`, `SetPoint`, `SetMovable`, `EnableMouse`,
 - `GetContainerItemInfo(bag, slot)` → `nil, count, nil, nil, nil, nil, link`
 - `GetItemInfo(link)` → `link` (link == name in the sim)
 
-### GM console (gm.lua) — test setup, NOT a WoW API
-- `GM.SetTradeSkillLine(name, lvl, cap)`
-- `GM.LoadRecipes(raw)` — load a `<prof>_data` array into the book
-- `GM.SetBag(name, count)` or `GM.SetBag({[name]=count, ...})`
-- `GM.SetSeed(n)`
-- `GM.ResetProgress()`
+### GM console — test setup, NOT a WoW API
+The shared `GM` table is created by `client.lua`; each domain module attaches
+its own knobs (setup helpers live with the domain they mutate).
+- `GM.SetSeed(n)` — generic (client.lua)
+- `GM.SetTradeSkillLine(name, lvl, cap)` — tradeskill.lua
+- `GM.LoadRecipes(raw)` — load a `<prof>_data` array into the book (tradeskill.lua)
+- `GM.SetBag(name, count)` or `GM.SetBag({[name]=count, ...})` — tradeskill.lua
+- `GM.ResetProgress()` — tradeskill.lua
 
 ### Loader (init.lua)
 - `loadAddon(tocPath)` → `ns` — parse .toc, run each file with `(addonName, ns)`, fire `ADDON_LOADED`
@@ -46,8 +48,9 @@ Widget methods: `SetSize`, `SetPoint`, `SetMovable`, `EnableMouse`,
 
 ## Growth path
 When other addons need new APIs, add them to `client.lua` (generic) or new
-domain modules (quest, combat, auction, etc.). The loader + GM console stay
-generic.
+domain modules (quest, combat, auction, etc.). Each domain module owns both its
+C-APIs and its `GM.*` setup knobs — the loader and the generic `GM` table stay
+in the shell.
 
 ## Usage (from a test driver)
 ```lua
