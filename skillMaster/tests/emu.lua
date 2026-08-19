@@ -24,7 +24,9 @@ fw.GM.SetSeed(tonumber(os.getenv("SKM_SEED") or "") or os.time())
 -- This also sets the <prof>_data globals and builds ns.db.
 local ns = fw.loadAddon("skillMaster.toc")
 
--- Seed the world: recipe book from the generated table, open skill line at start.
+-- Seed the world: load the recipe catalog (trainer-taught load learned,
+-- scroll-taught unlearned — the addon learns those from their teaching item
+-- mid-run) and open the skill line at the start level.
 local raw = _G[prof .. "_data"]
 assert(raw, "no data table for profession: " .. prof)
 fw.GM.LoadRecipes(raw)
@@ -69,7 +71,7 @@ end
 -- Tally leftover materials (waste) vs crafted value.
 local remain_val = 0
 for k, c in pairs(world.bag) do
-	if c > 0 and not db[k] then remain_val = remain_val + (db:price(k) or 0) * c end
+	if c > 0 and not db[k] then remain_val = remain_val + (db:price(world.item[k]) or 0) * c end
 end
 
 local ok = world.skill.lvl >= target

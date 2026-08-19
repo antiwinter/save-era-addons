@@ -1,39 +1,33 @@
--- tradeskill.lua — the simulated game world for trade-skill leveling plus the
--- WoW C-APIs skillMaster reads. This is where craft *mechanics* live off-client:
--- skill-up rolls, recursive sub-reagent crafting, reagent consumption. In-game
--- these are the client's job; here they are ours.
---
--- Installs into the shared world table (see init.lua) and registers its globals
--- through the passed `env`. Kept separate from client.lua so the generic client
--- shell stays reusable by other addons that don't touch trade skills.
 
 local function install(env, world)
-	-- world holds all mutable sim state; GM.* mutates it, C-APIs read it.
 	world.skill = world.skill or { name = "", lvl = 1, cap = 1 }
 	world.bag = world.bag or setmetatable({}, { __index = function() return 0 end })
-	world.book = world.book or {}   -- name -> { name, recipe, index, ... }
-	world.order = world.order or {} -- index -> name (mirrors GetTradeSkillInfo)
+	world.catalog = world.catalog or {} -- array: {id, name, recipe, colors, craft_count, learned}
+	world.item = world.item or {}       -- item id -> name (populated by SetBag)
 	world.crafts = world.crafts or 0
 
-	-- Look up the raw recipe record (with colors/craft_count) behind a book entry.
-	local function rec(name) return world.book[name] end
+	local nameToId = {} -- item name -> id; setup-only, for SetBag
 
-	-- One craft: auto-produce missing craftable sub-reagents, consume reagents,
-	-- add output, roll for a skill-up. Returns false if it can't proceed (recipe
-	-- not learnable yet or a leaf material is exhausted).
-	local function craftOne(name)
-		local r = rec(name)
-		if not r or world.skill.lvl < r.colors[1] then return false end
+	local function find(name)
+		for _, r in ipairs(world.catalog) do
+			if r.name == name then return r end
+		end
+		return nil
+	end
+
+	local function craftOne(r)
+		if world.skill.lvl < r.colors[1] then return false end
 		for _, rg in ipairs(r.recipe or {}) do
-			while world.bag[rg.name] < rg.count do
-				if not rec(rg.name) then return false end -- leaf material exhausted
-				if not craftOne(rg.name) then return false end
+			while world.bag[rg.id] < rg.count do
+				local sub = find(rg.name)
+				if not sub or sub.learned ~= 1 then return false end
+				if not craftOne(sub) then return false end
 			end
 		end
 		for _, rg in ipairs(r.recipe or {}) do
-			world.bag[rg.name] = world.bag[rg.name] - rg.count
+			world.bag[rg.id] = world.bag[rg.id] - rg.count
 		end
-		world.bag[r.name] = world.bag[r.name] + (r.craft_count or 1)
+		world.bag[r.id] = world.bag[r.id] + (r.craft_count or 1)
 		local roll = math.random(100)
 		local up = (world.skill.lvl < r.colors[2] and roll <= 100)
 			or (world.skill.lvl < r.colors[3] and roll <= 75)
@@ -51,39 +45,63 @@ local function install(env, world)
 	end
 
 	function env.GetNumTradeSkills()
-		return #world.order
+		return #world.catalog
 	end
 
+	-- Unlearned recipes report kind "header" so the addon skips them; the slot
+	-- index is the catalog array position, stable across learns.
 	function env.GetTradeSkillInfo(i)
-		local name = world.order[i]
-		if not name then return nil end
-		return name, "optimal" -- kind: never "header" in the sim
+		local r = world.catalog[i]
+		if not r then return nil end
+		return r.name, r.learned == 1 and "optimal" or "header"
 	end
 
 	function env.GetTradeSkillNumReagents(i)
-		local r = rec(world.order[i])
+		local r = world.catalog[i]
 		return r and #(r.recipe or {}) or 0
 	end
 
 	function env.GetTradeSkillReagentInfo(i, j)
-		local r = rec(world.order[i])
+		local r = world.catalog[i]
 		local rg = r and r.recipe and r.recipe[j]
 		if not rg then return nil end
 		return rg.name, nil, rg.count
 	end
 
-	-- The one mutating API: craft `batch` times, then fire the events the client
-	-- would, so the addon's own event frame drives the refresh (same path as live).
 	function env.DoTradeSkill(index, batch)
-		local name = world.order[index]
+		local r = world.catalog[index]
 		for _ = 1, (batch or 1) do
-			if not craftOne(name) then break end
+			if not r or not craftOne(r) then break end
 		end
 		env.__fire("TRADE_SKILL_UPDATE")
 		env.__fire("BAG_UPDATE")
 	end
 
-	-- ---- Container / item C-API (bag lives as name->count, one virtual bag) --
+	local TEACH_PREFIXES = { "Schematic: ", "Pattern: ", "Plans: ", "Plan: ",
+		"Recipe: ", "Formula: ", "Design: ", "Blueprint: " }
+
+	-- The addon finds the teaching item by id (locale-independent); here we parse
+	-- its name to locate the recipe — sim-only, the data is English.
+	function env.UseContainerItem(bag, slot)
+		if bag ~= 0 then return end
+		local id = env.GetContainerItemID(bag, slot)
+		local name = world.item[id]
+		if not name then return end
+		for _, p in ipairs(TEACH_PREFIXES) do
+			if name:sub(1, #p) == p then
+				local r = find(name:sub(#p + 1))
+				if r then
+					r.learned = 1
+					world.bag[id] = 0
+					env.__fire("TRADE_SKILL_UPDATE")
+					env.__fire("BAG_UPDATE")
+				end
+				return
+			end
+		end
+	end
+
+	-- ---- Container / item C-API (bag is id->count, one virtual bag) ----------
 	function env.GetContainerNumSlots(bag)
 		if bag ~= 0 then return 0 end
 		local n = 0
@@ -94,12 +112,11 @@ local function install(env, world)
 	function env.GetContainerItemInfo(bag, slot)
 		if bag ~= 0 then return nil end
 		local i = 0
-		for name, count in pairs(world.bag) do
+		for id, count in pairs(world.bag) do
 			if count > 0 then
 				i = i + 1
 				if i == slot then
-					-- returns: texture, count, ..., link  (link == name in the sim)
-					return nil, count, nil, nil, nil, nil, name
+					return nil, count, nil, nil, nil, nil, world.item[id]
 				end
 			end
 		end
@@ -108,43 +125,66 @@ local function install(env, world)
 
 	function env.GetItemInfo(link) return link end
 
+	function env.GetContainerItemID(bag, slot)
+		if bag ~= 0 then return nil end
+		local i = 0
+		for id, count in pairs(world.bag) do
+			if count > 0 then
+				i = i + 1
+				if i == slot then return id end
+			end
+		end
+		return nil
+	end
+
 	-- ---- GM console (test setup, NOT WoW APIs) -----------------------------
-	-- These attach to the shared GM table (created by client.lua) so trade-skill
-	-- setup knobs live with the trade-skill domain, not in a catch-all file.
 	local GM = env.GM
 
-	-- Set the open trade-skill line the addon reads via GetTradeSkillLine.
 	function GM.SetTradeSkillLine(name, lvl, cap)
 		world.skill.name = name
 		world.skill.lvl = lvl or 1
 		world.skill.cap = cap or lvl or 1
 	end
 
-	-- Replace/patch bag contents. Table form sets counts by item name;
-	-- name+count form adds a single stack.
+	-- Stock by item name: resolve name->id, store the count, and record the name
+	-- so GetContainerItemInfo can return it (the addon's bag is name-keyed).
 	function GM.SetBag(a, b)
 		if type(a) == "table" then
-			for name, count in pairs(a) do world.bag[name] = count end
+			for name, count in pairs(a) do
+				local id = nameToId[name]
+				if id then world.bag[id] = count; world.item[id] = name end
+			end
 		else
-			world.bag[a] = (world.bag[a] or 0) + (b or 0)
+			local id = nameToId[a]
+			if id then
+				world.bag[id] = (world.bag[id] or 0) + (b or 0)
+				world.item[id] = a
+			end
 		end
 	end
 
-	-- Load a raw recipe array (as data/<prof>.lua emits) into the book, keyed by
-	-- name and mirrored by index so GetTradeSkillInfo(i) works. Records keep their
-	-- colors/craft_count fields so craft mechanics can read them.
 	function GM.LoadRecipes(raw)
-		world.book, world.order = {}, {}
-		for i, r in ipairs(raw) do
-			world.book[r.name] = {
-				name = r.name, recipe = r.recipe, index = i,
+		world.catalog = {}
+		world.item = {}
+		nameToId = {}
+		for _, r in ipairs(raw) do
+			world.catalog[#world.catalog + 1] = {
+				id = r.id, name = r.name, recipe = r.recipe,
 				colors = r.colors, craft_count = r.craft_count,
+				learned = (r.schem_id and r.schem_id > 0) and 0 or 1,
 			}
-			world.order[i] = r.name
+			nameToId[r.name] = r.id
+			for _, rg in ipairs(r.recipe or {}) do
+				nameToId[rg.name] = rg.id
+			end
+			if r.schem_id and r.schem_id > 0 then
+				for _, p in ipairs(TEACH_PREFIXES) do
+					nameToId[p .. r.name] = r.schem_id
+				end
+			end
 		end
 	end
 
-	-- Reset counters without dropping the loaded book.
 	function GM.ResetProgress()
 		world.crafts = 0
 	end

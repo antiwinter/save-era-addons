@@ -1,1535 +1,1582 @@
 tailor_data = {
-  {id = 6243, name = "Green Woolen Robe", spell_name = "Green Woolen Robe", spell_id = 7636, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 2, avgbuyout = 0, cost = 4748, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
+  {id = 6243, name = "Green Woolen Robe", spell_name = "Green Woolen Robe", spell_id = 7636, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 2, avgbuyout = 0, cost = 4810, phaseId = 0, schemprice = 10000, schemid = 6273, recipe = {
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
     {id = 2605, name = "Green Dye", count = 1, avgbuyout = 2500},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 3, avgbuyout = 445},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 3, avgbuyout = 450},
   }},
-  {id = 7027, name = "Boots of Darkness", spell_name = "Boots of Darkness", spell_id = 8778, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 2, avgbuyout = 0, cost = 10518, phaseId = 0, schem = 0, recipe = {
-    {id = 2319, name = "Medium Leather", count = 2, avgbuyout = 188},
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1061},
-    {id = 6048, name = "Shadow Protection Potion", count = 1, avgbuyout = 6976},
+  {id = 7027, name = "Boots of Darkness", spell_name = "Boots of Darkness", spell_id = 8778, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 2, avgbuyout = 0, cost = 10889, phaseId = 0, schemprice = 10000, schemid = 7093, recipe = {
+    {id = 2319, name = "Medium Leather", count = 2, avgbuyout = 196},
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1083},
+    {id = 6048, name = "Shadow Protection Potion", count = 1, avgbuyout = 7269},
   }},
-  {id = 10010, name = "Stormcloth Pants", spell_name = "Stormcloth Pants", spell_id = 12062, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 2, avgbuyout = 0, cost = 20286, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3399},
-    {id = 7079, name = "Globe of Water", count = 2, avgbuyout = 1266},
+  {id = 10010, name = "Stormcloth Pants", spell_name = "Stormcloth Pants", spell_id = 12062, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 2, avgbuyout = 0, cost = 20174, phaseId = 0, schemprice = 10000, schemid = 10303, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3391},
+    {id = 7079, name = "Globe of Water", count = 2, avgbuyout = 1310},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
   }},
-  {id = 10011, name = "Stormcloth Gloves", spell_name = "Stormcloth Gloves", spell_id = 12063, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 2, avgbuyout = 0, cost = 16991, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3399},
-    {id = 7079, name = "Globe of Water", count = 2, avgbuyout = 1266},
+  {id = 10011, name = "Stormcloth Gloves", spell_name = "Stormcloth Gloves", spell_id = 12063, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 2, avgbuyout = 0, cost = 16929, phaseId = 0, schemprice = 10000, schemid = 10304, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3391},
+    {id = 7079, name = "Globe of Water", count = 2, avgbuyout = 1310},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
   }},
-  {id = 10020, name = "Stormcloth Vest", spell_name = "Stormcloth Vest", spell_id = 12068, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 2, avgbuyout = 0, cost = 24847, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 5, avgbuyout = 3399},
-    {id = 7079, name = "Globe of Water", count = 3, avgbuyout = 1266},
+  {id = 10020, name = "Stormcloth Vest", spell_name = "Stormcloth Vest", spell_id = 12068, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 2, avgbuyout = 0, cost = 24729, phaseId = 0, schemprice = 10000, schemid = 10313, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 5, avgbuyout = 3391},
+    {id = 7079, name = "Globe of Water", count = 3, avgbuyout = 1310},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
   }},
-  {id = 10032, name = "Stormcloth Headband", spell_name = "Stormcloth Headband", spell_id = 12083, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 2, avgbuyout = 0, cost = 22818, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3399},
-    {id = 7079, name = "Globe of Water", count = 4, avgbuyout = 1266},
+  {id = 10032, name = "Stormcloth Headband", spell_name = "Stormcloth Headband", spell_id = 12083, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 2, avgbuyout = 0, cost = 22794, phaseId = 0, schemprice = 10000, schemid = 10319, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3391},
+    {id = 7079, name = "Globe of Water", count = 4, avgbuyout = 1310},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
   }},
-  {id = 10038, name = "Stormcloth Shoulders", spell_name = "Stormcloth Shoulders", spell_id = 12087, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 2, avgbuyout = 0, cost = 30932, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 5, avgbuyout = 3399},
-    {id = 7079, name = "Globe of Water", count = 6, avgbuyout = 1266},
+  {id = 10038, name = "Stormcloth Shoulders", spell_name = "Stormcloth Shoulders", spell_id = 12087, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 2, avgbuyout = 0, cost = 30946, phaseId = 0, schemprice = 10000, schemid = 10322, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 5, avgbuyout = 3391},
+    {id = 7079, name = "Globe of Water", count = 6, avgbuyout = 1310},
     {id = 8343, name = "Heavy Silken Thread", count = 3, avgbuyout = 2287},
   }},
-  {id = 10039, name = "Stormcloth Boots", spell_name = "Stormcloth Boots", spell_id = 12090, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 2, avgbuyout = 0, cost = 35765, phaseId = 0, schem = 0, recipe = {
-    {id = 4304, name = "Thick Leather", count = 2, avgbuyout = 769},
-    {id = 4339, name = "Bolt of Mageweave", count = 6, avgbuyout = 3399},
-    {id = 7079, name = "Globe of Water", count = 6, avgbuyout = 1266},
+  {id = 10039, name = "Stormcloth Boots", spell_name = "Stormcloth Boots", spell_id = 12090, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 2, avgbuyout = 0, cost = 35847, phaseId = 0, schemprice = 10000, schemid = 10324, recipe = {
+    {id = 4304, name = "Thick Leather", count = 2, avgbuyout = 828},
+    {id = 4339, name = "Bolt of Mageweave", count = 6, avgbuyout = 3391},
+    {id = 7079, name = "Globe of Water", count = 6, avgbuyout = 1310},
     {id = 8343, name = "Heavy Silken Thread", count = 3, avgbuyout = 2287},
   }},
-  {id = 2570, name = "Linen Cloak", spell_name = "Linen Cloak", spell_id = 2387, craft_count = 1, colors = {1,35,47,60}, learnedat = 1, nskillup = 1, quality = 1, avgbuyout = 1199, cost = 219, phaseId = 0, schem = 0, recipe = {
+  {id = 2570, name = "Linen Cloak", spell_name = "Linen Cloak", spell_id = 2387, craft_count = 1, colors = {1,35,47,60}, learnedat = 1, nskillup = 1, quality = 1, avgbuyout = 1664, cost = 221, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
     {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 1, avgbuyout = 80},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 1, avgbuyout = 83},
   }},
-  {id = 2576, name = "White Linen Shirt", spell_name = "White Linen Shirt", spell_id = 2393, craft_count = 1, colors = {1,35,47,60}, learnedat = 1, nskillup = 1, quality = 1, avgbuyout = 900, cost = 418, phaseId = 0, schem = 0, recipe = {
-    {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
-    {id = 2324, name = "Bleach", count = 1, avgbuyout = 199},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 1, avgbuyout = 80},
-  }},
-  {id = 2996, name = "Bolt of Linen Cloth", spell_name = "Bolt of Linen Cloth", spell_id = 2963, craft_count = 1, colors = {1,25,37,50}, learnedat = 1, nskillup = 1, quality = 1, avgbuyout = 80, cost = 80, phaseId = 0, schem = 0, recipe = {
-    {id = 2589, name = "Linen Cloth", count = 2, avgbuyout = 40},
-  }},
-  {id = 4344, name = "Brown Linen Shirt", spell_name = "Brown Linen Shirt", spell_id = 3915, craft_count = 1, colors = {1,35,47,60}, learnedat = 1, nskillup = 1, quality = 1, avgbuyout = 472, cost = 219, phaseId = 0, schem = 0, recipe = {
-    {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 1, avgbuyout = 80},
-  }},
-  {id = 10045, name = "Simple Linen Pants", spell_name = "Simple Linen Pants", spell_id = 12044, craft_count = 1, colors = {1,35,47,60}, learnedat = 1, nskillup = 1, quality = 1, avgbuyout = 99, cost = 219, phaseId = 0, schem = 0, recipe = {
-    {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 1, avgbuyout = 80},
-  }},
-  {id = 2568, name = "Brown Linen Vest", spell_name = "Brown Linen Vest", spell_id = 2385, craft_count = 1, colors = {10,45,57,70}, learnedat = 10, nskillup = 1, quality = 1, avgbuyout = 98, cost = 219, phaseId = 0, schem = 0, recipe = {
-    {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 1, avgbuyout = 80},
-  }},
-  {id = 7026, name = "Linen Belt", spell_name = "Linen Belt", spell_id = 8776, craft_count = 1, colors = {15,50,67,85}, learnedat = 15, nskillup = 1, quality = 1, avgbuyout = 144, cost = 219, phaseId = 0, schem = 0, recipe = {
-    {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 1, avgbuyout = 80},
-  }},
-  {id = 10046, name = "Simple Linen Boots", spell_name = "Simple Linen Boots", spell_id = 12045, craft_count = 1, colors = {20,50,67,85}, learnedat = 20, nskillup = 1, quality = 1, avgbuyout = 3995, cost = 393, phaseId = 0, schem = 0, recipe = {
-    {id = 2318, name = "Light Leather", count = 1, avgbuyout = 94},
-    {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 2, avgbuyout = 80},
-  }},
-  {id = 4343, name = "Brown Linen Pants", spell_name = "Brown Linen Pants", spell_id = 3914, craft_count = 1, colors = {30,55,72,90}, learnedat = 30, nskillup = 1, quality = 1, avgbuyout = 787, cost = 299, phaseId = 0, schem = 0, recipe = {
-    {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 2, avgbuyout = 80},
-  }},
-  {id = 6238, name = "Brown Linen Robe", spell_name = "Brown Linen Robe", spell_id = 7623, craft_count = 1, colors = {30,55,72,90}, learnedat = 30, nskillup = 1, quality = 2, avgbuyout = 733, cost = 379, phaseId = 0, schem = 0, recipe = {
-    {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 3, avgbuyout = 80},
-  }},
-  {id = 6241, name = "White Linen Robe", spell_name = "White Linen Robe", spell_id = 7624, craft_count = 1, colors = {30,55,72,90}, learnedat = 30, nskillup = 1, quality = 2, avgbuyout = 969, cost = 578, phaseId = 0, schem = 0, recipe = {
+  {id = 2576, name = "White Linen Shirt", spell_name = "White Linen Shirt", spell_id = 2393, craft_count = 1, colors = {1,35,47,60}, learnedat = 1, nskillup = 1, quality = 1, avgbuyout = 944, cost = 420, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
     {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
     {id = 2324, name = "Bleach", count = 1, avgbuyout = 199},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 3, avgbuyout = 80},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 1, avgbuyout = 83},
   }},
-  {id = 4307, name = "Heavy Linen Gloves", spell_name = "Heavy Linen Gloves", spell_id = 3840, craft_count = 1, colors = {35,60,77,95}, learnedat = 35, nskillup = 1, quality = 1, avgbuyout = 512, cost = 299, phaseId = 0, schem = 0, recipe = {
+  {id = 2996, name = "Bolt of Linen Cloth", spell_name = "Bolt of Linen Cloth", spell_id = 2963, craft_count = 1, colors = {1,25,37,50}, learnedat = 1, nskillup = 1, quality = 1, avgbuyout = 83, cost = 82, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2589, name = "Linen Cloth", count = 2, avgbuyout = 41},
+  }},
+  {id = 4344, name = "Brown Linen Shirt", spell_name = "Brown Linen Shirt", spell_id = 3915, craft_count = 1, colors = {1,35,47,60}, learnedat = 1, nskillup = 1, quality = 1, avgbuyout = 596, cost = 221, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
     {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 2, avgbuyout = 80},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 1, avgbuyout = 83},
   }},
-  {id = 2572, name = "Red Linen Robe", spell_name = "Red Linen Robe", spell_id = 2389, craft_count = 1, colors = {40,65,82,100}, learnedat = 40, nskillup = 1, quality = 2, avgbuyout = 1351, cost = 1536, phaseId = 0, schem = 0, recipe = {
+  {id = 10045, name = "Simple Linen Pants", spell_name = "Simple Linen Pants", spell_id = 12044, craft_count = 1, colors = {1,35,47,60}, learnedat = 1, nskillup = 1, quality = 1, avgbuyout = 199, cost = 221, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 1, avgbuyout = 83},
+  }},
+  {id = 2568, name = "Brown Linen Vest", spell_name = "Brown Linen Vest", spell_id = 2385, craft_count = 1, colors = {10,45,57,70}, learnedat = 10, nskillup = 1, quality = 1, avgbuyout = 144, cost = 221, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 1, avgbuyout = 83},
+  }},
+  {id = 7026, name = "Linen Belt", spell_name = "Linen Belt", spell_id = 8776, craft_count = 1, colors = {15,50,67,85}, learnedat = 15, nskillup = 1, quality = 1, avgbuyout = 196, cost = 221, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 1, avgbuyout = 83},
+  }},
+  {id = 10046, name = "Simple Linen Boots", spell_name = "Simple Linen Boots", spell_id = 12045, craft_count = 1, colors = {20,50,67,85}, learnedat = 20, nskillup = 1, quality = 1, avgbuyout = 3995, cost = 401, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2318, name = "Light Leather", count = 1, avgbuyout = 98},
+    {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 2, avgbuyout = 83},
+  }},
+  {id = 4343, name = "Brown Linen Pants", spell_name = "Brown Linen Pants", spell_id = 3914, craft_count = 1, colors = {30,55,72,90}, learnedat = 30, nskillup = 1, quality = 1, avgbuyout = 804, cost = 303, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 2, avgbuyout = 83},
+  }},
+  {id = 6238, name = "Brown Linen Robe", spell_name = "Brown Linen Robe", spell_id = 7623, craft_count = 1, colors = {30,55,72,90}, learnedat = 30, nskillup = 1, quality = 2, avgbuyout = 751, cost = 385, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 3, avgbuyout = 83},
+  }},
+  {id = 6241, name = "White Linen Robe", spell_name = "White Linen Robe", spell_id = 7624, craft_count = 1, colors = {30,55,72,90}, learnedat = 30, nskillup = 1, quality = 2, avgbuyout = 975, cost = 584, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
+    {id = 2324, name = "Bleach", count = 1, avgbuyout = 199},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 3, avgbuyout = 83},
+  }},
+  {id = 4307, name = "Heavy Linen Gloves", spell_name = "Heavy Linen Gloves", spell_id = 3840, craft_count = 1, colors = {35,60,77,95}, learnedat = 35, nskillup = 1, quality = 1, avgbuyout = 600, cost = 303, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 2, avgbuyout = 83},
+  }},
+  {id = 2572, name = "Red Linen Robe", spell_name = "Red Linen Robe", spell_id = 2389, craft_count = 1, colors = {40,65,82,100}, learnedat = 40, nskillup = 1, quality = 2, avgbuyout = 1362, cost = 4488, phaseId = 0, schemprice = 80, schemid = 2598, recipe = {
     {id = 2320, name = "Coarse Thread", count = 2, avgbuyout = 139},
-    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 509},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 3, avgbuyout = 80},
+    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 1982},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 3, avgbuyout = 83},
   }},
-  {id = 2575, name = "Red Linen Shirt", spell_name = "Red Linen Shirt", spell_id = 2392, craft_count = 1, colors = {40,65,82,100}, learnedat = 40, nskillup = 1, quality = 1, avgbuyout = 814, cost = 808, phaseId = 0, schem = 0, recipe = {
+  {id = 2575, name = "Red Linen Shirt", spell_name = "Red Linen Shirt", spell_id = 2392, craft_count = 1, colors = {40,65,82,100}, learnedat = 40, nskillup = 1, quality = 1, avgbuyout = 798, cost = 2285, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
     {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
-    {id = 2604, name = "Red Dye", count = 1, avgbuyout = 509},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 2, avgbuyout = 80},
+    {id = 2604, name = "Red Dye", count = 1, avgbuyout = 1982},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 2, avgbuyout = 83},
   }},
-  {id = 2577, name = "Blue Linen Shirt", spell_name = "Blue Linen Shirt", spell_id = 2394, craft_count = 1, colors = {40,65,82,100}, learnedat = 40, nskillup = 1, quality = 1, avgbuyout = 1475, cost = 511, phaseId = 0, schem = 0, recipe = {
+  {id = 2577, name = "Blue Linen Shirt", spell_name = "Blue Linen Shirt", spell_id = 2394, craft_count = 1, colors = {40,65,82,100}, learnedat = 40, nskillup = 1, quality = 1, avgbuyout = 1475, cost = 515, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
     {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 2, avgbuyout = 80},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 2, avgbuyout = 83},
     {id = 6260, name = "Blue Dye", count = 1, avgbuyout = 212},
   }},
-  {id = 6786, name = "Simple Dress", spell_name = "Simple Dress", spell_id = 8465, craft_count = 1, colors = {40,65,82,100}, learnedat = 40, nskillup = 1, quality = 1, avgbuyout = 2928, cost = 710, phaseId = 0, schem = 0, recipe = {
+  {id = 6786, name = "Simple Dress", spell_name = "Simple Dress", spell_id = 8465, craft_count = 1, colors = {40,65,82,100}, learnedat = 40, nskillup = 1, quality = 1, avgbuyout = 2717, cost = 714, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
     {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
     {id = 2324, name = "Bleach", count = 1, avgbuyout = 199},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 2, avgbuyout = 80},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 2, avgbuyout = 83},
     {id = 6260, name = "Blue Dye", count = 1, avgbuyout = 212},
   }},
-  {id = 4238, name = "Linen Bag", spell_name = "Linen Bag", spell_id = 3755, craft_count = 1, colors = {45,70,87,105}, learnedat = 45, nskillup = 1, quality = 1, avgbuyout = 250, cost = 657, phaseId = 0, schem = 0, recipe = {
+  {id = 4238, name = "Linen Bag", spell_name = "Linen Bag", spell_id = 3755, craft_count = 1, colors = {45,70,87,105}, learnedat = 45, nskillup = 1, quality = 1, avgbuyout = 252, cost = 663, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
     {id = 2320, name = "Coarse Thread", count = 3, avgbuyout = 139},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 3, avgbuyout = 80},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 3, avgbuyout = 83},
   }},
-  {id = 6239, name = "Red Linen Vest", spell_name = "Red Linen Vest", spell_id = 7629, craft_count = 1, colors = {55,80,97,115}, learnedat = 55, nskillup = 1, quality = 2, avgbuyout = 1219, cost = 888, phaseId = 0, schem = 0, recipe = {
+  {id = 6239, name = "Red Linen Vest", spell_name = "Red Linen Vest", spell_id = 7629, craft_count = 1, colors = {55,80,97,115}, learnedat = 55, nskillup = 1, quality = 2, avgbuyout = 1000, cost = 2367, phaseId = 0, schemprice = 880, schemid = 6271, recipe = {
     {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
-    {id = 2604, name = "Red Dye", count = 1, avgbuyout = 509},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 3, avgbuyout = 80},
+    {id = 2604, name = "Red Dye", count = 1, avgbuyout = 1982},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 3, avgbuyout = 83},
   }},
-  {id = 6240, name = "Blue Linen Vest", spell_name = "Blue Linen Vest", spell_id = 7630, craft_count = 1, colors = {55,80,97,115}, learnedat = 55, nskillup = 1, quality = 2, avgbuyout = 1254, cost = 591, phaseId = 0, schem = 0, recipe = {
+  {id = 6240, name = "Blue Linen Vest", spell_name = "Blue Linen Vest", spell_id = 7630, craft_count = 1, colors = {55,80,97,115}, learnedat = 55, nskillup = 1, quality = 2, avgbuyout = 1500, cost = 597, phaseId = 0, schemprice = 5360, schemid = 6270, recipe = {
     {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 3, avgbuyout = 80},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 3, avgbuyout = 83},
     {id = 6260, name = "Blue Dye", count = 1, avgbuyout = 212},
   }},
-  {id = 2580, name = "Reinforced Linen Cape", spell_name = "Reinforced Linen Cape", spell_id = 2397, craft_count = 1, colors = {60,85,102,120}, learnedat = 60, nskillup = 1, quality = 1, avgbuyout = 371, cost = 577, phaseId = 0, schem = 0, recipe = {
+  {id = 2580, name = "Reinforced Linen Cape", spell_name = "Reinforced Linen Cape", spell_id = 2397, craft_count = 1, colors = {60,85,102,120}, learnedat = 60, nskillup = 1, quality = 1, avgbuyout = 371, cost = 581, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
     {id = 2320, name = "Coarse Thread", count = 3, avgbuyout = 139},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 2, avgbuyout = 80},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 2, avgbuyout = 83},
   }},
-  {id = 4308, name = "Green Linen Bracers", spell_name = "Green Linen Bracers", spell_id = 3841, craft_count = 1, colors = {60,85,102,120}, learnedat = 60, nskillup = 1, quality = 1, avgbuyout = 1500, cost = 3018, phaseId = 0, schem = 0, recipe = {
+  {id = 4308, name = "Green Linen Bracers", spell_name = "Green Linen Bracers", spell_id = 3841, craft_count = 1, colors = {60,85,102,120}, learnedat = 60, nskillup = 1, quality = 1, avgbuyout = 1500, cost = 3024, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
     {id = 2320, name = "Coarse Thread", count = 2, avgbuyout = 139},
     {id = 2605, name = "Green Dye", count = 1, avgbuyout = 2500},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 3, avgbuyout = 80},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 3, avgbuyout = 83},
   }},
-  {id = 2569, name = "Linen Boots", spell_name = "Linen Boots", spell_id = 2386, craft_count = 1, colors = {65,90,107,125}, learnedat = 65, nskillup = 1, quality = 1, avgbuyout = 1000, cost = 473, phaseId = 0, schem = 0, recipe = {
-    {id = 2318, name = "Light Leather", count = 1, avgbuyout = 94},
+  {id = 2569, name = "Linen Boots", spell_name = "Linen Boots", spell_id = 2386, craft_count = 1, colors = {65,90,107,125}, learnedat = 65, nskillup = 1, quality = 1, avgbuyout = 1000, cost = 483, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2318, name = "Light Leather", count = 1, avgbuyout = 98},
     {id = 2320, name = "Coarse Thread", count = 1, avgbuyout = 139},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 3, avgbuyout = 80},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 3, avgbuyout = 83},
   }},
-  {id = 2578, name = "Barbaric Linen Vest", spell_name = "Barbaric Linen Vest", spell_id = 2395, craft_count = 1, colors = {70,95,112,130}, learnedat = 70, nskillup = 1, quality = 2, avgbuyout = 1133, cost = 701, phaseId = 0, schem = 0, recipe = {
-    {id = 2318, name = "Light Leather", count = 1, avgbuyout = 94},
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 4, avgbuyout = 80},
+  {id = 2578, name = "Barbaric Linen Vest", spell_name = "Barbaric Linen Vest", spell_id = 2395, craft_count = 1, colors = {70,95,112,130}, learnedat = 70, nskillup = 1, quality = 2, avgbuyout = 1149, cost = 726, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2318, name = "Light Leather", count = 1, avgbuyout = 98},
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 4, avgbuyout = 83},
   }},
-  {id = 2579, name = "Green Linen Shirt", spell_name = "Green Linen Shirt", spell_id = 2396, craft_count = 1, colors = {70,95,112,130}, learnedat = 70, nskillup = 1, quality = 1, avgbuyout = 1780, cost = 3027, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
+  {id = 2579, name = "Green Linen Shirt", spell_name = "Green Linen Shirt", spell_id = 2396, craft_count = 1, colors = {70,95,112,130}, learnedat = 70, nskillup = 1, quality = 1, avgbuyout = 2000, cost = 3046, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
     {id = 2605, name = "Green Dye", count = 1, avgbuyout = 2500},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 3, avgbuyout = 80},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 3, avgbuyout = 83},
   }},
-  {id = 4309, name = "Handstitched Linen Britches", spell_name = "Handstitched Linen Britches", spell_id = 3842, craft_count = 1, colors = {70,95,112,130}, learnedat = 70, nskillup = 1, quality = 2, avgbuyout = 1147, cost = 894, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 4, avgbuyout = 80},
+  {id = 4309, name = "Handstitched Linen Britches", spell_name = "Handstitched Linen Britches", spell_id = 3842, craft_count = 1, colors = {70,95,112,130}, learnedat = 70, nskillup = 1, quality = 2, avgbuyout = 1161, cost = 928, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 4, avgbuyout = 83},
   }},
-  {id = 5762, name = "Red Linen Bag", spell_name = "Red Linen Bag", spell_id = 6686, craft_count = 1, colors = {70,95,112,130}, learnedat = 70, nskillup = 1, quality = 1, avgbuyout = 250, cost = 1116, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
-    {id = 2604, name = "Red Dye", count = 1, avgbuyout = 509},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 4, avgbuyout = 80},
+  {id = 5762, name = "Red Linen Bag", spell_name = "Red Linen Bag", spell_id = 6686, craft_count = 1, colors = {70,95,112,130}, learnedat = 70, nskillup = 1, quality = 1, avgbuyout = 250, cost = 2610, phaseId = 0, schemprice = 558, schemid = 5771, recipe = {
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
+    {id = 2604, name = "Red Dye", count = 1, avgbuyout = 1982},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 4, avgbuyout = 83},
   }},
-  {id = 6242, name = "Blue Linen Robe", spell_name = "Blue Linen Robe", spell_id = 7633, craft_count = 1, colors = {70,95,112,130}, learnedat = 70, nskillup = 1, quality = 2, avgbuyout = 2192, cost = 1022, phaseId = 0, schem = 0, recipe = {
+  {id = 6242, name = "Blue Linen Robe", spell_name = "Blue Linen Robe", spell_id = 7633, craft_count = 1, colors = {70,95,112,130}, learnedat = 70, nskillup = 1, quality = 2, avgbuyout = 2192, cost = 1030, phaseId = 0, schemprice = 4199, schemid = 6272, recipe = {
     {id = 2320, name = "Coarse Thread", count = 2, avgbuyout = 139},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 4, avgbuyout = 80},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 4, avgbuyout = 83},
     {id = 6260, name = "Blue Dye", count = 2, avgbuyout = 212},
   }},
-  {id = 2584, name = "Woolen Cape", spell_name = "Woolen Cape", spell_id = 2402, craft_count = 1, colors = {75,100,117,135}, learnedat = 75, nskillup = 1, quality = 1, avgbuyout = 222, cost = 845, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 1, avgbuyout = 445},
+  {id = 2584, name = "Woolen Cape", spell_name = "Woolen Cape", spell_id = 2402, craft_count = 1, colors = {75,100,117,135}, learnedat = 75, nskillup = 1, quality = 1, avgbuyout = 150, cost = 870, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 1, avgbuyout = 450},
   }},
-  {id = 2997, name = "Bolt of Woolen Cloth", spell_name = "Bolt of Woolen Cloth", spell_id = 2964, craft_count = 1, colors = {75,90,97,105}, learnedat = 75, nskillup = 1, quality = 1, avgbuyout = 445, cost = 558, phaseId = 0, schem = 0, recipe = {
-    {id = 2592, name = "Wool Cloth", count = 3, avgbuyout = 186},
+  {id = 2997, name = "Bolt of Woolen Cloth", spell_name = "Bolt of Woolen Cloth", spell_id = 2964, craft_count = 1, colors = {75,90,97,105}, learnedat = 75, nskillup = 1, quality = 1, avgbuyout = 450, cost = 570, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2592, name = "Wool Cloth", count = 3, avgbuyout = 190},
   }},
-  {id = 10047, name = "Simple Kilt", spell_name = "Simple Kilt", spell_id = 12046, craft_count = 1, colors = {75,100,117,135}, learnedat = 75, nskillup = 1, quality = 1, avgbuyout = 155, cost = 607, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 4, avgbuyout = 80},
+  {id = 10047, name = "Simple Kilt", spell_name = "Simple Kilt", spell_id = 12046, craft_count = 1, colors = {75,100,117,135}, learnedat = 75, nskillup = 1, quality = 1, avgbuyout = 160, cost = 628, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 4, avgbuyout = 83},
   }},
-  {id = 4240, name = "Woolen Bag", spell_name = "Woolen Bag", spell_id = 3757, craft_count = 1, colors = {80,105,122,140}, learnedat = 80, nskillup = 1, quality = 1, avgbuyout = 968, cost = 1961, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 3, avgbuyout = 445},
+  {id = 4240, name = "Woolen Bag", spell_name = "Woolen Bag", spell_id = 3757, craft_count = 1, colors = {80,105,122,140}, learnedat = 80, nskillup = 1, quality = 1, avgbuyout = 982, cost = 2010, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 3, avgbuyout = 450},
   }},
-  {id = 4312, name = "Soft-soled Linen Boots", spell_name = "Soft-soled Linen Boots", spell_id = 3845, craft_count = 1, colors = {80,105,122,140}, learnedat = 80, nskillup = 1, quality = 2, avgbuyout = 1593, cost = 875, phaseId = 0, schem = 0, recipe = {
-    {id = 2318, name = "Light Leather", count = 2, avgbuyout = 94},
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
-    {id = 2996, name = "Bolt of Linen Cloth", count = 5, avgbuyout = 80},
+  {id = 4312, name = "Soft-soled Linen Boots", spell_name = "Soft-soled Linen Boots", spell_id = 3845, craft_count = 1, colors = {80,105,122,140}, learnedat = 80, nskillup = 1, quality = 2, avgbuyout = 1625, cost = 906, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2318, name = "Light Leather", count = 2, avgbuyout = 98},
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
+    {id = 2996, name = "Bolt of Linen Cloth", count = 5, avgbuyout = 83},
   }},
-  {id = 2582, name = "Green Woolen Vest", spell_name = "Green Woolen Vest", spell_id = 2399, craft_count = 1, colors = {85,110,127,145}, learnedat = 85, nskillup = 1, quality = 1, avgbuyout = 897, cost = 4190, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
+  {id = 2582, name = "Green Woolen Vest", spell_name = "Green Woolen Vest", spell_id = 2399, craft_count = 1, colors = {85,110,127,145}, learnedat = 85, nskillup = 1, quality = 1, avgbuyout = 1111, cost = 4240, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
     {id = 2605, name = "Green Dye", count = 1, avgbuyout = 2500},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 2, avgbuyout = 445},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 2, avgbuyout = 450},
   }},
-  {id = 4310, name = "Heavy Woolen Gloves", spell_name = "Heavy Woolen Gloves", spell_id = 3843, craft_count = 1, colors = {85,110,127,145}, learnedat = 85, nskillup = 1, quality = 2, avgbuyout = 1755, cost = 1961, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 3, avgbuyout = 445},
+  {id = 4310, name = "Heavy Woolen Gloves", spell_name = "Heavy Woolen Gloves", spell_id = 3843, craft_count = 1, colors = {85,110,127,145}, learnedat = 85, nskillup = 1, quality = 2, avgbuyout = 1839, cost = 2010, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 3, avgbuyout = 450},
   }},
-  {id = 5542, name = "Pearl-clasped Cloak", spell_name = "Pearl-clasped Cloak", spell_id = 6521, craft_count = 1, colors = {90,115,132,150}, learnedat = 90, nskillup = 1, quality = 2, avgbuyout = 2705, cost = 2481, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 3, avgbuyout = 445},
-    {id = 5498, name = "Small Lustrous Pearl", count = 1, avgbuyout = 233},
+  {id = 5542, name = "Pearl-clasped Cloak", spell_name = "Pearl-clasped Cloak", spell_id = 6521, craft_count = 1, colors = {90,115,132,150}, learnedat = 90, nskillup = 1, quality = 2, avgbuyout = 2735, cost = 2553, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 3, avgbuyout = 450},
+    {id = 5498, name = "Small Lustrous Pearl", count = 1, avgbuyout = 243},
   }},
-  {id = 2583, name = "Woolen Boots", spell_name = "Woolen Boots", spell_id = 2401, craft_count = 1, colors = {95,120,137,155}, learnedat = 95, nskillup = 1, quality = 2, avgbuyout = 2100, cost = 2994, phaseId = 0, schem = 0, recipe = {
-    {id = 2318, name = "Light Leather", count = 2, avgbuyout = 94},
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 4, avgbuyout = 445},
+  {id = 2583, name = "Woolen Boots", spell_name = "Woolen Boots", spell_id = 2401, craft_count = 1, colors = {95,120,137,155}, learnedat = 95, nskillup = 1, quality = 2, avgbuyout = 2249, cost = 3076, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2318, name = "Light Leather", count = 2, avgbuyout = 98},
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 4, avgbuyout = 450},
   }},
-  {id = 4241, name = "Green Woolen Bag", spell_name = "Green Woolen Bag", spell_id = 3758, craft_count = 1, colors = {95,120,137,155}, learnedat = 95, nskillup = 1, quality = 1, avgbuyout = 1300, cost = 5019, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
+  {id = 4241, name = "Green Woolen Bag", spell_name = "Green Woolen Bag", spell_id = 3758, craft_count = 1, colors = {95,120,137,155}, learnedat = 95, nskillup = 1, quality = 1, avgbuyout = 1335, cost = 5080, phaseId = 0, schemprice = 1040, schemid = 4292, recipe = {
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
     {id = 2605, name = "Green Dye", count = 1, avgbuyout = 2500},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 4, avgbuyout = 445},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 4, avgbuyout = 450},
   }},
-  {id = 4313, name = "Red Woolen Boots", spell_name = "Red Woolen Boots", spell_id = 3847, craft_count = 1, colors = {95,120,137,155}, learnedat = 95, nskillup = 1, quality = 2, avgbuyout = 5000, cost = 3725, phaseId = 0, schem = 0, recipe = {
-    {id = 2318, name = "Light Leather", count = 2, avgbuyout = 94},
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
-    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 509},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 4, avgbuyout = 445},
+  {id = 4313, name = "Red Woolen Boots", spell_name = "Red Woolen Boots", spell_id = 3847, craft_count = 1, colors = {95,120,137,155}, learnedat = 95, nskillup = 1, quality = 2, avgbuyout = 5000, cost = 6740, phaseId = 0, schemprice = 1086, schemid = 4345, recipe = {
+    {id = 2318, name = "Light Leather", count = 2, avgbuyout = 98},
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
+    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 1982},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 4, avgbuyout = 450},
   }},
-  {id = 2587, name = "Gray Woolen Shirt", spell_name = "Gray Woolen Shirt", spell_id = 2406, craft_count = 1, colors = {100,110,120,130}, learnedat = 100, nskillup = 1, quality = 1, avgbuyout = 2093, cost = 1753, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 2, avgbuyout = 445},
+  {id = 2587, name = "Gray Woolen Shirt", spell_name = "Gray Woolen Shirt", spell_id = 2406, craft_count = 1, colors = {100,110,120,130}, learnedat = 100, nskillup = 1, quality = 1, avgbuyout = 2106, cost = 1790, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 2, avgbuyout = 450},
     {id = 4340, name = "Gray Dye", count = 1, avgbuyout = 350},
   }},
-  {id = 4311, name = "Heavy Woolen Cloak", spell_name = "Heavy Woolen Cloak", spell_id = 3844, craft_count = 1, colors = {100,125,142,160}, learnedat = 100, nskillup = 1, quality = 2, avgbuyout = 1616, cost = 2714, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 3, avgbuyout = 445},
-    {id = 5498, name = "Small Lustrous Pearl", count = 2, avgbuyout = 233},
+  {id = 4311, name = "Heavy Woolen Cloak", spell_name = "Heavy Woolen Cloak", spell_id = 3844, craft_count = 1, colors = {100,125,142,160}, learnedat = 100, nskillup = 1, quality = 2, avgbuyout = 2893, cost = 2796, phaseId = 0, schemprice = 1136, schemid = 4346, recipe = {
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 3, avgbuyout = 450},
+    {id = 5498, name = "Small Lustrous Pearl", count = 2, avgbuyout = 243},
   }},
-  {id = 6263, name = "Blue Overalls", spell_name = "Blue Overalls", spell_id = 7639, craft_count = 1, colors = {100,125,142,160}, learnedat = 100, nskillup = 1, quality = 2, avgbuyout = 3499, cost = 3230, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 4, avgbuyout = 445},
+  {id = 6263, name = "Blue Overalls", spell_name = "Blue Overalls", spell_id = 7639, craft_count = 1, colors = {100,125,142,160}, learnedat = 100, nskillup = 1, quality = 2, avgbuyout = 3500, cost = 3304, phaseId = 0, schemprice = 3267, schemid = 6274, recipe = {
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 4, avgbuyout = 450},
     {id = 6260, name = "Blue Dye", count = 2, avgbuyout = 212},
   }},
-  {id = 2585, name = "Gray Woolen Robe", spell_name = "Gray Woolen Robe", spell_id = 2403, craft_count = 1, colors = {105,130,147,165}, learnedat = 105, nskillup = 1, quality = 2, avgbuyout = 5800, cost = 3443, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 3, avgbuyout = 287},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 4, avgbuyout = 445},
+  {id = 2585, name = "Gray Woolen Robe", spell_name = "Gray Woolen Robe", spell_id = 2403, craft_count = 1, colors = {105,130,147,165}, learnedat = 105, nskillup = 1, quality = 2, avgbuyout = 5900, cost = 3530, phaseId = 0, schemprice = 3752, schemid = 2601, recipe = {
+    {id = 2321, name = "Fine Thread", count = 3, avgbuyout = 300},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 4, avgbuyout = 450},
     {id = 4340, name = "Gray Dye", count = 1, avgbuyout = 350},
   }},
-  {id = 4314, name = "Double-stitched Woolen Shoulders", spell_name = "Double-stitched Woolen Shoulders", spell_id = 3848, craft_count = 1, colors = {110,135,152,170}, learnedat = 110, nskillup = 1, quality = 1, avgbuyout = 561, cost = 2248, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 3, avgbuyout = 445},
+  {id = 4314, name = "Double-stitched Woolen Shoulders", spell_name = "Double-stitched Woolen Shoulders", spell_id = 3848, craft_count = 1, colors = {110,135,152,170}, learnedat = 110, nskillup = 1, quality = 1, avgbuyout = 582, cost = 2310, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 3, avgbuyout = 450},
   }},
-  {id = 4316, name = "Heavy Woolen Pants", spell_name = "Heavy Woolen Pants", spell_id = 3850, craft_count = 1, colors = {110,135,152,170}, learnedat = 110, nskillup = 1, quality = 2, avgbuyout = 2165, cost = 3938, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 4, avgbuyout = 287},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 5, avgbuyout = 445},
+  {id = 4316, name = "Heavy Woolen Pants", spell_name = "Heavy Woolen Pants", spell_id = 3850, craft_count = 1, colors = {110,135,152,170}, learnedat = 110, nskillup = 1, quality = 2, avgbuyout = 2200, cost = 4050, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 4, avgbuyout = 300},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 5, avgbuyout = 450},
   }},
-  {id = 4330, name = "Stylish Red Shirt", spell_name = "Stylish Red Shirt", spell_id = 3866, craft_count = 1, colors = {110,135,152,170}, learnedat = 110, nskillup = 1, quality = 1, avgbuyout = 3900, cost = 2979, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
-    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 509},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 3, avgbuyout = 445},
+  {id = 4330, name = "Stylish Red Shirt", spell_name = "Stylish Red Shirt", spell_id = 3866, craft_count = 1, colors = {110,135,152,170}, learnedat = 110, nskillup = 1, quality = 1, avgbuyout = 3900, cost = 5974, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
+    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 1982},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 3, avgbuyout = 450},
   }},
-  {id = 6787, name = "White Woolen Dress", spell_name = "White Woolen Dress", spell_id = 8467, craft_count = 1, colors = {110,135,152,170}, learnedat = 110, nskillup = 1, quality = 1, avgbuyout = 1456, cost = 2757, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
+  {id = 6787, name = "White Woolen Dress", spell_name = "White Woolen Dress", spell_id = 8467, craft_count = 1, colors = {110,135,152,170}, learnedat = 110, nskillup = 1, quality = 1, avgbuyout = 1456, cost = 2806, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
     {id = 2324, name = "Bleach", count = 4, avgbuyout = 199},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 3, avgbuyout = 445},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 3, avgbuyout = 450},
   }},
-  {id = 5763, name = "Red Woolen Bag", spell_name = "Red Woolen Bag", spell_id = 6688, craft_count = 1, colors = {115,140,157,175}, learnedat = 115, nskillup = 1, quality = 1, avgbuyout = 1150, cost = 3028, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
-    {id = 2604, name = "Red Dye", count = 1, avgbuyout = 509},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 4, avgbuyout = 445},
+  {id = 5763, name = "Red Woolen Bag", spell_name = "Red Woolen Bag", spell_id = 6688, craft_count = 1, colors = {115,140,157,175}, learnedat = 115, nskillup = 1, quality = 1, avgbuyout = 1150, cost = 4562, phaseId = 0, schemprice = 1281, schemid = 5772, recipe = {
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
+    {id = 2604, name = "Red Dye", count = 1, avgbuyout = 1982},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 4, avgbuyout = 450},
   }},
-  {id = 6264, name = "Greater Adept's Robe", spell_name = "Greater Adept's Robe", spell_id = 7643, craft_count = 1, colors = {115,140,157,175}, learnedat = 115, nskillup = 1, quality = 2, avgbuyout = 4332, cost = 5178, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 3, avgbuyout = 287},
-    {id = 2604, name = "Red Dye", count = 3, avgbuyout = 509},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 5, avgbuyout = 445},
+  {id = 6264, name = "Greater Adept's Robe", spell_name = "Greater Adept's Robe", spell_id = 7643, craft_count = 1, colors = {115,140,157,175}, learnedat = 115, nskillup = 1, quality = 2, avgbuyout = 4399, cost = 9696, phaseId = 0, schemprice = 5399, schemid = 6275, recipe = {
+    {id = 2321, name = "Fine Thread", count = 3, avgbuyout = 300},
+    {id = 2604, name = "Red Dye", count = 3, avgbuyout = 1982},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 5, avgbuyout = 450},
   }},
-  {id = 4315, name = "Reinforced Woolen Shoulders", spell_name = "Reinforced Woolen Shoulders", spell_id = 3849, craft_count = 1, colors = {120,145,162,180}, learnedat = 120, nskillup = 1, quality = 1, avgbuyout = 500, cost = 4298, phaseId = 0, schem = 0, recipe = {
-    {id = 2319, name = "Medium Leather", count = 2, avgbuyout = 188},
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 6, avgbuyout = 445},
+  {id = 4315, name = "Reinforced Woolen Shoulders", spell_name = "Reinforced Woolen Shoulders", spell_id = 3849, craft_count = 1, colors = {120,145,162,180}, learnedat = 120, nskillup = 1, quality = 1, avgbuyout = 3995, cost = 4412, phaseId = 0, schemprice = 2950, schemid = 4347, recipe = {
+    {id = 2319, name = "Medium Leather", count = 2, avgbuyout = 196},
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 6, avgbuyout = 450},
   }},
-  {id = 6384, name = "Stylish Blue Shirt", spell_name = "Stylish Blue Shirt", spell_id = 7892, craft_count = 1, colors = {120,145,162,180}, learnedat = 120, nskillup = 1, quality = 1, avgbuyout = 6414, cost = 3293, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 4, avgbuyout = 445},
+  {id = 6384, name = "Stylish Blue Shirt", spell_name = "Stylish Blue Shirt", spell_id = 7892, craft_count = 1, colors = {120,145,162,180}, learnedat = 120, nskillup = 1, quality = 1, avgbuyout = 8999, cost = 3354, phaseId = 0, schemprice = 3154, schemid = 6390, recipe = {
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 4, avgbuyout = 450},
     {id = 4340, name = "Gray Dye", count = 1, avgbuyout = 350},
     {id = 6260, name = "Blue Dye", count = 2, avgbuyout = 212},
   }},
-  {id = 6385, name = "Stylish Green Shirt", spell_name = "Stylish Green Shirt", spell_id = 7893, craft_count = 1, colors = {120,145,162,180}, learnedat = 120, nskillup = 1, quality = 1, avgbuyout = 9900, cost = 7869, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
+  {id = 6385, name = "Stylish Green Shirt", spell_name = "Stylish Green Shirt", spell_id = 7893, craft_count = 1, colors = {120,145,162,180}, learnedat = 120, nskillup = 1, quality = 1, avgbuyout = 9994, cost = 7930, phaseId = 0, schemprice = 3199, schemid = 6391, recipe = {
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
     {id = 2605, name = "Green Dye", count = 2, avgbuyout = 2500},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 4, avgbuyout = 445},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 4, avgbuyout = 450},
     {id = 4340, name = "Gray Dye", count = 1, avgbuyout = 350},
   }},
-  {id = 10048, name = "Colorful Kilt", spell_name = "Colorful Kilt", spell_id = 12047, craft_count = 1, colors = {120,145,162,180}, learnedat = 120, nskillup = 1, quality = 2, avgbuyout = 2500, cost = 4604, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
-    {id = 2604, name = "Red Dye", count = 3, avgbuyout = 509},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 5, avgbuyout = 445},
+  {id = 10048, name = "Colorful Kilt", spell_name = "Colorful Kilt", spell_id = 12047, craft_count = 1, colors = {120,145,162,180}, learnedat = 120, nskillup = 1, quality = 2, avgbuyout = 2500, cost = 9096, phaseId = 0, schemprice = 3200, schemid = 10316, recipe = {
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
+    {id = 2604, name = "Red Dye", count = 3, avgbuyout = 1982},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 5, avgbuyout = 450},
   }},
-  {id = 4305, name = "Bolt of Silk Cloth", spell_name = "Bolt of Silk Cloth", spell_id = 3839, craft_count = 1, colors = {125,135,140,145}, learnedat = 125, nskillup = 1, quality = 1, avgbuyout = 1061, cost = 864, phaseId = 0, schem = 0, recipe = {
-    {id = 4306, name = "Silk Cloth", count = 4, avgbuyout = 216},
+  {id = 4305, name = "Bolt of Silk Cloth", spell_name = "Bolt of Silk Cloth", spell_id = 3839, craft_count = 1, colors = {125,135,140,145}, learnedat = 125, nskillup = 1, quality = 1, avgbuyout = 1083, cost = 876, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4306, name = "Silk Cloth", count = 4, avgbuyout = 219},
   }},
-  {id = 4317, name = "Phoenix Pants", spell_name = "Phoenix Pants", spell_id = 3851, craft_count = 1, colors = {125,150,167,185}, learnedat = 125, nskillup = 1, quality = 2, avgbuyout = 14232, cost = 6809, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 3, avgbuyout = 287},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 6, avgbuyout = 445},
-    {id = 5500, name = "Iridescent Pearl", count = 1, avgbuyout = 2600},
+  {id = 4317, name = "Phoenix Pants", spell_name = "Phoenix Pants", spell_id = 3851, craft_count = 1, colors = {125,150,167,185}, learnedat = 125, nskillup = 1, quality = 2, avgbuyout = 14500, cost = 6874, phaseId = 0, schemprice = 4285, schemid = 4349, recipe = {
+    {id = 2321, name = "Fine Thread", count = 3, avgbuyout = 300},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 6, avgbuyout = 450},
+    {id = 5500, name = "Iridescent Pearl", count = 1, avgbuyout = 2554},
   }},
-  {id = 4320, name = "Spidersilk Boots", spell_name = "Spidersilk Boots", spell_id = 3855, craft_count = 1, colors = {125,150,167,185}, learnedat = 125, nskillup = 1, quality = 3, avgbuyout = 29485, cost = 16960, phaseId = 0, schem = 0, recipe = {
-    {id = 2319, name = "Medium Leather", count = 4, avgbuyout = 188},
-    {id = 3182, name = "Spider's Silk", count = 4, avgbuyout = 2320},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 2, avgbuyout = 1061},
-    {id = 5500, name = "Iridescent Pearl", count = 2, avgbuyout = 2600},
+  {id = 4320, name = "Spidersilk Boots", spell_name = "Spidersilk Boots", spell_id = 3855, craft_count = 1, colors = {125,150,167,185}, learnedat = 125, nskillup = 1, quality = 3, avgbuyout = 29787, cost = 17068, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2319, name = "Medium Leather", count = 4, avgbuyout = 196},
+    {id = 3182, name = "Spider's Silk", count = 4, avgbuyout = 2356},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 2, avgbuyout = 1083},
+    {id = 5500, name = "Iridescent Pearl", count = 2, avgbuyout = 2554},
   }},
-  {id = 4331, name = "Phoenix Gloves", spell_name = "Phoenix Gloves", spell_id = 3868, craft_count = 1, colors = {125,150,167,185}, learnedat = 125, nskillup = 1, quality = 2, avgbuyout = 14000, cost = 6378, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 4, avgbuyout = 287},
+  {id = 4331, name = "Phoenix Gloves", spell_name = "Phoenix Gloves", spell_id = 3868, craft_count = 1, colors = {125,150,167,185}, learnedat = 125, nskillup = 1, quality = 2, avgbuyout = 14000, cost = 6432, phaseId = 0, schemprice = 3987, schemid = 4348, recipe = {
+    {id = 2321, name = "Fine Thread", count = 4, avgbuyout = 300},
     {id = 2324, name = "Bleach", count = 2, avgbuyout = 199},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 4, avgbuyout = 445},
-    {id = 5500, name = "Iridescent Pearl", count = 1, avgbuyout = 2600},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 4, avgbuyout = 450},
+    {id = 5500, name = "Iridescent Pearl", count = 1, avgbuyout = 2554},
   }},
-  {id = 210781, name = "Phoenix Bindings", spell_name = "Phoenix Bindings", spell_id = 428424, craft_count = 1, colors = {0,125,137,150}, learnedat = 125, nskillup = 1, quality = 3, avgbuyout = 9335, cost = 4106, phaseId = 1, schem = 0, recipe = {
-    {id = 814, name = "Flask of Oil", count = 2, avgbuyout = 92},
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 6, avgbuyout = 445},
+  {id = 210781, name = "Phoenix Bindings", spell_name = "Phoenix Bindings", spell_id = 428424, craft_count = 1, colors = {0,125,137,150}, learnedat = 125, nskillup = 1, quality = 3, avgbuyout = 9335, cost = 4196, phaseId = 1, schemprice = 10000, schemid = 211247, recipe = {
+    {id = 814, name = "Flask of Oil", count = 2, avgbuyout = 88},
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 6, avgbuyout = 450},
   }},
-  {id = 4318, name = "Gloves of Meditation", spell_name = "Gloves of Meditation", spell_id = 3852, craft_count = 1, colors = {130,150,165,180}, learnedat = 130, nskillup = 1, quality = 2, avgbuyout = 1729, cost = 3442, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 3, avgbuyout = 287},
-    {id = 2997, name = "Bolt of Woolen Cloth", count = 4, avgbuyout = 445},
-    {id = 3383, name = "Elixir of Wisdom", count = 1, avgbuyout = 349},
+  {id = 4318, name = "Gloves of Meditation", spell_name = "Gloves of Meditation", spell_id = 3852, craft_count = 1, colors = {130,150,165,180}, learnedat = 130, nskillup = 1, quality = 2, avgbuyout = 1769, cost = 3540, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 3, avgbuyout = 300},
+    {id = 2997, name = "Bolt of Woolen Cloth", count = 4, avgbuyout = 450},
+    {id = 3383, name = "Elixir of Wisdom", count = 1, avgbuyout = 360},
   }},
-  {id = 4332, name = "Bright Yellow Shirt", spell_name = "Bright Yellow Shirt", spell_id = 3869, craft_count = 1, colors = {135,145,150,155}, learnedat = 135, nskillup = 1, quality = 1, avgbuyout = 9876, cost = 1151, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 1, avgbuyout = 1061},
+  {id = 4332, name = "Bright Yellow Shirt", spell_name = "Bright Yellow Shirt", spell_id = 3869, craft_count = 1, colors = {135,145,150,155}, learnedat = 135, nskillup = 1, quality = 1, avgbuyout = 10899, cost = 1176, phaseId = 0, schemprice = 18061, schemid = 14627, recipe = {
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 1, avgbuyout = 1083},
     {id = 4341, name = "Yellow Dye", count = 1, avgbuyout = 0},
   }},
-  {id = 5766, name = "Lesser Wizard's Robe", spell_name = "Lesser Wizard's Robe", spell_id = 6690, craft_count = 1, colors = {135,155,170,185}, learnedat = 135, nskillup = 1, quality = 2, avgbuyout = 5498, cost = 6942, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 3182, name = "Spider's Silk", count = 2, avgbuyout = 2320},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 2, avgbuyout = 1061},
+  {id = 5766, name = "Lesser Wizard's Robe", spell_name = "Lesser Wizard's Robe", spell_id = 6690, craft_count = 1, colors = {135,155,170,185}, learnedat = 135, nskillup = 1, quality = 2, avgbuyout = 5498, cost = 7064, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 3182, name = "Spider's Silk", count = 2, avgbuyout = 2356},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 2, avgbuyout = 1083},
   }},
-  {id = 4321, name = "Spider Silk Slippers", spell_name = "Spider Silk Slippers", spell_id = 3856, craft_count = 1, colors = {140,160,175,190}, learnedat = 140, nskillup = 1, quality = 2, avgbuyout = 1950, cost = 5486, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 3182, name = "Spider's Silk", count = 1, avgbuyout = 2320},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1061},
+  {id = 4321, name = "Spider Silk Slippers", spell_name = "Spider Silk Slippers", spell_id = 3856, craft_count = 1, colors = {140,160,175,190}, learnedat = 140, nskillup = 1, quality = 2, avgbuyout = 1950, cost = 5584, phaseId = 0, schemprice = 5095, schemid = 4350, recipe = {
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 3182, name = "Spider's Silk", count = 1, avgbuyout = 2356},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1083},
   }},
-  {id = 7046, name = "Azure Silk Pants", spell_name = "Azure Silk Pants", spell_id = 8758, craft_count = 1, colors = {140,160,175,190}, learnedat = 140, nskillup = 1, quality = 2, avgbuyout = 3143, cost = 4741, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 3, avgbuyout = 287},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1061},
+  {id = 7046, name = "Azure Silk Pants", spell_name = "Azure Silk Pants", spell_id = 8758, craft_count = 1, colors = {140,160,175,190}, learnedat = 140, nskillup = 1, quality = 2, avgbuyout = 3200, cost = 4828, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 3, avgbuyout = 300},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1083},
     {id = 6260, name = "Blue Dye", count = 2, avgbuyout = 212},
   }},
-  {id = 4319, name = "Azure Silk Gloves", spell_name = "Azure Silk Gloves", spell_id = 3854, craft_count = 1, colors = {145,165,180,195}, learnedat = 145, nskillup = 1, quality = 2, avgbuyout = 9400, cost = 4532, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 4234, name = "Heavy Leather", count = 2, avgbuyout = 471},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1061},
+  {id = 4319, name = "Azure Silk Gloves", spell_name = "Azure Silk Gloves", spell_id = 3854, craft_count = 1, colors = {145,165,180,195}, learnedat = 145, nskillup = 1, quality = 2, avgbuyout = 9500, cost = 4644, phaseId = 0, schemprice = 9000, schemid = 7114, recipe = {
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 4234, name = "Heavy Leather", count = 2, avgbuyout = 496},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1083},
     {id = 6260, name = "Blue Dye", count = 2, avgbuyout = 212},
   }},
-  {id = 7047, name = "Hands of Darkness", spell_name = "Hands of Darkness", spell_id = 8780, craft_count = 1, colors = {145,165,180,195}, learnedat = 145, nskillup = 1, quality = 2, avgbuyout = 25390, cost = 18060, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 4234, name = "Heavy Leather", count = 2, avgbuyout = 471},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1061},
-    {id = 6048, name = "Shadow Protection Potion", count = 2, avgbuyout = 6976},
+  {id = 7047, name = "Hands of Darkness", spell_name = "Hands of Darkness", spell_id = 8780, craft_count = 1, colors = {145,165,180,195}, learnedat = 145, nskillup = 1, quality = 2, avgbuyout = 25390, cost = 18758, phaseId = 0, schemprice = 8900, schemid = 7092, recipe = {
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 4234, name = "Heavy Leather", count = 2, avgbuyout = 496},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1083},
+    {id = 6048, name = "Shadow Protection Potion", count = 2, avgbuyout = 7269},
   }},
-  {id = 7048, name = "Azure Silk Hood", spell_name = "Azure Silk Hood", spell_id = 8760, craft_count = 1, colors = {145,155,160,165}, learnedat = 145, nskillup = 1, quality = 1, avgbuyout = 2271, cost = 2439, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 2, avgbuyout = 1061},
+  {id = 7048, name = "Azure Silk Hood", spell_name = "Azure Silk Hood", spell_id = 8760, craft_count = 1, colors = {145,155,160,165}, learnedat = 145, nskillup = 1, quality = 1, avgbuyout = 2400, cost = 2476, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 2, avgbuyout = 1083},
     {id = 6260, name = "Blue Dye", count = 2, avgbuyout = 212},
   }},
-  {id = 4245, name = "Small Silk Pack", spell_name = "Small Silk Pack", spell_id = 3813, craft_count = 1, colors = {150,170,185,200}, learnedat = 150, nskillup = 1, quality = 1, avgbuyout = 3865, cost = 4395, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 3, avgbuyout = 287},
-    {id = 4234, name = "Heavy Leather", count = 2, avgbuyout = 471},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1061},
+  {id = 4245, name = "Small Silk Pack", spell_name = "Small Silk Pack", spell_id = 3813, craft_count = 1, colors = {150,170,185,200}, learnedat = 150, nskillup = 1, quality = 1, avgbuyout = 3909, cost = 4520, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 3, avgbuyout = 300},
+    {id = 4234, name = "Heavy Leather", count = 2, avgbuyout = 496},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1083},
   }},
-  {id = 4324, name = "Azure Silk Vest", spell_name = "Azure Silk Vest", spell_id = 3859, craft_count = 1, colors = {150,170,185,200}, learnedat = 150, nskillup = 1, quality = 2, avgbuyout = 4444, cost = 5168, phaseId = 0, schem = 0, recipe = {
-    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1061},
+  {id = 4324, name = "Azure Silk Vest", spell_name = "Azure Silk Vest", spell_id = 3859, craft_count = 1, colors = {150,170,185,200}, learnedat = 150, nskillup = 1, quality = 2, avgbuyout = 4455, cost = 5228, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1083},
     {id = 6260, name = "Blue Dye", count = 4, avgbuyout = 212},
   }},
-  {id = 5770, name = "Robes of Arcana", spell_name = "Robes of Arcana", spell_id = 6692, craft_count = 1, colors = {150,170,185,200}, learnedat = 150, nskillup = 1, quality = 2, avgbuyout = 22400, cost = 8670, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 3182, name = "Spider's Silk", count = 2, avgbuyout = 2320},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1061},
+  {id = 5770, name = "Robes of Arcana", spell_name = "Robes of Arcana", spell_id = 6692, craft_count = 1, colors = {150,170,185,200}, learnedat = 150, nskillup = 1, quality = 2, avgbuyout = 23200, cost = 8816, phaseId = 0, schemprice = 69849, schemid = 5773, recipe = {
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 3182, name = "Spider's Silk", count = 2, avgbuyout = 2356},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1083},
   }},
-  {id = 7049, name = "Truefaith Gloves", spell_name = "Truefaith Gloves", spell_id = 8782, craft_count = 1, colors = {150,170,185,200}, learnedat = 150, nskillup = 1, quality = 2, avgbuyout = 15695, cost = 5109, phaseId = 0, schem = 0, recipe = {
-    {id = 929, name = "Healing Potion", count = 4, avgbuyout = 322},
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
-    {id = 4234, name = "Heavy Leather", count = 2, avgbuyout = 471},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1061},
+  {id = 7049, name = "Truefaith Gloves", spell_name = "Truefaith Gloves", spell_id = 8782, craft_count = 1, colors = {150,170,185,200}, learnedat = 150, nskillup = 1, quality = 2, avgbuyout = 15695, cost = 5196, phaseId = 0, schemprice = 9943, schemid = 7091, recipe = {
+    {id = 929, name = "Healing Potion", count = 4, avgbuyout = 319},
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
+    {id = 4234, name = "Heavy Leather", count = 2, avgbuyout = 496},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1083},
   }},
-  {id = 210795, name = "Extraplanar Spidersilk Boots", spell_name = "Extraplanar Spidersilk Boots", spell_id = 429351, craft_count = 1, colors = {0,150,167,185}, learnedat = 150, nskillup = 1, quality = 4, avgbuyout = 0, cost = 16960, phaseId = 1, schem = 0, recipe = {
-    {id = 4320, name = "Spidersilk Boots", count = 1, avgbuyout = 29485},
+  {id = 210795, name = "Extraplanar Spidersilk Boots", spell_name = "Extraplanar Spidersilk Boots", spell_id = 429351, craft_count = 1, colors = {0,150,167,185}, learnedat = 150, nskillup = 1, quality = 4, avgbuyout = 0, cost = 17068, phaseId = 1, schemprice = 0, schemid = 0, recipe = {
+    {id = 4320, name = "Spidersilk Boots", count = 1, avgbuyout = 29787},
     {id = 211422, name = "Shard of the Void", count = 1, avgbuyout = 0},
   }},
-  {id = 4333, name = "Dark Silk Shirt", spell_name = "Dark Silk Shirt", spell_id = 3870, craft_count = 1, colors = {155,165,170,175}, learnedat = 155, nskillup = 1, quality = 1, avgbuyout = 11000, cost = 2715, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 2, avgbuyout = 1061},
+  {id = 4333, name = "Dark Silk Shirt", spell_name = "Dark Silk Shirt", spell_id = 3870, craft_count = 1, colors = {155,165,170,175}, learnedat = 155, nskillup = 1, quality = 1, avgbuyout = 12500, cost = 2752, phaseId = 0, schemprice = 8383, schemid = 6401, recipe = {
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 2, avgbuyout = 1083},
     {id = 4340, name = "Gray Dye", count = 2, avgbuyout = 350},
   }},
-  {id = 6795, name = "White Swashbuckler's Shirt", spell_name = "White Swashbuckler's Shirt", spell_id = 8483, craft_count = 1, colors = {160,170,175,180}, learnedat = 160, nskillup = 1, quality = 1, avgbuyout = 8400, cost = 4012, phaseId = 0, schem = 0, recipe = {
+  {id = 6795, name = "White Swashbuckler's Shirt", spell_name = "White Swashbuckler's Shirt", spell_id = 8483, craft_count = 1, colors = {160,170,175,180}, learnedat = 160, nskillup = 1, quality = 1, avgbuyout = 8400, cost = 4100, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
     {id = 2324, name = "Bleach", count = 2, avgbuyout = 199},
-    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1061},
+    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1083},
   }},
-  {id = 7050, name = "Silk Headband", spell_name = "Silk Headband", spell_id = 8762, craft_count = 1, colors = {160,170,175,180}, learnedat = 160, nskillup = 1, quality = 1, avgbuyout = 1991, cost = 3166, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1061},
+  {id = 7050, name = "Silk Headband", spell_name = "Silk Headband", spell_id = 8762, craft_count = 1, colors = {160,170,175,180}, learnedat = 160, nskillup = 1, quality = 1, avgbuyout = 2217, cost = 3228, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1083},
   }},
-  {id = 4322, name = "Enchanter's Cowl", spell_name = "Enchanter's Cowl", spell_id = 3857, craft_count = 1, colors = {165,185,200,215}, learnedat = 165, nskillup = 1, quality = 2, avgbuyout = 10702, cost = 4710, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1061},
-    {id = 4337, name = "Thick Spider's Silk", count = 2, avgbuyout = 772},
+  {id = 4322, name = "Enchanter's Cowl", spell_name = "Enchanter's Cowl", spell_id = 3857, craft_count = 1, colors = {165,185,200,215}, learnedat = 165, nskillup = 1, quality = 2, avgbuyout = 10702, cost = 4770, phaseId = 0, schemprice = 8900, schemid = 14630, recipe = {
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1083},
+    {id = 4337, name = "Thick Spider's Silk", count = 2, avgbuyout = 771},
   }},
-  {id = 7065, name = "Green Silk Armor", spell_name = "Green Silk Armor", spell_id = 8784, craft_count = 1, colors = {165,185,200,215}, learnedat = 165, nskillup = 1, quality = 2, avgbuyout = 8869, cost = 10342, phaseId = 0, schem = 0, recipe = {
+  {id = 7065, name = "Green Silk Armor", spell_name = "Green Silk Armor", spell_id = 8784, craft_count = 1, colors = {165,185,200,215}, learnedat = 165, nskillup = 1, quality = 2, avgbuyout = 9000, cost = 10454, phaseId = 0, schemprice = 5365, schemid = 7090, recipe = {
     {id = 2605, name = "Green Dye", count = 2, avgbuyout = 2500},
-    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1061},
+    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1083},
   }},
-  {id = 4323, name = "Shadow Hood", spell_name = "Shadow Hood", spell_id = 3858, craft_count = 1, colors = {170,190,205,220}, learnedat = 170, nskillup = 1, quality = 2, avgbuyout = 30649, cost = 42099, phaseId = 0, schem = 0, recipe = {
-    {id = 3824, name = "Shadow Oil", count = 1, avgbuyout = 37621},
-    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1061},
+  {id = 4323, name = "Shadow Hood", spell_name = "Shadow Hood", spell_id = 3858, craft_count = 1, colors = {170,190,205,220}, learnedat = 170, nskillup = 1, quality = 2, avgbuyout = 30649, cost = 43467, phaseId = 0, schemprice = 47500, schemid = 4351, recipe = {
+    {id = 3824, name = "Shadow Oil", count = 1, avgbuyout = 38889},
+    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1083},
   }},
-  {id = 4334, name = "Formal White Shirt", spell_name = "Formal White Shirt", spell_id = 3871, craft_count = 1, colors = {170,180,185,190}, learnedat = 170, nskillup = 1, quality = 1, avgbuyout = 3194, cost = 3277, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
+  {id = 4334, name = "Formal White Shirt", spell_name = "Formal White Shirt", spell_id = 3871, craft_count = 1, colors = {170,180,185,190}, learnedat = 170, nskillup = 1, quality = 1, avgbuyout = 3194, cost = 3326, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
     {id = 2324, name = "Bleach", count = 2, avgbuyout = 199},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1061},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1083},
   }},
-  {id = 7051, name = "Earthen Vest", spell_name = "Earthen Vest", spell_id = 8764, craft_count = 1, colors = {170,190,205,220}, learnedat = 170, nskillup = 1, quality = 2, avgbuyout = 2499, cost = 22647, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1061},
-    {id = 7067, name = "Elemental Earth", count = 1, avgbuyout = 19481},
+  {id = 7051, name = "Earthen Vest", spell_name = "Earthen Vest", spell_id = 8764, craft_count = 1, colors = {170,190,205,220}, learnedat = 170, nskillup = 1, quality = 2, avgbuyout = 2600, cost = 23908, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1083},
+    {id = 7067, name = "Elemental Earth", count = 1, avgbuyout = 20680},
   }},
-  {id = 215365, name = "Invoker's Mantle", spell_name = "Invoker's Mantle", spell_id = 435848, craft_count = 1, colors = {0,170,185,200}, learnedat = 170, nskillup = 1, quality = 2, avgbuyout = 9299, cost = 5991, phaseId = 2, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1061},
+  {id = 215365, name = "Invoker's Mantle", spell_name = "Invoker's Mantle", spell_id = 435848, craft_count = 1, colors = {0,170,185,200}, learnedat = 170, nskillup = 1, quality = 2, avgbuyout = 9501, cost = 6052, phaseId = 2, schemprice = 7476, schemid = 215370, recipe = {
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1083},
     {id = 4340, name = "Gray Dye", count = 4, avgbuyout = 350},
     {id = 6260, name = "Blue Dye", count = 4, avgbuyout = 212},
   }},
-  {id = 215366, name = "Invoker's Cord", spell_name = "Invoker's Cord", spell_id = 435841, craft_count = 1, colors = {0,170,185,200}, learnedat = 170, nskillup = 1, quality = 2, avgbuyout = 7591, cost = 3500, phaseId = 2, schem = 0, recipe = {
-    {id = 1210, name = "Shadowgem", count = 1, avgbuyout = 271},
-    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 287},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1061},
+  {id = 215366, name = "Invoker's Cord", spell_name = "Invoker's Cord", spell_id = 435841, craft_count = 1, colors = {0,170,185,200}, learnedat = 170, nskillup = 1, quality = 2, avgbuyout = 7754, cost = 3563, phaseId = 2, schemprice = 7000, schemid = 215369, recipe = {
+    {id = 1210, name = "Shadowgem", count = 1, avgbuyout = 285},
+    {id = 2321, name = "Fine Thread", count = 1, avgbuyout = 300},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1083},
     {id = 4340, name = "Gray Dye", count = 1, avgbuyout = 350},
   }},
-  {id = 217256, name = "Earthen Vest", spell_name = "Earthen Vest", spell_id = 439100, craft_count = 1, colors = {170,190,205,220}, learnedat = 170, nskillup = 1, quality = 2, avgbuyout = 3490, cost = 22647, phaseId = 2, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1061},
-    {id = 7067, name = "Elemental Earth", count = 1, avgbuyout = 19481},
+  {id = 217256, name = "Earthen Vest", spell_name = "Earthen Vest", spell_id = 439100, craft_count = 1, colors = {170,190,205,220}, learnedat = 170, nskillup = 1, quality = 2, avgbuyout = 4000, cost = 23908, phaseId = 2, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1083},
+    {id = 7067, name = "Elemental Earth", count = 1, avgbuyout = 20680},
   }},
-  {id = 4325, name = "Boots of the Enchanter", spell_name = "Boots of the Enchanter", spell_id = 3860, craft_count = 1, colors = {175,195,210,225}, learnedat = 175, nskillup = 1, quality = 2, avgbuyout = 9999, cost = 6022, phaseId = 0, schem = 0, recipe = {
-    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1061},
-    {id = 4337, name = "Thick Spider's Silk", count = 2, avgbuyout = 772},
+  {id = 4325, name = "Boots of the Enchanter", spell_name = "Boots of the Enchanter", spell_id = 3860, craft_count = 1, colors = {175,195,210,225}, learnedat = 175, nskillup = 1, quality = 2, avgbuyout = 9999, cost = 6120, phaseId = 0, schemprice = 5400, schemid = 4352, recipe = {
+    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1083},
+    {id = 4337, name = "Thick Spider's Silk", count = 2, avgbuyout = 771},
   }},
-  {id = 4339, name = "Bolt of Mageweave", spell_name = "Bolt of Mageweave", spell_id = 3865, craft_count = 1, colors = {175,180,182,185}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 3399, cost = 3295, phaseId = 0, schem = 0, recipe = {
-    {id = 4338, name = "Mageweave Cloth", count = 5, avgbuyout = 659},
+  {id = 4339, name = "Bolt of Mageweave", spell_name = "Bolt of Mageweave", spell_id = 3865, craft_count = 1, colors = {175,180,182,185}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 3391, cost = 3245, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4338, name = "Mageweave Cloth", count = 5, avgbuyout = 649},
   }},
-  {id = 5764, name = "Green Silk Pack", spell_name = "Green Silk Pack", spell_id = 6693, craft_count = 1, colors = {175,195,210,225}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 5100, cost = 8230, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 3, avgbuyout = 287},
+  {id = 5764, name = "Green Silk Pack", spell_name = "Green Silk Pack", spell_id = 6693, craft_count = 1, colors = {175,195,210,225}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 5197, cost = 8392, phaseId = 0, schemprice = 3892, schemid = 5774, recipe = {
+    {id = 2321, name = "Fine Thread", count = 3, avgbuyout = 300},
     {id = 2605, name = "Green Dye", count = 1, avgbuyout = 2500},
-    {id = 4234, name = "Heavy Leather", count = 3, avgbuyout = 471},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1061},
+    {id = 4234, name = "Heavy Leather", count = 3, avgbuyout = 496},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1083},
   }},
-  {id = 6796, name = "Red Swashbuckler's Shirt", spell_name = "Red Swashbuckler's Shirt", spell_id = 8489, craft_count = 1, colors = {175,185,190,195}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 4800, cost = 4632, phaseId = 0, schem = 0, recipe = {
-    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 509},
-    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1061},
+  {id = 6796, name = "Red Swashbuckler's Shirt", spell_name = "Red Swashbuckler's Shirt", spell_id = 8489, craft_count = 1, colors = {175,185,190,195}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 4800, cost = 7666, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 1982},
+    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1083},
   }},
-  {id = 7052, name = "Azure Silk Belt", spell_name = "Azure Silk Belt", spell_id = 8766, craft_count = 1, colors = {175,195,210,225}, learnedat = 175, nskillup = 1, quality = 2, avgbuyout = 20960, cost = 13781, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1061},
+  {id = 7052, name = "Azure Silk Belt", spell_name = "Azure Silk Belt", spell_id = 8766, craft_count = 1, colors = {175,195,210,225}, learnedat = 175, nskillup = 1, quality = 2, avgbuyout = 21624, cost = 14846, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1083},
     {id = 6260, name = "Blue Dye", count = 2, avgbuyout = 212},
-    {id = 7070, name = "Elemental Water", count = 1, avgbuyout = 7450},
-    {id = 7071, name = "Iron Buckle", count = 1, avgbuyout = 1877},
+    {id = 7070, name = "Elemental Water", count = 1, avgbuyout = 8333},
+    {id = 7071, name = "Iron Buckle", count = 1, avgbuyout = 1985},
   }},
-  {id = 7053, name = "Azure Silk Cloak", spell_name = "Azure Silk Cloak", spell_id = 8786, craft_count = 1, colors = {175,195,210,225}, learnedat = 175, nskillup = 1, quality = 2, avgbuyout = 7500, cost = 3590, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1061},
+  {id = 7053, name = "Azure Silk Cloak", spell_name = "Azure Silk Cloak", spell_id = 8786, craft_count = 1, colors = {175,195,210,225}, learnedat = 175, nskillup = 1, quality = 2, avgbuyout = 7897, cost = 3652, phaseId = 0, schemprice = 14912, schemid = 7089, recipe = {
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1083},
     {id = 6260, name = "Blue Dye", count = 2, avgbuyout = 212},
   }},
-  {id = 7055, name = "Crimson Silk Belt", spell_name = "Crimson Silk Belt", spell_id = 8772, craft_count = 1, colors = {175,195,210,225}, learnedat = 175, nskillup = 1, quality = 2, avgbuyout = 6734, cost = 7373, phaseId = 0, schem = 0, recipe = {
-    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 509},
-    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1061},
-    {id = 7071, name = "Iron Buckle", count = 1, avgbuyout = 1877},
+  {id = 7055, name = "Crimson Silk Belt", spell_name = "Crimson Silk Belt", spell_id = 8772, craft_count = 1, colors = {175,195,210,225}, learnedat = 175, nskillup = 1, quality = 2, avgbuyout = 6734, cost = 10527, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 1982},
+    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1083},
+    {id = 7071, name = "Iron Buckle", count = 1, avgbuyout = 1985},
   }},
-  {id = 217255, name = "Crimson Silk Belt", spell_name = "Crimson Silk Belt", spell_id = 439098, craft_count = 1, colors = {175,195,210,225}, learnedat = 175, nskillup = 1, quality = 2, avgbuyout = 6672, cost = 7373, phaseId = 2, schem = 0, recipe = {
-    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 509},
-    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1061},
-    {id = 7071, name = "Iron Buckle", count = 1, avgbuyout = 1877},
+  {id = 217255, name = "Crimson Silk Belt", spell_name = "Crimson Silk Belt", spell_id = 439098, craft_count = 1, colors = {175,195,210,225}, learnedat = 175, nskillup = 1, quality = 2, avgbuyout = 6672, cost = 10527, phaseId = 2, schemprice = 0, schemid = 0, recipe = {
+    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 1982},
+    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1083},
+    {id = 7071, name = "Iron Buckle", count = 1, avgbuyout = 1985},
   }},
-  {id = 4328, name = "Spider Belt", spell_name = "Spider Belt", spell_id = 3863, craft_count = 1, colors = {180,200,215,230}, learnedat = 180, nskillup = 1, quality = 2, avgbuyout = 24500, cost = 6877, phaseId = 0, schem = 0, recipe = {
-    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1061},
-    {id = 4337, name = "Thick Spider's Silk", count = 2, avgbuyout = 772},
-    {id = 7071, name = "Iron Buckle", count = 1, avgbuyout = 1877},
+  {id = 4328, name = "Spider Belt", spell_name = "Spider Belt", spell_id = 3863, craft_count = 1, colors = {180,200,215,230}, learnedat = 180, nskillup = 1, quality = 2, avgbuyout = 24500, cost = 7031, phaseId = 0, schemprice = 6698, schemid = 4353, recipe = {
+    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1083},
+    {id = 4337, name = "Thick Spider's Silk", count = 2, avgbuyout = 771},
+    {id = 7071, name = "Iron Buckle", count = 1, avgbuyout = 1985},
   }},
-  {id = 7056, name = "Crimson Silk Cloak", spell_name = "Crimson Silk Cloak", spell_id = 8789, craft_count = 1, colors = {180,200,215,230}, learnedat = 180, nskillup = 1, quality = 2, avgbuyout = 4380, cost = 11460, phaseId = 0, schem = 0, recipe = {
-    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 509},
-    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1061},
-    {id = 6371, name = "Fire Oil", count = 2, avgbuyout = 2550},
+  {id = 7056, name = "Crimson Silk Cloak", spell_name = "Crimson Silk Cloak", spell_id = 8789, craft_count = 1, colors = {180,200,215,230}, learnedat = 180, nskillup = 1, quality = 2, avgbuyout = 19982, cost = 14664, phaseId = 0, schemprice = 11800, schemid = 7087, recipe = {
+    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 1982},
+    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1083},
+    {id = 6371, name = "Fire Oil", count = 2, avgbuyout = 2623},
   }},
-  {id = 7057, name = "Green Silken Shoulders", spell_name = "Green Silken Shoulders", spell_id = 8774, craft_count = 1, colors = {180,200,215,230}, learnedat = 180, nskillup = 1, quality = 2, avgbuyout = 4443, cost = 6364, phaseId = 0, schem = 0, recipe = {
-    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1061},
+  {id = 7057, name = "Green Silken Shoulders", spell_name = "Green Silken Shoulders", spell_id = 8774, craft_count = 1, colors = {180,200,215,230}, learnedat = 180, nskillup = 1, quality = 2, avgbuyout = 4410, cost = 6528, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1083},
   }},
-  {id = 4326, name = "Long Silken Cloak", spell_name = "Long Silken Cloak", spell_id = 3861, craft_count = 1, colors = {185,205,220,235}, learnedat = 185, nskillup = 1, quality = 2, avgbuyout = 4400, cost = 5402, phaseId = 0, schem = 0, recipe = {
-    {id = 3827, name = "Mana Potion", count = 1, avgbuyout = 924},
-    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1061},
+  {id = 4326, name = "Long Silken Cloak", spell_name = "Long Silken Cloak", spell_id = 3861, craft_count = 1, colors = {185,205,220,235}, learnedat = 185, nskillup = 1, quality = 2, avgbuyout = 4441, cost = 5449, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3827, name = "Mana Potion", count = 1, avgbuyout = 871},
+    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1083},
   }},
-  {id = 4335, name = "Rich Purple Silk Shirt", spell_name = "Rich Purple Silk Shirt", spell_id = 3872, craft_count = 1, colors = {185,195,200,205}, learnedat = 185, nskillup = 1, quality = 1, avgbuyout = 14058, cost = 11391, phaseId = 0, schem = 0, recipe = {
-    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1061},
+  {id = 4335, name = "Rich Purple Silk Shirt", spell_name = "Rich Purple Silk Shirt", spell_id = 3872, craft_count = 1, colors = {185,195,200,205}, learnedat = 185, nskillup = 1, quality = 1, avgbuyout = 14583, cost = 11491, phaseId = 0, schemprice = 279999, schemid = 4354, recipe = {
+    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1083},
     {id = 4342, name = "Purple Dye", count = 1, avgbuyout = 6913},
   }},
-  {id = 5765, name = "Black Silk Pack", spell_name = "Black Silk Pack", spell_id = 6695, craft_count = 1, colors = {185,205,220,235}, learnedat = 185, nskillup = 1, quality = 1, avgbuyout = 7500, cost = 8467, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 4, avgbuyout = 287},
+  {id = 5765, name = "Black Silk Pack", spell_name = "Black Silk Pack", spell_id = 6695, craft_count = 1, colors = {185,205,220,235}, learnedat = 185, nskillup = 1, quality = 1, avgbuyout = 7950, cost = 8579, phaseId = 0, schemprice = 5535, schemid = 5775, recipe = {
+    {id = 2321, name = "Fine Thread", count = 4, avgbuyout = 300},
     {id = 2325, name = "Black Dye", count = 1, avgbuyout = 2999},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1061},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1083},
   }},
-  {id = 7058, name = "Crimson Silk Vest", spell_name = "Crimson Silk Vest", spell_id = 8791, craft_count = 1, colors = {185,205,215,225}, learnedat = 185, nskillup = 1, quality = 1, avgbuyout = 2011, cost = 5048, phaseId = 0, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 509},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1061},
+  {id = 7058, name = "Crimson Silk Vest", spell_name = "Crimson Silk Vest", spell_id = 8791, craft_count = 1, colors = {185,205,215,225}, learnedat = 185, nskillup = 1, quality = 1, avgbuyout = 2011, cost = 8068, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 1982},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1083},
   }},
-  {id = 217252, name = "Long Silken Cloak", spell_name = "Long Silken Cloak", spell_id = 439094, craft_count = 1, colors = {185,205,220,235}, learnedat = 185, nskillup = 1, quality = 2, avgbuyout = 5100, cost = 5402, phaseId = 2, schem = 0, recipe = {
-    {id = 3827, name = "Mana Potion", count = 1, avgbuyout = 924},
-    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1061},
+  {id = 217252, name = "Long Silken Cloak", spell_name = "Long Silken Cloak", spell_id = 439094, craft_count = 1, colors = {185,205,220,235}, learnedat = 185, nskillup = 1, quality = 2, avgbuyout = 5191, cost = 5449, phaseId = 2, schemprice = 0, schemid = 0, recipe = {
+    {id = 3827, name = "Mana Potion", count = 1, avgbuyout = 871},
+    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1083},
   }},
-  {id = 217257, name = "Enchanter's Cowl", spell_name = "Enchanter's Cowl", spell_id = 439102, craft_count = 1, colors = {0,185,200,215}, learnedat = 185, nskillup = 1, quality = 2, avgbuyout = 14293, cost = 4710, phaseId = 2, schem = 0, recipe = {
-    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 287},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1061},
-    {id = 4337, name = "Thick Spider's Silk", count = 2, avgbuyout = 772},
+  {id = 217257, name = "Enchanter's Cowl", spell_name = "Enchanter's Cowl", spell_id = 439102, craft_count = 1, colors = {0,185,200,215}, learnedat = 185, nskillup = 1, quality = 2, avgbuyout = 16242, cost = 4770, phaseId = 2, schemprice = 8900, schemid = 14630, recipe = {
+    {id = 2321, name = "Fine Thread", count = 2, avgbuyout = 300},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 3, avgbuyout = 1083},
+    {id = 4337, name = "Thick Spider's Silk", count = 2, avgbuyout = 771},
   }},
-  {id = 7054, name = "Robe of Power", spell_name = "Robe of Power", spell_id = 8770, craft_count = 1, colors = {190,210,225,240}, learnedat = 190, nskillup = 1, quality = 3, avgbuyout = 0, cost = 117034, phaseId = 0, schem = 0, recipe = {
-    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1022},
-    {id = 4339, name = "Bolt of Mageweave", count = 2, avgbuyout = 3399},
-    {id = 7067, name = "Elemental Earth", count = 2, avgbuyout = 19481},
-    {id = 7068, name = "Elemental Fire", count = 2, avgbuyout = 25799},
-    {id = 7069, name = "Elemental Air", count = 2, avgbuyout = 1470},
-    {id = 7070, name = "Elemental Water", count = 2, avgbuyout = 7450},
+  {id = 7054, name = "Robe of Power", spell_name = "Robe of Power", spell_id = 8770, craft_count = 1, colors = {190,210,225,240}, learnedat = 190, nskillup = 1, quality = 3, avgbuyout = 0, cost = 120472, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1074},
+    {id = 4339, name = "Bolt of Mageweave", count = 2, avgbuyout = 3391},
+    {id = 7067, name = "Elemental Earth", count = 2, avgbuyout = 20680},
+    {id = 7068, name = "Elemental Fire", count = 2, avgbuyout = 24856},
+    {id = 7069, name = "Elemental Air", count = 2, avgbuyout = 2048},
+    {id = 7070, name = "Elemental Water", count = 2, avgbuyout = 8333},
   }},
-  {id = 7059, name = "Crimson Silk Shoulders", spell_name = "Crimson Silk Shoulders", spell_id = 8793, craft_count = 1, colors = {190,210,225,240}, learnedat = 190, nskillup = 1, quality = 2, avgbuyout = 11700, cost = 12482, phaseId = 0, schem = 0, recipe = {
-    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 509},
-    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1061},
-    {id = 6371, name = "Fire Oil", count = 2, avgbuyout = 2550},
+  {id = 7059, name = "Crimson Silk Shoulders", spell_name = "Crimson Silk Shoulders", spell_id = 8793, craft_count = 1, colors = {190,210,225,240}, learnedat = 190, nskillup = 1, quality = 2, avgbuyout = 11700, cost = 15738, phaseId = 0, schemprice = 5504, schemid = 7084, recipe = {
+    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 1982},
+    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1083},
+    {id = 6371, name = "Fire Oil", count = 2, avgbuyout = 2623},
   }},
-  {id = 7060, name = "Azure Shoulders", spell_name = "Azure Shoulders", spell_id = 8795, craft_count = 1, colors = {190,210,225,240}, learnedat = 190, nskillup = 1, quality = 2, avgbuyout = 16499, cost = 7992, phaseId = 0, schem = 0, recipe = {
-    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 6, avgbuyout = 1061},
+  {id = 7060, name = "Azure Shoulders", spell_name = "Azure Shoulders", spell_id = 8795, craft_count = 1, colors = {190,210,225,240}, learnedat = 190, nskillup = 1, quality = 2, avgbuyout = 16499, cost = 8170, phaseId = 0, schemprice = 6900, schemid = 7085, recipe = {
+    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 6, avgbuyout = 1083},
     {id = 6260, name = "Blue Dye", count = 2, avgbuyout = 212},
-    {id = 7072, name = "Naga Scale", count = 2, avgbuyout = 170},
+    {id = 7072, name = "Naga Scale", count = 2, avgbuyout = 171},
   }},
-  {id = 17723, name = "Green Holiday Shirt", spell_name = "Green Holiday Shirt", spell_id = 21945, craft_count = 1, colors = {190,200,205,210}, learnedat = 190, nskillup = 1, quality = 1, avgbuyout = 23997, cost = 15342, phaseId = 0, schem = 0, recipe = {
+  {id = 17723, name = "Green Holiday Shirt", spell_name = "Green Holiday Shirt", spell_id = 21945, craft_count = 1, colors = {190,200,205,210}, learnedat = 190, nskillup = 1, quality = 1, avgbuyout = 23997, cost = 15454, phaseId = 0, schemprice = 24500, schemid = 17724, recipe = {
     {id = 2605, name = "Green Dye", count = 4, avgbuyout = 2500},
-    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1061},
+    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1083},
   }},
-  {id = 7061, name = "Earthen Silk Belt", spell_name = "Earthen Silk Belt", spell_id = 8797, craft_count = 1, colors = {195,215,230,245}, learnedat = 195, nskillup = 1, quality = 2, avgbuyout = 0, cost = 88049, phaseId = 0, schem = 0, recipe = {
-    {id = 4234, name = "Heavy Leather", count = 4, avgbuyout = 471},
-    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1061},
-    {id = 7067, name = "Elemental Earth", count = 4, avgbuyout = 19481},
-    {id = 7071, name = "Iron Buckle", count = 1, avgbuyout = 1877},
+  {id = 7061, name = "Earthen Silk Belt", spell_name = "Earthen Silk Belt", spell_id = 8797, craft_count = 1, colors = {195,215,230,245}, learnedat = 195, nskillup = 1, quality = 2, avgbuyout = 0, cost = 93217, phaseId = 0, schemprice = 4567, schemid = 7086, recipe = {
+    {id = 4234, name = "Heavy Leather", count = 4, avgbuyout = 496},
+    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1083},
+    {id = 7067, name = "Elemental Earth", count = 4, avgbuyout = 20680},
+    {id = 7071, name = "Iron Buckle", count = 1, avgbuyout = 1985},
   }},
-  {id = 7062, name = "Crimson Silk Pantaloons", spell_name = "Crimson Silk Pantaloons", spell_id = 8799, craft_count = 1, colors = {195,215,225,235}, learnedat = 195, nskillup = 1, quality = 1, avgbuyout = 4531, cost = 6518, phaseId = 0, schem = 0, recipe = {
-    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 509},
-    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1061},
+  {id = 7062, name = "Crimson Silk Pantaloons", spell_name = "Crimson Silk Pantaloons", spell_id = 8799, craft_count = 1, colors = {195,215,225,235}, learnedat = 195, nskillup = 1, quality = 1, avgbuyout = 4531, cost = 9616, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 1982},
+    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1083},
   }},
-  {id = 217253, name = "Boots of the Enchanter", spell_name = "Boots of the Enchanter", spell_id = 439097, craft_count = 1, colors = {0,195,210,225}, learnedat = 195, nskillup = 1, quality = 2, avgbuyout = 14988, cost = 6022, phaseId = 2, schem = 0, recipe = {
-    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1061},
-    {id = 4337, name = "Thick Spider's Silk", count = 2, avgbuyout = 772},
+  {id = 217253, name = "Boots of the Enchanter", spell_name = "Boots of the Enchanter", spell_id = 439097, craft_count = 1, colors = {0,195,210,225}, learnedat = 195, nskillup = 1, quality = 2, avgbuyout = 15119, cost = 6120, phaseId = 2, schemprice = 5400, schemid = 4352, recipe = {
+    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 4, avgbuyout = 1083},
+    {id = 4337, name = "Thick Spider's Silk", count = 2, avgbuyout = 771},
   }},
-  {id = 4327, name = "Icy Cloak", spell_name = "Icy Cloak", spell_id = 3862, craft_count = 1, colors = {200,220,235,250}, learnedat = 200, nskillup = 1, quality = 3, avgbuyout = 158998, cost = 37368, phaseId = 0, schem = 0, recipe = {
-    {id = 3829, name = "Frost Oil", count = 1, avgbuyout = 23895},
-    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1022},
-    {id = 4337, name = "Thick Spider's Silk", count = 2, avgbuyout = 772},
-    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3399},
+  {id = 4327, name = "Icy Cloak", spell_name = "Icy Cloak", spell_id = 3862, craft_count = 1, colors = {200,220,235,250}, learnedat = 200, nskillup = 1, quality = 3, avgbuyout = 143000, cost = 39000, phaseId = 0, schemprice = 16775, schemid = 4355, recipe = {
+    {id = 3829, name = "Frost Oil", count = 1, avgbuyout = 25575},
+    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1074},
+    {id = 4337, name = "Thick Spider's Silk", count = 2, avgbuyout = 771},
+    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3391},
   }},
-  {id = 4329, name = "Star Belt", spell_name = "Star Belt", spell_id = 3864, craft_count = 1, colors = {200,220,235,250}, learnedat = 200, nskillup = 1, quality = 2, avgbuyout = 58500, cost = 19050, phaseId = 0, schem = 0, recipe = {
-    {id = 3864, name = "Citrine", count = 1, avgbuyout = 1087},
-    {id = 4234, name = "Heavy Leather", count = 4, avgbuyout = 471},
-    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1022},
-    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3399},
-    {id = 7071, name = "Iron Buckle", count = 1, avgbuyout = 1877},
+  {id = 4329, name = "Star Belt", spell_name = "Star Belt", spell_id = 3864, craft_count = 1, colors = {200,220,235,250}, learnedat = 200, nskillup = 1, quality = 2, avgbuyout = 58770, cost = 19138, phaseId = 0, schemprice = 219999, schemid = 4356, recipe = {
+    {id = 3864, name = "Citrine", count = 1, avgbuyout = 1115},
+    {id = 4234, name = "Heavy Leather", count = 4, avgbuyout = 496},
+    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1074},
+    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3391},
+    {id = 7071, name = "Iron Buckle", count = 1, avgbuyout = 1985},
   }},
-  {id = 4336, name = "Black Swashbuckler's Shirt", spell_name = "Black Swashbuckler's Shirt", spell_id = 3873, craft_count = 1, colors = {200,210,215,220}, learnedat = 200, nskillup = 1, quality = 1, avgbuyout = 25000, cost = 8341, phaseId = 0, schem = 0, recipe = {
+  {id = 4336, name = "Black Swashbuckler's Shirt", spell_name = "Black Swashbuckler's Shirt", spell_id = 3873, craft_count = 1, colors = {200,210,215,220}, learnedat = 200, nskillup = 1, quality = 1, avgbuyout = 26399, cost = 8453, phaseId = 0, schemprice = 11250, schemid = 10728, recipe = {
     {id = 2325, name = "Black Dye", count = 1, avgbuyout = 2999},
-    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1061},
+    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1083},
   }},
-  {id = 213379, name = "Hyperconductive Arcano-Filament", spell_name = "Hyperconductive Arcano-Filament", spell_id = 435827, craft_count = 1, colors = {0,200,210,220}, learnedat = 200, nskillup = 1, quality = 3, avgbuyout = 55042, cost = 18025, phaseId = 2, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 2, avgbuyout = 3399},
+  {id = 213379, name = "Hyperconductive Arcano-Filament", spell_name = "Hyperconductive Arcano-Filament", spell_id = 435827, craft_count = 1, colors = {0,200,210,220}, learnedat = 200, nskillup = 1, quality = 3, avgbuyout = 55042, cost = 17925, phaseId = 2, schemprice = 10000, schemid = 215368, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 2, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 5, avgbuyout = 2287},
     {id = 213378, name = "Unstable Microfilament", count = 5, avgbuyout = 0},
   }},
-  {id = 7063, name = "Crimson Silk Robe", spell_name = "Crimson Silk Robe", spell_id = 8802, craft_count = 1, colors = {205,220,235,250}, learnedat = 205, nskillup = 1, quality = 2, avgbuyout = 0, cost = 115014, phaseId = 0, schem = 0, recipe = {
-    {id = 2604, name = "Red Dye", count = 4, avgbuyout = 509},
-    {id = 3827, name = "Mana Potion", count = 2, avgbuyout = 924},
-    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 8, avgbuyout = 1061},
-    {id = 7068, name = "Elemental Fire", count = 4, avgbuyout = 25799},
+  {id = 7063, name = "Crimson Silk Robe", spell_name = "Crimson Silk Robe", spell_id = 8802, craft_count = 1, colors = {205,220,235,250}, learnedat = 205, nskillup = 1, quality = 2, avgbuyout = 0, cost = 117176, phaseId = 0, schemprice = 26545, schemid = 7088, recipe = {
+    {id = 2604, name = "Red Dye", count = 4, avgbuyout = 1982},
+    {id = 3827, name = "Mana Potion", count = 2, avgbuyout = 871},
+    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 8, avgbuyout = 1083},
+    {id = 7068, name = "Elemental Fire", count = 4, avgbuyout = 24856},
   }},
-  {id = 9998, name = "Black Mageweave Vest", spell_name = "Black Mageweave Vest", spell_id = 12048, craft_count = 1, colors = {205,220,235,250}, learnedat = 205, nskillup = 1, quality = 2, avgbuyout = 7020, cost = 9656, phaseId = 0, schem = 0, recipe = {
-    {id = 4291, name = "Silken Thread", count = 3, avgbuyout = 1022},
-    {id = 4339, name = "Bolt of Mageweave", count = 2, avgbuyout = 3399},
+  {id = 9998, name = "Black Mageweave Vest", spell_name = "Black Mageweave Vest", spell_id = 12048, craft_count = 1, colors = {205,220,235,250}, learnedat = 205, nskillup = 1, quality = 2, avgbuyout = 7020, cost = 9712, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4291, name = "Silken Thread", count = 3, avgbuyout = 1074},
+    {id = 4339, name = "Bolt of Mageweave", count = 2, avgbuyout = 3391},
   }},
-  {id = 9999, name = "Black Mageweave Leggings", spell_name = "Black Mageweave Leggings", spell_id = 12049, craft_count = 1, colors = {205,220,235,250}, learnedat = 205, nskillup = 1, quality = 2, avgbuyout = 6400, cost = 9656, phaseId = 0, schem = 0, recipe = {
-    {id = 4291, name = "Silken Thread", count = 3, avgbuyout = 1022},
-    {id = 4339, name = "Bolt of Mageweave", count = 2, avgbuyout = 3399},
+  {id = 9999, name = "Black Mageweave Leggings", spell_name = "Black Mageweave Leggings", spell_id = 12049, craft_count = 1, colors = {205,220,235,250}, learnedat = 205, nskillup = 1, quality = 2, avgbuyout = 6464, cost = 9712, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4291, name = "Silken Thread", count = 3, avgbuyout = 1074},
+    {id = 4339, name = "Bolt of Mageweave", count = 2, avgbuyout = 3391},
   }},
-  {id = 217246, name = "Black Mageweave Vest", spell_name = "Black Mageweave Vest", spell_id = 439086, craft_count = 1, colors = {205,220,235,250}, learnedat = 205, nskillup = 1, quality = 2, avgbuyout = 10800, cost = 9656, phaseId = 2, schem = 0, recipe = {
-    {id = 4291, name = "Silken Thread", count = 3, avgbuyout = 1022},
-    {id = 4339, name = "Bolt of Mageweave", count = 2, avgbuyout = 3399},
+  {id = 217246, name = "Black Mageweave Vest", spell_name = "Black Mageweave Vest", spell_id = 439086, craft_count = 1, colors = {205,220,235,250}, learnedat = 205, nskillup = 1, quality = 2, avgbuyout = 11110, cost = 9712, phaseId = 2, schemprice = 0, schemid = 0, recipe = {
+    {id = 4291, name = "Silken Thread", count = 3, avgbuyout = 1074},
+    {id = 4339, name = "Bolt of Mageweave", count = 2, avgbuyout = 3391},
   }},
-  {id = 217247, name = "Black Mageweave Leggings", spell_name = "Black Mageweave Leggings", spell_id = 439088, craft_count = 1, colors = {205,220,235,250}, learnedat = 205, nskillup = 1, quality = 2, avgbuyout = 8487, cost = 9656, phaseId = 2, schem = 0, recipe = {
-    {id = 4291, name = "Silken Thread", count = 3, avgbuyout = 1022},
-    {id = 4339, name = "Bolt of Mageweave", count = 2, avgbuyout = 3399},
+  {id = 217247, name = "Black Mageweave Leggings", spell_name = "Black Mageweave Leggings", spell_id = 439088, craft_count = 1, colors = {205,220,235,250}, learnedat = 205, nskillup = 1, quality = 2, avgbuyout = 8692, cost = 9712, phaseId = 2, schemprice = 0, schemid = 0, recipe = {
+    {id = 4291, name = "Silken Thread", count = 3, avgbuyout = 1074},
+    {id = 4339, name = "Bolt of Mageweave", count = 2, avgbuyout = 3391},
   }},
-  {id = 7064, name = "Crimson Silk Gloves", spell_name = "Crimson Silk Gloves", spell_id = 8804, craft_count = 1, colors = {210,225,240,255}, learnedat = 210, nskillup = 1, quality = 2, avgbuyout = 14392, cost = 67500, phaseId = 0, schem = 0, recipe = {
-    {id = 2604, name = "Red Dye", count = 4, avgbuyout = 509},
-    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1022},
-    {id = 4304, name = "Thick Leather", count = 2, avgbuyout = 769},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 6, avgbuyout = 1061},
-    {id = 6371, name = "Fire Oil", count = 2, avgbuyout = 2550},
-    {id = 7068, name = "Elemental Fire", count = 2, avgbuyout = 25799},
+  {id = 7064, name = "Crimson Silk Gloves", spell_name = "Crimson Silk Gloves", spell_id = 8804, craft_count = 1, colors = {210,225,240,255}, learnedat = 210, nskillup = 1, quality = 2, avgbuyout = 14249, cost = 71946, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2604, name = "Red Dye", count = 4, avgbuyout = 1982},
+    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1074},
+    {id = 4304, name = "Thick Leather", count = 2, avgbuyout = 828},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 6, avgbuyout = 1083},
+    {id = 6371, name = "Fire Oil", count = 2, avgbuyout = 2623},
+    {id = 7068, name = "Elemental Fire", count = 2, avgbuyout = 24856},
   }},
-  {id = 10001, name = "Black Mageweave Robe", spell_name = "Black Mageweave Robe", spell_id = 12050, craft_count = 1, colors = {210,225,240,255}, learnedat = 210, nskillup = 1, quality = 2, avgbuyout = 8900, cost = 12172, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3399},
+  {id = 10001, name = "Black Mageweave Robe", spell_name = "Black Mageweave Robe", spell_id = 12050, craft_count = 1, colors = {210,225,240,255}, learnedat = 210, nskillup = 1, quality = 2, avgbuyout = 9200, cost = 12022, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 1, avgbuyout = 2287},
   }},
-  {id = 10002, name = "Shadoweave Pants", spell_name = "Shadoweave Pants", spell_id = 12052, craft_count = 1, colors = {210,225,240,255}, learnedat = 210, nskillup = 1, quality = 2, avgbuyout = 40406, cost = 14274, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3399},
+  {id = 10002, name = "Shadoweave Pants", spell_name = "Shadoweave Pants", spell_id = 12052, craft_count = 1, colors = {210,225,240,255}, learnedat = 210, nskillup = 1, quality = 2, avgbuyout = 40000, cost = 14120, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 1, avgbuyout = 2287},
-    {id = 10285, name = "Shadow Silk", count = 2, avgbuyout = 1051},
+    {id = 10285, name = "Shadow Silk", count = 2, avgbuyout = 1049},
   }},
-  {id = 217250, name = "Crimson Silk Shoulders", spell_name = "Crimson Silk Shoulders", spell_id = 439093, craft_count = 1, colors = {0,210,225,240}, learnedat = 210, nskillup = 1, quality = 2, avgbuyout = 16814, cost = 12482, phaseId = 2, schem = 0, recipe = {
-    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 509},
-    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1061},
-    {id = 6371, name = "Fire Oil", count = 2, avgbuyout = 2550},
+  {id = 217250, name = "Crimson Silk Shoulders", spell_name = "Crimson Silk Shoulders", spell_id = 439093, craft_count = 1, colors = {0,210,225,240}, learnedat = 210, nskillup = 1, quality = 2, avgbuyout = 16814, cost = 15738, phaseId = 2, schemprice = 5504, schemid = 7084, recipe = {
+    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 1982},
+    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1083},
+    {id = 6371, name = "Fire Oil", count = 2, avgbuyout = 2623},
   }},
-  {id = 10003, name = "Black Mageweave Gloves", spell_name = "Black Mageweave Gloves", spell_id = 12053, craft_count = 1, colors = {215,230,245,260}, learnedat = 215, nskillup = 1, quality = 2, avgbuyout = 5800, cost = 11164, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 2, avgbuyout = 3399},
+  {id = 10003, name = "Black Mageweave Gloves", spell_name = "Black Mageweave Gloves", spell_id = 12053, craft_count = 1, colors = {215,230,245,260}, learnedat = 215, nskillup = 1, quality = 2, avgbuyout = 5800, cost = 11064, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 2, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
   }},
-  {id = 10004, name = "Shadoweave Robe", spell_name = "Shadoweave Robe", spell_id = 12055, craft_count = 1, colors = {215,230,245,260}, learnedat = 215, nskillup = 1, quality = 2, avgbuyout = 34988, cost = 14274, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3399},
+  {id = 10004, name = "Shadoweave Robe", spell_name = "Shadoweave Robe", spell_id = 12055, craft_count = 1, colors = {215,230,245,260}, learnedat = 215, nskillup = 1, quality = 2, avgbuyout = 34988, cost = 14120, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 1, avgbuyout = 2287},
-    {id = 10285, name = "Shadow Silk", count = 2, avgbuyout = 1051},
+    {id = 10285, name = "Shadow Silk", count = 2, avgbuyout = 1049},
   }},
-  {id = 10007, name = "Red Mageweave Vest", spell_name = "Red Mageweave Vest", spell_id = 12056, craft_count = 1, colors = {215,230,245,260}, learnedat = 215, nskillup = 1, quality = 2, avgbuyout = 27139, cost = 13190, phaseId = 0, schem = 0, recipe = {
-    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 509},
-    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3399},
+  {id = 10007, name = "Red Mageweave Vest", spell_name = "Red Mageweave Vest", spell_id = 12056, craft_count = 1, colors = {215,230,245,260}, learnedat = 215, nskillup = 1, quality = 2, avgbuyout = 20000, cost = 15986, phaseId = 0, schemprice = 6900, schemid = 10300, recipe = {
+    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 1982},
+    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 1, avgbuyout = 2287},
   }},
-  {id = 10008, name = "White Bandit Mask", spell_name = "White Bandit Mask", spell_id = 12059, craft_count = 1, colors = {215,220,225,230}, learnedat = 215, nskillup = 1, quality = 2, avgbuyout = 15464, cost = 5781, phaseId = 0, schem = 0, recipe = {
+  {id = 10008, name = "White Bandit Mask", spell_name = "White Bandit Mask", spell_id = 12059, craft_count = 1, colors = {215,220,225,230}, learnedat = 215, nskillup = 1, quality = 2, avgbuyout = 15489, cost = 5731, phaseId = 0, schemprice = 21199, schemid = 10301, recipe = {
     {id = 2324, name = "Bleach", count = 1, avgbuyout = 199},
-    {id = 4339, name = "Bolt of Mageweave", count = 1, avgbuyout = 3399},
+    {id = 4339, name = "Bolt of Mageweave", count = 1, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 1, avgbuyout = 2287},
   }},
-  {id = 10009, name = "Red Mageweave Pants", spell_name = "Red Mageweave Pants", spell_id = 12060, craft_count = 1, colors = {215,230,245,260}, learnedat = 215, nskillup = 1, quality = 2, avgbuyout = 33830, cost = 13190, phaseId = 0, schem = 0, recipe = {
-    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 509},
-    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3399},
+  {id = 10009, name = "Red Mageweave Pants", spell_name = "Red Mageweave Pants", spell_id = 12060, craft_count = 1, colors = {215,230,245,260}, learnedat = 215, nskillup = 1, quality = 2, avgbuyout = 33333, cost = 15986, phaseId = 0, schemprice = 11800, schemid = 10302, recipe = {
+    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 1982},
+    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 1, avgbuyout = 2287},
   }},
-  {id = 10056, name = "Orange Mageweave Shirt", spell_name = "Orange Mageweave Shirt", spell_id = 12061, craft_count = 1, colors = {215,220,225,230}, learnedat = 215, nskillup = 1, quality = 1, avgbuyout = 4399, cost = 5682, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 1, avgbuyout = 3399},
+  {id = 10056, name = "Orange Mageweave Shirt", spell_name = "Orange Mageweave Shirt", spell_id = 12061, craft_count = 1, colors = {215,220,225,230}, learnedat = 215, nskillup = 1, quality = 1, avgbuyout = 4399, cost = 5632, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 1, avgbuyout = 3391},
     {id = 6261, name = "Orange Dye", count = 1, avgbuyout = 100},
     {id = 8343, name = "Heavy Silken Thread", count = 1, avgbuyout = 2287},
   }},
-  {id = 217248, name = "Earthen Silk Belt", spell_name = "Earthen Silk Belt", spell_id = 439091, craft_count = 1, colors = {0,215,230,245}, learnedat = 215, nskillup = 1, quality = 2, avgbuyout = 23595, cost = 88049, phaseId = 2, schem = 0, recipe = {
-    {id = 4234, name = "Heavy Leather", count = 4, avgbuyout = 471},
-    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1061},
-    {id = 7067, name = "Elemental Earth", count = 4, avgbuyout = 19481},
-    {id = 7071, name = "Iron Buckle", count = 1, avgbuyout = 1877},
+  {id = 217248, name = "Earthen Silk Belt", spell_name = "Earthen Silk Belt", spell_id = 439091, craft_count = 1, colors = {0,215,230,245}, learnedat = 215, nskillup = 1, quality = 2, avgbuyout = 23595, cost = 93217, phaseId = 2, schemprice = 4567, schemid = 7086, recipe = {
+    {id = 4234, name = "Heavy Leather", count = 4, avgbuyout = 496},
+    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 5, avgbuyout = 1083},
+    {id = 7067, name = "Elemental Earth", count = 4, avgbuyout = 20680},
+    {id = 7071, name = "Iron Buckle", count = 1, avgbuyout = 1985},
   }},
-  {id = 10052, name = "Orange Martial Shirt", spell_name = "Orange Martial Shirt", spell_id = 12064, craft_count = 1, colors = {220,225,230,235}, learnedat = 220, nskillup = 1, quality = 1, avgbuyout = 39700, cost = 9077, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 2, avgbuyout = 3399},
+  {id = 10052, name = "Orange Martial Shirt", spell_name = "Orange Martial Shirt", spell_id = 12064, craft_count = 1, colors = {220,225,230,235}, learnedat = 220, nskillup = 1, quality = 1, avgbuyout = 35000, cost = 8977, phaseId = 0, schemprice = 16283, schemid = 10311, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 2, avgbuyout = 3391},
     {id = 6261, name = "Orange Dye", count = 2, avgbuyout = 100},
     {id = 8343, name = "Heavy Silken Thread", count = 1, avgbuyout = 2287},
   }},
-  {id = 217245, name = "Crimson Silk Robe", spell_name = "Crimson Silk Robe", spell_id = 439085, craft_count = 1, colors = {0,220,235,250}, learnedat = 220, nskillup = 1, quality = 2, avgbuyout = 0, cost = 115014, phaseId = 2, schem = 0, recipe = {
-    {id = 2604, name = "Red Dye", count = 4, avgbuyout = 509},
-    {id = 3827, name = "Mana Potion", count = 2, avgbuyout = 924},
-    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1022},
-    {id = 4305, name = "Bolt of Silk Cloth", count = 8, avgbuyout = 1061},
-    {id = 7068, name = "Elemental Fire", count = 4, avgbuyout = 25799},
+  {id = 217245, name = "Crimson Silk Robe", spell_name = "Crimson Silk Robe", spell_id = 439085, craft_count = 1, colors = {0,220,235,250}, learnedat = 220, nskillup = 1, quality = 2, avgbuyout = 0, cost = 117176, phaseId = 2, schemprice = 26545, schemid = 7088, recipe = {
+    {id = 2604, name = "Red Dye", count = 4, avgbuyout = 1982},
+    {id = 3827, name = "Mana Potion", count = 2, avgbuyout = 871},
+    {id = 4291, name = "Silken Thread", count = 1, avgbuyout = 1074},
+    {id = 4305, name = "Bolt of Silk Cloth", count = 8, avgbuyout = 1083},
+    {id = 7068, name = "Elemental Fire", count = 4, avgbuyout = 24856},
   }},
-  {id = 10018, name = "Red Mageweave Gloves", spell_name = "Red Mageweave Gloves", spell_id = 12066, craft_count = 1, colors = {225,240,255,270}, learnedat = 225, nskillup = 1, quality = 2, avgbuyout = 28799, cost = 15477, phaseId = 0, schem = 0, recipe = {
-    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 509},
-    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3399},
+  {id = 10018, name = "Red Mageweave Gloves", spell_name = "Red Mageweave Gloves", spell_id = 12066, craft_count = 1, colors = {225,240,255,270}, learnedat = 225, nskillup = 1, quality = 2, avgbuyout = 28209, cost = 18273, phaseId = 0, schemprice = 9090, schemid = 10312, recipe = {
+    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 1982},
+    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
   }},
-  {id = 10019, name = "Dreamweave Gloves", spell_name = "Dreamweave Gloves", spell_id = 12067, craft_count = 1, colors = {225,240,255,270}, learnedat = 225, nskillup = 1, quality = 3, avgbuyout = 83000, cost = 41332, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3399},
-    {id = 8153, name = "Wildvine", count = 4, avgbuyout = 5484},
+  {id = 10019, name = "Dreamweave Gloves", spell_name = "Dreamweave Gloves", spell_id = 12067, craft_count = 1, colors = {225,240,255,270}, learnedat = 225, nskillup = 1, quality = 3, avgbuyout = 82196, cost = 41538, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3391},
+    {id = 8153, name = "Wildvine", count = 4, avgbuyout = 5596},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
-    {id = 10286, name = "Heart of the Wild", count = 2, avgbuyout = 821},
+    {id = 10286, name = "Heart of the Wild", count = 2, avgbuyout = 800},
   }},
-  {id = 10021, name = "Dreamweave Vest", spell_name = "Dreamweave Vest", spell_id = 12070, craft_count = 1, colors = {225,240,255,270}, learnedat = 225, nskillup = 1, quality = 3, avgbuyout = 97500, cost = 58890, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 6, avgbuyout = 3399},
-    {id = 8153, name = "Wildvine", count = 6, avgbuyout = 5484},
+  {id = 10021, name = "Dreamweave Vest", spell_name = "Dreamweave Vest", spell_id = 12070, craft_count = 1, colors = {225,240,255,270}, learnedat = 225, nskillup = 1, quality = 3, avgbuyout = 98814, cost = 59220, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 6, avgbuyout = 3391},
+    {id = 8153, name = "Wildvine", count = 6, avgbuyout = 5596},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
-    {id = 10286, name = "Heart of the Wild", count = 2, avgbuyout = 821},
+    {id = 10286, name = "Heart of the Wild", count = 2, avgbuyout = 800},
   }},
-  {id = 10023, name = "Shadoweave Gloves", spell_name = "Shadoweave Gloves", spell_id = 12071, craft_count = 1, colors = {225,240,255,270}, learnedat = 225, nskillup = 1, quality = 2, avgbuyout = 53505, cost = 26304, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 5, avgbuyout = 3399},
+  {id = 10023, name = "Shadoweave Gloves", spell_name = "Shadoweave Gloves", spell_id = 12071, craft_count = 1, colors = {225,240,255,270}, learnedat = 225, nskillup = 1, quality = 2, avgbuyout = 53505, cost = 26044, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 5, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
-    {id = 10285, name = "Shadow Silk", count = 5, avgbuyout = 1051},
+    {id = 10285, name = "Shadow Silk", count = 5, avgbuyout = 1049},
   }},
-  {id = 10042, name = "Cindercloth Robe", spell_name = "Cindercloth Robe", spell_id = 12069, craft_count = 1, colors = {225,240,255,270}, learnedat = 225, nskillup = 1, quality = 2, avgbuyout = 120999, cost = 27059, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 5, avgbuyout = 3399},
-    {id = 7077, name = "Heart of Fire", count = 2, avgbuyout = 3005},
+  {id = 10042, name = "Cindercloth Robe", spell_name = "Cindercloth Robe", spell_id = 12069, craft_count = 1, colors = {225,240,255,270}, learnedat = 225, nskillup = 1, quality = 2, avgbuyout = 120999, cost = 26865, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 5, avgbuyout = 3391},
+    {id = 7077, name = "Heart of Fire", count = 2, avgbuyout = 3033},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
   }},
-  {id = 10050, name = "Mageweave Bag", spell_name = "Mageweave Bag", spell_id = 12065, craft_count = 1, colors = {225,240,255,270}, learnedat = 225, nskillup = 1, quality = 1, avgbuyout = 11725, cost = 15224, phaseId = 0, schem = 0, recipe = {
-    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1022},
-    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3399},
+  {id = 10050, name = "Mageweave Bag", spell_name = "Mageweave Bag", spell_id = 12065, craft_count = 1, colors = {225,240,255,270}, learnedat = 225, nskillup = 1, quality = 1, avgbuyout = 11725, cost = 15128, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4291, name = "Silken Thread", count = 2, avgbuyout = 1074},
+    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3391},
   }},
-  {id = 22246, name = "Enchanted Mageweave Pouch", spell_name = "Enchanted Mageweave Pouch", spell_id = 27658, craft_count = 1, colors = {225,240,255,270}, learnedat = 225, nskillup = 1, quality = 2, avgbuyout = 28998, cost = 21478, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3399},
+  {id = 22246, name = "Enchanted Mageweave Pouch", spell_name = "Enchanted Mageweave Pouch", spell_id = 27658, craft_count = 1, colors = {225,240,255,270}, learnedat = 225, nskillup = 1, quality = 2, avgbuyout = 27900, cost = 21290, phaseId = 0, schemprice = 11699, schemid = 22307, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
-    {id = 11137, name = "Vision Dust", count = 4, avgbuyout = 931},
+    {id = 11137, name = "Vision Dust", count = 4, avgbuyout = 934},
   }},
-  {id = 215111, name = "Gneuro-Linked Arcano-Filament Monocle", spell_name = "Gneuro-Linked Arcano-Filament Monocle", spell_id = 435610, craft_count = 1, colors = {0,225,230,235}, learnedat = 225, nskillup = 1, quality = 4, avgbuyout = 0, cost = 184353, phaseId = 2, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 10, avgbuyout = 3399},
-    {id = 11137, name = "Vision Dust", count = 10, avgbuyout = 931},
+  {id = 215111, name = "Gneuro-Linked Arcano-Filament Monocle", spell_name = "Gneuro-Linked Arcano-Filament Monocle", spell_id = 435610, craft_count = 1, colors = {0,225,230,235}, learnedat = 225, nskillup = 1, quality = 4, avgbuyout = 0, cost = 183383, phaseId = 2, schemprice = 10000, schemid = 215149, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 10, avgbuyout = 3391},
+    {id = 11137, name = "Vision Dust", count = 10, avgbuyout = 934},
     {id = 213369, name = "Faintly Glowing Leather", count = 1, avgbuyout = 32078},
     {id = 213372, name = "Insulating Gniodine", count = 1, avgbuyout = 19890},
     {id = 213379, name = "Hyperconductive Arcano-Filament", count = 5, avgbuyout = 55042},
   }},
-  {id = 10024, name = "Black Mageweave Headband", spell_name = "Black Mageweave Headband", spell_id = 12072, craft_count = 1, colors = {230,245,260,275}, learnedat = 230, nskillup = 1, quality = 2, avgbuyout = 11700, cost = 14459, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3399},
+  {id = 10024, name = "Black Mageweave Headband", spell_name = "Black Mageweave Headband", spell_id = 12072, craft_count = 1, colors = {230,245,260,275}, learnedat = 230, nskillup = 1, quality = 2, avgbuyout = 11700, cost = 14309, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
   }},
-  {id = 10026, name = "Black Mageweave Boots", spell_name = "Black Mageweave Boots", spell_id = 12073, craft_count = 1, colors = {230,245,260,275}, learnedat = 230, nskillup = 1, quality = 2, avgbuyout = 33918, cost = 15997, phaseId = 0, schem = 0, recipe = {
-    {id = 4304, name = "Thick Leather", count = 2, avgbuyout = 769},
-    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3399},
+  {id = 10026, name = "Black Mageweave Boots", spell_name = "Black Mageweave Boots", spell_id = 12073, craft_count = 1, colors = {230,245,260,275}, learnedat = 230, nskillup = 1, quality = 2, avgbuyout = 33264, cost = 15965, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4304, name = "Thick Leather", count = 2, avgbuyout = 828},
+    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
   }},
-  {id = 10027, name = "Black Mageweave Shoulders", spell_name = "Black Mageweave Shoulders", spell_id = 12074, craft_count = 1, colors = {230,245,260,275}, learnedat = 230, nskillup = 1, quality = 2, avgbuyout = 10674, cost = 14459, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3399},
+  {id = 10027, name = "Black Mageweave Shoulders", spell_name = "Black Mageweave Shoulders", spell_id = 12074, craft_count = 1, colors = {230,245,260,275}, learnedat = 230, nskillup = 1, quality = 2, avgbuyout = 10800, cost = 14309, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
   }},
-  {id = 10054, name = "Lavender Mageweave Shirt", spell_name = "Lavender Mageweave Shirt", spell_id = 12075, craft_count = 1, colors = {230,235,240,245}, learnedat = 230, nskillup = 1, quality = 1, avgbuyout = 36950, cost = 24990, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 2, avgbuyout = 3399},
+  {id = 10054, name = "Lavender Mageweave Shirt", spell_name = "Lavender Mageweave Shirt", spell_id = 12075, craft_count = 1, colors = {230,235,240,245}, learnedat = 230, nskillup = 1, quality = 1, avgbuyout = 36950, cost = 24890, phaseId = 0, schemprice = 19009, schemid = 10314, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 2, avgbuyout = 3391},
     {id = 4342, name = "Purple Dye", count = 2, avgbuyout = 6913},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
   }},
-  {id = 10028, name = "Shadoweave Shoulders", spell_name = "Shadoweave Shoulders", spell_id = 12076, craft_count = 1, colors = {235,250,265,280}, learnedat = 235, nskillup = 1, quality = 2, avgbuyout = 50996, cost = 25253, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 5, avgbuyout = 3399},
+  {id = 10028, name = "Shadoweave Shoulders", spell_name = "Shadoweave Shoulders", spell_id = 12076, craft_count = 1, colors = {235,250,265,280}, learnedat = 235, nskillup = 1, quality = 2, avgbuyout = 50000, cost = 24995, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 5, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
-    {id = 10285, name = "Shadow Silk", count = 4, avgbuyout = 1051},
+    {id = 10285, name = "Shadow Silk", count = 4, avgbuyout = 1049},
   }},
-  {id = 10029, name = "Red Mageweave Shoulders", spell_name = "Red Mageweave Shoulders", spell_id = 12078, craft_count = 1, colors = {235,250,265,280}, learnedat = 235, nskillup = 1, quality = 2, avgbuyout = 14999, cost = 21059, phaseId = 0, schem = 0, recipe = {
-    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 509},
-    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3399},
+  {id = 10029, name = "Red Mageweave Shoulders", spell_name = "Red Mageweave Shoulders", spell_id = 12078, craft_count = 1, colors = {235,250,265,280}, learnedat = 235, nskillup = 1, quality = 2, avgbuyout = 14999, cost = 23805, phaseId = 0, schemprice = 7558, schemid = 10315, recipe = {
+    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 1982},
+    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 3, avgbuyout = 2287},
   }},
-  {id = 10051, name = "Red Mageweave Bag", spell_name = "Red Mageweave Bag", spell_id = 12079, craft_count = 1, colors = {235,250,265,280}, learnedat = 235, nskillup = 1, quality = 1, avgbuyout = 10494, cost = 18772, phaseId = 0, schem = 0, recipe = {
-    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 509},
-    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3399},
+  {id = 10051, name = "Red Mageweave Bag", spell_name = "Red Mageweave Bag", spell_id = 12079, craft_count = 1, colors = {235,250,265,280}, learnedat = 235, nskillup = 1, quality = 1, avgbuyout = 10517, cost = 21518, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 1982},
+    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
   }},
-  {id = 10053, name = "Simple Black Dress", spell_name = "Simple Black Dress", spell_id = 12077, craft_count = 1, colors = {235,240,245,250}, learnedat = 235, nskillup = 1, quality = 1, avgbuyout = 49790, cost = 15370, phaseId = 0, schem = 0, recipe = {
+  {id = 10053, name = "Simple Black Dress", spell_name = "Simple Black Dress", spell_id = 12077, craft_count = 1, colors = {235,240,245,250}, learnedat = 235, nskillup = 1, quality = 1, avgbuyout = 53986, cost = 15220, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
     {id = 2324, name = "Bleach", count = 1, avgbuyout = 199},
     {id = 2325, name = "Black Dye", count = 1, avgbuyout = 2999},
-    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3399},
+    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 1, avgbuyout = 2287},
   }},
-  {id = 10055, name = "Pink Mageweave Shirt", spell_name = "Pink Mageweave Shirt", spell_id = 12080, craft_count = 1, colors = {235,240,245,250}, learnedat = 235, nskillup = 1, quality = 1, avgbuyout = 36694, cost = 14838, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3399},
+  {id = 10055, name = "Pink Mageweave Shirt", spell_name = "Pink Mageweave Shirt", spell_id = 12080, craft_count = 1, colors = {235,240,245,250}, learnedat = 235, nskillup = 1, quality = 1, avgbuyout = 36694, cost = 14688, phaseId = 0, schemprice = 19499, schemid = 10317, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 1, avgbuyout = 2287},
     {id = 10290, name = "Pink Dye", count = 1, avgbuyout = 2666},
   }},
-  {id = 10030, name = "Admiral's Hat", spell_name = "Admiral's Hat", spell_id = 12081, craft_count = 1, colors = {240,255,270,285}, learnedat = 240, nskillup = 1, quality = 2, avgbuyout = 75464, cost = 35681, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3399},
-    {id = 4589, name = "Long Elegant Feather", count = 6, avgbuyout = 3537},
+  {id = 10030, name = "Admiral's Hat", spell_name = "Admiral's Hat", spell_id = 12081, craft_count = 1, colors = {240,255,270,285}, learnedat = 240, nskillup = 1, quality = 2, avgbuyout = 75464, cost = 37109, phaseId = 0, schemprice = 17438, schemid = 10318, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 3, avgbuyout = 3391},
+    {id = 4589, name = "Long Elegant Feather", count = 6, avgbuyout = 3800},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
   }},
-  {id = 10031, name = "Shadoweave Boots", spell_name = "Shadoweave Boots", spell_id = 12082, craft_count = 1, colors = {240,255,270,285}, learnedat = 240, nskillup = 1, quality = 2, avgbuyout = 61499, cost = 34475, phaseId = 0, schem = 0, recipe = {
-    {id = 4304, name = "Thick Leather", count = 2, avgbuyout = 769},
-    {id = 4339, name = "Bolt of Mageweave", count = 6, avgbuyout = 3399},
+  {id = 10031, name = "Shadoweave Boots", spell_name = "Shadoweave Boots", spell_id = 12082, craft_count = 1, colors = {240,255,270,285}, learnedat = 240, nskillup = 1, quality = 2, avgbuyout = 59999, cost = 34281, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4304, name = "Thick Leather", count = 2, avgbuyout = 828},
+    {id = 4339, name = "Bolt of Mageweave", count = 6, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 3, avgbuyout = 2287},
-    {id = 10285, name = "Shadow Silk", count = 6, avgbuyout = 1051},
+    {id = 10285, name = "Shadow Silk", count = 6, avgbuyout = 1049},
   }},
-  {id = 10033, name = "Red Mageweave Headband", spell_name = "Red Mageweave Headband", spell_id = 12084, craft_count = 1, colors = {240,255,270,285}, learnedat = 240, nskillup = 1, quality = 2, avgbuyout = 13700, cost = 18772, phaseId = 0, schem = 0, recipe = {
-    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 509},
-    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3399},
+  {id = 10033, name = "Red Mageweave Headband", spell_name = "Red Mageweave Headband", spell_id = 12084, craft_count = 1, colors = {240,255,270,285}, learnedat = 240, nskillup = 1, quality = 2, avgbuyout = 13700, cost = 21518, phaseId = 0, schemprice = 7688, schemid = 10320, recipe = {
+    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 1982},
+    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
   }},
-  {id = 10034, name = "Tuxedo Shirt", spell_name = "Tuxedo Shirt", spell_id = 12085, craft_count = 1, colors = {240,245,250,255}, learnedat = 240, nskillup = 1, quality = 1, avgbuyout = 40196, cost = 17754, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3399},
+  {id = 10034, name = "Tuxedo Shirt", spell_name = "Tuxedo Shirt", spell_id = 12085, craft_count = 1, colors = {240,245,250,255}, learnedat = 240, nskillup = 1, quality = 1, avgbuyout = 40987, cost = 17554, phaseId = 0, schemprice = 29250, schemid = 10321, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
   }},
-  {id = 10025, name = "Shadoweave Mask", spell_name = "Shadoweave Mask", spell_id = 12086, craft_count = 1, colors = {245,260,275,290}, learnedat = 245, nskillup = 1, quality = 2, avgbuyout = 44900, cost = 19572, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 2, avgbuyout = 3399},
+  {id = 10025, name = "Shadoweave Mask", spell_name = "Shadoweave Mask", spell_id = 12086, craft_count = 1, colors = {245,260,275,290}, learnedat = 245, nskillup = 1, quality = 2, avgbuyout = 44400, cost = 19456, phaseId = 0, schemprice = 139988, schemid = 10463, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 2, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 2, avgbuyout = 2287},
-    {id = 10285, name = "Shadow Silk", count = 8, avgbuyout = 1051},
+    {id = 10285, name = "Shadow Silk", count = 8, avgbuyout = 1049},
   }},
-  {id = 10035, name = "Tuxedo Pants", spell_name = "Tuxedo Pants", spell_id = 12089, craft_count = 1, colors = {245,250,255,260}, learnedat = 245, nskillup = 1, quality = 1, avgbuyout = 30000, cost = 20041, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3399},
+  {id = 10035, name = "Tuxedo Pants", spell_name = "Tuxedo Pants", spell_id = 12089, craft_count = 1, colors = {245,250,255,260}, learnedat = 245, nskillup = 1, quality = 1, avgbuyout = 34749, cost = 19841, phaseId = 0, schemprice = 21200, schemid = 10323, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 3, avgbuyout = 2287},
   }},
-  {id = 10044, name = "Cindercloth Boots", spell_name = "Cindercloth Boots", spell_id = 12088, craft_count = 1, colors = {245,260,275,290}, learnedat = 245, nskillup = 1, quality = 2, avgbuyout = 16704, cost = 27879, phaseId = 0, schem = 0, recipe = {
-    {id = 4304, name = "Thick Leather", count = 2, avgbuyout = 769},
-    {id = 4339, name = "Bolt of Mageweave", count = 5, avgbuyout = 3399},
-    {id = 7077, name = "Heart of Fire", count = 1, avgbuyout = 3005},
+  {id = 10044, name = "Cindercloth Boots", spell_name = "Cindercloth Boots", spell_id = 12088, craft_count = 1, colors = {245,260,275,290}, learnedat = 245, nskillup = 1, quality = 2, avgbuyout = 16704, cost = 27775, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4304, name = "Thick Leather", count = 2, avgbuyout = 828},
+    {id = 4339, name = "Bolt of Mageweave", count = 5, avgbuyout = 3391},
+    {id = 7077, name = "Heart of Fire", count = 1, avgbuyout = 3033},
     {id = 8343, name = "Heavy Silken Thread", count = 3, avgbuyout = 2287},
   }},
-  {id = 10036, name = "Tuxedo Jacket", spell_name = "Tuxedo Jacket", spell_id = 12093, craft_count = 1, colors = {250,265,280,295}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 19998, cost = 23336, phaseId = 0, schem = 0, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 5, avgbuyout = 3399},
+  {id = 10036, name = "Tuxedo Jacket", spell_name = "Tuxedo Jacket", spell_id = 12093, craft_count = 1, colors = {250,265,280,295}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 19998, cost = 23086, phaseId = 0, schemprice = 19699, schemid = 10326, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 5, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 3, avgbuyout = 2287},
   }},
-  {id = 10040, name = "White Wedding Dress", spell_name = "White Wedding Dress", spell_id = 12091, craft_count = 1, colors = {250,255,260,265}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 73985, cost = 23535, phaseId = 0, schem = 0, recipe = {
+  {id = 10040, name = "White Wedding Dress", spell_name = "White Wedding Dress", spell_id = 12091, craft_count = 1, colors = {250,255,260,265}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 73985, cost = 23285, phaseId = 0, schemprice = 22369, schemid = 10325, recipe = {
     {id = 2324, name = "Bleach", count = 1, avgbuyout = 199},
-    {id = 4339, name = "Bolt of Mageweave", count = 5, avgbuyout = 3399},
+    {id = 4339, name = "Bolt of Mageweave", count = 5, avgbuyout = 3391},
     {id = 8343, name = "Heavy Silken Thread", count = 3, avgbuyout = 2287},
   }},
-  {id = 10041, name = "Dreamweave Circlet", spell_name = "Dreamweave Circlet", spell_id = 12092, craft_count = 1, colors = {250,265,280,295}, learnedat = 250, nskillup = 1, quality = 3, avgbuyout = 84900, cost = 61216, phaseId = 0, schem = 0, recipe = {
-    {id = 1529, name = "Jade", count = 1, avgbuyout = 1834},
-    {id = 4339, name = "Bolt of Mageweave", count = 8, avgbuyout = 3399},
-    {id = 6037, name = "Truesilver Bar", count = 1, avgbuyout = 2583},
-    {id = 8153, name = "Wildvine", count = 4, avgbuyout = 5484},
+  {id = 10041, name = "Dreamweave Circlet", spell_name = "Dreamweave Circlet", spell_id = 12092, craft_count = 1, colors = {250,265,280,295}, learnedat = 250, nskillup = 1, quality = 3, avgbuyout = 84900, cost = 61752, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 1529, name = "Jade", count = 1, avgbuyout = 1783},
+    {id = 4339, name = "Bolt of Mageweave", count = 8, avgbuyout = 3391},
+    {id = 6037, name = "Truesilver Bar", count = 1, avgbuyout = 3164},
+    {id = 8153, name = "Wildvine", count = 4, avgbuyout = 5596},
     {id = 8343, name = "Heavy Silken Thread", count = 3, avgbuyout = 2287},
-    {id = 10286, name = "Heart of the Wild", count = 2, avgbuyout = 821},
+    {id = 10286, name = "Heart of the Wild", count = 2, avgbuyout = 800},
   }},
-  {id = 14048, name = "Bolt of Runecloth", spell_name = "Bolt of Runecloth", spell_id = 18401, craft_count = 1, colors = {250,255,257,260}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 5697, cost = 5170, phaseId = 0, schem = 0, recipe = {
-    {id = 14047, name = "Runecloth", count = 5, avgbuyout = 1034},
+  {id = 14048, name = "Bolt of Runecloth", spell_name = "Bolt of Runecloth", spell_id = 18401, craft_count = 1, colors = {250,255,257,260}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 5841, cost = 5735, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 14047, name = "Runecloth", count = 5, avgbuyout = 1147},
   }},
-  {id = 14342, name = "Mooncloth", spell_name = "Mooncloth", spell_id = 18560, craft_count = 1, colors = {250,290,305,320}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 196900, cost = 51822, phaseId = 0, schem = 0, recipe = {
-    {id = 14256, name = "Felcloth", count = 2, avgbuyout = 25911},
+  {id = 14342, name = "Mooncloth", spell_name = "Mooncloth", spell_id = 18560, craft_count = 1, colors = {250,290,305,320}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 199632, cost = 56500, phaseId = 0, schemprice = 38025, schemid = 14526, recipe = {
+    {id = 14256, name = "Felcloth", count = 2, avgbuyout = 28250},
   }},
-  {id = 21154, name = "Festival Dress", spell_name = "Festive Red Dress", spell_id = 26403, craft_count = 1, colors = {250,265,280,295}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 397376, cost = 39554, phaseId = 0, schem = 0, recipe = {
-    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 509},
-    {id = 4625, name = "Firebloom", count = 2, avgbuyout = 4178},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 21154, name = "Festival Dress", spell_name = "Festive Red Dress", spell_id = 26403, craft_count = 1, colors = {250,265,280,295}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 397376, cost = 44891, phaseId = 0, schemprice = 259996, schemid = 21722, recipe = {
+    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 1982},
+    {id = 4625, name = "Firebloom", count = 2, avgbuyout = 4413},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 21542, name = "Festival Suit", spell_name = "Festive Red Pant Suit", spell_id = 26407, craft_count = 1, colors = {250,265,280,295}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 29900, cost = 39554, phaseId = 0, schem = 0, recipe = {
-    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 509},
-    {id = 4625, name = "Firebloom", count = 2, avgbuyout = 4178},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 21542, name = "Festival Suit", spell_name = "Festive Red Pant Suit", spell_id = 26407, craft_count = 1, colors = {250,265,280,295}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 29900, cost = 44891, phaseId = 0, schemprice = 240000, schemid = 21723, recipe = {
+    {id = 2604, name = "Red Dye", count = 2, avgbuyout = 1982},
+    {id = 4625, name = "Firebloom", count = 2, avgbuyout = 4413},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 220749, name = "Mantle of Insanity", spell_name = "Mantle of Insanity", spell_id = 446194, craft_count = 1, colors = {0,250,255,260}, learnedat = 250, nskillup = 1, quality = 4, avgbuyout = 0, cost = 907538, phaseId = 3, schem = 0, recipe = {
-    {id = 12803, name = "Living Essence", count = 4, avgbuyout = 22062},
-    {id = 14048, name = "Bolt of Runecloth", count = 10, avgbuyout = 5697},
+  {id = 220749, name = "Mantle of Insanity", spell_name = "Mantle of Insanity", spell_id = 446194, craft_count = 1, colors = {0,250,255,260}, learnedat = 250, nskillup = 1, quality = 4, avgbuyout = 0, cost = 889150, phaseId = 3, schemprice = 0, schemid = 0, recipe = {
+    {id = 12803, name = "Living Essence", count = 4, avgbuyout = 21700},
+    {id = 14048, name = "Bolt of Runecloth", count = 10, avgbuyout = 5841},
     {id = 220688, name = "Inert Mantle of Nightmares", count = 1, avgbuyout = 0},
-    {id = 221021, name = "Nightmare Seed", count = 10, avgbuyout = 76759},
+    {id = 221021, name = "Nightmare Seed", count = 10, avgbuyout = 74500},
   }},
-  {id = 220750, name = "Fractured Mind Pauldrons", spell_name = "Fractured Mind Pauldrons", spell_id = 446193, craft_count = 1, colors = {0,250,255,260}, learnedat = 250, nskillup = 1, quality = 4, avgbuyout = 0, cost = 1016238, phaseId = 3, schem = 0, recipe = {
-    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5697},
-    {id = 14256, name = "Felcloth", count = 8, avgbuyout = 25911},
+  {id = 220750, name = "Fractured Mind Pauldrons", spell_name = "Fractured Mind Pauldrons", spell_id = 446193, craft_count = 1, colors = {0,250,255,260}, learnedat = 250, nskillup = 1, quality = 4, avgbuyout = 0, cost = 1016880, phaseId = 3, schemprice = 0, schemid = 0, recipe = {
+    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5841},
+    {id = 14256, name = "Felcloth", count = 8, avgbuyout = 28250},
     {id = 220688, name = "Inert Mantle of Nightmares", count = 1, avgbuyout = 0},
-    {id = 221021, name = "Nightmare Seed", count = 10, avgbuyout = 76759},
+    {id = 221021, name = "Nightmare Seed", count = 10, avgbuyout = 74500},
   }},
-  {id = 220751, name = "Shoulderpads of the Deranged", spell_name = "Shoulderpads of the Deranged", spell_id = 446195, craft_count = 1, colors = {0,250,255,260}, learnedat = 250, nskillup = 1, quality = 4, avgbuyout = 0, cost = 1064361, phaseId = 3, schem = 0, recipe = {
-    {id = 7080, name = "Essence of Water", count = 1, avgbuyout = 125795},
-    {id = 14048, name = "Bolt of Runecloth", count = 3, avgbuyout = 5697},
-    {id = 14256, name = "Felcloth", count = 6, avgbuyout = 25911},
+  {id = 220751, name = "Shoulderpads of the Deranged", spell_name = "Shoulderpads of the Deranged", spell_id = 446195, craft_count = 1, colors = {0,250,255,260}, learnedat = 250, nskillup = 1, quality = 4, avgbuyout = 0, cost = 1057929, phaseId = 3, schemprice = 0, schemid = 0, recipe = {
+    {id = 7080, name = "Essence of Water", count = 1, avgbuyout = 126224},
+    {id = 14048, name = "Bolt of Runecloth", count = 3, avgbuyout = 5841},
+    {id = 14256, name = "Felcloth", count = 6, avgbuyout = 28250},
     {id = 220688, name = "Inert Mantle of Nightmares", count = 1, avgbuyout = 0},
-    {id = 221021, name = "Nightmare Seed", count = 10, avgbuyout = 76759},
+    {id = 221021, name = "Nightmare Seed", count = 10, avgbuyout = 74500},
   }},
-  {id = 13856, name = "Runecloth Belt", spell_name = "Runecloth Belt", spell_id = 18402, craft_count = 1, colors = {255,270,285,300}, learnedat = 255, nskillup = 1, quality = 2, avgbuyout = 13000, cost = 25010, phaseId = 0, schem = 0, recipe = {
-    {id = 14048, name = "Bolt of Runecloth", count = 3, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 13856, name = "Runecloth Belt", spell_name = "Runecloth Belt", spell_id = 18402, craft_count = 1, colors = {255,270,285,300}, learnedat = 255, nskillup = 1, quality = 2, avgbuyout = 13000, cost = 26366, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 14048, name = "Bolt of Runecloth", count = 3, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 13868, name = "Frostweave Robe", spell_name = "Frostweave Robe", spell_id = 18404, craft_count = 1, colors = {255,270,285,300}, learnedat = 255, nskillup = 1, quality = 2, avgbuyout = 41229, cost = 37882, phaseId = 0, schem = 0, recipe = {
-    {id = 7079, name = "Globe of Water", count = 2, avgbuyout = 1266},
-    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 13868, name = "Frostweave Robe", spell_name = "Frostweave Robe", spell_id = 18404, craft_count = 1, colors = {255,270,285,300}, learnedat = 255, nskillup = 1, quality = 2, avgbuyout = 50000, cost = 40456, phaseId = 0, schemprice = 12799, schemid = 14467, recipe = {
+    {id = 7079, name = "Globe of Water", count = 2, avgbuyout = 1310},
+    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 13869, name = "Frostweave Tunic", spell_name = "Frostweave Tunic", spell_id = 18403, craft_count = 1, colors = {255,270,285,300}, learnedat = 255, nskillup = 1, quality = 2, avgbuyout = 44900, cost = 37882, phaseId = 0, schem = 0, recipe = {
-    {id = 7079, name = "Globe of Water", count = 2, avgbuyout = 1266},
-    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 13869, name = "Frostweave Tunic", spell_name = "Frostweave Tunic", spell_id = 18403, craft_count = 1, colors = {255,270,285,300}, learnedat = 255, nskillup = 1, quality = 2, avgbuyout = 44900, cost = 40456, phaseId = 0, schemprice = 14430, schemid = 14466, recipe = {
+    {id = 7079, name = "Globe of Water", count = 2, avgbuyout = 1310},
+    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 13857, name = "Runecloth Tunic", spell_name = "Runecloth Tunic", spell_id = 18407, craft_count = 1, colors = {260,275,290,305}, learnedat = 260, nskillup = 1, quality = 2, avgbuyout = 20000, cost = 42671, phaseId = 0, schem = 0, recipe = {
-    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 1, avgbuyout = 7321},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 13857, name = "Runecloth Tunic", spell_name = "Runecloth Tunic", spell_id = 18407, craft_count = 1, colors = {260,275,290,305}, learnedat = 260, nskillup = 1, quality = 2, avgbuyout = 20000, cost = 45383, phaseId = 0, schemprice = 15199, schemid = 14470, recipe = {
+    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 1, avgbuyout = 7547},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 13858, name = "Runecloth Robe", spell_name = "Runecloth Robe", spell_id = 18406, craft_count = 1, colors = {260,275,290,305}, learnedat = 260, nskillup = 1, quality = 2, avgbuyout = 100000, cost = 42671, phaseId = 0, schem = 0, recipe = {
-    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 1, avgbuyout = 7321},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 13858, name = "Runecloth Robe", spell_name = "Runecloth Robe", spell_id = 18406, craft_count = 1, colors = {260,275,290,305}, learnedat = 260, nskillup = 1, quality = 2, avgbuyout = 89605, cost = 45383, phaseId = 0, schemprice = 68898, schemid = 14469, recipe = {
+    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 1, avgbuyout = 7547},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 14042, name = "Cindercloth Vest", spell_name = "Cindercloth Vest", spell_id = 18408, craft_count = 1, colors = {260,275,290,305}, learnedat = 260, nskillup = 1, quality = 2, avgbuyout = 156462, cost = 44365, phaseId = 0, schem = 0, recipe = {
-    {id = 7077, name = "Heart of Fire", count = 3, avgbuyout = 3005},
-    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 14042, name = "Cindercloth Vest", spell_name = "Cindercloth Vest", spell_id = 18408, craft_count = 1, colors = {260,275,290,305}, learnedat = 260, nskillup = 1, quality = 2, avgbuyout = 156462, cost = 46935, phaseId = 0, schemprice = 33600, schemid = 14471, recipe = {
+    {id = 7077, name = "Heart of Fire", count = 3, avgbuyout = 3033},
+    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 14046, name = "Runecloth Bag", spell_name = "Runecloth Bag", spell_id = 18405, craft_count = 1, colors = {260,275,290,305}, learnedat = 260, nskillup = 1, quality = 1, avgbuyout = 28626, cost = 38564, phaseId = 0, schem = 0, recipe = {
-    {id = 8170, name = "Rugged Leather", count = 2, avgbuyout = 1607},
-    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 14046, name = "Runecloth Bag", spell_name = "Runecloth Bag", spell_id = 18405, craft_count = 1, colors = {260,275,290,305}, learnedat = 260, nskillup = 1, quality = 1, avgbuyout = 28649, cost = 41404, phaseId = 0, schemprice = 163400, schemid = 14468, recipe = {
+    {id = 8170, name = "Rugged Leather", count = 2, avgbuyout = 1784},
+    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 21340, name = "Soul Pouch", spell_name = "Soul Pouch", spell_id = 26085, craft_count = 1, colors = {260,275,290,305}, learnedat = 260, nskillup = 1, quality = 2, avgbuyout = 74983, cost = 48084, phaseId = 0, schem = 0, recipe = {
-    {id = 7972, name = "Ichor of Undeath", count = 2, avgbuyout = 568},
-    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1607},
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 21340, name = "Soul Pouch", spell_name = "Soul Pouch", spell_id = 26085, craft_count = 1, colors = {260,275,290,305}, learnedat = 260, nskillup = 1, quality = 2, avgbuyout = 75109, cost = 51833, phaseId = 0, schemprice = 41311, schemid = 21358, recipe = {
+    {id = 7972, name = "Ichor of Undeath", count = 2, avgbuyout = 563},
+    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1784},
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 13860, name = "Runecloth Cloak", spell_name = "Runecloth Cloak", spell_id = 18409, craft_count = 1, colors = {265,280,295,310}, learnedat = 265, nskillup = 1, quality = 2, avgbuyout = 28700, cost = 37501, phaseId = 0, schem = 0, recipe = {
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 1, avgbuyout = 7321},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 238267, name = "Scarlet Augur's Cuffs", spell_name = "Scarlet Augur's Cuffs", spell_id = 1224610, craft_count = 1, colors = {0,260,282,305}, learnedat = 260, nskillup = 1, quality = 3, avgbuyout = 296533, cost = 45880, phaseId = 8, schemprice = 459993, schemid = 238301, recipe = {
+    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5841},
   }},
-  {id = 13870, name = "Frostweave Gloves", spell_name = "Frostweave Gloves", spell_id = 18411, craft_count = 1, colors = {265,280,295,310}, learnedat = 265, nskillup = 1, quality = 2, avgbuyout = 176738, cost = 150805, phaseId = 0, schem = 0, recipe = {
-    {id = 7080, name = "Essence of Water", count = 1, avgbuyout = 125795},
-    {id = 14048, name = "Bolt of Runecloth", count = 3, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 238269, name = "Scarlet Augur's Strap", spell_name = "Scarlet Augur's Strap", spell_id = 1224612, craft_count = 1, colors = {0,260,282,305}, learnedat = 260, nskillup = 1, quality = 3, avgbuyout = 1400000, cost = 437069, phaseId = 8, schemprice = 599892, schemid = 238303, recipe = {
+    {id = 12811, name = "Righteous Orb", count = 1, avgbuyout = 379719},
+    {id = 14048, name = "Bolt of Runecloth", count = 10, avgbuyout = 5841},
   }},
-  {id = 14143, name = "Ghostweave Belt", spell_name = "Ghostweave Belt", spell_id = 18410, craft_count = 1, colors = {265,280,295,310}, learnedat = 265, nskillup = 1, quality = 2, avgbuyout = 121555, cost = 90331, phaseId = 0, schem = 0, recipe = {
-    {id = 9210, name = "Ghost Dye", count = 2, avgbuyout = 29000},
-    {id = 14048, name = "Bolt of Runecloth", count = 3, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 1, avgbuyout = 7321},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 239147, name = "Crusader's Knapsack", spell_name = "Crusader's Knapsack", spell_id = 1227723, craft_count = 1, colors = {0,260,262,265}, learnedat = 260, nskillup = 1, quality = 3, avgbuyout = 1150249, cost = 498506, phaseId = 8, schemprice = 10000, schemid = 239149, recipe = {
+    {id = 2604, name = "Red Dye", count = 8, avgbuyout = 1982},
+    {id = 12811, name = "Righteous Orb", count = 1, avgbuyout = 379719},
+    {id = 14048, name = "Bolt of Runecloth", count = 14, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 3, avgbuyout = 7547},
   }},
-  {id = 14043, name = "Cindercloth Gloves", spell_name = "Cindercloth Gloves", spell_id = 18412, craft_count = 1, colors = {270,285,300,315}, learnedat = 270, nskillup = 1, quality = 2, avgbuyout = 28850, cost = 39195, phaseId = 0, schem = 0, recipe = {
-    {id = 7077, name = "Heart of Fire", count = 3, avgbuyout = 3005},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 13860, name = "Runecloth Cloak", spell_name = "Runecloth Cloak", spell_id = 18409, craft_count = 1, colors = {265,280,295,310}, learnedat = 265, nskillup = 1, quality = 2, avgbuyout = 28700, cost = 39648, phaseId = 0, schemprice = 10000, schemid = 14472, recipe = {
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 1, avgbuyout = 7547},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 14100, name = "Brightcloth Robe", spell_name = "Brightcloth Robe", spell_id = 18414, craft_count = 1, colors = {270,285,300,315}, learnedat = 270, nskillup = 1, quality = 2, avgbuyout = 133300, cost = 38656, phaseId = 0, schem = 0, recipe = {
-    {id = 3577, name = "Gold Bar", count = 2, avgbuyout = 1653},
-    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 13870, name = "Frostweave Gloves", spell_name = "Frostweave Gloves", spell_id = 18411, craft_count = 1, colors = {265,280,295,310}, learnedat = 265, nskillup = 1, quality = 2, avgbuyout = 183293, cost = 152590, phaseId = 0, schemprice = 17137, schemid = 14474, recipe = {
+    {id = 7080, name = "Essence of Water", count = 1, avgbuyout = 126224},
+    {id = 14048, name = "Bolt of Runecloth", count = 3, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 14101, name = "Brightcloth Gloves", spell_name = "Brightcloth Gloves", spell_id = 18415, craft_count = 1, colors = {270,285,300,315}, learnedat = 270, nskillup = 1, quality = 2, avgbuyout = 88061, cost = 33486, phaseId = 0, schem = 0, recipe = {
-    {id = 3577, name = "Gold Bar", count = 2, avgbuyout = 1653},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 14143, name = "Ghostweave Belt", spell_name = "Ghostweave Belt", spell_id = 18410, craft_count = 1, colors = {265,280,295,310}, learnedat = 265, nskillup = 1, quality = 2, avgbuyout = 121555, cost = 91711, phaseId = 0, schemprice = 89999, schemid = 14473, recipe = {
+    {id = 9210, name = "Ghost Dye", count = 2, avgbuyout = 28899},
+    {id = 14048, name = "Bolt of Runecloth", count = 3, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 1, avgbuyout = 7547},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 14142, name = "Ghostweave Gloves", spell_name = "Ghostweave Gloves", spell_id = 18413, craft_count = 1, colors = {270,285,300,315}, learnedat = 270, nskillup = 1, quality = 2, avgbuyout = 47000, cost = 95501, phaseId = 0, schem = 0, recipe = {
-    {id = 9210, name = "Ghost Dye", count = 2, avgbuyout = 29000},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 1, avgbuyout = 7321},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 14043, name = "Cindercloth Gloves", spell_name = "Cindercloth Gloves", spell_id = 18412, craft_count = 1, colors = {270,285,300,315}, learnedat = 270, nskillup = 1, quality = 2, avgbuyout = 28850, cost = 41200, phaseId = 0, schemprice = 35498, schemid = 14476, recipe = {
+    {id = 7077, name = "Heart of Fire", count = 3, avgbuyout = 3033},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 13863, name = "Runecloth Gloves", spell_name = "Runecloth Gloves", spell_id = 18417, craft_count = 1, colors = {275,290,305,320}, learnedat = 275, nskillup = 1, quality = 2, avgbuyout = 12777, cost = 36608, phaseId = 0, schem = 0, recipe = {
-    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1607},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 14100, name = "Brightcloth Robe", spell_name = "Brightcloth Robe", spell_id = 18414, craft_count = 1, colors = {270,285,300,315}, learnedat = 270, nskillup = 1, quality = 2, avgbuyout = 133300, cost = 41110, phaseId = 0, schemprice = 13047, schemid = 14478, recipe = {
+    {id = 3577, name = "Gold Bar", count = 2, avgbuyout = 1637},
+    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 14044, name = "Cindercloth Cloak", spell_name = "Cindercloth Cloak", spell_id = 18418, craft_count = 1, colors = {275,290,305,320}, learnedat = 275, nskillup = 1, quality = 2, avgbuyout = 121212, cost = 67078, phaseId = 0, schem = 0, recipe = {
-    {id = 7078, name = "Essence of Fire", count = 1, avgbuyout = 31728},
-    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 14101, name = "Brightcloth Gloves", spell_name = "Brightcloth Gloves", spell_id = 18415, craft_count = 1, colors = {270,285,300,315}, learnedat = 270, nskillup = 1, quality = 2, avgbuyout = 76049, cost = 35375, phaseId = 0, schemprice = 13800, schemid = 14479, recipe = {
+    {id = 3577, name = "Gold Bar", count = 2, avgbuyout = 1637},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 14103, name = "Brightcloth Cloak", spell_name = "Brightcloth Cloak", spell_id = 18420, craft_count = 1, colors = {275,290,305,320}, learnedat = 275, nskillup = 1, quality = 2, avgbuyout = 27300, cost = 33486, phaseId = 0, schem = 0, recipe = {
-    {id = 3577, name = "Gold Bar", count = 2, avgbuyout = 1653},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 14142, name = "Ghostweave Gloves", spell_name = "Ghostweave Gloves", spell_id = 18413, craft_count = 1, colors = {270,285,300,315}, learnedat = 270, nskillup = 1, quality = 2, avgbuyout = 47000, cost = 97446, phaseId = 0, schemprice = 51000, schemid = 14477, recipe = {
+    {id = 9210, name = "Ghost Dye", count = 2, avgbuyout = 28899},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 1, avgbuyout = 7547},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 14107, name = "Felcloth Pants", spell_name = "Felcloth Pants", spell_id = 18419, craft_count = 1, colors = {275,290,305,320}, learnedat = 275, nskillup = 1, quality = 2, avgbuyout = 184378, cost = 138994, phaseId = 0, schem = 0, recipe = {
-    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5697},
-    {id = 14256, name = "Felcloth", count = 4, avgbuyout = 25911},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 238268, name = "Scarlet Augur's Mitts", spell_name = "Scarlet Augur's Mitts", spell_id = 1224611, craft_count = 1, colors = {0,270,287,305}, learnedat = 270, nskillup = 1, quality = 3, avgbuyout = 1249987, cost = 437069, phaseId = 8, schemprice = 434998, schemid = 238302, recipe = {
+    {id = 12811, name = "Righteous Orb", count = 1, avgbuyout = 379719},
+    {id = 14048, name = "Bolt of Runecloth", count = 10, avgbuyout = 5841},
   }},
-  {id = 14132, name = "Wizardweave Leggings", spell_name = "Wizardweave Leggings", spell_id = 18421, craft_count = 1, colors = {275,290,305,320}, learnedat = 275, nskillup = 1, quality = 2, avgbuyout = 37323, cost = 43346, phaseId = 0, schem = 0, recipe = {
-    {id = 11176, name = "Dream Dust", count = 1, avgbuyout = 2826},
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 238271, name = "Scarlet Augur's Soles", spell_name = "Scarlet Augur's Soles", spell_id = 1224614, craft_count = 1, colors = {0,270,287,305}, learnedat = 270, nskillup = 1, quality = 3, avgbuyout = 1299582, cost = 437069, phaseId = 8, schemprice = 459997, schemid = 238305, recipe = {
+    {id = 12811, name = "Righteous Orb", count = 1, avgbuyout = 379719},
+    {id = 14048, name = "Bolt of Runecloth", count = 10, avgbuyout = 5841},
   }},
-  {id = 14134, name = "Cloak of Fire", spell_name = "Cloak of Fire", spell_id = 18422, craft_count = 1, colors = {275,290,305,320}, learnedat = 275, nskillup = 1, quality = 3, avgbuyout = 150000, cost = 282648, phaseId = 0, schem = 0, recipe = {
-    {id = 7068, name = "Elemental Fire", count = 4, avgbuyout = 25799},
-    {id = 7077, name = "Heart of Fire", count = 4, avgbuyout = 3005},
-    {id = 7078, name = "Essence of Fire", count = 4, avgbuyout = 31728},
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 13863, name = "Runecloth Gloves", spell_name = "Runecloth Gloves", spell_id = 18417, craft_count = 1, colors = {275,290,305,320}, learnedat = 275, nskillup = 1, quality = 2, avgbuyout = 12900, cost = 39237, phaseId = 0, schemprice = 84999, schemid = 14481, recipe = {
+    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1784},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 14141, name = "Ghostweave Vest", spell_name = "Ghostweave Vest", spell_id = 18416, craft_count = 1, colors = {275,290,305,320}, learnedat = 275, nskillup = 1, quality = 2, avgbuyout = 0, cost = 163841, phaseId = 0, schem = 0, recipe = {
-    {id = 9210, name = "Ghost Dye", count = 4, avgbuyout = 29000},
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 1, avgbuyout = 7321},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 14044, name = "Cindercloth Cloak", spell_name = "Cindercloth Cloak", spell_id = 18418, craft_count = 1, colors = {275,290,305,320}, learnedat = 275, nskillup = 1, quality = 2, avgbuyout = 120235, cost = 67384, phaseId = 0, schemprice = 600000, schemid = 14482, recipe = {
+    {id = 7078, name = "Essence of Fire", count = 1, avgbuyout = 29548},
+    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 22248, name = "Enchanted Runecloth Bag", spell_name = "Enchanted Runecloth Bag", spell_id = 27659, craft_count = 1, colors = {275,290,305,320}, learnedat = 275, nskillup = 1, quality = 2, avgbuyout = 175000, cost = 165276, phaseId = 0, schem = 0, recipe = {
-    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9500},
-    {id = 16203, name = "Greater Eternal Essence", count = 2, avgbuyout = 60213},
+  {id = 14103, name = "Brightcloth Cloak", spell_name = "Brightcloth Cloak", spell_id = 18420, craft_count = 1, colors = {275,290,305,320}, learnedat = 275, nskillup = 1, quality = 2, avgbuyout = 27300, cost = 35375, phaseId = 0, schemprice = 19400, schemid = 14484, recipe = {
+    {id = 3577, name = "Gold Bar", count = 2, avgbuyout = 1637},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 22251, name = "Cenarion Herb Bag", spell_name = "Cenarion Herb Bag", spell_id = 27724, craft_count = 1, colors = {275,290,305,320}, learnedat = 275, nskillup = 1, quality = 2, avgbuyout = 257238, cost = 89250, phaseId = 0, schem = 0, recipe = {
-    {id = 8831, name = "Purple Lotus", count = 10, avgbuyout = 1144},
-    {id = 11040, name = "Morrowgrain", count = 8, avgbuyout = 4120},
-    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9500},
+  {id = 14107, name = "Felcloth Pants", spell_name = "Felcloth Pants", spell_id = 18419, craft_count = 1, colors = {275,290,305,320}, learnedat = 275, nskillup = 1, quality = 2, avgbuyout = 189000, cost = 150836, phaseId = 0, schemprice = 59118, schemid = 14483, recipe = {
+    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5841},
+    {id = 14256, name = "Felcloth", count = 4, avgbuyout = 28250},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 13864, name = "Runecloth Boots", spell_name = "Runecloth Boots", spell_id = 18423, craft_count = 1, colors = {280,295,310,325}, learnedat = 280, nskillup = 1, quality = 2, avgbuyout = 29900, cost = 51250, phaseId = 0, schem = 0, recipe = {
-    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1607},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7321},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 14132, name = "Wizardweave Leggings", spell_name = "Wizardweave Leggings", spell_id = 18421, craft_count = 1, colors = {275,290,305,320}, learnedat = 275, nskillup = 1, quality = 2, avgbuyout = 37323, cost = 46472, phaseId = 0, schemprice = 149997, schemid = 14485, recipe = {
+    {id = 11176, name = "Dream Dust", count = 1, avgbuyout = 2901},
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 13871, name = "Frostweave Pants", spell_name = "Frostweave Pants", spell_id = 18424, craft_count = 1, colors = {280,295,310,325}, learnedat = 280, nskillup = 1, quality = 2, avgbuyout = 185000, cost = 166315, phaseId = 0, schem = 0, recipe = {
-    {id = 7080, name = "Essence of Water", count = 1, avgbuyout = 125795},
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 14134, name = "Cloak of Fire", spell_name = "Cloak of Fire", spell_id = 18422, craft_count = 1, colors = {275,290,305,320}, learnedat = 275, nskillup = 1, quality = 3, avgbuyout = 250000, cost = 273319, phaseId = 0, schemprice = 10000, schemid = 14486, recipe = {
+    {id = 7068, name = "Elemental Fire", count = 4, avgbuyout = 24856},
+    {id = 7077, name = "Heart of Fire", count = 4, avgbuyout = 3033},
+    {id = 7078, name = "Essence of Fire", count = 4, avgbuyout = 29548},
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 14045, name = "Cindercloth Pants", spell_name = "Cindercloth Pants", spell_id = 18434, craft_count = 1, colors = {280,295,310,325}, learnedat = 280, nskillup = 1, quality = 2, avgbuyout = 90000, cost = 72248, phaseId = 0, schem = 0, recipe = {
-    {id = 7078, name = "Essence of Fire", count = 1, avgbuyout = 31728},
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 14141, name = "Ghostweave Vest", spell_name = "Ghostweave Vest", spell_id = 18416, craft_count = 1, colors = {275,290,305,320}, learnedat = 275, nskillup = 1, quality = 2, avgbuyout = 0, cost = 166714, phaseId = 0, schemprice = 84480, schemid = 14480, recipe = {
+    {id = 9210, name = "Ghost Dye", count = 4, avgbuyout = 28899},
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 1, avgbuyout = 7547},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 13865, name = "Runecloth Pants", spell_name = "Runecloth Pants", spell_id = 18438, craft_count = 1, colors = {285,300,315,330}, learnedat = 285, nskillup = 1, quality = 2, avgbuyout = 29908, cost = 55162, phaseId = 0, schem = 0, recipe = {
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7321},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 22248, name = "Enchanted Runecloth Bag", spell_name = "Enchanted Runecloth Bag", spell_id = 27659, craft_count = 1, colors = {275,290,305,320}, learnedat = 275, nskillup = 1, quality = 2, avgbuyout = 166236, cost = 169951, phaseId = 0, schemprice = 100000, schemid = 22308, recipe = {
+    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9161},
+    {id = 16203, name = "Greater Eternal Essence", count = 2, avgbuyout = 61477},
   }},
-  {id = 14108, name = "Felcloth Boots", spell_name = "Felcloth Boots", spell_id = 18437, craft_count = 1, colors = {285,300,315,330}, learnedat = 285, nskillup = 1, quality = 2, avgbuyout = 140003, cost = 150592, phaseId = 0, schem = 0, recipe = {
-    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1607},
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14256, name = "Felcloth", count = 4, avgbuyout = 25911},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 22251, name = "Cenarion Herb Bag", spell_name = "Cenarion Herb Bag", spell_id = 27724, craft_count = 1, colors = {275,290,305,320}, learnedat = 275, nskillup = 1, quality = 2, avgbuyout = 246000, cost = 91815, phaseId = 0, schemprice = 10000, schemid = 22310, recipe = {
+    {id = 8831, name = "Purple Lotus", count = 10, avgbuyout = 1169},
+    {id = 11040, name = "Morrowgrain", count = 8, avgbuyout = 4141},
+    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9161},
   }},
-  {id = 14136, name = "Robe of Winter Night", spell_name = "Robe of Winter Night", spell_id = 18436, craft_count = 1, colors = {285,300,315,330}, learnedat = 285, nskillup = 1, quality = 3, avgbuyout = 1093728, cost = 919652, phaseId = 0, schem = 0, recipe = {
-    {id = 7080, name = "Essence of Water", count = 4, avgbuyout = 125795},
-    {id = 12808, name = "Essence of Undeath", count = 4, avgbuyout = 11085},
-    {id = 14048, name = "Bolt of Runecloth", count = 10, avgbuyout = 5697},
-    {id = 14256, name = "Felcloth", count = 12, avgbuyout = 25911},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 13864, name = "Runecloth Boots", spell_name = "Runecloth Boots", spell_id = 18423, craft_count = 1, colors = {280,295,310,325}, learnedat = 280, nskillup = 1, quality = 2, avgbuyout = 29900, cost = 54331, phaseId = 0, schemprice = 68663, schemid = 14488, recipe = {
+    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1784},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7547},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 18258, name = "Gordok Ogre Suit", spell_name = "Gordok Ogre Suit", spell_id = 22813, craft_count = 1, colors = {0,285,290,295}, learnedat = 285, nskillup = 1, quality = 2, avgbuyout = 108000, cost = 26268, phaseId = 0, schem = 0, recipe = {
-    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1607},
-    {id = 14048, name = "Bolt of Runecloth", count = 2, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 13871, name = "Frostweave Pants", spell_name = "Frostweave Pants", spell_id = 18424, craft_count = 1, colors = {280,295,310,325}, learnedat = 280, nskillup = 1, quality = 2, avgbuyout = 190000, cost = 169795, phaseId = 0, schemprice = 26400, schemid = 14489, recipe = {
+    {id = 7080, name = "Essence of Water", count = 1, avgbuyout = 126224},
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+  }},
+  {id = 14045, name = "Cindercloth Pants", spell_name = "Cindercloth Pants", spell_id = 18434, craft_count = 1, colors = {280,295,310,325}, learnedat = 280, nskillup = 1, quality = 2, avgbuyout = 90000, cost = 73119, phaseId = 0, schemprice = 65000, schemid = 14490, recipe = {
+    {id = 7078, name = "Essence of Fire", count = 1, avgbuyout = 29548},
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+  }},
+  {id = 238270, name = "Scarlet Augur's Leggings", spell_name = "Scarlet Augur's Leggings", spell_id = 1224613, craft_count = 1, colors = {0,280,292,305}, learnedat = 280, nskillup = 1, quality = 3, avgbuyout = 1900000, cost = 448539, phaseId = 8, schemprice = 249997, schemid = 238304, recipe = {
+    {id = 12811, name = "Righteous Orb", count = 1, avgbuyout = 379719},
+    {id = 12938, name = "Blood of Heroes", count = 1, avgbuyout = 0},
+    {id = 14048, name = "Bolt of Runecloth", count = 12, avgbuyout = 5841},
+  }},
+  {id = 13865, name = "Runecloth Pants", spell_name = "Runecloth Pants", spell_id = 18438, craft_count = 1, colors = {285,300,315,330}, learnedat = 285, nskillup = 1, quality = 2, avgbuyout = 29908, cost = 58665, phaseId = 0, schemprice = 29989, schemid = 14491, recipe = {
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7547},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+  }},
+  {id = 14108, name = "Felcloth Boots", spell_name = "Felcloth Boots", spell_id = 18437, craft_count = 1, colors = {285,300,315,330}, learnedat = 285, nskillup = 1, quality = 2, avgbuyout = 150000, cost = 163707, phaseId = 0, schemprice = 20000, schemid = 14492, recipe = {
+    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1784},
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14256, name = "Felcloth", count = 4, avgbuyout = 28250},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+  }},
+  {id = 14136, name = "Robe of Winter Night", spell_name = "Robe of Winter Night", spell_id = 18436, craft_count = 1, colors = {285,300,315,330}, learnedat = 285, nskillup = 1, quality = 3, avgbuyout = 1109000, cost = 964815, phaseId = 0, schemprice = 10000, schemid = 14493, recipe = {
+    {id = 7080, name = "Essence of Water", count = 4, avgbuyout = 126224},
+    {id = 12808, name = "Essence of Undeath", count = 4, avgbuyout = 13602},
+    {id = 14048, name = "Bolt of Runecloth", count = 10, avgbuyout = 5841},
+    {id = 14256, name = "Felcloth", count = 12, avgbuyout = 28250},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+  }},
+  {id = 18258, name = "Gordok Ogre Suit", spell_name = "Gordok Ogre Suit", spell_id = 22813, craft_count = 1, colors = {0,285,290,295}, learnedat = 285, nskillup = 1, quality = 2, avgbuyout = 114500, cost = 27767, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1784},
+    {id = 14048, name = "Bolt of Runecloth", count = 2, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
     {id = 18240, name = "Ogre Tannin", count = 1, avgbuyout = 0},
   }},
-  {id = 21341, name = "Felcloth Bag", spell_name = "Felcloth Bag", spell_id = 26086, craft_count = 1, colors = {285,300,315,330}, learnedat = 285, nskillup = 1, quality = 3, avgbuyout = 649998, cost = 698662, phaseId = 0, schem = 0, recipe = {
-    {id = 12810, name = "Enchanted Leather", count = 6, avgbuyout = 39384},
-    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7321},
-    {id = 14256, name = "Felcloth", count = 12, avgbuyout = 25911},
-    {id = 20520, name = "Dark Rune", count = 2, avgbuyout = 61071},
+  {id = 21341, name = "Felcloth Bag", spell_name = "Felcloth Bag", spell_id = 26086, craft_count = 1, colors = {285,300,315,330}, learnedat = 285, nskillup = 1, quality = 3, avgbuyout = 699999, cost = 741444, phaseId = 0, schemprice = 10000, schemid = 21369, recipe = {
+    {id = 12810, name = "Enchanted Leather", count = 6, avgbuyout = 39273},
+    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7547},
+    {id = 14256, name = "Felcloth", count = 12, avgbuyout = 28250},
+    {id = 20520, name = "Dark Rune", count = 2, avgbuyout = 68309},
   }},
-  {id = 227855, name = "Synthetic Gordok Ogre Suit", spell_name = "Synthetic Gordok Ogre Suit", spell_id = 461692, craft_count = 1, colors = {0,285,290,295}, learnedat = 285, nskillup = 1, quality = 2, avgbuyout = 0, cost = 26268, phaseId = 4, schem = 0, recipe = {
-    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1607},
-    {id = 14048, name = "Bolt of Runecloth", count = 2, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 227855, name = "Synthetic Gordok Ogre Suit", spell_name = "Synthetic Gordok Ogre Suit", spell_id = 461692, craft_count = 1, colors = {0,285,290,295}, learnedat = 285, nskillup = 1, quality = 2, avgbuyout = 0, cost = 27767, phaseId = 4, schemprice = 0, schemid = 0, recipe = {
+    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1784},
+    {id = 14048, name = "Bolt of Runecloth", count = 2, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
     {id = 18240, name = "Ogre Tannin", count = 1, avgbuyout = 0},
   }},
-  {id = 14104, name = "Brightcloth Pants", spell_name = "Brightcloth Pants", spell_id = 18439, craft_count = 1, colors = {290,305,320,335}, learnedat = 290, nskillup = 1, quality = 2, avgbuyout = 149499, cost = 54453, phaseId = 0, schem = 0, recipe = {
-    {id = 3577, name = "Gold Bar", count = 4, avgbuyout = 1653},
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 1, avgbuyout = 7321},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 238264, name = "Scarlet Augur's Hood", spell_name = "Scarlet Augur's Hood", spell_id = 1224607, craft_count = 1, colors = {0,285,295,305}, learnedat = 285, nskillup = 1, quality = 3, avgbuyout = 2707428, cost = 828258, phaseId = 8, schemprice = 3999980, schemid = 238298, recipe = {
+    {id = 12811, name = "Righteous Orb", count = 2, avgbuyout = 379719},
+    {id = 12938, name = "Blood of Heroes", count = 1, avgbuyout = 0},
+    {id = 14048, name = "Bolt of Runecloth", count = 12, avgbuyout = 5841},
   }},
-  {id = 14111, name = "Felcloth Hood", spell_name = "Felcloth Hood", spell_id = 18442, craft_count = 1, colors = {290,305,320,335}, learnedat = 290, nskillup = 1, quality = 2, avgbuyout = 133086, cost = 138994, phaseId = 0, schem = 0, recipe = {
-    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5697},
-    {id = 14256, name = "Felcloth", count = 4, avgbuyout = 25911},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 238265, name = "Scarlet Augur's Mantle", spell_name = "Scarlet Augur's Mantle", spell_id = 1224608, craft_count = 1, colors = {0,285,295,305}, learnedat = 285, nskillup = 1, quality = 3, avgbuyout = 1319989, cost = 437069, phaseId = 8, schemprice = 3496497, schemid = 238299, recipe = {
+    {id = 12811, name = "Righteous Orb", count = 1, avgbuyout = 379719},
+    {id = 14048, name = "Bolt of Runecloth", count = 10, avgbuyout = 5841},
   }},
-  {id = 14137, name = "Mooncloth Leggings", spell_name = "Mooncloth Leggings", spell_id = 18440, craft_count = 1, colors = {290,305,320,335}, learnedat = 290, nskillup = 1, quality = 3, avgbuyout = 500000, cost = 247808, phaseId = 0, schem = 0, recipe = {
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 196900},
+  {id = 238266, name = "Scarlet Augur's Vestaments", spell_name = "Scarlet Augur's Vestaments", spell_id = 1224609, craft_count = 1, colors = {0,285,295,305}, learnedat = 285, nskillup = 1, quality = 3, avgbuyout = 2222222, cost = 448539, phaseId = 8, schemprice = 2506954, schemid = 238300, recipe = {
+    {id = 12811, name = "Righteous Orb", count = 1, avgbuyout = 379719},
+    {id = 12938, name = "Blood of Heroes", count = 1, avgbuyout = 0},
+    {id = 14048, name = "Bolt of Runecloth", count = 12, avgbuyout = 5841},
   }},
-  {id = 14144, name = "Ghostweave Pants", spell_name = "Ghostweave Pants", spell_id = 18441, craft_count = 1, colors = {290,305,320,335}, learnedat = 290, nskillup = 1, quality = 2, avgbuyout = 427799, cost = 156520, phaseId = 0, schem = 0, recipe = {
-    {id = 9210, name = "Ghost Dye", count = 4, avgbuyout = 29000},
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 14104, name = "Brightcloth Pants", spell_name = "Brightcloth Pants", spell_id = 18439, craft_count = 1, colors = {290,305,320,335}, learnedat = 290, nskillup = 1, quality = 2, avgbuyout = 149499, cost = 57666, phaseId = 0, schemprice = 23000, schemid = 14494, recipe = {
+    {id = 3577, name = "Gold Bar", count = 4, avgbuyout = 1637},
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 1, avgbuyout = 7547},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 15802, name = "Mooncloth Boots", spell_name = "Mooncloth Boots", spell_id = 19435, craft_count = 1, colors = {290,295,310,325}, learnedat = 290, nskillup = 1, quality = 3, avgbuyout = 990000, cost = 251142, phaseId = 0, schem = 0, recipe = {
-    {id = 7971, name = "Black Pearl", count = 2, avgbuyout = 1667},
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 196900},
+  {id = 14111, name = "Felcloth Hood", spell_name = "Felcloth Hood", spell_id = 18442, craft_count = 1, colors = {290,305,320,335}, learnedat = 290, nskillup = 1, quality = 2, avgbuyout = 133086, cost = 150836, phaseId = 0, schemprice = 29799, schemid = 14496, recipe = {
+    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5841},
+    {id = 14256, name = "Felcloth", count = 4, avgbuyout = 28250},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 19047, name = "Wisdom of the Timbermaw", spell_name = "Wisdom of the Timbermaw", spell_id = 23662, craft_count = 1, colors = {290,305,320,335}, learnedat = 290, nskillup = 1, quality = 3, avgbuyout = 1003191, cost = 248161, phaseId = 0, schem = 0, recipe = {
-    {id = 7076, name = "Essence of Earth", count = 3, avgbuyout = 41991},
-    {id = 12803, name = "Living Essence", count = 3, avgbuyout = 22062},
-    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7321},
+  {id = 14137, name = "Mooncloth Leggings", spell_name = "Mooncloth Leggings", spell_id = 18440, craft_count = 1, colors = {290,305,320,335}, learnedat = 290, nskillup = 1, quality = 3, avgbuyout = 500000, cost = 269571, phaseId = 0, schemprice = 103775, schemid = 14497, recipe = {
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 199632},
   }},
-  {id = 19056, name = "Argent Boots", spell_name = "Argent Boots", spell_id = 23664, craft_count = 1, colors = {290,305,320,335}, learnedat = 290, nskillup = 1, quality = 3, avgbuyout = 0, cost = 1037426, phaseId = 0, schem = 0, recipe = {
-    {id = 12809, name = "Guardian Stone", count = 2, avgbuyout = 136314},
-    {id = 12810, name = "Enchanted Leather", count = 4, avgbuyout = 39384},
-    {id = 13926, name = "Golden Pearl", count = 2, avgbuyout = 280800},
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7321},
+  {id = 14144, name = "Ghostweave Pants", spell_name = "Ghostweave Pants", spell_id = 18441, craft_count = 1, colors = {290,305,320,335}, learnedat = 290, nskillup = 1, quality = 2, avgbuyout = 427799, cost = 159167, phaseId = 0, schemprice = 159101, schemid = 14495, recipe = {
+    {id = 9210, name = "Ghost Dye", count = 4, avgbuyout = 28899},
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 13866, name = "Runecloth Headband", spell_name = "Runecloth Headband", spell_id = 18444, craft_count = 1, colors = {295,310,325,340}, learnedat = 295, nskillup = 1, quality = 2, avgbuyout = 32500, cost = 44822, phaseId = 0, schem = 0, recipe = {
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7321},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 15802, name = "Mooncloth Boots", spell_name = "Mooncloth Boots", spell_id = 19435, craft_count = 1, colors = {290,295,310,325}, learnedat = 290, nskillup = 1, quality = 3, avgbuyout = 990000, cost = 273005, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 7971, name = "Black Pearl", count = 2, avgbuyout = 1717},
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 199632},
   }},
-  {id = 13867, name = "Runecloth Shoulders", spell_name = "Runecloth Shoulders", spell_id = 18449, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 2, avgbuyout = 80061, cost = 66760, phaseId = 0, schem = 0, recipe = {
-    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1607},
-    {id = 14048, name = "Bolt of Runecloth", count = 7, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7321},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 19047, name = "Wisdom of the Timbermaw", spell_name = "Wisdom of the Timbermaw", spell_id = 23662, craft_count = 1, colors = {290,305,320,335}, learnedat = 290, nskillup = 1, quality = 3, avgbuyout = 1003191, cost = 243965, phaseId = 0, schemprice = 10000, schemid = 19215, recipe = {
+    {id = 7076, name = "Essence of Earth", count = 3, avgbuyout = 39297},
+    {id = 12803, name = "Living Essence", count = 3, avgbuyout = 21700},
+    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7547},
   }},
-  {id = 14106, name = "Felcloth Robe", spell_name = "Felcloth Robe", spell_id = 18451, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 2, avgbuyout = 235000, cost = 267648, phaseId = 0, schem = 0, recipe = {
+  {id = 19056, name = "Argent Boots", spell_name = "Argent Boots", spell_id = 23664, craft_count = 1, colors = {290,305,320,335}, learnedat = 290, nskillup = 1, quality = 3, avgbuyout = 0, cost = 995896, phaseId = 0, schemprice = 10000, schemid = 19216, recipe = {
+    {id = 12809, name = "Guardian Stone", count = 2, avgbuyout = 145000},
+    {id = 12810, name = "Enchanted Leather", count = 4, avgbuyout = 39273},
+    {id = 13926, name = "Golden Pearl", count = 2, avgbuyout = 249650},
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7547},
+  }},
+  {id = 13866, name = "Runecloth Headband", spell_name = "Runecloth Headband", spell_id = 18444, craft_count = 1, colors = {295,310,325,340}, learnedat = 295, nskillup = 1, quality = 2, avgbuyout = 32500, cost = 47195, phaseId = 0, schemprice = 27332, schemid = 14498, recipe = {
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7547},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+  }},
+  {id = 13867, name = "Runecloth Shoulders", spell_name = "Runecloth Shoulders", spell_id = 18449, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 2, avgbuyout = 100000, cost = 71536, phaseId = 0, schemprice = 23232, schemid = 14504, recipe = {
+    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1784},
+    {id = 14048, name = "Bolt of Runecloth", count = 7, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7547},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+  }},
+  {id = 14106, name = "Felcloth Robe", spell_name = "Felcloth Robe", spell_id = 18451, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 2, avgbuyout = 235000, cost = 290202, phaseId = 0, schemprice = 25200, schemid = 14506, recipe = {
     {id = 12662, name = "Demonic Rune", count = 4, avgbuyout = 0},
-    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5697},
-    {id = 14256, name = "Felcloth", count = 8, avgbuyout = 25911},
-    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9500},
+    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5841},
+    {id = 14256, name = "Felcloth", count = 8, avgbuyout = 28250},
+    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9161},
   }},
-  {id = 14112, name = "Felcloth Shoulders", spell_name = "Felcloth Shoulders", spell_id = 18453, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 2, avgbuyout = 309000, cost = 217084, phaseId = 0, schem = 0, recipe = {
-    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1607},
+  {id = 14112, name = "Felcloth Shoulders", spell_name = "Felcloth Shoulders", spell_id = 18453, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 2, avgbuyout = 314999, cost = 235103, phaseId = 0, schemprice = 40000, schemid = 14508, recipe = {
+    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1784},
     {id = 12662, name = "Demonic Rune", count = 4, avgbuyout = 0},
-    {id = 14048, name = "Bolt of Runecloth", count = 7, avgbuyout = 5697},
-    {id = 14256, name = "Felcloth", count = 6, avgbuyout = 25911},
-    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9500},
+    {id = 14048, name = "Bolt of Runecloth", count = 7, avgbuyout = 5841},
+    {id = 14256, name = "Felcloth", count = 6, avgbuyout = 28250},
+    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9161},
   }},
-  {id = 14128, name = "Wizardweave Robe", spell_name = "Wizardweave Robe", spell_id = 18446, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 2, avgbuyout = 274944, cost = 56512, phaseId = 0, schem = 0, recipe = {
-    {id = 11176, name = "Dream Dust", count = 2, avgbuyout = 2826},
-    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 14128, name = "Wizardweave Robe", spell_name = "Wizardweave Robe", spell_id = 18446, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 2, avgbuyout = 274944, cost = 60843, phaseId = 0, schemprice = 176625, schemid = 14500, recipe = {
+    {id = 11176, name = "Dream Dust", count = 2, avgbuyout = 2901},
+    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 14130, name = "Wizardweave Turban", spell_name = "Wizardweave Turban", spell_id = 18450, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 2, avgbuyout = 200000, cost = 58286, phaseId = 0, schem = 0, recipe = {
-    {id = 7910, name = "Star Ruby", count = 1, avgbuyout = 6462},
-    {id = 11176, name = "Dream Dust", count = 4, avgbuyout = 2826},
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
+  {id = 14130, name = "Wizardweave Turban", spell_name = "Wizardweave Turban", spell_id = 18450, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 2, avgbuyout = 200000, cost = 61579, phaseId = 0, schemprice = 249999, schemid = 14505, recipe = {
+    {id = 7910, name = "Star Ruby", count = 1, avgbuyout = 6404},
+    {id = 11176, name = "Dream Dust", count = 4, avgbuyout = 2901},
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
   }},
-  {id = 14138, name = "Mooncloth Vest", spell_name = "Mooncloth Vest", spell_id = 18447, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 100000, cost = 247808, phaseId = 0, schem = 0, recipe = {
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 196900},
+  {id = 14138, name = "Mooncloth Vest", spell_name = "Mooncloth Vest", spell_id = 18447, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 100000, cost = 269571, phaseId = 0, schemprice = 100174, schemid = 14501, recipe = {
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 199632},
   }},
-  {id = 14139, name = "Mooncloth Shoulders", spell_name = "Mooncloth Shoulders", spell_id = 18448, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 515456, cost = 294460, phaseId = 0, schem = 0, recipe = {
-    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 5, avgbuyout = 196900},
+  {id = 14139, name = "Mooncloth Shoulders", spell_name = "Mooncloth Shoulders", spell_id = 18448, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 515456, cost = 320336, phaseId = 0, schemprice = 110000, schemid = 14507, recipe = {
+    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 5, avgbuyout = 199632},
   }},
-  {id = 14140, name = "Mooncloth Circlet", spell_name = "Mooncloth Circlet", spell_id = 18452, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1650000, cost = 459558, phaseId = 0, schem = 0, recipe = {
-    {id = 12800, name = "Azerothian Diamond", count = 1, avgbuyout = 30178},
-    {id = 12810, name = "Enchanted Leather", count = 2, avgbuyout = 39384},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 6, avgbuyout = 196900},
+  {id = 14140, name = "Mooncloth Circlet", spell_name = "Mooncloth Circlet", spell_id = 18452, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1650000, cost = 490608, phaseId = 0, schemprice = 450000, schemid = 14509, recipe = {
+    {id = 12800, name = "Azerothian Diamond", count = 1, avgbuyout = 31800},
+    {id = 12810, name = "Enchanted Leather", count = 2, avgbuyout = 39273},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 6, avgbuyout = 199632},
   }},
-  {id = 14146, name = "Gloves of Spell Mastery", spell_name = "Gloves of Spell Mastery", spell_id = 18454, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 6500000, cost = 3025036, phaseId = 0, schem = 0, recipe = {
-    {id = 9210, name = "Ghost Dye", count = 10, avgbuyout = 29000},
-    {id = 12364, name = "Huge Emerald", count = 6, avgbuyout = 24374},
-    {id = 12810, name = "Enchanted Leather", count = 8, avgbuyout = 39384},
-    {id = 13926, name = "Golden Pearl", count = 6, avgbuyout = 280800},
-    {id = 14048, name = "Bolt of Runecloth", count = 10, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 10, avgbuyout = 196900},
+  {id = 14146, name = "Gloves of Spell Mastery", spell_name = "Gloves of Spell Mastery", spell_id = 18454, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 6500000, cost = 2933746, phaseId = 0, schemprice = 1999999, schemid = 14511, recipe = {
+    {id = 9210, name = "Ghost Dye", count = 10, avgbuyout = 28899},
+    {id = 12364, name = "Huge Emerald", count = 6, avgbuyout = 32000},
+    {id = 12810, name = "Enchanted Leather", count = 8, avgbuyout = 39273},
+    {id = 13926, name = "Golden Pearl", count = 6, avgbuyout = 249650},
+    {id = 14048, name = "Bolt of Runecloth", count = 10, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 10, avgbuyout = 199632},
   }},
-  {id = 14152, name = "Robe of the Archmage", spell_name = "Robe of the Archmage", spell_id = 18457, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 0, cost = 3836180, phaseId = 0, schem = 0, recipe = {
-    {id = 7076, name = "Essence of Earth", count = 10, avgbuyout = 41991},
-    {id = 7078, name = "Essence of Fire", count = 10, avgbuyout = 31728},
-    {id = 7080, name = "Essence of Water", count = 10, avgbuyout = 125795},
-    {id = 7082, name = "Essence of Air", count = 10, avgbuyout = 176000},
-    {id = 14048, name = "Bolt of Runecloth", count = 12, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9500},
+  {id = 14152, name = "Robe of the Archmage", spell_name = "Robe of the Archmage", spell_id = 18457, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 0, cost = 3805152, phaseId = 0, schemprice = 309000, schemid = 14513, recipe = {
+    {id = 7076, name = "Essence of Earth", count = 10, avgbuyout = 39297},
+    {id = 7078, name = "Essence of Fire", count = 10, avgbuyout = 29548},
+    {id = 7080, name = "Essence of Water", count = 10, avgbuyout = 126224},
+    {id = 7082, name = "Essence of Air", count = 10, avgbuyout = 176732},
+    {id = 14048, name = "Bolt of Runecloth", count = 12, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9161},
   }},
-  {id = 14153, name = "Robe of the Void", spell_name = "Robe of the Void", spell_id = 18458, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 0, cost = 1631236, phaseId = 0, schem = 0, recipe = {
-    {id = 7078, name = "Essence of Fire", count = 12, avgbuyout = 31728},
+  {id = 14153, name = "Robe of the Void", spell_name = "Robe of the Void", spell_id = 18458, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 0, cost = 1734942, phaseId = 0, schemprice = 106290, schemid = 14514, recipe = {
+    {id = 7078, name = "Essence of Fire", count = 12, avgbuyout = 29548},
     {id = 12662, name = "Demonic Rune", count = 20, avgbuyout = 0},
-    {id = 12808, name = "Essence of Undeath", count = 12, avgbuyout = 11085},
-    {id = 14048, name = "Bolt of Runecloth", count = 12, avgbuyout = 5697},
-    {id = 14256, name = "Felcloth", count = 40, avgbuyout = 25911},
-    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9500},
+    {id = 12808, name = "Essence of Undeath", count = 12, avgbuyout = 13602},
+    {id = 14048, name = "Bolt of Runecloth", count = 12, avgbuyout = 5841},
+    {id = 14256, name = "Felcloth", count = 40, avgbuyout = 28250},
+    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9161},
   }},
-  {id = 14154, name = "Truefaith Vestments", spell_name = "Truefaith Vestments", spell_id = 18456, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 0, cost = 3171504, phaseId = 0, schem = 0, recipe = {
-    {id = 9210, name = "Ghost Dye", count = 10, avgbuyout = 29000},
-    {id = 12811, name = "Righteous Orb", count = 4, avgbuyout = 289761},
-    {id = 13926, name = "Golden Pearl", count = 4, avgbuyout = 280800},
-    {id = 14048, name = "Bolt of Runecloth", count = 12, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 10, avgbuyout = 196900},
+  {id = 14154, name = "Truefaith Vestments", spell_name = "Truefaith Vestments", spell_id = 18456, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 0, cost = 3458608, phaseId = 0, schemprice = 208000, schemid = 14512, recipe = {
+    {id = 9210, name = "Ghost Dye", count = 10, avgbuyout = 28899},
+    {id = 12811, name = "Righteous Orb", count = 4, avgbuyout = 379719},
+    {id = 13926, name = "Golden Pearl", count = 4, avgbuyout = 249650},
+    {id = 14048, name = "Bolt of Runecloth", count = 12, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 10, avgbuyout = 199632},
   }},
-  {id = 14155, name = "Mooncloth Bag", spell_name = "Mooncloth Bag", spell_id = 18445, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 2, avgbuyout = 217000, cost = 82002, phaseId = 0, schem = 0, recipe = {
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 1, avgbuyout = 196900},
+  {id = 14155, name = "Mooncloth Bag", spell_name = "Mooncloth Bag", spell_id = 18445, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 2, avgbuyout = 222499, cost = 88601, phaseId = 0, schemprice = 152099, schemid = 14499, recipe = {
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 1, avgbuyout = 199632},
   }},
-  {id = 14156, name = "Bottomless Bag", spell_name = "Bottomless Bag", spell_id = 18455, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 3045000, cost = 869276, phaseId = 0, schem = 0, recipe = {
-    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 12, avgbuyout = 196900},
-    {id = 14344, name = "Large Brilliant Shard", count = 2, avgbuyout = 34776},
-    {id = 17012, name = "Core Leather", count = 2, avgbuyout = 58750},
+  {id = 14156, name = "Bottomless Bag", spell_name = "Bottomless Bag", spell_id = 18455, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 3307372, cost = 979316, phaseId = 0, schemprice = 8606112, schemid = 14510, recipe = {
+    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 12, avgbuyout = 199632},
+    {id = 14344, name = "Large Brilliant Shard", count = 2, avgbuyout = 36111},
+    {id = 17012, name = "Core Leather", count = 2, avgbuyout = 82446},
   }},
-  {id = 16979, name = "Flarecore Gloves", spell_name = "Flarecore Gloves", spell_id = 20849, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 1249999, cost = 1114290, phaseId = 0, schem = 0, recipe = {
-    {id = 7078, name = "Essence of Fire", count = 4, avgbuyout = 31728},
-    {id = 12810, name = "Enchanted Leather", count = 2, avgbuyout = 39384},
-    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9500},
-    {id = 17010, name = "Fiery Core", count = 6, avgbuyout = 141375},
+  {id = 16979, name = "Flarecore Gloves", spell_name = "Flarecore Gloves", spell_id = 20849, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 1249999, cost = 1025928, phaseId = 0, schemprice = 10000, schemid = 17018, recipe = {
+    {id = 7078, name = "Essence of Fire", count = 4, avgbuyout = 29548},
+    {id = 12810, name = "Enchanted Leather", count = 2, avgbuyout = 39273},
+    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9161},
+    {id = 17010, name = "Fiery Core", count = 6, avgbuyout = 127498},
   }},
-  {id = 16980, name = "Flarecore Mantle", spell_name = "Flarecore Mantle", spell_id = 20848, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 1389999, cost = 1346944, phaseId = 0, schem = 0, recipe = {
-    {id = 12810, name = "Enchanted Leather", count = 6, avgbuyout = 39384},
-    {id = 14048, name = "Bolt of Runecloth", count = 12, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9500},
-    {id = 17010, name = "Fiery Core", count = 4, avgbuyout = 141375},
-    {id = 17011, name = "Lava Core", count = 4, avgbuyout = 116025},
+  {id = 16980, name = "Flarecore Mantle", spell_name = "Flarecore Mantle", spell_id = 20848, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 1389999, cost = 1236940, phaseId = 0, schemprice = 10000, schemid = 17017, recipe = {
+    {id = 12810, name = "Enchanted Leather", count = 6, avgbuyout = 39273},
+    {id = 14048, name = "Bolt of Runecloth", count = 12, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9161},
+    {id = 17010, name = "Fiery Core", count = 4, avgbuyout = 127498},
+    {id = 17011, name = "Lava Core", count = 4, avgbuyout = 101042},
   }},
-  {id = 18263, name = "Flarecore Wraps", spell_name = "Flarecore Wraps", spell_id = 22759, craft_count = 1, colors = {300,320,335,350}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 2989900, cost = 1779692, phaseId = 0, schem = 0, recipe = {
-    {id = 7078, name = "Essence of Fire", count = 2, avgbuyout = 31728},
-    {id = 12810, name = "Enchanted Leather", count = 6, avgbuyout = 39384},
-    {id = 14341, name = "Rune Thread", count = 4, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 6, avgbuyout = 196900},
-    {id = 17010, name = "Fiery Core", count = 8, avgbuyout = 141375},
+  {id = 18263, name = "Flarecore Wraps", spell_name = "Flarecore Wraps", spell_id = 22759, craft_count = 1, colors = {300,320,335,350}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 2989900, cost = 1690362, phaseId = 0, schemprice = 480000, schemid = 18265, recipe = {
+    {id = 7078, name = "Essence of Fire", count = 2, avgbuyout = 29548},
+    {id = 12810, name = "Enchanted Leather", count = 6, avgbuyout = 39273},
+    {id = 14341, name = "Rune Thread", count = 4, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 6, avgbuyout = 199632},
+    {id = 17010, name = "Fiery Core", count = 8, avgbuyout = 127498},
   }},
-  {id = 18405, name = "Belt of the Archmage", spell_name = "Belt of the Archmage", spell_id = 22866, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 0, cost = 3046872, phaseId = 0, schem = 0, recipe = {
-    {id = 7078, name = "Essence of Fire", count = 12, avgbuyout = 31728},
-    {id = 7080, name = "Essence of Water", count = 12, avgbuyout = 125795},
-    {id = 9210, name = "Ghost Dye", count = 10, avgbuyout = 29000},
-    {id = 14048, name = "Bolt of Runecloth", count = 16, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 6, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 10, avgbuyout = 196900},
-    {id = 14344, name = "Large Brilliant Shard", count = 6, avgbuyout = 34776},
+  {id = 18405, name = "Belt of the Archmage", spell_name = "Belt of the Archmage", spell_id = 22866, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 0, cost = 3086646, phaseId = 0, schemprice = 700000, schemid = 18414, recipe = {
+    {id = 7078, name = "Essence of Fire", count = 12, avgbuyout = 29548},
+    {id = 7080, name = "Essence of Water", count = 12, avgbuyout = 126224},
+    {id = 9210, name = "Ghost Dye", count = 10, avgbuyout = 28899},
+    {id = 14048, name = "Bolt of Runecloth", count = 16, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 6, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 10, avgbuyout = 199632},
+    {id = 14344, name = "Large Brilliant Shard", count = 6, avgbuyout = 36111},
   }},
-  {id = 18407, name = "Felcloth Gloves", spell_name = "Felcloth Gloves", spell_id = 22867, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1200000, cost = 687940, phaseId = 0, schem = 0, recipe = {
+  {id = 18407, name = "Felcloth Gloves", spell_name = "Felcloth Gloves", spell_id = 22867, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1200000, cost = 760958, phaseId = 0, schemprice = 10000, schemid = 18415, recipe = {
     {id = 12662, name = "Demonic Rune", count = 6, avgbuyout = 0},
-    {id = 12808, name = "Essence of Undeath", count = 8, avgbuyout = 11085},
-    {id = 14048, name = "Bolt of Runecloth", count = 12, avgbuyout = 5697},
-    {id = 14256, name = "Felcloth", count = 20, avgbuyout = 25911},
-    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9500},
+    {id = 12808, name = "Essence of Undeath", count = 8, avgbuyout = 13602},
+    {id = 14048, name = "Bolt of Runecloth", count = 12, avgbuyout = 5841},
+    {id = 14256, name = "Felcloth", count = 20, avgbuyout = 28250},
+    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9161},
   }},
-  {id = 18408, name = "Inferno Gloves", spell_name = "Inferno Gloves", spell_id = 22868, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 600000, cost = 411244, phaseId = 0, schem = 0, recipe = {
-    {id = 7078, name = "Essence of Fire", count = 10, avgbuyout = 31728},
-    {id = 7910, name = "Star Ruby", count = 2, avgbuyout = 6462},
-    {id = 14048, name = "Bolt of Runecloth", count = 12, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9500},
+  {id = 18408, name = "Inferno Gloves", spell_name = "Inferno Gloves", spell_id = 22868, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 600000, cost = 395430, phaseId = 0, schemprice = 10000, schemid = 18416, recipe = {
+    {id = 7078, name = "Essence of Fire", count = 10, avgbuyout = 29548},
+    {id = 7910, name = "Star Ruby", count = 2, avgbuyout = 6404},
+    {id = 14048, name = "Bolt of Runecloth", count = 12, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9161},
   }},
-  {id = 18409, name = "Mooncloth Gloves", spell_name = "Mooncloth Gloves", spell_id = 22869, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 0, cost = 953572, phaseId = 0, schem = 0, recipe = {
-    {id = 13926, name = "Golden Pearl", count = 2, avgbuyout = 280800},
-    {id = 14048, name = "Bolt of Runecloth", count = 12, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 6, avgbuyout = 196900},
+  {id = 18409, name = "Mooncloth Gloves", spell_name = "Mooncloth Gloves", spell_id = 22869, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 0, cost = 925442, phaseId = 0, schemprice = 10000, schemid = 18417, recipe = {
+    {id = 13926, name = "Golden Pearl", count = 2, avgbuyout = 249650},
+    {id = 14048, name = "Bolt of Runecloth", count = 12, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 6, avgbuyout = 199632},
   }},
-  {id = 18413, name = "Cloak of Warding", spell_name = "Cloak of Warding", spell_id = 22870, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1150000, cost = 1134796, phaseId = 0, schem = 0, recipe = {
-    {id = 12360, name = "Arcanite Bar", count = 1, avgbuyout = 508500},
-    {id = 12809, name = "Guardian Stone", count = 4, avgbuyout = 136314},
-    {id = 14048, name = "Bolt of Runecloth", count = 12, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9500},
+  {id = 18413, name = "Cloak of Warding", spell_name = "Cloak of Warding", spell_id = 22870, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1150000, cost = 1208142, phaseId = 0, schemprice = 10000, schemid = 18418, recipe = {
+    {id = 12360, name = "Arcanite Bar", count = 1, avgbuyout = 541000},
+    {id = 12809, name = "Guardian Stone", count = 4, avgbuyout = 145000},
+    {id = 14048, name = "Bolt of Runecloth", count = 12, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9161},
   }},
-  {id = 18486, name = "Mooncloth Robe", spell_name = "Mooncloth Robe", spell_id = 22902, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1290000, cost = 818908, phaseId = 0, schem = 0, recipe = {
-    {id = 13926, name = "Golden Pearl", count = 2, avgbuyout = 280800},
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 196900},
+  {id = 18486, name = "Mooncloth Robe", spell_name = "Mooncloth Robe", spell_id = 22902, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1529998, cost = 778032, phaseId = 0, schemprice = 48000, schemid = 18487, recipe = {
+    {id = 13926, name = "Golden Pearl", count = 2, avgbuyout = 249650},
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 199632},
   }},
-  {id = 19050, name = "Mantle of the Timbermaw", spell_name = "Mantle of the Timbermaw", spell_id = 23663, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 2999999, cost = 594017, phaseId = 0, schem = 0, recipe = {
-    {id = 7076, name = "Essence of Earth", count = 5, avgbuyout = 41991},
-    {id = 12803, name = "Living Essence", count = 5, avgbuyout = 22062},
-    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7321},
-    {id = 14342, name = "Mooncloth", count = 5, avgbuyout = 196900},
+  {id = 19050, name = "Mantle of the Timbermaw", spell_name = "Mantle of the Timbermaw", spell_id = 23663, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 2999999, cost = 602579, phaseId = 0, schemprice = 10000, schemid = 19218, recipe = {
+    {id = 7076, name = "Essence of Earth", count = 5, avgbuyout = 39297},
+    {id = 12803, name = "Living Essence", count = 5, avgbuyout = 21700},
+    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7547},
+    {id = 14342, name = "Mooncloth", count = 5, avgbuyout = 199632},
   }},
-  {id = 19059, name = "Argent Shoulders", spell_name = "Argent Shoulders", spell_id = 23665, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 500000, cost = 546380, phaseId = 0, schem = 0, recipe = {
-    {id = 12809, name = "Guardian Stone", count = 2, avgbuyout = 136314},
-    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7321},
-    {id = 14342, name = "Mooncloth", count = 5, avgbuyout = 196900},
+  {id = 19059, name = "Argent Shoulders", spell_name = "Argent Shoulders", spell_id = 23665, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 500000, cost = 587594, phaseId = 0, schemprice = 10000, schemid = 19217, recipe = {
+    {id = 12809, name = "Guardian Stone", count = 2, avgbuyout = 145000},
+    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7547},
+    {id = 14342, name = "Mooncloth", count = 5, avgbuyout = 199632},
   }},
-  {id = 19156, name = "Flarecore Robe", spell_name = "Flarecore Robe", spell_id = 23666, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 2649992, cost = 1368697, phaseId = 0, schem = 0, recipe = {
-    {id = 7078, name = "Essence of Fire", count = 6, avgbuyout = 31728},
-    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7321},
-    {id = 14342, name = "Mooncloth", count = 10, avgbuyout = 196900},
-    {id = 17010, name = "Fiery Core", count = 2, avgbuyout = 141375},
-    {id = 17011, name = "Lava Core", count = 3, avgbuyout = 116025},
+  {id = 19156, name = "Flarecore Robe", spell_name = "Flarecore Robe", spell_id = 23666, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 2949994, cost = 1330598, phaseId = 0, schemprice = 10000, schemid = 19219, recipe = {
+    {id = 7078, name = "Essence of Fire", count = 6, avgbuyout = 29548},
+    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7547},
+    {id = 14342, name = "Mooncloth", count = 10, avgbuyout = 199632},
+    {id = 17010, name = "Fiery Core", count = 2, avgbuyout = 127498},
+    {id = 17011, name = "Lava Core", count = 3, avgbuyout = 101042},
   }},
-  {id = 19165, name = "Flarecore Leggings", spell_name = "Flarecore Leggings", spell_id = 23667, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 3489998, cost = 1816090, phaseId = 0, schem = 0, recipe = {
-    {id = 7078, name = "Essence of Fire", count = 10, avgbuyout = 31728},
-    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7321},
-    {id = 14342, name = "Mooncloth", count = 8, avgbuyout = 196900},
-    {id = 17010, name = "Fiery Core", count = 5, avgbuyout = 141375},
-    {id = 17011, name = "Lava Core", count = 3, avgbuyout = 116025},
+  {id = 19165, name = "Flarecore Leggings", spell_name = "Flarecore Leggings", spell_id = 23667, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 3489998, cost = 1718284, phaseId = 0, schemprice = 10000, schemid = 19220, recipe = {
+    {id = 7078, name = "Essence of Fire", count = 10, avgbuyout = 29548},
+    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7547},
+    {id = 14342, name = "Mooncloth", count = 8, avgbuyout = 199632},
+    {id = 17010, name = "Fiery Core", count = 5, avgbuyout = 127498},
+    {id = 17011, name = "Lava Core", count = 3, avgbuyout = 101042},
   }},
-  {id = 19682, name = "Bloodvine Vest", spell_name = "Bloodvine Vest", spell_id = 24091, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1790000, cost = 1259416, phaseId = 0, schem = 0, recipe = {
-    {id = 12804, name = "Powerful Mojo", count = 4, avgbuyout = 3407},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7321},
-    {id = 14342, name = "Mooncloth", count = 3, avgbuyout = 196900},
-    {id = 19726, name = "Bloodvine", count = 5, avgbuyout = 211000},
+  {id = 19682, name = "Bloodvine Vest", spell_name = "Bloodvine Vest", spell_id = 24091, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1947368, cost = 1258978, phaseId = 0, schemprice = 10000, schemid = 19764, recipe = {
+    {id = 12804, name = "Powerful Mojo", count = 4, avgbuyout = 3486},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7547},
+    {id = 14342, name = "Mooncloth", count = 3, avgbuyout = 199632},
+    {id = 19726, name = "Bloodvine", count = 5, avgbuyout = 207500},
   }},
-  {id = 19683, name = "Bloodvine Leggings", spell_name = "Bloodvine Leggings", spell_id = 24092, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1639999, cost = 1100238, phaseId = 0, schem = 0, recipe = {
-    {id = 12804, name = "Powerful Mojo", count = 4, avgbuyout = 3407},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7321},
-    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 196900},
-    {id = 19726, name = "Bloodvine", count = 4, avgbuyout = 211000},
+  {id = 19683, name = "Bloodvine Leggings", spell_name = "Bloodvine Leggings", spell_id = 24092, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1850000, cost = 1107978, phaseId = 0, schemprice = 10000, schemid = 19765, recipe = {
+    {id = 12804, name = "Powerful Mojo", count = 4, avgbuyout = 3486},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7547},
+    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 199632},
+    {id = 19726, name = "Bloodvine", count = 4, avgbuyout = 207500},
   }},
-  {id = 19684, name = "Bloodvine Boots", spell_name = "Bloodvine Boots", spell_id = 24093, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1520000, cost = 995966, phaseId = 0, schem = 0, recipe = {
-    {id = 12810, name = "Enchanted Leather", count = 4, avgbuyout = 39384},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7321},
-    {id = 14342, name = "Mooncloth", count = 3, avgbuyout = 196900},
-    {id = 19726, name = "Bloodvine", count = 3, avgbuyout = 211000},
+  {id = 19684, name = "Bloodvine Boots", spell_name = "Bloodvine Boots", spell_id = 24093, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1599999, cost = 1002220, phaseId = 0, schemprice = 10000, schemid = 19766, recipe = {
+    {id = 12810, name = "Enchanted Leather", count = 4, avgbuyout = 39273},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7547},
+    {id = 14342, name = "Mooncloth", count = 3, avgbuyout = 199632},
+    {id = 19726, name = "Bloodvine", count = 3, avgbuyout = 207500},
   }},
-  {id = 20537, name = "Runed Stygian Boots", spell_name = "Runed Stygian Boots", spell_id = 24903, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 2250000, cost = 584160, phaseId = 0, schem = 0, recipe = {
-    {id = 12810, name = "Enchanted Leather", count = 2, avgbuyout = 39384},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7321},
-    {id = 14256, name = "Felcloth", count = 4, avgbuyout = 25911},
-    {id = 20520, name = "Dark Rune", count = 6, avgbuyout = 61071},
+  {id = 20537, name = "Runed Stygian Boots", spell_name = "Runed Stygian Boots", spell_id = 24903, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 2210030, cost = 639434, phaseId = 0, schemprice = 1250000, schemid = 20547, recipe = {
+    {id = 12810, name = "Enchanted Leather", count = 2, avgbuyout = 39273},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7547},
+    {id = 14256, name = "Felcloth", count = 4, avgbuyout = 28250},
+    {id = 20520, name = "Dark Rune", count = 6, avgbuyout = 68309},
   }},
-  {id = 20538, name = "Runed Stygian Leggings", spell_name = "Runed Stygian Leggings", spell_id = 24901, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 2789999, cost = 689696, phaseId = 0, schem = 0, recipe = {
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7321},
-    {id = 14256, name = "Felcloth", count = 6, avgbuyout = 25911},
-    {id = 20520, name = "Dark Rune", count = 8, avgbuyout = 61071},
+  {id = 20538, name = "Runed Stygian Leggings", spell_name = "Runed Stygian Leggings", spell_id = 24901, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 2026969, cost = 765476, phaseId = 0, schemprice = 487499, schemid = 20546, recipe = {
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7547},
+    {id = 14256, name = "Felcloth", count = 6, avgbuyout = 28250},
+    {id = 20520, name = "Dark Rune", count = 8, avgbuyout = 68309},
   }},
-  {id = 20539, name = "Runed Stygian Belt", spell_name = "Runed Stygian Belt", spell_id = 24902, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1697499, cost = 521998, phaseId = 0, schem = 0, recipe = {
-    {id = 12810, name = "Enchanted Leather", count = 2, avgbuyout = 39384},
-    {id = 14048, name = "Bolt of Runecloth", count = 2, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7321},
-    {id = 14256, name = "Felcloth", count = 2, avgbuyout = 25911},
-    {id = 20520, name = "Dark Rune", count = 6, avgbuyout = 61071},
+  {id = 20539, name = "Runed Stygian Belt", spell_name = "Runed Stygian Belt", spell_id = 24902, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1506443, cost = 571464, phaseId = 0, schemprice = 420000, schemid = 20548, recipe = {
+    {id = 12810, name = "Enchanted Leather", count = 2, avgbuyout = 39273},
+    {id = 14048, name = "Bolt of Runecloth", count = 2, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7547},
+    {id = 14256, name = "Felcloth", count = 2, avgbuyout = 28250},
+    {id = 20520, name = "Dark Rune", count = 6, avgbuyout = 68309},
   }},
-  {id = 21342, name = "Core Felcloth Bag", spell_name = "Core Felcloth Bag", spell_id = 26087, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 4009900, cost = 3302416, phaseId = 0, schem = 0, recipe = {
-    {id = 7078, name = "Essence of Fire", count = 4, avgbuyout = 31728},
-    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7321},
-    {id = 14256, name = "Felcloth", count = 20, avgbuyout = 25911},
-    {id = 17012, name = "Core Leather", count = 16, avgbuyout = 58750},
-    {id = 19726, name = "Bloodvine", count = 8, avgbuyout = 211000},
+  {id = 21342, name = "Core Felcloth Bag", spell_name = "Core Felcloth Bag", spell_id = 26087, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 4009900, cost = 3692516, phaseId = 0, schemprice = 740025, schemid = 21371, recipe = {
+    {id = 7078, name = "Essence of Fire", count = 4, avgbuyout = 29548},
+    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7547},
+    {id = 14256, name = "Felcloth", count = 20, avgbuyout = 28250},
+    {id = 17012, name = "Core Leather", count = 16, avgbuyout = 82446},
+    {id = 19726, name = "Bloodvine", count = 8, avgbuyout = 207500},
   }},
-  {id = 22249, name = "Big Bag of Enchantment", spell_name = "Big Bag of Enchantment", spell_id = 27660, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 2, avgbuyout = 1000000, cost = 356944, phaseId = 0, schem = 0, recipe = {
-    {id = 12810, name = "Enchanted Leather", count = 4, avgbuyout = 39384},
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7321},
-    {id = 14344, name = "Large Brilliant Shard", count = 4, avgbuyout = 34776},
+  {id = 22249, name = "Big Bag of Enchantment", spell_name = "Big Bag of Enchantment", spell_id = 27660, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 2, avgbuyout = 880000, cost = 366134, phaseId = 0, schemprice = 1000000, schemid = 22309, recipe = {
+    {id = 12810, name = "Enchanted Leather", count = 4, avgbuyout = 39273},
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7547},
+    {id = 14344, name = "Large Brilliant Shard", count = 4, avgbuyout = 36111},
   }},
-  {id = 22252, name = "Satchel of Cenarius", spell_name = "Satchel of Cenarius", spell_id = 27725, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 2, avgbuyout = 1479750, cost = 833748, phaseId = 0, schem = 0, recipe = {
-    {id = 13468, name = "Black Lotus", count = 1, avgbuyout = 669800},
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7321},
-    {id = 14342, name = "Mooncloth", count = 2, avgbuyout = 196900},
+  {id = 22252, name = "Satchel of Cenarius", spell_name = "Satchel of Cenarius", spell_id = 27725, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 2, avgbuyout = 1479750, cost = 716587, phaseId = 0, schemprice = 10000, schemid = 22312, recipe = {
+    {id = 13468, name = "Black Lotus", count = 1, avgbuyout = 538989},
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7547},
+    {id = 14342, name = "Mooncloth", count = 2, avgbuyout = 199632},
   }},
-  {id = 22652, name = "Glacial Vest", spell_name = "Glacial Vest", spell_id = 28207, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 7200000, cost = 5026698, phaseId = 0, schem = 0, recipe = {
-    {id = 7080, name = "Essence of Water", count = 6, avgbuyout = 125795},
-    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 8, avgbuyout = 7321},
-    {id = 22682, name = "Frozen Rune", count = 7, avgbuyout = 596000},
+  {id = 22652, name = "Glacial Vest", spell_name = "Glacial Vest", spell_id = 28207, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 7200000, cost = 5203600, phaseId = 0, schemprice = 10000, schemid = 22686, recipe = {
+    {id = 7080, name = "Essence of Water", count = 6, avgbuyout = 126224},
+    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 8, avgbuyout = 7547},
+    {id = 22682, name = "Frozen Rune", count = 7, avgbuyout = 620000},
   }},
-  {id = 22654, name = "Glacial Gloves", spell_name = "Glacial Gloves", spell_id = 28205, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 5409998, cost = 3533144, phaseId = 0, schem = 0, recipe = {
-    {id = 7080, name = "Essence of Water", count = 4, avgbuyout = 125795},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7321},
-    {id = 22682, name = "Frozen Rune", count = 5, avgbuyout = 596000},
+  {id = 22654, name = "Glacial Gloves", spell_name = "Glacial Gloves", spell_id = 28205, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 4967743, cost = 3658024, phaseId = 0, schemprice = 10000, schemid = 22684, recipe = {
+    {id = 7080, name = "Essence of Water", count = 4, avgbuyout = 126224},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7547},
+    {id = 22682, name = "Frozen Rune", count = 5, avgbuyout = 620000},
   }},
-  {id = 22655, name = "Glacial Wrists", spell_name = "Glacial Wrists", spell_id = 28209, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 4349982, cost = 2675214, phaseId = 0, schem = 0, recipe = {
-    {id = 7080, name = "Essence of Water", count = 2, avgbuyout = 125795},
-    {id = 14048, name = "Bolt of Runecloth", count = 2, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7321},
-    {id = 22682, name = "Frozen Rune", count = 4, avgbuyout = 596000},
+  {id = 22655, name = "Glacial Wrists", spell_name = "Glacial Wrists", spell_id = 28209, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 4247810, cost = 2774106, phaseId = 0, schemprice = 10000, schemid = 22687, recipe = {
+    {id = 7080, name = "Essence of Water", count = 2, avgbuyout = 126224},
+    {id = 14048, name = "Bolt of Runecloth", count = 2, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7547},
+    {id = 22682, name = "Frozen Rune", count = 4, avgbuyout = 620000},
   }},
-  {id = 22658, name = "Glacial Cloak", spell_name = "Glacial Cloak", spell_id = 28208, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 4901853, cost = 3281554, phaseId = 0, schem = 0, recipe = {
-    {id = 7080, name = "Essence of Water", count = 2, avgbuyout = 125795},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7321},
-    {id = 22682, name = "Frozen Rune", count = 5, avgbuyout = 596000},
+  {id = 22658, name = "Glacial Cloak", spell_name = "Glacial Cloak", spell_id = 28208, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 4795296, cost = 3405576, phaseId = 0, schemprice = 10000, schemid = 22685, recipe = {
+    {id = 7080, name = "Essence of Water", count = 2, avgbuyout = 126224},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7547},
+    {id = 22682, name = "Frozen Rune", count = 5, avgbuyout = 620000},
   }},
-  {id = 22660, name = "Gaea's Embrace", spell_name = "Gaea's Embrace", spell_id = 28210, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1293803, cost = 432176, phaseId = 0, schem = 0, recipe = {
-    {id = 12803, name = "Living Essence", count = 4, avgbuyout = 22062},
-    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7321},
-    {id = 14342, name = "Mooncloth", count = 2, avgbuyout = 196900},
-    {id = 19726, name = "Bloodvine", count = 1, avgbuyout = 211000},
+  {id = 22660, name = "Gaea's Embrace", spell_name = "Gaea's Embrace", spell_id = 28210, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1293803, cost = 437488, phaseId = 0, schemprice = 10000, schemid = 22683, recipe = {
+    {id = 12803, name = "Living Essence", count = 4, avgbuyout = 21700},
+    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7547},
+    {id = 14342, name = "Mooncloth", count = 2, avgbuyout = 199632},
+    {id = 19726, name = "Bloodvine", count = 1, avgbuyout = 207500},
   }},
-  {id = 22756, name = "Sylvan Vest", spell_name = "Sylvan Vest", spell_id = 28480, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1230000, cost = 501446, phaseId = 0, schem = 0, recipe = {
-    {id = 12803, name = "Living Essence", count = 2, avgbuyout = 22062},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7321},
-    {id = 19726, name = "Bloodvine", count = 2, avgbuyout = 211000},
+  {id = 22756, name = "Sylvan Vest", spell_name = "Sylvan Vest", spell_id = 28480, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1230000, cost = 496434, phaseId = 0, schemprice = 10000, schemid = 22774, recipe = {
+    {id = 12803, name = "Living Essence", count = 2, avgbuyout = 21700},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7547},
+    {id = 19726, name = "Bloodvine", count = 2, avgbuyout = 207500},
   }},
-  {id = 22757, name = "Sylvan Crown", spell_name = "Sylvan Crown", spell_id = 28481, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1110000, cost = 183090, phaseId = 0, schem = 0, recipe = {
-    {id = 12803, name = "Living Essence", count = 2, avgbuyout = 22062},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7321},
-    {id = 14342, name = "Mooncloth", count = 2, avgbuyout = 196900},
+  {id = 22757, name = "Sylvan Crown", spell_name = "Sylvan Crown", spell_id = 28481, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1110000, cost = 194434, phaseId = 0, schemprice = 10000, schemid = 22773, recipe = {
+    {id = 12803, name = "Living Essence", count = 2, avgbuyout = 21700},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7547},
+    {id = 14342, name = "Mooncloth", count = 2, avgbuyout = 199632},
   }},
-  {id = 22758, name = "Sylvan Shoulders", spell_name = "Sylvan Shoulders", spell_id = 28482, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 449999, cost = 113230, phaseId = 0, schem = 0, recipe = {
-    {id = 12803, name = "Living Essence", count = 4, avgbuyout = 22062},
-    {id = 14048, name = "Bolt of Runecloth", count = 2, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7321},
+  {id = 22758, name = "Sylvan Shoulders", spell_name = "Sylvan Shoulders", spell_id = 28482, craft_count = 1, colors = {300,315,330,345}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 449999, cost = 113364, phaseId = 0, schemprice = 10000, schemid = 22772, recipe = {
+    {id = 12803, name = "Living Essence", count = 4, avgbuyout = 21700},
+    {id = 14048, name = "Bolt of Runecloth", count = 2, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7547},
   }},
-  {id = 227864, name = "Incandescent Mooncloth Leggings", spell_name = "Incandescent Mooncloth Leggings", spell_id = 461752, craft_count = 1, colors = {0,305,320,335}, learnedat = 305, nskillup = 1, quality = 3, avgbuyout = 1660155, cost = 247808, phaseId = 4, schem = 0, recipe = {
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 196900},
+  {id = 239148, name = "Crimson Dawnwoven Bag", spell_name = "Crimson Dawnwoven Bag", spell_id = 1227724, craft_count = 1, colors = {0,300,302,305}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 3279983, cost = 932210, phaseId = 8, schemprice = 10000, schemid = 239150, recipe = {
+    {id = 2604, name = "Red Dye", count = 4, avgbuyout = 1982},
+    {id = 12808, name = "Essence of Undeath", count = 2, avgbuyout = 13602},
+    {id = 12811, name = "Righteous Orb", count = 2, avgbuyout = 379719},
+    {id = 12938, name = "Blood of Heroes", count = 1, avgbuyout = 0},
+    {id = 14048, name = "Bolt of Runecloth", count = 24, avgbuyout = 5841},
   }},
-  {id = 227844, name = "Leather-Reinforced Runecloth Bag", spell_name = "Leather-Reinforced Runecloth Bag", spell_id = 461727, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 3, avgbuyout = 348998, cost = 246062, phaseId = 4, schem = 0, recipe = {
-    {id = 8170, name = "Rugged Leather", count = 2, avgbuyout = 1607},
-    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
-    {id = 15407, name = "Cured Rugged Hide", count = 1, avgbuyout = 207498},
+  {id = 227864, name = "Incandescent Mooncloth Leggings", spell_name = "Incandescent Mooncloth Leggings", spell_id = 461752, craft_count = 1, colors = {0,305,320,335}, learnedat = 305, nskillup = 1, quality = 3, avgbuyout = 1660155, cost = 269571, phaseId = 4, schemprice = 269995, schemid = 228318, recipe = {
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 199632},
   }},
-  {id = 227860, name = "Incandescent Mooncloth Vest", spell_name = "Incandescent Mooncloth Vest", spell_id = 461747, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 3, avgbuyout = 1339999, cost = 247808, phaseId = 4, schem = 0, recipe = {
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 196900},
+  {id = 227844, name = "Leather-Reinforced Runecloth Bag", spell_name = "Leather-Reinforced Runecloth Bag", spell_id = 461727, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 3, avgbuyout = 347992, cost = 242897, phaseId = 4, schemprice = 1806969, schemid = 228121, recipe = {
+    {id = 8170, name = "Rugged Leather", count = 2, avgbuyout = 1784},
+    {id = 14048, name = "Bolt of Runecloth", count = 5, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+    {id = 15407, name = "Cured Rugged Hide", count = 1, avgbuyout = 201493},
   }},
-  {id = 227861, name = "Incandescent Mooncloth Robe", spell_name = "Incandescent Mooncloth Robe", spell_id = 461708, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 3, avgbuyout = 2989931, cost = 818908, phaseId = 4, schem = 0, recipe = {
-    {id = 13926, name = "Golden Pearl", count = 2, avgbuyout = 280800},
-    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 196900},
+  {id = 227860, name = "Incandescent Mooncloth Vest", spell_name = "Incandescent Mooncloth Vest", spell_id = 461747, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 3, avgbuyout = 1339999, cost = 269571, phaseId = 4, schemprice = 120000, schemid = 228316, recipe = {
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 199632},
   }},
-  {id = 227863, name = "Incandescent Mooncloth Circlet", spell_name = "Incandescent Mooncloth Circlet", spell_id = 461750, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 3, avgbuyout = 3452832, cost = 459558, phaseId = 4, schem = 0, recipe = {
-    {id = 12800, name = "Azerothian Diamond", count = 1, avgbuyout = 30178},
-    {id = 12810, name = "Enchanted Leather", count = 2, avgbuyout = 39384},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 6, avgbuyout = 196900},
+  {id = 227861, name = "Incandescent Mooncloth Robe", spell_name = "Incandescent Mooncloth Robe", spell_id = 461708, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 3, avgbuyout = 2989931, cost = 778032, phaseId = 4, schemprice = 100000, schemid = 228303, recipe = {
+    {id = 13926, name = "Golden Pearl", count = 2, avgbuyout = 249650},
+    {id = 14048, name = "Bolt of Runecloth", count = 6, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 199632},
   }},
-  {id = 228476, name = "Embroidered Belt of the Archmage", spell_name = "Embroidered Belt of the Archmage", spell_id = 462282, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 7999996, cost = 3046872, phaseId = 4, schem = 0, recipe = {
-    {id = 7078, name = "Essence of Fire", count = 12, avgbuyout = 31728},
-    {id = 7080, name = "Essence of Water", count = 12, avgbuyout = 125795},
-    {id = 9210, name = "Ghost Dye", count = 10, avgbuyout = 29000},
-    {id = 14048, name = "Bolt of Runecloth", count = 16, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 6, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 10, avgbuyout = 196900},
-    {id = 14344, name = "Large Brilliant Shard", count = 6, avgbuyout = 34776},
+  {id = 227863, name = "Incandescent Mooncloth Circlet", spell_name = "Incandescent Mooncloth Circlet", spell_id = 461750, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 3, avgbuyout = 3947766, cost = 490608, phaseId = 4, schemprice = 233978, schemid = 228317, recipe = {
+    {id = 12800, name = "Azerothian Diamond", count = 1, avgbuyout = 31800},
+    {id = 12810, name = "Enchanted Leather", count = 2, avgbuyout = 39273},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 6, avgbuyout = 199632},
   }},
-  {id = 228994, name = "Bottomless Bag", spell_name = "Bottomless Bag", spell_id = 463972, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 3, avgbuyout = 2996402, cost = 869276, phaseId = 4, schem = 0, recipe = {
-    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5697},
-    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 12, avgbuyout = 196900},
-    {id = 14344, name = "Large Brilliant Shard", count = 2, avgbuyout = 34776},
-    {id = 17012, name = "Core Leather", count = 2, avgbuyout = 58750},
+  {id = 228476, name = "Embroidered Belt of the Archmage", spell_name = "Embroidered Belt of the Archmage", spell_id = 462282, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 7999996, cost = 3086646, phaseId = 4, schemprice = 1806666, schemid = 228477, recipe = {
+    {id = 7078, name = "Essence of Fire", count = 12, avgbuyout = 29548},
+    {id = 7080, name = "Essence of Water", count = 12, avgbuyout = 126224},
+    {id = 9210, name = "Ghost Dye", count = 10, avgbuyout = 28899},
+    {id = 14048, name = "Bolt of Runecloth", count = 16, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 6, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 10, avgbuyout = 199632},
+    {id = 14344, name = "Large Brilliant Shard", count = 6, avgbuyout = 36111},
   }},
-  {id = 233826, name = "Vampiric Cowl", spell_name = "Vampiric Cowl", spell_id = 1213527, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 3799090, cost = 825398, phaseId = 6, schem = 0, recipe = {
-    {id = 12810, name = "Enchanted Leather", count = 8, avgbuyout = 39384},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 8, avgbuyout = 196900},
-    {id = 234009, name = "Bolt of Qiraji Silk", count = 15, avgbuyout = 16896},
+  {id = 228994, name = "Bottomless Bag", spell_name = "Bottomless Bag", spell_id = 463972, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 3, avgbuyout = 2996402, cost = 979316, phaseId = 4, schemprice = 8606112, schemid = 14510, recipe = {
+    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5841},
+    {id = 14341, name = "Rune Thread", count = 2, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 12, avgbuyout = 199632},
+    {id = 14344, name = "Large Brilliant Shard", count = 2, avgbuyout = 36111},
+    {id = 17012, name = "Core Leather", count = 2, avgbuyout = 82446},
   }},
-  {id = 233833, name = "Vampiric Shawl", spell_name = "Vampiric Shawl", spell_id = 1213530, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 3750000, cost = 825398, phaseId = 6, schem = 0, recipe = {
-    {id = 12810, name = "Enchanted Leather", count = 8, avgbuyout = 39384},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 8, avgbuyout = 196900},
-    {id = 234009, name = "Bolt of Qiraji Silk", count = 15, avgbuyout = 16896},
+  {id = 233826, name = "Vampiric Cowl", spell_name = "Vampiric Cowl", spell_id = 1213527, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 3009996, cost = 1013320, phaseId = 6, schemprice = 10000, schemid = 234240, recipe = {
+    {id = 12810, name = "Enchanted Leather", count = 8, avgbuyout = 39273},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 8, avgbuyout = 199632},
+    {id = 234009, name = "Bolt of Qiraji Silk", count = 15, avgbuyout = 22221},
   }},
-  {id = 233837, name = "Vampiric Robe", spell_name = "Vampiric Robe", spell_id = 1213532, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 4599999, cost = 1247722, phaseId = 6, schem = 0, recipe = {
-    {id = 12810, name = "Enchanted Leather", count = 12, avgbuyout = 39384},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
-    {id = 14342, name = "Mooncloth", count = 12, avgbuyout = 196900},
-    {id = 234009, name = "Bolt of Qiraji Silk", count = 25, avgbuyout = 16896},
+  {id = 233833, name = "Vampiric Shawl", spell_name = "Vampiric Shawl", spell_id = 1213530, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 3750000, cost = 1013320, phaseId = 6, schemprice = 10000, schemid = 234241, recipe = {
+    {id = 12810, name = "Enchanted Leather", count = 8, avgbuyout = 39273},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 8, avgbuyout = 199632},
+    {id = 234009, name = "Bolt of Qiraji Silk", count = 15, avgbuyout = 22221},
   }},
-  {id = 234009, name = "Bolt of Qiraji Silk", spell_name = "Bolt of Qiraji Silk", spell_id = 1214173, craft_count = 1, colors = {0,315,322,330}, learnedat = 315, nskillup = 1, quality = 1, avgbuyout = 16896, cost = 5750, phaseId = 6, schem = 0, recipe = {
-    {id = 234008, name = "Qiraji Silk", count = 5, avgbuyout = 1150},
+  {id = 233837, name = "Vampiric Robe", spell_name = "Vampiric Robe", spell_id = 1213532, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 5259898, cost = 1555062, phaseId = 6, schemprice = 10000, schemid = 234242, recipe = {
+    {id = 12810, name = "Enchanted Leather", count = 12, avgbuyout = 39273},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+    {id = 14342, name = "Mooncloth", count = 12, avgbuyout = 199632},
+    {id = 234009, name = "Bolt of Qiraji Silk", count = 25, avgbuyout = 22221},
   }},
-  {id = 234312, name = "Sylvan Shoulders", spell_name = "Sylvan Shoulders", spell_id = 1213740, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 2450000, cost = 771212, phaseId = 6, schem = 0, recipe = {
-    {id = 12803, name = "Living Essence", count = 4, avgbuyout = 22062},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7321},
-    {id = 19726, name = "Bloodvine", count = 3, avgbuyout = 211000},
+  {id = 234009, name = "Bolt of Qiraji Silk", spell_name = "Bolt of Qiraji Silk", spell_id = 1214173, craft_count = 1, colors = {0,315,322,330}, learnedat = 315, nskillup = 1, quality = 1, avgbuyout = 22221, cost = 15865, phaseId = 6, schemprice = 10000, schemid = 234445, recipe = {
+    {id = 234008, name = "Qiraji Silk", count = 5, avgbuyout = 3173},
   }},
-  {id = 234315, name = "Sylvan Crown", spell_name = "Sylvan Crown", spell_id = 1213742, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 3999981, cost = 1160117, phaseId = 6, schem = 0, recipe = {
-    {id = 12803, name = "Living Essence", count = 3, avgbuyout = 22062},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 3, avgbuyout = 7321},
-    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 196900},
-    {id = 19726, name = "Bloodvine", count = 4, avgbuyout = 211000},
+  {id = 234312, name = "Sylvan Shoulders", spell_name = "Sylvan Shoulders", spell_id = 1213740, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 2450000, cost = 762428, phaseId = 6, schemprice = 10000, schemid = 22772, recipe = {
+    {id = 12803, name = "Living Essence", count = 4, avgbuyout = 21700},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7547},
+    {id = 19726, name = "Bloodvine", count = 3, avgbuyout = 207500},
   }},
-  {id = 234317, name = "Sylvan Vest", spell_name = "Sylvan Vest", spell_id = 1213744, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 4509980, cost = 927055, phaseId = 6, schem = 0, recipe = {
-    {id = 12803, name = "Living Essence", count = 2, avgbuyout = 22062},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 3, avgbuyout = 7321},
-    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 196900},
-    {id = 19726, name = "Bloodvine", count = 3, avgbuyout = 211000},
+  {id = 234315, name = "Sylvan Crown", spell_name = "Sylvan Crown", spell_id = 1213742, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 4480000, cost = 1166681, phaseId = 6, schemprice = 10000, schemid = 22773, recipe = {
+    {id = 12803, name = "Living Essence", count = 3, avgbuyout = 21700},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 3, avgbuyout = 7547},
+    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 199632},
+    {id = 19726, name = "Bloodvine", count = 4, avgbuyout = 207500},
   }},
-  {id = 236690, name = "Glacial Cloak", spell_name = "Glacial Cloak", spell_id = 1223762, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 1750000, cost = 726549, phaseId = 7, schem = 0, recipe = {
-    {id = 7080, name = "Essence of Water", count = 2, avgbuyout = 125795},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7321},
-    {id = 236656, name = "Frozen Rune", count = 5, avgbuyout = 84999},
+  {id = 234317, name = "Sylvan Vest", spell_name = "Sylvan Vest", spell_id = 1213744, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 4509980, cost = 937481, phaseId = 6, schemprice = 10000, schemid = 22774, recipe = {
+    {id = 12803, name = "Living Essence", count = 2, avgbuyout = 21700},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 3, avgbuyout = 7547},
+    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 199632},
+    {id = 19726, name = "Bloodvine", count = 3, avgbuyout = 207500},
   }},
-  {id = 236692, name = "Glacial Gloves", spell_name = "Glacial Gloves", spell_id = 1223764, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 2289988, cost = 978139, phaseId = 7, schem = 0, recipe = {
-    {id = 7080, name = "Essence of Water", count = 4, avgbuyout = 125795},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7321},
-    {id = 236656, name = "Frozen Rune", count = 5, avgbuyout = 84999},
+  {id = 236690, name = "Glacial Cloak", spell_name = "Glacial Cloak", spell_id = 1223762, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 1677659, cost = 820566, phaseId = 7, schemprice = 10000, schemid = 22685, recipe = {
+    {id = 7080, name = "Essence of Water", count = 2, avgbuyout = 126224},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7547},
+    {id = 236656, name = "Frozen Rune", count = 5, avgbuyout = 102998},
   }},
-  {id = 236693, name = "Glacial Wrists", spell_name = "Glacial Wrists", spell_id = 1223766, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 1899999, cost = 631210, phaseId = 7, schem = 0, recipe = {
-    {id = 7080, name = "Essence of Water", count = 2, avgbuyout = 125795},
-    {id = 14048, name = "Bolt of Runecloth", count = 2, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7321},
-    {id = 236656, name = "Frozen Rune", count = 4, avgbuyout = 84999},
+  {id = 236692, name = "Glacial Gloves", spell_name = "Glacial Gloves", spell_id = 1223764, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 2289988, cost = 1073014, phaseId = 7, schemprice = 10000, schemid = 22684, recipe = {
+    {id = 7080, name = "Essence of Water", count = 4, avgbuyout = 126224},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7547},
+    {id = 236656, name = "Frozen Rune", count = 5, avgbuyout = 102998},
   }},
-  {id = 236694, name = "Glacial Vest", spell_name = "Glacial Vest", spell_id = 1223760, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 3999961, cost = 1449691, phaseId = 7, schem = 0, recipe = {
-    {id = 7080, name = "Essence of Water", count = 6, avgbuyout = 125795},
-    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 8, avgbuyout = 7321},
-    {id = 236656, name = "Frozen Rune", count = 7, avgbuyout = 84999},
+  {id = 236693, name = "Glacial Wrists", spell_name = "Glacial Wrists", spell_id = 1223766, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 1899999, cost = 706098, phaseId = 7, schemprice = 10000, schemid = 22687, recipe = {
+    {id = 7080, name = "Essence of Water", count = 2, avgbuyout = 126224},
+    {id = 14048, name = "Bolt of Runecloth", count = 2, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7547},
+    {id = 236656, name = "Frozen Rune", count = 4, avgbuyout = 102998},
   }},
-  {id = 236704, name = "Frosty Wrists", spell_name = "Frosty Wrists", spell_id = 1223772, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 999970, cost = 631210, phaseId = 7, schem = 0, recipe = {
-    {id = 7080, name = "Essence of Water", count = 2, avgbuyout = 125795},
-    {id = 14048, name = "Bolt of Runecloth", count = 2, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7321},
-    {id = 236656, name = "Frozen Rune", count = 4, avgbuyout = 84999},
+  {id = 236694, name = "Glacial Vest", spell_name = "Glacial Vest", spell_id = 1223760, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 3990000, cost = 1584586, phaseId = 7, schemprice = 10000, schemid = 22686, recipe = {
+    {id = 7080, name = "Essence of Water", count = 6, avgbuyout = 126224},
+    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 8, avgbuyout = 7547},
+    {id = 236656, name = "Frozen Rune", count = 7, avgbuyout = 102998},
   }},
-  {id = 236705, name = "Frosty Gloves", spell_name = "Frosty Gloves", spell_id = 1223770, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 2499999, cost = 978139, phaseId = 7, schem = 0, recipe = {
-    {id = 7080, name = "Essence of Water", count = 4, avgbuyout = 125795},
-    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7321},
-    {id = 236656, name = "Frozen Rune", count = 5, avgbuyout = 84999},
+  {id = 236704, name = "Frosty Wrists", spell_name = "Frosty Wrists", spell_id = 1223772, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 999970, cost = 706098, phaseId = 7, schemprice = 0, schemid = 0, recipe = {
+    {id = 7080, name = "Essence of Water", count = 2, avgbuyout = 126224},
+    {id = 14048, name = "Bolt of Runecloth", count = 2, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7547},
+    {id = 236656, name = "Frozen Rune", count = 4, avgbuyout = 102998},
   }},
-  {id = 236706, name = "Frosty Vest", spell_name = "Frosty Vest", spell_id = 1223768, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 3999936, cost = 1449691, phaseId = 7, schem = 0, recipe = {
-    {id = 7080, name = "Essence of Water", count = 6, avgbuyout = 125795},
-    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 8, avgbuyout = 7321},
-    {id = 236656, name = "Frozen Rune", count = 7, avgbuyout = 84999},
+  {id = 236705, name = "Frosty Gloves", spell_name = "Frosty Gloves", spell_id = 1223770, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 2499999, cost = 1073014, phaseId = 7, schemprice = 0, schemid = 0, recipe = {
+    {id = 7080, name = "Essence of Water", count = 4, avgbuyout = 126224},
+    {id = 14048, name = "Bolt of Runecloth", count = 4, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 4, avgbuyout = 7547},
+    {id = 236656, name = "Frozen Rune", count = 5, avgbuyout = 102998},
   }},
-  {id = 233956, name = "Qiraji Silk Scarf", spell_name = "Qiraji Silk Scarf", spell_id = 1213534, craft_count = 1, colors = {0,320,330,340}, learnedat = 320, nskillup = 1, quality = 4, avgbuyout = 3399999, cost = 1455178, phaseId = 6, schem = 0, recipe = {
-    {id = 12810, name = "Enchanted Leather", count = 8, avgbuyout = 39384},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
-    {id = 15407, name = "Cured Rugged Hide", count = 4, avgbuyout = 207498},
-    {id = 234007, name = "Spiked Silithid Chitin", count = 8, avgbuyout = 31108},
-    {id = 234009, name = "Bolt of Qiraji Silk", count = 9, avgbuyout = 16896},
+  {id = 236706, name = "Frosty Vest", spell_name = "Frosty Vest", spell_id = 1223768, craft_count = 1, colors = {0,315,330,345}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 3999936, cost = 1584586, phaseId = 7, schemprice = 0, schemid = 0, recipe = {
+    {id = 7080, name = "Essence of Water", count = 6, avgbuyout = 126224},
+    {id = 14048, name = "Bolt of Runecloth", count = 8, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 8, avgbuyout = 7547},
+    {id = 236656, name = "Frozen Rune", count = 7, avgbuyout = 102998},
   }},
-  {id = 233958, name = "Qiraji Silk Cape", spell_name = "Qiraji Silk Cape", spell_id = 1213536, craft_count = 1, colors = {0,320,330,340}, learnedat = 320, nskillup = 1, quality = 4, avgbuyout = 3709919, cost = 1455178, phaseId = 6, schem = 0, recipe = {
-    {id = 12810, name = "Enchanted Leather", count = 8, avgbuyout = 39384},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
-    {id = 15407, name = "Cured Rugged Hide", count = 4, avgbuyout = 207498},
-    {id = 234007, name = "Spiked Silithid Chitin", count = 8, avgbuyout = 31108},
-    {id = 234009, name = "Bolt of Qiraji Silk", count = 9, avgbuyout = 16896},
+  {id = 233956, name = "Qiraji Silk Scarf", spell_name = "Qiraji Silk Scarf", spell_id = 1213534, craft_count = 1, colors = {0,320,330,340}, learnedat = 320, nskillup = 1, quality = 4, avgbuyout = 3009975, cost = 1597822, phaseId = 6, schemprice = 10000, schemid = 234244, recipe = {
+    {id = 12810, name = "Enchanted Leather", count = 8, avgbuyout = 39273},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+    {id = 15407, name = "Cured Rugged Hide", count = 4, avgbuyout = 201493},
+    {id = 234007, name = "Spiked Silithid Chitin", count = 8, avgbuyout = 40715},
+    {id = 234009, name = "Bolt of Qiraji Silk", count = 9, avgbuyout = 22221},
   }},
-  {id = 233959, name = "Qiraji Silk Cloak", spell_name = "Qiraji Silk Cloak", spell_id = 1213538, craft_count = 1, colors = {0,320,330,340}, learnedat = 320, nskillup = 1, quality = 4, avgbuyout = 3499923, cost = 1455178, phaseId = 6, schem = 0, recipe = {
-    {id = 12810, name = "Enchanted Leather", count = 8, avgbuyout = 39384},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
-    {id = 15407, name = "Cured Rugged Hide", count = 4, avgbuyout = 207498},
-    {id = 234007, name = "Spiked Silithid Chitin", count = 8, avgbuyout = 31108},
-    {id = 234009, name = "Bolt of Qiraji Silk", count = 9, avgbuyout = 16896},
+  {id = 233958, name = "Qiraji Silk Cape", spell_name = "Qiraji Silk Cape", spell_id = 1213536, craft_count = 1, colors = {0,320,330,340}, learnedat = 320, nskillup = 1, quality = 4, avgbuyout = 3249992, cost = 1597822, phaseId = 6, schemprice = 10000, schemid = 234249, recipe = {
+    {id = 12810, name = "Enchanted Leather", count = 8, avgbuyout = 39273},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+    {id = 15407, name = "Cured Rugged Hide", count = 4, avgbuyout = 201493},
+    {id = 234007, name = "Spiked Silithid Chitin", count = 8, avgbuyout = 40715},
+    {id = 234009, name = "Bolt of Qiraji Silk", count = 9, avgbuyout = 22221},
   }},
-  {id = 233960, name = "Qiraji Silk Drape", spell_name = "Qiraji Silk Drape", spell_id = 1213540, craft_count = 1, colors = {0,320,330,340}, learnedat = 320, nskillup = 1, quality = 4, avgbuyout = 3800000, cost = 1455178, phaseId = 6, schem = 0, recipe = {
-    {id = 12810, name = "Enchanted Leather", count = 8, avgbuyout = 39384},
-    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9500},
-    {id = 15407, name = "Cured Rugged Hide", count = 4, avgbuyout = 207498},
-    {id = 234007, name = "Spiked Silithid Chitin", count = 8, avgbuyout = 31108},
-    {id = 234009, name = "Bolt of Qiraji Silk", count = 9, avgbuyout = 16896},
+  {id = 233959, name = "Qiraji Silk Cloak", spell_name = "Qiraji Silk Cloak", spell_id = 1213538, craft_count = 1, colors = {0,320,330,340}, learnedat = 320, nskillup = 1, quality = 4, avgbuyout = 3259994, cost = 1597822, phaseId = 6, schemprice = 10000, schemid = 234250, recipe = {
+    {id = 12810, name = "Enchanted Leather", count = 8, avgbuyout = 39273},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+    {id = 15407, name = "Cured Rugged Hide", count = 4, avgbuyout = 201493},
+    {id = 234007, name = "Spiked Silithid Chitin", count = 8, avgbuyout = 40715},
+    {id = 234009, name = "Bolt of Qiraji Silk", count = 9, avgbuyout = 22221},
   }},
-  {id = 234484, name = "Dreamscale Bracers", spell_name = "Dreamscale Bracers", spell_id = 1214306, craft_count = 1, colors = {0,320,330,340}, learnedat = 320, nskillup = 1, quality = 4, avgbuyout = 0, cost = 1661226, phaseId = 6, schem = 0, recipe = {
-    {id = 12803, name = "Living Essence", count = 4, avgbuyout = 22062},
-    {id = 14048, name = "Bolt of Runecloth", count = 30, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 6, avgbuyout = 7321},
-    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 196900},
-    {id = 20381, name = "Dreamscale", count = 4, avgbuyout = 291666},
+  {id = 233960, name = "Qiraji Silk Drape", spell_name = "Qiraji Silk Drape", spell_id = 1213540, craft_count = 1, colors = {0,320,330,340}, learnedat = 320, nskillup = 1, quality = 4, avgbuyout = 3509906, cost = 1597822, phaseId = 6, schemprice = 10000, schemid = 234251, recipe = {
+    {id = 12810, name = "Enchanted Leather", count = 8, avgbuyout = 39273},
+    {id = 14341, name = "Rune Thread", count = 1, avgbuyout = 9161},
+    {id = 15407, name = "Cured Rugged Hide", count = 4, avgbuyout = 201493},
+    {id = 234007, name = "Spiked Silithid Chitin", count = 8, avgbuyout = 40715},
+    {id = 234009, name = "Bolt of Qiraji Silk", count = 9, avgbuyout = 22221},
   }},
-  {id = 234485, name = "Dreamscale Mitts", spell_name = "Dreamscale Mitts", spell_id = 1214307, craft_count = 1, colors = {0,320,330,340}, learnedat = 320, nskillup = 1, quality = 4, avgbuyout = 0, cost = 1952892, phaseId = 6, schem = 0, recipe = {
-    {id = 12803, name = "Living Essence", count = 4, avgbuyout = 22062},
-    {id = 14048, name = "Bolt of Runecloth", count = 30, avgbuyout = 5697},
-    {id = 14227, name = "Ironweb Spider Silk", count = 6, avgbuyout = 7321},
-    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 196900},
-    {id = 20381, name = "Dreamscale", count = 5, avgbuyout = 291666},
+  {id = 234484, name = "Dreamscale Bracers", spell_name = "Dreamscale Bracers", spell_id = 1214306, craft_count = 1, colors = {0,320,330,340}, learnedat = 320, nskillup = 1, quality = 4, avgbuyout = 0, cost = 1530132, phaseId = 6, schemprice = 10000, schemid = 234483, recipe = {
+    {id = 12803, name = "Living Essence", count = 4, avgbuyout = 21700},
+    {id = 14048, name = "Bolt of Runecloth", count = 30, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 6, avgbuyout = 7547},
+    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 199632},
+    {id = 20381, name = "Dreamscale", count = 4, avgbuyout = 250000},
+  }},
+  {id = 234485, name = "Dreamscale Mitts", spell_name = "Dreamscale Mitts", spell_id = 1214307, craft_count = 1, colors = {0,320,330,340}, learnedat = 320, nskillup = 1, quality = 4, avgbuyout = 0, cost = 1780132, phaseId = 6, schemprice = 10000, schemid = 234486, recipe = {
+    {id = 12803, name = "Living Essence", count = 4, avgbuyout = 21700},
+    {id = 14048, name = "Bolt of Runecloth", count = 30, avgbuyout = 5841},
+    {id = 14227, name = "Ironweb Spider Silk", count = 6, avgbuyout = 7547},
+    {id = 14342, name = "Mooncloth", count = 4, avgbuyout = 199632},
+    {id = 20381, name = "Dreamscale", count = 5, avgbuyout = 250000},
   }},
 }

@@ -1,0 +1,3 @@
+# Scraper cache & intermediate scrape artifacts
+cache/
+*.json

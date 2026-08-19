@@ -5,15 +5,17 @@ import got from "got";
 import fs from "fs";
 import path from "path";
 
+// teach: item-name prefix for recipes learned from an item rather than a
+// trainer (Schematic: <name>, Pattern: <name>, ...).
 const profs = {
-  eng: { id: 202, name: "engineering", item: "Rough Stone" },
-  bs: { id: 164, name: "blacksmithing" },
-  lw: { id: 165, name: "leatherworking" },
-  alch: { id: 171, name: "alchemy" },
-  ench: { id: 333, name: "enchanting" },
-  tailor: { id: 197, name: "tailoring", item: '"Linen Cloth"' },
-  jc: { id: 755, name: "jewelcrafting" },
-  insc: { id: 773, name: "inscription" },
+  eng: { id: 202, name: "engineering", item: "Rough Stone", teach: "Schematic" },
+  bs: { id: 164, name: "blacksmithing", teach: "Plans" },
+  lw: { id: 165, name: "leatherworking", teach: "Pattern" },
+  alch: { id: 171, name: "alchemy", teach: "Recipe" },
+  ench: { id: 333, name: "enchanting", teach: "Formula" },
+  tailor: { id: 197, name: "tailoring", item: '"Linen Cloth"', teach: "Pattern" },
+  jc: { id: 755, name: "jewelcrafting", teach: "Design" },
+  insc: { id: 773, name: "inscription", teach: "Formula" },
 };
 
 const prog = new Command();
@@ -50,7 +52,21 @@ prog
       html = fs.readFileSync(cache, "utf8");
     } else {
       console.log(`Fetching: ${url}`);
-      const res = await got(url);
+      // Wowhead is often only reachable via a proxy here; honor the standard
+      // http(s)_proxy env vars. hpagent is imported lazily so runs without a
+      // proxy configured don't need the dependency installed.
+      const proxy =
+        process.env.https_proxy ||
+        process.env.HTTPS_PROXY ||
+        process.env.http_proxy ||
+        process.env.HTTP_PROXY;
+      let opts = {};
+      if (proxy) {
+        console.log(`Using proxy: ${proxy}`);
+        const { HttpsProxyAgent } = await import("hpagent");
+        opts.agent = { https: new HttpsProxyAgent({ proxy }) };
+      }
+      const res = await got(url, opts);
       html = res.body;
       fs.writeFileSync(cache, html);
     }
@@ -113,7 +129,8 @@ prog
 
       const itemId = s.creates[0];
       const item = data.item[itemId] || {};
-      const name = (item.name_enus || s.name || "").replace(/"/g, '\\"');
+      const rawName = item.name_enus || s.name || "";
+      const name = rawName.replace(/"/g, '\\"');
 
       const reags = {};
       if (s.reagents) {
@@ -140,14 +157,21 @@ prog
         phaseId: s.phaseId || 0,
         avgbuyout: item.jsonequip?.avgbuyout || 0,
         recipe: reags,
-        schem: 0,
+        schemprice: 0,
+        schemid: 0,
       };
 
-      // Find schematic for this recipe
-      const schemName = `Schematic: ${name}`;
+      // Find the teaching item for this recipe. schem.json carries only recipe
+      // metadata (name, skill, quality, source) — no buyout data. Wowhead embeds
+      // the teaching item's market price under item.json keyed by item id.
+      const schemName = `${prof.teach}: ${rawName}`;
       const schem = data.schem?.find((s) => s.name === schemName);
       if (schem) {
-        recs[itemId].schem = schem.avgbuyout || 1;
+        const schemItem = data.item[schem.id] || {};
+        // Default to 1g (10000 copper) when no market data is available, so the
+        // planner still accounts for the teaching scroll's cost rather than 0.
+        recs[itemId].schemprice = schemItem.jsonequip?.avgbuyout || 10000;
+        recs[itemId].schemid = schem.id || 0;
       }
     });
 
@@ -180,7 +204,7 @@ prog
       lua += `spell_id = ${r.spell_id}, craft_count = ${r.craft_count}, `;
       lua += `colors = {${r.colors.join(",")}}, learnedat = ${r.learnedat}, `;
       lua += `nskillup = ${r.nskillup}, quality = ${r.quality}, `;
-      lua += `avgbuyout = ${r.avgbuyout}, cost = ${r.cost}, phaseId = ${r.phaseId}, schem = ${r.schem}, recipe = {\n`;
+      lua += `avgbuyout = ${r.avgbuyout}, cost = ${r.cost}, phaseId = ${r.phaseId}, schemprice = ${r.schemprice}, schemid = ${r.schemid}, recipe = {\n`;
 
       Object.entries(r.recipe).forEach(([id, rg]) => {
         lua += `    {id = ${id}, name = "${rg.name}", count = ${rg.count}, avgbuyout = ${rg.avgbuyout}},\n`;

@@ -22,28 +22,30 @@ Widget methods: `SetSize`, `SetPoint`, `SetMovable`, `EnableMouse`,
 ### Trade-skill domain (tradeskill.lua)
 - `GetTradeSkillLine()` → `name, nil, rank, maxRank`
 - `GetNumTradeSkills()` → count
-- `GetTradeSkillInfo(i)` → `name, kind`
+- `GetTradeSkillInfo(i)` → `name, kind` ("header" if unlearned, else "optimal")
 - `GetTradeSkillNumReagents(i)` → count
 - `GetTradeSkillReagentInfo(i, j)` → `name, nil, count`
 - `DoTradeSkill(index, batch)` — fires `TRADE_SKILL_UPDATE` + `BAG_UPDATE`
-- `GetContainerNumSlots(bag)` → count (only bag 0 is populated)
-- `GetContainerItemInfo(bag, slot)` → `nil, count, nil, nil, nil, nil, link`
+- `GetContainerNumSlots(bag)` → count (only bag 0 is populated; bag is id-keyed)
+- `GetContainerItemInfo(bag, slot)` → `nil, count, nil, nil, nil, nil, link` (link = name from `world.item[id]`)
+- `GetContainerItemID(bag, slot)` → item id
 - `GetItemInfo(link)` → `link` (link == name in the sim)
+- `UseContainerItem(bag, slot)` — a teaching item learns its recipe (`learned=1`), is consumed; fires `TRADE_SKILL_UPDATE` + `BAG_UPDATE`
 
 ### GM console — test setup, NOT a WoW API
 The shared `GM` table is created by `client.lua`; each domain module attaches
 its own knobs (setup helpers live with the domain they mutate).
 - `GM.SetSeed(n)` — generic (client.lua)
 - `GM.SetTradeSkillLine(name, lvl, cap)` — tradeskill.lua
-- `GM.LoadRecipes(raw)` — load a `<prof>_data` array into the book (tradeskill.lua)
-- `GM.SetBag(name, count)` or `GM.SetBag({[name]=count, ...})` — tradeskill.lua
+- `GM.LoadRecipes(raw)` — load a `<prof>_data` array into the catalog; trainer-taught load learned, scroll-taught unlearned (tradeskill.lua)
+- `GM.SetBag(name, count)` or `GM.SetBag({[name]=count, ...})` — stock the id-keyed bag by item name (tradeskill.lua)
 - `GM.ResetProgress()` — tradeskill.lua
 
 ### Loader (init.lua)
 - `loadAddon(tocPath)` → `ns` — parse .toc, run each file with `(addonName, ns)`, fire `ADDON_LOADED`
 - `fire(event, ...)` — dispatch an event to all registered frames
 - `slash(line)` — dispatch a slash command (e.g., `"/skm plan"`)
-- `world` — the mutable sim state (skill, bag, book, crafts)
+- `world` — the mutable sim state (skill, bag, catalog, item, crafts)
 - `env` — the global table (`_G`)
 
 ## Growth path

@@ -7,6 +7,7 @@
   "dependencies": {
     "cheerio": "^1.0.0",
     "commander": "^13.1.0",
-    "got": "^14.4.6"
+    "got": "^14.4.6",
+    "hpagent": "^1.2.0"
   }
 }

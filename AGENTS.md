@@ -27,6 +27,13 @@ file holds the conventions common to all of them.
 11. Delete obsolete code instead of preserving history.
 12. Continuously improve the architecture while implementing changes.
 
+# About comments in code
+don't write verbose comments!
+don't write verbose comments!
+don't write verbose comments!
+don't write verbose comments!
+only explain unormal 'why', when really necessary, readers are not ideats, when really necessary, when really necessary, not 'what' or 'how'.
+
 # Skills
 - `png2blp` (`.claude/skills/png2blp/`) — convert PNG → BLP for addon art.
   Run from the repo root: `python3 .claude/skills/png2blp/png2blp.py <src.png> <dst.blp>`.

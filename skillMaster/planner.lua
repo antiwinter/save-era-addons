@@ -199,7 +199,18 @@ local function BuildPlan(db, opts)
 		return actions
 	end
 
-	return gen_plan(), material
+	local actions = gen_plan()
+
+	-- Each schematic-taught recipe the plan crafts needs its teaching item
+	-- ("Schematic: X") once — it teaches the recipe and stays in the bag.
+	for _, ac in ipairs(actions) do
+		local r = db[ac.item]
+		if r and r.schemid and r.schemid > 0 and db.schemPrefix then
+			material[db.schemPrefix .. ac.item] = 1
+		end
+	end
+
+	return actions, material
 end
 
 ns.Planner = { BuildPlan = BuildPlan, rolls = rolls }

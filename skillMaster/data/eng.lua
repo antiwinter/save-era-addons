@@ -1,1011 +1,1043 @@
 eng_data = {
-  {id = 10579, name = "Explosive Arrow", spell_name = "Explosive Arrow", spell_id = 12719, craft_count = 100, colors = {}, learnedat = 0, nskillup = 1, quality = 3, avgbuyout = 0, cost = 9308, phaseId = 0, schem = 0, recipe = {
+  {id = 10579, name = "Explosive Arrow", spell_name = "Explosive Arrow", spell_id = 12719, craft_count = 100, colors = {}, learnedat = 0, nskillup = 1, quality = 3, avgbuyout = 0, cost = 9514, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
     {id = 3030, name = "Razor Arrow", count = 100, avgbuyout = 4},
-    {id = 3860, name = "Mithril Bar", count = 2, avgbuyout = 2098},
-    {id = 10505, name = "Solid Blasting Powder", count = 2, avgbuyout = 2806},
+    {id = 3860, name = "Mithril Bar", count = 2, avgbuyout = 2167},
+    {id = 10505, name = "Solid Blasting Powder", count = 2, avgbuyout = 2901},
   }},
-  {id = 10580, name = "Goblin \"Boom\" Box", spell_name = "Goblin \"Boom\" Box", spell_id = 12720, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 1, avgbuyout = 0, cost = 16855, phaseId = 0, schem = 0, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 2, avgbuyout = 2098},
-    {id = 10505, name = "Solid Blasting Powder", count = 2, avgbuyout = 2806},
-    {id = 10558, name = "Gold Power Core", count = 1, avgbuyout = 1227},
-    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5537},
+  {id = 10580, name = "Goblin \"Boom\" Box", spell_name = "Goblin \"Boom\" Box", spell_id = 12720, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 1, avgbuyout = 0, cost = 17252, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 2, avgbuyout = 2167},
+    {id = 10505, name = "Solid Blasting Powder", count = 2, avgbuyout = 2901},
+    {id = 10558, name = "Gold Power Core", count = 1, avgbuyout = 1295},
+    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5706},
   }},
-  {id = 10585, name = "Goblin Radio", spell_name = "Goblin Radio", spell_id = 12722, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 1, avgbuyout = 0, cost = 18555, phaseId = 0, schem = 0, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 2, avgbuyout = 2098},
-    {id = 4389, name = "Gyrochronatom", count = 1, avgbuyout = 4483},
-    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 8999},
-    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5537},
+  {id = 10585, name = "Goblin Radio", spell_name = "Goblin Radio", spell_id = 12722, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 1, avgbuyout = 0, cost = 19038, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 2, avgbuyout = 2167},
+    {id = 4389, name = "Gyrochronatom", count = 1, avgbuyout = 4633},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
+    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5706},
   }},
-  {id = 10719, name = "Mobile Alarm", spell_name = "Mobile Alarm", spell_id = 12900, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 1, avgbuyout = 0, cost = 19799, phaseId = 0, schem = 0, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 4, avgbuyout = 2098},
-    {id = 10559, name = "Mithril Tube", count = 1, avgbuyout = 6730},
-    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 8999},
+  {id = 10719, name = "Mobile Alarm", spell_name = "Mobile Alarm", spell_id = 12900, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 1, avgbuyout = 0, cost = 20375, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 4, avgbuyout = 2167},
+    {id = 10559, name = "Mithril Tube", count = 1, avgbuyout = 6672},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
   }},
-  {id = 10723, name = "Gnomish Ham Radio", spell_name = "Gnomish Ham Radio", spell_id = 12904, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 1, avgbuyout = 0, cost = 18555, phaseId = 0, schem = 0, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 2, avgbuyout = 2098},
-    {id = 4389, name = "Gyrochronatom", count = 1, avgbuyout = 4483},
-    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 8999},
-    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5537},
+  {id = 10723, name = "Gnomish Ham Radio", spell_name = "Gnomish Ham Radio", spell_id = 12904, craft_count = 1, colors = {}, learnedat = 0, nskillup = 1, quality = 1, avgbuyout = 0, cost = 19038, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 2, avgbuyout = 2167},
+    {id = 4389, name = "Gyrochronatom", count = 1, avgbuyout = 4633},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
+    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5706},
   }},
-  {id = 4357, name = "Rough Blasting Powder", spell_name = "Rough Blasting Powder", spell_id = 3918, craft_count = 1, colors = {1,20,30,40}, learnedat = 1, nskillup = 1, quality = 1, avgbuyout = 15, cost = 29, phaseId = 0, schem = 0, recipe = {
+  {id = 4357, name = "Rough Blasting Powder", spell_name = "Rough Blasting Powder", spell_id = 3918, craft_count = 1, colors = {1,20,30,40}, learnedat = 1, nskillup = 1, quality = 1, avgbuyout = 17, cost = 29, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
     {id = 2835, name = "Rough Stone", count = 1, avgbuyout = 29},
   }},
-  {id = 4358, name = "Rough Dynamite", spell_name = "Rough Dynamite", spell_id = 3919, craft_count = 2, colors = {1,30,45,60}, learnedat = 1, nskillup = 1, quality = 1, avgbuyout = 32, cost = 98, phaseId = 0, schem = 0, recipe = {
-    {id = 2589, name = "Linen Cloth", count = 1, avgbuyout = 40},
-    {id = 4357, name = "Rough Blasting Powder", count = 2, avgbuyout = 15},
+  {id = 4358, name = "Rough Dynamite", spell_name = "Rough Dynamite", spell_id = 3919, craft_count = 2, colors = {1,30,45,60}, learnedat = 1, nskillup = 1, quality = 1, avgbuyout = 34, cost = 99, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2589, name = "Linen Cloth", count = 1, avgbuyout = 41},
+    {id = 4357, name = "Rough Blasting Powder", count = 2, avgbuyout = 17},
   }},
-  {id = 4359, name = "Handful of Copper Bolts", spell_name = "Handful of Copper Bolts", spell_id = 3922, craft_count = 1, colors = {30,45,52,60}, learnedat = 30, nskillup = 1, quality = 1, avgbuyout = 167, cost = 298, phaseId = 0, schem = 0, recipe = {
-    {id = 2840, name = "Copper Bar", count = 1, avgbuyout = 298},
+  {id = 4359, name = "Handful of Copper Bolts", spell_name = "Handful of Copper Bolts", spell_id = 3922, craft_count = 1, colors = {30,45,52,60}, learnedat = 30, nskillup = 1, quality = 1, avgbuyout = 182, cost = 309, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2840, name = "Copper Bar", count = 1, avgbuyout = 309},
   }},
-  {id = 4360, name = "Rough Copper Bomb", spell_name = "Rough Copper Bomb", spell_id = 3923, craft_count = 2, colors = {30,60,75,90}, learnedat = 30, nskillup = 1, quality = 1, avgbuyout = 265, cost = 694, phaseId = 0, schem = 0, recipe = {
-    {id = 2589, name = "Linen Cloth", count = 1, avgbuyout = 40},
-    {id = 2840, name = "Copper Bar", count = 1, avgbuyout = 298},
-    {id = 4357, name = "Rough Blasting Powder", count = 2, avgbuyout = 15},
-    {id = 4359, name = "Handful of Copper Bolts", count = 1, avgbuyout = 167},
+  {id = 4360, name = "Rough Copper Bomb", spell_name = "Rough Copper Bomb", spell_id = 3923, craft_count = 2, colors = {30,60,75,90}, learnedat = 30, nskillup = 1, quality = 1, avgbuyout = 260, cost = 717, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2589, name = "Linen Cloth", count = 1, avgbuyout = 41},
+    {id = 2840, name = "Copper Bar", count = 1, avgbuyout = 309},
+    {id = 4357, name = "Rough Blasting Powder", count = 2, avgbuyout = 17},
+    {id = 4359, name = "Handful of Copper Bolts", count = 1, avgbuyout = 182},
   }},
-  {id = 8067, name = "Crafted Light Shot", spell_name = "Crafted Light Shot", spell_id = 3920, craft_count = 200, colors = {0,30,45,60}, learnedat = 30, nskillup = 1, quality = 1, avgbuyout = 0, cost = 327, phaseId = 0, schem = 0, recipe = {
-    {id = 2840, name = "Copper Bar", count = 1, avgbuyout = 298},
-    {id = 4357, name = "Rough Blasting Powder", count = 1, avgbuyout = 15},
+  {id = 8067, name = "Crafted Light Shot", spell_name = "Crafted Light Shot", spell_id = 3920, craft_count = 200, colors = {0,30,45,60}, learnedat = 30, nskillup = 1, quality = 1, avgbuyout = 0, cost = 338, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2840, name = "Copper Bar", count = 1, avgbuyout = 309},
+    {id = 4357, name = "Rough Blasting Powder", count = 1, avgbuyout = 17},
   }},
-  {id = 4361, name = "Copper Tube", spell_name = "Copper Tube", spell_id = 3924, craft_count = 1, colors = {50,80,95,110}, learnedat = 50, nskillup = 1, quality = 1, avgbuyout = 168, cost = 1186, phaseId = 0, schem = 0, recipe = {
-    {id = 2840, name = "Copper Bar", count = 2, avgbuyout = 298},
+  {id = 4361, name = "Copper Tube", spell_name = "Copper Tube", spell_id = 3924, craft_count = 1, colors = {50,80,95,110}, learnedat = 50, nskillup = 1, quality = 1, avgbuyout = 167, cost = 1208, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2840, name = "Copper Bar", count = 2, avgbuyout = 309},
     {id = 2880, name = "Weak Flux", count = 1, avgbuyout = 590},
   }},
-  {id = 4362, name = "Rough Boomstick", spell_name = "Rough Boomstick", spell_id = 3925, craft_count = 1, colors = {50,80,95,110}, learnedat = 50, nskillup = 1, quality = 2, avgbuyout = 1600, cost = 3396, phaseId = 0, schem = 0, recipe = {
-    {id = 4359, name = "Handful of Copper Bolts", count = 1, avgbuyout = 167},
-    {id = 4361, name = "Copper Tube", count = 1, avgbuyout = 168},
+  {id = 4362, name = "Rough Boomstick", spell_name = "Rough Boomstick", spell_id = 3925, craft_count = 1, colors = {50,80,95,110}, learnedat = 50, nskillup = 1, quality = 2, avgbuyout = 1600, cost = 3429, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4359, name = "Handful of Copper Bolts", count = 1, avgbuyout = 182},
+    {id = 4361, name = "Copper Tube", count = 1, avgbuyout = 167},
     {id = 4399, name = "Wooden Stock", count = 1, avgbuyout = 1912},
   }},
-  {id = 6219, name = "Arclight Spanner", spell_name = "Arclight Spanner", spell_id = 7430, craft_count = 1, colors = {50,70,80,90}, learnedat = 50, nskillup = 1, quality = 1, avgbuyout = 4000, cost = 1788, phaseId = 0, schem = 0, recipe = {
-    {id = 2840, name = "Copper Bar", count = 6, avgbuyout = 298},
+  {id = 6219, name = "Arclight Spanner", spell_name = "Arclight Spanner", spell_id = 7430, craft_count = 1, colors = {50,70,80,90}, learnedat = 50, nskillup = 1, quality = 1, avgbuyout = 4100, cost = 1854, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2840, name = "Copper Bar", count = 6, avgbuyout = 309},
   }},
-  {id = 4405, name = "Crude Scope", spell_name = "Crude Scope", spell_id = 3977, craft_count = 1, colors = {60,90,105,120}, learnedat = 60, nskillup = 1, quality = 1, avgbuyout = 208, cost = 1508, phaseId = 0, schem = 0, recipe = {
-    {id = 774, name = "Malachite", count = 1, avgbuyout = 24},
-    {id = 4359, name = "Handful of Copper Bolts", count = 1, avgbuyout = 167},
-    {id = 4361, name = "Copper Tube", count = 1, avgbuyout = 168},
+  {id = 4405, name = "Crude Scope", spell_name = "Crude Scope", spell_id = 3977, craft_count = 1, colors = {60,90,105,120}, learnedat = 60, nskillup = 1, quality = 1, avgbuyout = 236, cost = 1544, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 774, name = "Malachite", count = 1, avgbuyout = 27},
+    {id = 4359, name = "Handful of Copper Bolts", count = 1, avgbuyout = 182},
+    {id = 4361, name = "Copper Tube", count = 1, avgbuyout = 167},
   }},
-  {id = 4363, name = "Copper Modulator", spell_name = "Copper Modulator", spell_id = 3926, craft_count = 1, colors = {65,95,110,125}, learnedat = 65, nskillup = 1, quality = 1, avgbuyout = 359, cost = 974, phaseId = 0, schem = 0, recipe = {
-    {id = 2589, name = "Linen Cloth", count = 2, avgbuyout = 40},
-    {id = 2840, name = "Copper Bar", count = 1, avgbuyout = 298},
-    {id = 4359, name = "Handful of Copper Bolts", count = 2, avgbuyout = 167},
+  {id = 4363, name = "Copper Modulator", spell_name = "Copper Modulator", spell_id = 3926, craft_count = 1, colors = {65,95,110,125}, learnedat = 65, nskillup = 1, quality = 1, avgbuyout = 380, cost = 1009, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2589, name = "Linen Cloth", count = 2, avgbuyout = 41},
+    {id = 2840, name = "Copper Bar", count = 1, avgbuyout = 309},
+    {id = 4359, name = "Handful of Copper Bolts", count = 2, avgbuyout = 182},
   }},
-  {id = 4364, name = "Coarse Blasting Powder", spell_name = "Coarse Blasting Powder", spell_id = 3929, craft_count = 1, colors = {75,85,90,95}, learnedat = 75, nskillup = 1, quality = 1, avgbuyout = 283, cost = 679, phaseId = 0, schem = 0, recipe = {
-    {id = 2836, name = "Coarse Stone", count = 1, avgbuyout = 679},
+  {id = 4364, name = "Coarse Blasting Powder", spell_name = "Coarse Blasting Powder", spell_id = 3929, craft_count = 1, colors = {75,85,90,95}, learnedat = 75, nskillup = 1, quality = 1, avgbuyout = 297, cost = 719, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2836, name = "Coarse Stone", count = 1, avgbuyout = 719},
   }},
-  {id = 4365, name = "Coarse Dynamite", spell_name = "Coarse Dynamite", spell_id = 3931, craft_count = 1, colors = {75,90,97,105}, learnedat = 75, nskillup = 1, quality = 1, avgbuyout = 139, cost = 2077, phaseId = 0, schem = 0, recipe = {
-    {id = 2589, name = "Linen Cloth", count = 1, avgbuyout = 40},
-    {id = 4364, name = "Coarse Blasting Powder", count = 3, avgbuyout = 283},
+  {id = 4365, name = "Coarse Dynamite", spell_name = "Coarse Dynamite", spell_id = 3931, craft_count = 1, colors = {75,90,97,105}, learnedat = 75, nskillup = 1, quality = 1, avgbuyout = 165, cost = 2198, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2589, name = "Linen Cloth", count = 1, avgbuyout = 41},
+    {id = 4364, name = "Coarse Blasting Powder", count = 3, avgbuyout = 297},
   }},
-  {id = 4401, name = "Mechanical Squirrel Box", spell_name = "Mechanical Squirrel", spell_id = 3928, craft_count = 1, colors = {75,105,120,135}, learnedat = 75, nskillup = 1, quality = 1, avgbuyout = 2599, cost = 1618, phaseId = 0, schem = 0, recipe = {
-    {id = 774, name = "Malachite", count = 2, avgbuyout = 24},
-    {id = 2840, name = "Copper Bar", count = 1, avgbuyout = 298},
-    {id = 4359, name = "Handful of Copper Bolts", count = 1, avgbuyout = 167},
-    {id = 4363, name = "Copper Modulator", count = 1, avgbuyout = 359},
+  {id = 4401, name = "Mechanical Squirrel Box", spell_name = "Mechanical Squirrel", spell_id = 3928, craft_count = 1, colors = {75,105,120,135}, learnedat = 75, nskillup = 1, quality = 1, avgbuyout = 3079, cost = 1681, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 774, name = "Malachite", count = 2, avgbuyout = 27},
+    {id = 2840, name = "Copper Bar", count = 1, avgbuyout = 309},
+    {id = 4359, name = "Handful of Copper Bolts", count = 1, avgbuyout = 182},
+    {id = 4363, name = "Copper Modulator", count = 1, avgbuyout = 380},
   }},
-  {id = 8068, name = "Crafted Heavy Shot", spell_name = "Crafted Heavy Shot", spell_id = 3930, craft_count = 200, colors = {75,85,90,95}, learnedat = 75, nskillup = 1, quality = 1, avgbuyout = 3, cost = 977, phaseId = 0, schem = 0, recipe = {
-    {id = 2840, name = "Copper Bar", count = 1, avgbuyout = 298},
-    {id = 4364, name = "Coarse Blasting Powder", count = 1, avgbuyout = 283},
+  {id = 8068, name = "Crafted Heavy Shot", spell_name = "Crafted Heavy Shot", spell_id = 3930, craft_count = 200, colors = {75,85,90,95}, learnedat = 75, nskillup = 1, quality = 1, avgbuyout = 4, cost = 1028, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2840, name = "Copper Bar", count = 1, avgbuyout = 309},
+    {id = 4364, name = "Coarse Blasting Powder", count = 1, avgbuyout = 297},
   }},
-  {id = 4366, name = "Target Dummy", spell_name = "Target Dummy", spell_id = 3932, craft_count = 1, colors = {85,115,130,145}, learnedat = 85, nskillup = 1, quality = 1, avgbuyout = 2623, cost = 2193, phaseId = 0, schem = 0, recipe = {
-    {id = 2592, name = "Wool Cloth", count = 1, avgbuyout = 186},
-    {id = 2841, name = "Bronze Bar", count = 1, avgbuyout = 437},
-    {id = 4359, name = "Handful of Copper Bolts", count = 2, avgbuyout = 167},
-    {id = 4363, name = "Copper Modulator", count = 1, avgbuyout = 359},
+  {id = 4366, name = "Target Dummy", spell_name = "Target Dummy", spell_id = 3932, craft_count = 1, colors = {85,115,130,145}, learnedat = 85, nskillup = 1, quality = 1, avgbuyout = 2778, cost = 2268, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2592, name = "Wool Cloth", count = 1, avgbuyout = 190},
+    {id = 2841, name = "Bronze Bar", count = 1, avgbuyout = 451},
+    {id = 4359, name = "Handful of Copper Bolts", count = 2, avgbuyout = 182},
+    {id = 4363, name = "Copper Modulator", count = 1, avgbuyout = 380},
   }},
-  {id = 4404, name = "Silver Contact", spell_name = "Silver Contact", spell_id = 3973, craft_count = 5, colors = {90,110,125,140}, learnedat = 90, nskillup = 1, quality = 1, avgbuyout = 56, cost = 721, phaseId = 0, schem = 0, recipe = {
-    {id = 2842, name = "Silver Bar", count = 1, avgbuyout = 721},
+  {id = 4404, name = "Silver Contact", spell_name = "Silver Contact", spell_id = 3973, craft_count = 5, colors = {90,110,125,140}, learnedat = 90, nskillup = 1, quality = 1, avgbuyout = 56, cost = 731, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2842, name = "Silver Bar", count = 1, avgbuyout = 731},
   }},
-  {id = 4367, name = "Small Seaforium Charge", spell_name = "Small Seaforium Charge", spell_id = 3933, craft_count = 1, colors = {100,130,145,160}, learnedat = 100, nskillup = 1, quality = 1, avgbuyout = 3282, cost = 3073, phaseId = 0, schem = 1, recipe = {
-    {id = 159, name = "Refreshing Spring Water", count = 1, avgbuyout = 647},
-    {id = 2318, name = "Light Leather", count = 1, avgbuyout = 94},
-    {id = 4363, name = "Copper Modulator", count = 1, avgbuyout = 359},
-    {id = 4364, name = "Coarse Blasting Powder", count = 2, avgbuyout = 283},
+  {id = 4367, name = "Small Seaforium Charge", spell_name = "Small Seaforium Charge", spell_id = 3933, craft_count = 1, colors = {100,130,145,160}, learnedat = 100, nskillup = 1, quality = 1, avgbuyout = 4724, cost = 3440, phaseId = 0, schemprice = 1692, schemid = 4409, recipe = {
+    {id = 159, name = "Refreshing Spring Water", count = 1, avgbuyout = 895},
+    {id = 2318, name = "Light Leather", count = 1, avgbuyout = 98},
+    {id = 4363, name = "Copper Modulator", count = 1, avgbuyout = 380},
+    {id = 4364, name = "Coarse Blasting Powder", count = 2, avgbuyout = 297},
   }},
-  {id = 4368, name = "Flying Tiger Goggles", spell_name = "Flying Tiger Goggles", spell_id = 3934, craft_count = 1, colors = {100,130,145,160}, learnedat = 100, nskillup = 1, quality = 2, avgbuyout = 1293, cost = 944, phaseId = 0, schem = 0, recipe = {
-    {id = 818, name = "Tigerseye", count = 2, avgbuyout = 190},
-    {id = 2318, name = "Light Leather", count = 6, avgbuyout = 94},
+  {id = 4368, name = "Flying Tiger Goggles", spell_name = "Flying Tiger Goggles", spell_id = 3934, craft_count = 1, colors = {100,130,145,160}, learnedat = 100, nskillup = 1, quality = 2, avgbuyout = 1398, cost = 998, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 818, name = "Tigerseye", count = 2, avgbuyout = 205},
+    {id = 2318, name = "Light Leather", count = 6, avgbuyout = 98},
   }},
-  {id = 6712, name = "Practice Lock", spell_name = "Practice Lock", spell_id = 8334, craft_count = 1, colors = {100,115,122,130}, learnedat = 100, nskillup = 1, quality = 1, avgbuyout = 249, cost = 1623, phaseId = 0, schem = 0, recipe = {
-    {id = 2841, name = "Bronze Bar", count = 1, avgbuyout = 437},
+  {id = 6712, name = "Practice Lock", spell_name = "Practice Lock", spell_id = 8334, craft_count = 1, colors = {100,115,122,130}, learnedat = 100, nskillup = 1, quality = 1, avgbuyout = 275, cost = 1659, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2841, name = "Bronze Bar", count = 1, avgbuyout = 451},
     {id = 2880, name = "Weak Flux", count = 1, avgbuyout = 590},
-    {id = 4359, name = "Handful of Copper Bolts", count = 2, avgbuyout = 167},
+    {id = 4359, name = "Handful of Copper Bolts", count = 2, avgbuyout = 182},
   }},
-  {id = 6714, name = "Ez-Thro Dynamite", spell_name = "EZ-Thro Dynamite", spell_id = 8339, craft_count = 1, colors = {100,115,122,130}, learnedat = 100, nskillup = 1, quality = 1, avgbuyout = 968, cost = 2902, phaseId = 0, schem = 0, recipe = {
-    {id = 2592, name = "Wool Cloth", count = 1, avgbuyout = 186},
-    {id = 4364, name = "Coarse Blasting Powder", count = 4, avgbuyout = 283},
+  {id = 6714, name = "Ez-Thro Dynamite", spell_name = "EZ-Thro Dynamite", spell_id = 8339, craft_count = 1, colors = {100,115,122,130}, learnedat = 100, nskillup = 1, quality = 1, avgbuyout = 1111, cost = 3066, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2592, name = "Wool Cloth", count = 1, avgbuyout = 190},
+    {id = 4364, name = "Coarse Blasting Powder", count = 4, avgbuyout = 297},
   }},
-  {id = 4369, name = "Deadly Blunderbuss", spell_name = "Deadly Blunderbuss", spell_id = 3936, craft_count = 1, colors = {105,130,142,155}, learnedat = 105, nskillup = 1, quality = 2, avgbuyout = 5368, cost = 5852, phaseId = 0, schem = 0, recipe = {
-    {id = 2319, name = "Medium Leather", count = 2, avgbuyout = 188},
-    {id = 4359, name = "Handful of Copper Bolts", count = 4, avgbuyout = 167},
-    {id = 4361, name = "Copper Tube", count = 2, avgbuyout = 168},
+  {id = 4369, name = "Deadly Blunderbuss", spell_name = "Deadly Blunderbuss", spell_id = 3936, craft_count = 1, colors = {105,130,142,155}, learnedat = 105, nskillup = 1, quality = 2, avgbuyout = 5585, cost = 5956, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2319, name = "Medium Leather", count = 2, avgbuyout = 196},
+    {id = 4359, name = "Handful of Copper Bolts", count = 4, avgbuyout = 182},
+    {id = 4361, name = "Copper Tube", count = 2, avgbuyout = 167},
     {id = 4399, name = "Wooden Stock", count = 1, avgbuyout = 1912},
   }},
-  {id = 4370, name = "Large Copper Bomb", spell_name = "Large Copper Bomb", spell_id = 3937, craft_count = 2, colors = {105,105,130,155}, learnedat = 105, nskillup = 1, quality = 1, avgbuyout = 4373, cost = 4331, phaseId = 0, schem = 0, recipe = {
-    {id = 2840, name = "Copper Bar", count = 3, avgbuyout = 298},
-    {id = 4364, name = "Coarse Blasting Powder", count = 4, avgbuyout = 283},
+  {id = 4370, name = "Large Copper Bomb", spell_name = "Large Copper Bomb", spell_id = 3937, craft_count = 2, colors = {105,105,130,155}, learnedat = 105, nskillup = 1, quality = 1, avgbuyout = 4373, cost = 4534, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2840, name = "Copper Bar", count = 3, avgbuyout = 309},
+    {id = 4364, name = "Coarse Blasting Powder", count = 4, avgbuyout = 297},
     {id = 4404, name = "Silver Contact", count = 1, avgbuyout = 56},
   }},
-  {id = 4371, name = "Bronze Tube", spell_name = "Bronze Tube", spell_id = 3938, craft_count = 1, colors = {105,105,130,155}, learnedat = 105, nskillup = 1, quality = 1, avgbuyout = 759, cost = 1464, phaseId = 0, schem = 0, recipe = {
-    {id = 2841, name = "Bronze Bar", count = 2, avgbuyout = 437},
+  {id = 4371, name = "Bronze Tube", spell_name = "Bronze Tube", spell_id = 3938, craft_count = 1, colors = {105,105,130,155}, learnedat = 105, nskillup = 1, quality = 1, avgbuyout = 752, cost = 1492, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2841, name = "Bronze Bar", count = 2, avgbuyout = 451},
     {id = 2880, name = "Weak Flux", count = 1, avgbuyout = 590},
   }},
-  {id = 4406, name = "Standard Scope", spell_name = "Standard Scope", spell_id = 3978, craft_count = 1, colors = {110,135,147,160}, learnedat = 110, nskillup = 1, quality = 1, avgbuyout = 1059, cost = 3233, phaseId = 0, schem = 0, recipe = {
-    {id = 1206, name = "Moss Agate", count = 1, avgbuyout = 1769},
-    {id = 4371, name = "Bronze Tube", count = 1, avgbuyout = 759},
+  {id = 4406, name = "Standard Scope", spell_name = "Standard Scope", spell_id = 3978, craft_count = 1, colors = {110,135,147,160}, learnedat = 110, nskillup = 1, quality = 1, avgbuyout = 1072, cost = 3760, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 1206, name = "Moss Agate", count = 1, avgbuyout = 2268},
+    {id = 4371, name = "Bronze Tube", count = 1, avgbuyout = 752},
   }},
-  {id = 4372, name = "Lovingly Crafted Boomstick", spell_name = "Lovingly Crafted Boomstick", spell_id = 3939, craft_count = 1, colors = {120,145,157,170}, learnedat = 120, nskillup = 1, quality = 2, avgbuyout = 8971, cost = 13196, phaseId = 0, schem = 1, recipe = {
-    {id = 1206, name = "Moss Agate", count = 3, avgbuyout = 1769},
-    {id = 4359, name = "Handful of Copper Bolts", count = 2, avgbuyout = 167},
-    {id = 4371, name = "Bronze Tube", count = 2, avgbuyout = 759},
-    {id = 4400, name = "Heavy Stock", count = 1, avgbuyout = 4365},
+  {id = 4372, name = "Lovingly Crafted Boomstick", spell_name = "Lovingly Crafted Boomstick", spell_id = 3939, craft_count = 1, colors = {120,145,157,170}, learnedat = 120, nskillup = 1, quality = 2, avgbuyout = 8971, cost = 14013, phaseId = 0, schemprice = 6639, schemid = 13309, recipe = {
+    {id = 1206, name = "Moss Agate", count = 3, avgbuyout = 2268},
+    {id = 4359, name = "Handful of Copper Bolts", count = 2, avgbuyout = 182},
+    {id = 4371, name = "Bronze Tube", count = 2, avgbuyout = 752},
+    {id = 4400, name = "Heavy Stock", count = 1, avgbuyout = 3607},
   }},
-  {id = 4373, name = "Shadow Goggles", spell_name = "Shadow Goggles", spell_id = 3940, craft_count = 1, colors = {120,145,157,170}, learnedat = 120, nskillup = 1, quality = 2, avgbuyout = 2700, cost = 1294, phaseId = 0, schem = 1, recipe = {
-    {id = 1210, name = "Shadowgem", count = 2, avgbuyout = 271},
-    {id = 2319, name = "Medium Leather", count = 4, avgbuyout = 188},
+  {id = 4373, name = "Shadow Goggles", spell_name = "Shadow Goggles", spell_id = 3940, craft_count = 1, colors = {120,145,157,170}, learnedat = 120, nskillup = 1, quality = 2, avgbuyout = 3000, cost = 1354, phaseId = 0, schemprice = 4899, schemid = 4410, recipe = {
+    {id = 1210, name = "Shadowgem", count = 2, avgbuyout = 285},
+    {id = 2319, name = "Medium Leather", count = 4, avgbuyout = 196},
   }},
-  {id = 4374, name = "Small Bronze Bomb", spell_name = "Small Bronze Bomb", spell_id = 3941, craft_count = 1, colors = {120,120,145,170}, learnedat = 120, nskillup = 1, quality = 1, avgbuyout = 1949, cost = 4497, phaseId = 0, schem = 0, recipe = {
-    {id = 2592, name = "Wool Cloth", count = 1, avgbuyout = 186},
-    {id = 2841, name = "Bronze Bar", count = 2, avgbuyout = 437},
-    {id = 4364, name = "Coarse Blasting Powder", count = 4, avgbuyout = 283},
+  {id = 4374, name = "Small Bronze Bomb", spell_name = "Small Bronze Bomb", spell_id = 3941, craft_count = 1, colors = {120,120,145,170}, learnedat = 120, nskillup = 1, quality = 1, avgbuyout = 1949, cost = 4699, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2592, name = "Wool Cloth", count = 1, avgbuyout = 190},
+    {id = 2841, name = "Bronze Bar", count = 2, avgbuyout = 451},
+    {id = 4364, name = "Coarse Blasting Powder", count = 4, avgbuyout = 297},
     {id = 4404, name = "Silver Contact", count = 1, avgbuyout = 56},
   }},
-  {id = 4375, name = "Whirring Bronze Gizmo", spell_name = "Whirring Bronze Gizmo", spell_id = 3942, craft_count = 1, colors = {125,125,150,175}, learnedat = 125, nskillup = 1, quality = 1, avgbuyout = 1178, cost = 1060, phaseId = 0, schem = 0, recipe = {
-    {id = 2592, name = "Wool Cloth", count = 1, avgbuyout = 186},
-    {id = 2841, name = "Bronze Bar", count = 2, avgbuyout = 437},
+  {id = 4375, name = "Whirring Bronze Gizmo", spell_name = "Whirring Bronze Gizmo", spell_id = 3942, craft_count = 1, colors = {125,125,150,175}, learnedat = 125, nskillup = 1, quality = 1, avgbuyout = 1192, cost = 1092, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2592, name = "Wool Cloth", count = 1, avgbuyout = 190},
+    {id = 2841, name = "Bronze Bar", count = 2, avgbuyout = 451},
   }},
-  {id = 4376, name = "Flame Deflector", spell_name = "Flame Deflector", spell_id = 3944, craft_count = 1, colors = {125,125,150,175}, learnedat = 125, nskillup = 1, quality = 1, avgbuyout = 20096, cost = 10362, phaseId = 0, schem = 1, recipe = {
-    {id = 4375, name = "Whirring Bronze Gizmo", count = 1, avgbuyout = 1178},
-    {id = 4402, name = "Small Flame Sac", count = 1, avgbuyout = 9302},
+  {id = 4376, name = "Flame Deflector", spell_name = "Flame Deflector", spell_id = 3944, craft_count = 1, colors = {125,125,150,175}, learnedat = 125, nskillup = 1, quality = 1, avgbuyout = 20096, cost = 11424, phaseId = 0, schemprice = 998996, schemid = 4411, recipe = {
+    {id = 4375, name = "Whirring Bronze Gizmo", count = 1, avgbuyout = 1192},
+    {id = 4402, name = "Small Flame Sac", count = 1, avgbuyout = 10332},
   }},
-  {id = 4377, name = "Heavy Blasting Powder", spell_name = "Heavy Blasting Powder", spell_id = 3945, craft_count = 1, colors = {125,125,135,145}, learnedat = 125, nskillup = 1, quality = 1, avgbuyout = 837, cost = 787, phaseId = 0, schem = 0, recipe = {
-    {id = 2838, name = "Heavy Stone", count = 1, avgbuyout = 787},
+  {id = 4377, name = "Heavy Blasting Powder", spell_name = "Heavy Blasting Powder", spell_id = 3945, craft_count = 1, colors = {125,125,135,145}, learnedat = 125, nskillup = 1, quality = 1, avgbuyout = 889, cost = 790, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2838, name = "Heavy Stone", count = 1, avgbuyout = 790},
   }},
-  {id = 4378, name = "Heavy Dynamite", spell_name = "Heavy Dynamite", spell_id = 3946, craft_count = 1, colors = {125,125,135,145}, learnedat = 125, nskillup = 1, quality = 1, avgbuyout = 1447, cost = 1760, phaseId = 0, schem = 0, recipe = {
-    {id = 2592, name = "Wool Cloth", count = 1, avgbuyout = 186},
-    {id = 4377, name = "Heavy Blasting Powder", count = 2, avgbuyout = 837},
+  {id = 4378, name = "Heavy Dynamite", spell_name = "Heavy Dynamite", spell_id = 3946, craft_count = 1, colors = {125,125,135,145}, learnedat = 125, nskillup = 1, quality = 1, avgbuyout = 1465, cost = 1770, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2592, name = "Wool Cloth", count = 1, avgbuyout = 190},
+    {id = 4377, name = "Heavy Blasting Powder", count = 2, avgbuyout = 889},
   }},
-  {id = 7506, name = "Gnomish Universal Remote", spell_name = "Gnomish Universal Remote", spell_id = 9269, craft_count = 1, colors = {125,150,162,175}, learnedat = 125, nskillup = 1, quality = 2, avgbuyout = 2777, cost = 4080, phaseId = 0, schem = 1, recipe = {
-    {id = 774, name = "Malachite", count = 1, avgbuyout = 24},
-    {id = 814, name = "Flask of Oil", count = 2, avgbuyout = 92},
-    {id = 818, name = "Tigerseye", count = 1, avgbuyout = 190},
-    {id = 2841, name = "Bronze Bar", count = 6, avgbuyout = 437},
-    {id = 4375, name = "Whirring Bronze Gizmo", count = 1, avgbuyout = 1178},
+  {id = 7506, name = "Gnomish Universal Remote", spell_name = "Gnomish Universal Remote", spell_id = 9269, craft_count = 1, colors = {125,150,162,175}, learnedat = 125, nskillup = 1, quality = 2, avgbuyout = 2777, cost = 4206, phaseId = 0, schemprice = 8950, schemid = 7560, recipe = {
+    {id = 774, name = "Malachite", count = 1, avgbuyout = 27},
+    {id = 814, name = "Flask of Oil", count = 2, avgbuyout = 88},
+    {id = 818, name = "Tigerseye", count = 1, avgbuyout = 205},
+    {id = 2841, name = "Bronze Bar", count = 6, avgbuyout = 451},
+    {id = 4375, name = "Whirring Bronze Gizmo", count = 1, avgbuyout = 1192},
   }},
-  {id = 8069, name = "Crafted Solid Shot", spell_name = "Crafted Solid Shot", spell_id = 3947, craft_count = 200, colors = {125,125,135,145}, learnedat = 125, nskillup = 1, quality = 1, avgbuyout = 9, cost = 1224, phaseId = 0, schem = 0, recipe = {
-    {id = 2841, name = "Bronze Bar", count = 1, avgbuyout = 437},
-    {id = 4377, name = "Heavy Blasting Powder", count = 1, avgbuyout = 837},
+  {id = 8069, name = "Crafted Solid Shot", spell_name = "Crafted Solid Shot", spell_id = 3947, craft_count = 200, colors = {125,125,135,145}, learnedat = 125, nskillup = 1, quality = 1, avgbuyout = 9, cost = 1241, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2841, name = "Bronze Bar", count = 1, avgbuyout = 451},
+    {id = 4377, name = "Heavy Blasting Powder", count = 1, avgbuyout = 889},
   }},
-  {id = 21557, name = "Small Red Rocket", spell_name = "Small Red Rocket", spell_id = 26418, craft_count = 3, colors = {125,125,137,150}, learnedat = 125, nskillup = 1, quality = 1, avgbuyout = 499, cost = 867, phaseId = 0, schem = 1, recipe = {
-    {id = 2319, name = "Medium Leather", count = 1, avgbuyout = 188},
-    {id = 4364, name = "Coarse Blasting Powder", count = 1, avgbuyout = 283},
+  {id = 21557, name = "Small Red Rocket", spell_name = "Small Red Rocket", spell_id = 26418, craft_count = 3, colors = {125,125,137,150}, learnedat = 125, nskillup = 1, quality = 1, avgbuyout = 499, cost = 915, phaseId = 0, schemprice = 10000, schemid = 21726, recipe = {
+    {id = 2319, name = "Medium Leather", count = 1, avgbuyout = 196},
+    {id = 4364, name = "Coarse Blasting Powder", count = 1, avgbuyout = 297},
   }},
-  {id = 21558, name = "Small Blue Rocket", spell_name = "Small Blue Rocket", spell_id = 26416, craft_count = 3, colors = {125,125,137,150}, learnedat = 125, nskillup = 1, quality = 1, avgbuyout = 0, cost = 867, phaseId = 0, schem = 1, recipe = {
-    {id = 2319, name = "Medium Leather", count = 1, avgbuyout = 188},
-    {id = 4364, name = "Coarse Blasting Powder", count = 1, avgbuyout = 283},
+  {id = 21558, name = "Small Blue Rocket", spell_name = "Small Blue Rocket", spell_id = 26416, craft_count = 3, colors = {125,125,137,150}, learnedat = 125, nskillup = 1, quality = 1, avgbuyout = 0, cost = 915, phaseId = 0, schemprice = 10000, schemid = 21724, recipe = {
+    {id = 2319, name = "Medium Leather", count = 1, avgbuyout = 196},
+    {id = 4364, name = "Coarse Blasting Powder", count = 1, avgbuyout = 297},
   }},
-  {id = 21559, name = "Small Green Rocket", spell_name = "Small Green Rocket", spell_id = 26417, craft_count = 3, colors = {125,125,137,150}, learnedat = 125, nskillup = 1, quality = 1, avgbuyout = 0, cost = 867, phaseId = 0, schem = 1, recipe = {
-    {id = 2319, name = "Medium Leather", count = 1, avgbuyout = 188},
-    {id = 4364, name = "Coarse Blasting Powder", count = 1, avgbuyout = 283},
+  {id = 21559, name = "Small Green Rocket", spell_name = "Small Green Rocket", spell_id = 26417, craft_count = 3, colors = {125,125,137,150}, learnedat = 125, nskillup = 1, quality = 1, avgbuyout = 0, cost = 915, phaseId = 0, schemprice = 10000, schemid = 21725, recipe = {
+    {id = 2319, name = "Medium Leather", count = 1, avgbuyout = 196},
+    {id = 4364, name = "Coarse Blasting Powder", count = 1, avgbuyout = 297},
   }},
-  {id = 4379, name = "Silver-plated Shotgun", spell_name = "Silver-plated Shotgun", spell_id = 3949, craft_count = 1, colors = {130,155,167,180}, learnedat = 130, nskillup = 1, quality = 2, avgbuyout = 6087, cost = 11576, phaseId = 0, schem = 0, recipe = {
-    {id = 2842, name = "Silver Bar", count = 3, avgbuyout = 721},
-    {id = 4371, name = "Bronze Tube", count = 2, avgbuyout = 759},
-    {id = 4375, name = "Whirring Bronze Gizmo", count = 2, avgbuyout = 1178},
-    {id = 4400, name = "Heavy Stock", count = 1, avgbuyout = 4365},
+  {id = 4379, name = "Silver-plated Shotgun", spell_name = "Silver-plated Shotgun", spell_id = 3949, craft_count = 1, colors = {130,155,167,180}, learnedat = 130, nskillup = 1, quality = 2, avgbuyout = 6100, cost = 10968, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2842, name = "Silver Bar", count = 3, avgbuyout = 731},
+    {id = 4371, name = "Bronze Tube", count = 2, avgbuyout = 752},
+    {id = 4375, name = "Whirring Bronze Gizmo", count = 2, avgbuyout = 1192},
+    {id = 4400, name = "Heavy Stock", count = 1, avgbuyout = 3607},
   }},
-  {id = 5507, name = "Ornate Spyglass", spell_name = "Ornate Spyglass", spell_id = 6458, craft_count = 1, colors = {135,160,172,185}, learnedat = 135, nskillup = 1, quality = 1, avgbuyout = 8086, cost = 7791, phaseId = 0, schem = 0, recipe = {
-    {id = 1206, name = "Moss Agate", count = 1, avgbuyout = 1769},
-    {id = 4363, name = "Copper Modulator", count = 1, avgbuyout = 359},
-    {id = 4371, name = "Bronze Tube", count = 2, avgbuyout = 759},
-    {id = 4375, name = "Whirring Bronze Gizmo", count = 2, avgbuyout = 1178},
+  {id = 5507, name = "Ornate Spyglass", spell_name = "Ornate Spyglass", spell_id = 6458, craft_count = 1, colors = {135,160,172,185}, learnedat = 135, nskillup = 1, quality = 1, avgbuyout = 8400, cost = 8445, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 1206, name = "Moss Agate", count = 1, avgbuyout = 2268},
+    {id = 4363, name = "Copper Modulator", count = 1, avgbuyout = 380},
+    {id = 4371, name = "Bronze Tube", count = 2, avgbuyout = 752},
+    {id = 4375, name = "Whirring Bronze Gizmo", count = 2, avgbuyout = 1192},
   }},
-  {id = 210147, name = "Shredder Autosalvage Unit", spell_name = "Shredder Autosalvage Unit", spell_id = 424641, craft_count = 1, colors = {0,135,140,145}, learnedat = 135, nskillup = 1, quality = 1, avgbuyout = 6524, cost = 3839, phaseId = 1, schem = 1, recipe = {
-    {id = 4234, name = "Heavy Leather", count = 1, avgbuyout = 471},
-    {id = 4375, name = "Whirring Bronze Gizmo", count = 2, avgbuyout = 1178},
-    {id = 4382, name = "Bronze Framework", count = 1, avgbuyout = 1717},
+  {id = 210147, name = "Shredder Autosalvage Unit", spell_name = "Shredder Autosalvage Unit", spell_id = 424641, craft_count = 1, colors = {0,135,140,145}, learnedat = 135, nskillup = 1, quality = 1, avgbuyout = 6524, cost = 3968, phaseId = 1, schemprice = 7055, schemid = 210178, recipe = {
+    {id = 4234, name = "Heavy Leather", count = 1, avgbuyout = 496},
+    {id = 4375, name = "Whirring Bronze Gizmo", count = 2, avgbuyout = 1192},
+    {id = 4382, name = "Bronze Framework", count = 1, avgbuyout = 1810},
   }},
-  {id = 4380, name = "Big Bronze Bomb", spell_name = "Big Bronze Bomb", spell_id = 3950, craft_count = 2, colors = {140,140,165,190}, learnedat = 140, nskillup = 1, quality = 1, avgbuyout = 1499, cost = 3606, phaseId = 0, schem = 0, recipe = {
-    {id = 2841, name = "Bronze Bar", count = 3, avgbuyout = 437},
-    {id = 4377, name = "Heavy Blasting Powder", count = 2, avgbuyout = 837},
+  {id = 4380, name = "Big Bronze Bomb", spell_name = "Big Bronze Bomb", spell_id = 3950, craft_count = 2, colors = {140,140,165,190}, learnedat = 140, nskillup = 1, quality = 1, avgbuyout = 1890, cost = 3664, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2841, name = "Bronze Bar", count = 3, avgbuyout = 451},
+    {id = 4377, name = "Heavy Blasting Powder", count = 2, avgbuyout = 889},
     {id = 4404, name = "Silver Contact", count = 1, avgbuyout = 56},
   }},
-  {id = 4381, name = "Minor Recombobulator", spell_name = "Minor Recombobulator", spell_id = 3952, craft_count = 1, colors = {140,165,177,190}, learnedat = 140, nskillup = 1, quality = 2, avgbuyout = 8391, cost = 5729, phaseId = 0, schem = 1, recipe = {
-    {id = 1206, name = "Moss Agate", count = 1, avgbuyout = 1769},
-    {id = 2319, name = "Medium Leather", count = 2, avgbuyout = 188},
-    {id = 4371, name = "Bronze Tube", count = 1, avgbuyout = 759},
-    {id = 4375, name = "Whirring Bronze Gizmo", count = 2, avgbuyout = 1178},
+  {id = 4381, name = "Minor Recombobulator", spell_name = "Minor Recombobulator", spell_id = 3952, craft_count = 1, colors = {140,165,177,190}, learnedat = 140, nskillup = 1, quality = 2, avgbuyout = 9458, cost = 6336, phaseId = 0, schemprice = 15184, schemid = 14639, recipe = {
+    {id = 1206, name = "Moss Agate", count = 1, avgbuyout = 2268},
+    {id = 2319, name = "Medium Leather", count = 2, avgbuyout = 196},
+    {id = 4371, name = "Bronze Tube", count = 1, avgbuyout = 752},
+    {id = 4375, name = "Whirring Bronze Gizmo", count = 2, avgbuyout = 1192},
   }},
-  {id = 4382, name = "Bronze Framework", spell_name = "Bronze Framework", spell_id = 3953, craft_count = 1, colors = {145,145,170,195}, learnedat = 145, nskillup = 1, quality = 1, avgbuyout = 1717, cost = 1248, phaseId = 0, schem = 0, recipe = {
-    {id = 2319, name = "Medium Leather", count = 1, avgbuyout = 188},
-    {id = 2592, name = "Wool Cloth", count = 1, avgbuyout = 186},
-    {id = 2841, name = "Bronze Bar", count = 2, avgbuyout = 437},
+  {id = 4382, name = "Bronze Framework", spell_name = "Bronze Framework", spell_id = 3953, craft_count = 1, colors = {145,145,170,195}, learnedat = 145, nskillup = 1, quality = 1, avgbuyout = 1810, cost = 1288, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2319, name = "Medium Leather", count = 1, avgbuyout = 196},
+    {id = 2592, name = "Wool Cloth", count = 1, avgbuyout = 190},
+    {id = 2841, name = "Bronze Bar", count = 2, avgbuyout = 451},
   }},
-  {id = 4383, name = "Moonsight Rifle", spell_name = "Moonsight Rifle", spell_id = 3954, craft_count = 1, colors = {145,170,182,195}, learnedat = 145, nskillup = 1, quality = 2, avgbuyout = 11500, cost = 14825, phaseId = 0, schem = 1, recipe = {
-    {id = 1705, name = "Lesser Moonstone", count = 2, avgbuyout = 1444},
-    {id = 4371, name = "Bronze Tube", count = 3, avgbuyout = 759},
-    {id = 4375, name = "Whirring Bronze Gizmo", count = 3, avgbuyout = 1178},
-    {id = 4400, name = "Heavy Stock", count = 1, avgbuyout = 4365},
+  {id = 4383, name = "Moonsight Rifle", spell_name = "Moonsight Rifle", spell_id = 3954, craft_count = 1, colors = {145,170,182,195}, learnedat = 145, nskillup = 1, quality = 2, avgbuyout = 12297, cost = 14673, phaseId = 0, schemprice = 5500, schemid = 4412, recipe = {
+    {id = 1705, name = "Lesser Moonstone", count = 2, avgbuyout = 1657},
+    {id = 4371, name = "Bronze Tube", count = 3, avgbuyout = 752},
+    {id = 4375, name = "Whirring Bronze Gizmo", count = 3, avgbuyout = 1192},
+    {id = 4400, name = "Heavy Stock", count = 1, avgbuyout = 3607},
   }},
-  {id = 4384, name = "Explosive Sheep", spell_name = "Explosive Sheep", spell_id = 3955, craft_count = 1, colors = {150,175,187,200}, learnedat = 150, nskillup = 1, quality = 1, avgbuyout = 1775, cost = 4254, phaseId = 0, schem = 0, recipe = {
-    {id = 2592, name = "Wool Cloth", count = 2, avgbuyout = 186},
-    {id = 4375, name = "Whirring Bronze Gizmo", count = 1, avgbuyout = 1178},
-    {id = 4377, name = "Heavy Blasting Powder", count = 2, avgbuyout = 837},
-    {id = 4382, name = "Bronze Framework", count = 1, avgbuyout = 1717},
+  {id = 4384, name = "Explosive Sheep", spell_name = "Explosive Sheep", spell_id = 3955, craft_count = 1, colors = {150,175,187,200}, learnedat = 150, nskillup = 1, quality = 1, avgbuyout = 1811, cost = 4340, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2592, name = "Wool Cloth", count = 2, avgbuyout = 190},
+    {id = 4375, name = "Whirring Bronze Gizmo", count = 1, avgbuyout = 1192},
+    {id = 4377, name = "Heavy Blasting Powder", count = 2, avgbuyout = 889},
+    {id = 4382, name = "Bronze Framework", count = 1, avgbuyout = 1810},
   }},
-  {id = 4385, name = "Green Tinted Goggles", spell_name = "Green Tinted Goggles", spell_id = 3956, craft_count = 1, colors = {150,175,187,200}, learnedat = 150, nskillup = 1, quality = 2, avgbuyout = 7532, cost = 5234, phaseId = 0, schem = 0, recipe = {
-    {id = 1206, name = "Moss Agate", count = 2, avgbuyout = 1769},
-    {id = 2319, name = "Medium Leather", count = 4, avgbuyout = 188},
-    {id = 4368, name = "Flying Tiger Goggles", count = 1, avgbuyout = 1293},
+  {id = 4385, name = "Green Tinted Goggles", spell_name = "Green Tinted Goggles", spell_id = 3956, craft_count = 1, colors = {150,175,187,200}, learnedat = 150, nskillup = 1, quality = 2, avgbuyout = 8095, cost = 6318, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 1206, name = "Moss Agate", count = 2, avgbuyout = 2268},
+    {id = 2319, name = "Medium Leather", count = 4, avgbuyout = 196},
+    {id = 4368, name = "Flying Tiger Goggles", count = 1, avgbuyout = 1398},
   }},
-  {id = 6533, name = "Aquadynamic Fish Attractor", spell_name = "Aquadynamic Fish Attractor", spell_id = 9271, craft_count = 3, colors = {150,150,160,170}, learnedat = 150, nskillup = 1, quality = 1, avgbuyout = 1322, cost = 1622, phaseId = 0, schem = 0, recipe = {
-    {id = 2841, name = "Bronze Bar", count = 2, avgbuyout = 437},
-    {id = 4364, name = "Coarse Blasting Powder", count = 1, avgbuyout = 283},
-    {id = 6530, name = "Nightcrawlers", count = 1, avgbuyout = 69},
+  {id = 6533, name = "Aquadynamic Fish Attractor", spell_name = "Aquadynamic Fish Attractor", spell_id = 9271, craft_count = 3, colors = {150,150,160,170}, learnedat = 150, nskillup = 1, quality = 1, avgbuyout = 1353, cost = 1691, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 2841, name = "Bronze Bar", count = 2, avgbuyout = 451},
+    {id = 4364, name = "Coarse Blasting Powder", count = 1, avgbuyout = 297},
+    {id = 6530, name = "Nightcrawlers", count = 1, avgbuyout = 70},
   }},
-  {id = 9312, name = "Blue Firework", spell_name = "Blue Firework", spell_id = 23067, craft_count = 3, colors = {150,150,162,175}, learnedat = 150, nskillup = 1, quality = 1, avgbuyout = 160, cost = 1258, phaseId = 0, schem = 1, recipe = {
-    {id = 4234, name = "Heavy Leather", count = 1, avgbuyout = 471},
-    {id = 4377, name = "Heavy Blasting Powder", count = 1, avgbuyout = 837},
+  {id = 9312, name = "Blue Firework", spell_name = "Blue Firework", spell_id = 23067, craft_count = 3, colors = {150,150,162,175}, learnedat = 150, nskillup = 1, quality = 1, avgbuyout = 160, cost = 1286, phaseId = 0, schemprice = 15800, schemid = 18649, recipe = {
+    {id = 4234, name = "Heavy Leather", count = 1, avgbuyout = 496},
+    {id = 4377, name = "Heavy Blasting Powder", count = 1, avgbuyout = 889},
   }},
-  {id = 9313, name = "Green Firework", spell_name = "Green Firework", spell_id = 23068, craft_count = 3, colors = {150,150,162,175}, learnedat = 150, nskillup = 1, quality = 1, avgbuyout = 698, cost = 1258, phaseId = 0, schem = 1, recipe = {
-    {id = 4234, name = "Heavy Leather", count = 1, avgbuyout = 471},
-    {id = 4377, name = "Heavy Blasting Powder", count = 1, avgbuyout = 837},
+  {id = 9313, name = "Green Firework", spell_name = "Green Firework", spell_id = 23068, craft_count = 3, colors = {150,150,162,175}, learnedat = 150, nskillup = 1, quality = 1, avgbuyout = 771, cost = 1286, phaseId = 0, schemprice = 14426, schemid = 18648, recipe = {
+    {id = 4234, name = "Heavy Leather", count = 1, avgbuyout = 496},
+    {id = 4377, name = "Heavy Blasting Powder", count = 1, avgbuyout = 889},
   }},
-  {id = 9318, name = "Red Firework", spell_name = "Red Firework", spell_id = 23066, craft_count = 3, colors = {150,150,162,175}, learnedat = 150, nskillup = 1, quality = 1, avgbuyout = 3799, cost = 1258, phaseId = 0, schem = 1, recipe = {
-    {id = 4234, name = "Heavy Leather", count = 1, avgbuyout = 471},
-    {id = 4377, name = "Heavy Blasting Powder", count = 1, avgbuyout = 837},
+  {id = 9318, name = "Red Firework", spell_name = "Red Firework", spell_id = 23066, craft_count = 3, colors = {150,150,162,175}, learnedat = 150, nskillup = 1, quality = 1, avgbuyout = 3799, cost = 1286, phaseId = 0, schemprice = 16118, schemid = 18647, recipe = {
+    {id = 4234, name = "Heavy Leather", count = 1, avgbuyout = 496},
+    {id = 4377, name = "Heavy Blasting Powder", count = 1, avgbuyout = 889},
   }},
-  {id = 10558, name = "Gold Power Core", spell_name = "Gold Power Core", spell_id = 12584, craft_count = 3, colors = {150,150,170,190}, learnedat = 150, nskillup = 1, quality = 1, avgbuyout = 1227, cost = 1653, phaseId = 0, schem = 0, recipe = {
-    {id = 3577, name = "Gold Bar", count = 1, avgbuyout = 1653},
+  {id = 10558, name = "Gold Power Core", spell_name = "Gold Power Core", spell_id = 12584, craft_count = 3, colors = {150,150,170,190}, learnedat = 150, nskillup = 1, quality = 1, avgbuyout = 1295, cost = 1637, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3577, name = "Gold Bar", count = 1, avgbuyout = 1637},
   }},
-  {id = 4386, name = "Ice Deflector", spell_name = "Ice Deflector", spell_id = 3957, craft_count = 1, colors = {155,175,185,195}, learnedat = 155, nskillup = 1, quality = 1, avgbuyout = 85500, cost = 24955, phaseId = 0, schem = 1, recipe = {
-    {id = 3829, name = "Frost Oil", count = 1, avgbuyout = 23895},
-    {id = 4375, name = "Whirring Bronze Gizmo", count = 1, avgbuyout = 1178},
+  {id = 4386, name = "Ice Deflector", spell_name = "Ice Deflector", spell_id = 3957, craft_count = 1, colors = {155,175,185,195}, learnedat = 155, nskillup = 1, quality = 1, avgbuyout = 85500, cost = 26667, phaseId = 0, schemprice = 21722, schemid = 13308, recipe = {
+    {id = 3829, name = "Frost Oil", count = 1, avgbuyout = 25575},
+    {id = 4375, name = "Whirring Bronze Gizmo", count = 1, avgbuyout = 1192},
   }},
-  {id = 4387, name = "Iron Strut", spell_name = "Iron Strut", spell_id = 3958, craft_count = 1, colors = {160,160,170,180}, learnedat = 160, nskillup = 1, quality = 1, avgbuyout = 2254, cost = 2598, phaseId = 0, schem = 0, recipe = {
-    {id = 3575, name = "Iron Bar", count = 2, avgbuyout = 1299},
+  {id = 4387, name = "Iron Strut", spell_name = "Iron Strut", spell_id = 3958, craft_count = 1, colors = {160,160,170,180}, learnedat = 160, nskillup = 1, quality = 1, avgbuyout = 2480, cost = 2720, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3575, name = "Iron Bar", count = 2, avgbuyout = 1360},
   }},
-  {id = 4388, name = "Discombobulator Ray", spell_name = "Discombobulator Ray", spell_id = 3959, craft_count = 1, colors = {160,180,190,200}, learnedat = 160, nskillup = 1, quality = 1, avgbuyout = 15499, cost = 6910, phaseId = 0, schem = 1, recipe = {
-    {id = 1529, name = "Jade", count = 1, avgbuyout = 1834},
-    {id = 4306, name = "Silk Cloth", count = 2, avgbuyout = 216},
-    {id = 4371, name = "Bronze Tube", count = 1, avgbuyout = 759},
-    {id = 4375, name = "Whirring Bronze Gizmo", count = 3, avgbuyout = 1178},
+  {id = 4388, name = "Discombobulator Ray", spell_name = "Discombobulator Ray", spell_id = 3959, craft_count = 1, colors = {160,180,190,200}, learnedat = 160, nskillup = 1, quality = 1, avgbuyout = 15000, cost = 6989, phaseId = 0, schemprice = 3490000, schemid = 4413, recipe = {
+    {id = 1529, name = "Jade", count = 1, avgbuyout = 1783},
+    {id = 4306, name = "Silk Cloth", count = 2, avgbuyout = 219},
+    {id = 4371, name = "Bronze Tube", count = 1, avgbuyout = 752},
+    {id = 4375, name = "Whirring Bronze Gizmo", count = 3, avgbuyout = 1192},
   }},
-  {id = 4403, name = "Portable Bronze Mortar", spell_name = "Portable Bronze Mortar", spell_id = 3960, craft_count = 1, colors = {165,185,195,205}, learnedat = 165, nskillup = 1, quality = 1, avgbuyout = 82699, cost = 12354, phaseId = 0, schem = 1, recipe = {
-    {id = 2319, name = "Medium Leather", count = 4, avgbuyout = 188},
-    {id = 4371, name = "Bronze Tube", count = 4, avgbuyout = 759},
-    {id = 4377, name = "Heavy Blasting Powder", count = 4, avgbuyout = 837},
-    {id = 4387, name = "Iron Strut", count = 1, avgbuyout = 2254},
+  {id = 4403, name = "Portable Bronze Mortar", spell_name = "Portable Bronze Mortar", spell_id = 3960, craft_count = 1, colors = {165,185,195,205}, learnedat = 165, nskillup = 1, quality = 1, avgbuyout = 82699, cost = 12632, phaseId = 0, schemprice = 5600, schemid = 4414, recipe = {
+    {id = 2319, name = "Medium Leather", count = 4, avgbuyout = 196},
+    {id = 4371, name = "Bronze Tube", count = 4, avgbuyout = 752},
+    {id = 4377, name = "Heavy Blasting Powder", count = 4, avgbuyout = 889},
+    {id = 4387, name = "Iron Strut", count = 1, avgbuyout = 2480},
   }},
-  {id = 7148, name = "Goblin Jumper Cables", spell_name = "Goblin Jumper Cables", spell_id = 9273, craft_count = 1, colors = {165,165,180,200}, learnedat = 165, nskillup = 1, quality = 1, avgbuyout = 32312, cost = 43870, phaseId = 0, schem = 1, recipe = {
-    {id = 814, name = "Flask of Oil", count = 2, avgbuyout = 92},
-    {id = 1210, name = "Shadowgem", count = 2, avgbuyout = 271},
-    {id = 3575, name = "Iron Bar", count = 6, avgbuyout = 1299},
-    {id = 4306, name = "Silk Cloth", count = 2, avgbuyout = 216},
-    {id = 4375, name = "Whirring Bronze Gizmo", count = 2, avgbuyout = 1178},
-    {id = 7191, name = "Fused Wiring", count = 1, avgbuyout = 32798},
+  {id = 7148, name = "Goblin Jumper Cables", spell_name = "Goblin Jumper Cables", spell_id = 9273, craft_count = 1, colors = {165,165,180,200}, learnedat = 165, nskillup = 1, quality = 1, avgbuyout = 30595, cost = 45428, phaseId = 0, schemprice = 6394, schemid = 7561, recipe = {
+    {id = 814, name = "Flask of Oil", count = 2, avgbuyout = 88},
+    {id = 1210, name = "Shadowgem", count = 2, avgbuyout = 285},
+    {id = 3575, name = "Iron Bar", count = 6, avgbuyout = 1360},
+    {id = 4306, name = "Silk Cloth", count = 2, avgbuyout = 219},
+    {id = 4375, name = "Whirring Bronze Gizmo", count = 2, avgbuyout = 1192},
+    {id = 7191, name = "Fused Wiring", count = 1, avgbuyout = 33900},
   }},
-  {id = 4389, name = "Gyrochronatom", spell_name = "Gyrochronatom", spell_id = 3961, craft_count = 1, colors = {170,170,190,210}, learnedat = 170, nskillup = 1, quality = 1, avgbuyout = 4483, cost = 2952, phaseId = 0, schem = 0, recipe = {
-    {id = 3575, name = "Iron Bar", count = 1, avgbuyout = 1299},
-    {id = 10558, name = "Gold Power Core", count = 1, avgbuyout = 1227},
+  {id = 4389, name = "Gyrochronatom", spell_name = "Gyrochronatom", spell_id = 3961, craft_count = 1, colors = {170,170,190,210}, learnedat = 170, nskillup = 1, quality = 1, avgbuyout = 4633, cost = 2997, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3575, name = "Iron Bar", count = 1, avgbuyout = 1360},
+    {id = 10558, name = "Gold Power Core", count = 1, avgbuyout = 1295},
   }},
-  {id = 4390, name = "Iron Grenade", spell_name = "Iron Grenade", spell_id = 3962, craft_count = 2, colors = {175,175,195,215}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 2340, cost = 2302, phaseId = 0, schem = 0, recipe = {
-    {id = 3575, name = "Iron Bar", count = 1, avgbuyout = 1299},
-    {id = 4306, name = "Silk Cloth", count = 1, avgbuyout = 216},
-    {id = 4377, name = "Heavy Blasting Powder", count = 1, avgbuyout = 837},
+  {id = 4390, name = "Iron Grenade", spell_name = "Iron Grenade", spell_id = 3962, craft_count = 2, colors = {175,175,195,215}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 2439, cost = 2369, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3575, name = "Iron Bar", count = 1, avgbuyout = 1360},
+    {id = 4306, name = "Silk Cloth", count = 1, avgbuyout = 219},
+    {id = 4377, name = "Heavy Blasting Powder", count = 1, avgbuyout = 889},
   }},
-  {id = 4391, name = "Compact Harvest Reaper Kit", spell_name = "Compact Harvest Reaper Kit", spell_id = 3963, craft_count = 1, colors = {175,175,195,215}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 21348, cost = 14232, phaseId = 0, schem = 0, recipe = {
-    {id = 4234, name = "Heavy Leather", count = 4, avgbuyout = 471},
-    {id = 4382, name = "Bronze Framework", count = 1, avgbuyout = 1717},
-    {id = 4387, name = "Iron Strut", count = 2, avgbuyout = 2254},
-    {id = 4389, name = "Gyrochronatom", count = 2, avgbuyout = 4483},
+  {id = 4391, name = "Compact Harvest Reaper Kit", spell_name = "Compact Harvest Reaper Kit", spell_id = 3963, craft_count = 1, colors = {175,175,195,215}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 21495, cost = 14706, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4234, name = "Heavy Leather", count = 4, avgbuyout = 496},
+    {id = 4382, name = "Bronze Framework", count = 1, avgbuyout = 1810},
+    {id = 4387, name = "Iron Strut", count = 2, avgbuyout = 2480},
+    {id = 4389, name = "Gyrochronatom", count = 2, avgbuyout = 4633},
   }},
-  {id = 10498, name = "Gyromatic Micro-Adjustor", spell_name = "Gyromatic Micro-Adjustor", spell_id = 12590, craft_count = 1, colors = {175,175,195,215}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 6599, cost = 9944, phaseId = 0, schem = 0, recipe = {
-    {id = 3859, name = "Steel Bar", count = 4, avgbuyout = 2486},
+  {id = 10498, name = "Gyromatic Micro-Adjustor", spell_name = "Gyromatic Micro-Adjustor", spell_id = 12590, craft_count = 1, colors = {175,175,195,215}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 7491, cost = 10660, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3859, name = "Steel Bar", count = 4, avgbuyout = 2665},
   }},
-  {id = 10499, name = "Bright-Eye Goggles", spell_name = "Bright-Eye Goggles", spell_id = 12587, craft_count = 1, colors = {175,195,205,215}, learnedat = 175, nskillup = 1, quality = 2, avgbuyout = 4170, cost = 5000, phaseId = 0, schem = 1, recipe = {
-    {id = 3864, name = "Citrine", count = 2, avgbuyout = 1087},
-    {id = 4234, name = "Heavy Leather", count = 6, avgbuyout = 471},
+  {id = 10499, name = "Bright-Eye Goggles", spell_name = "Bright-Eye Goggles", spell_id = 12587, craft_count = 1, colors = {175,195,205,215}, learnedat = 175, nskillup = 1, quality = 2, avgbuyout = 26260, cost = 5206, phaseId = 0, schemprice = 5398, schemid = 10601, recipe = {
+    {id = 3864, name = "Citrine", count = 2, avgbuyout = 1115},
+    {id = 4234, name = "Heavy Leather", count = 6, avgbuyout = 496},
   }},
-  {id = 10505, name = "Solid Blasting Powder", spell_name = "Solid Blasting Powder", spell_id = 12585, craft_count = 1, colors = {175,175,185,195}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 2806, cost = 2356, phaseId = 0, schem = 0, recipe = {
-    {id = 7912, name = "Solid Stone", count = 2, avgbuyout = 1178},
+  {id = 10505, name = "Solid Blasting Powder", spell_name = "Solid Blasting Powder", spell_id = 12585, craft_count = 1, colors = {175,175,185,195}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 2901, cost = 2390, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 7912, name = "Solid Stone", count = 2, avgbuyout = 1195},
   }},
-  {id = 10507, name = "Solid Dynamite", spell_name = "Solid Dynamite", spell_id = 12586, craft_count = 2, colors = {175,175,185,195}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 2272, cost = 2572, phaseId = 0, schem = 0, recipe = {
-    {id = 4306, name = "Silk Cloth", count = 1, avgbuyout = 216},
-    {id = 10505, name = "Solid Blasting Powder", count = 1, avgbuyout = 2806},
+  {id = 10507, name = "Solid Dynamite", spell_name = "Solid Dynamite", spell_id = 12586, craft_count = 2, colors = {175,175,185,195}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 2520, cost = 2609, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4306, name = "Silk Cloth", count = 1, avgbuyout = 219},
+    {id = 10505, name = "Solid Blasting Powder", count = 1, avgbuyout = 2901},
   }},
-  {id = 21589, name = "Large Blue Rocket", spell_name = "Large Blue Rocket", spell_id = 26420, craft_count = 3, colors = {175,175,187,200}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 0, cost = 1258, phaseId = 0, schem = 1, recipe = {
-    {id = 4234, name = "Heavy Leather", count = 1, avgbuyout = 471},
-    {id = 4377, name = "Heavy Blasting Powder", count = 1, avgbuyout = 837},
+  {id = 21589, name = "Large Blue Rocket", spell_name = "Large Blue Rocket", spell_id = 26420, craft_count = 3, colors = {175,175,187,200}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 0, cost = 1286, phaseId = 0, schemprice = 10000, schemid = 21727, recipe = {
+    {id = 4234, name = "Heavy Leather", count = 1, avgbuyout = 496},
+    {id = 4377, name = "Heavy Blasting Powder", count = 1, avgbuyout = 889},
   }},
-  {id = 21590, name = "Large Green Rocket", spell_name = "Large Green Rocket", spell_id = 26421, craft_count = 3, colors = {175,175,187,200}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 5, cost = 1258, phaseId = 0, schem = 1, recipe = {
-    {id = 4234, name = "Heavy Leather", count = 1, avgbuyout = 471},
-    {id = 4377, name = "Heavy Blasting Powder", count = 1, avgbuyout = 837},
+  {id = 21590, name = "Large Green Rocket", spell_name = "Large Green Rocket", spell_id = 26421, craft_count = 3, colors = {175,175,187,200}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 5, cost = 1286, phaseId = 0, schemprice = 10000, schemid = 21728, recipe = {
+    {id = 4234, name = "Heavy Leather", count = 1, avgbuyout = 496},
+    {id = 4377, name = "Heavy Blasting Powder", count = 1, avgbuyout = 889},
   }},
-  {id = 21592, name = "Large Red Rocket", spell_name = "Large Red Rocket", spell_id = 26422, craft_count = 3, colors = {175,175,187,200}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 0, cost = 1258, phaseId = 0, schem = 1, recipe = {
-    {id = 4234, name = "Heavy Leather", count = 1, avgbuyout = 471},
-    {id = 4377, name = "Heavy Blasting Powder", count = 1, avgbuyout = 837},
+  {id = 21592, name = "Large Red Rocket", spell_name = "Large Red Rocket", spell_id = 26422, craft_count = 3, colors = {175,175,187,200}, learnedat = 175, nskillup = 1, quality = 1, avgbuyout = 0, cost = 1286, phaseId = 0, schemprice = 10000, schemid = 21729, recipe = {
+    {id = 4234, name = "Heavy Leather", count = 1, avgbuyout = 496},
+    {id = 4377, name = "Heavy Blasting Powder", count = 1, avgbuyout = 889},
   }},
-  {id = 4407, name = "Accurate Scope", spell_name = "Accurate Scope", spell_id = 3979, craft_count = 1, colors = {180,200,210,220}, learnedat = 180, nskillup = 1, quality = 1, avgbuyout = 13800, cost = 4385, phaseId = 0, schem = 1, recipe = {
-    {id = 1529, name = "Jade", count = 1, avgbuyout = 1834},
-    {id = 3864, name = "Citrine", count = 1, avgbuyout = 1087},
-    {id = 4371, name = "Bronze Tube", count = 1, avgbuyout = 759},
+  {id = 4407, name = "Accurate Scope", spell_name = "Accurate Scope", spell_id = 3979, craft_count = 1, colors = {180,200,210,220}, learnedat = 180, nskillup = 1, quality = 1, avgbuyout = 13987, cost = 4390, phaseId = 0, schemprice = 13359, schemid = 13310, recipe = {
+    {id = 1529, name = "Jade", count = 1, avgbuyout = 1783},
+    {id = 3864, name = "Citrine", count = 1, avgbuyout = 1115},
+    {id = 4371, name = "Bronze Tube", count = 1, avgbuyout = 752},
   }},
-  {id = 4392, name = "Advanced Target Dummy", spell_name = "Advanced Target Dummy", spell_id = 3965, craft_count = 1, colors = {185,185,205,225}, learnedat = 185, nskillup = 1, quality = 1, avgbuyout = 20000, cost = 8682, phaseId = 0, schem = 0, recipe = {
-    {id = 4234, name = "Heavy Leather", count = 4, avgbuyout = 471},
-    {id = 4382, name = "Bronze Framework", count = 1, avgbuyout = 1717},
-    {id = 4387, name = "Iron Strut", count = 1, avgbuyout = 2254},
-    {id = 4389, name = "Gyrochronatom", count = 1, avgbuyout = 4483},
+  {id = 4392, name = "Advanced Target Dummy", spell_name = "Advanced Target Dummy", spell_id = 3965, craft_count = 1, colors = {185,185,205,225}, learnedat = 185, nskillup = 1, quality = 1, avgbuyout = 20748, cost = 8989, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4234, name = "Heavy Leather", count = 4, avgbuyout = 496},
+    {id = 4382, name = "Bronze Framework", count = 1, avgbuyout = 1810},
+    {id = 4387, name = "Iron Strut", count = 1, avgbuyout = 2480},
+    {id = 4389, name = "Gyrochronatom", count = 1, avgbuyout = 4633},
   }},
-  {id = 4393, name = "Craftsman's Monocle", spell_name = "Craftsman's Monocle", spell_id = 3966, craft_count = 1, colors = {185,205,215,225}, learnedat = 185, nskillup = 1, quality = 2, avgbuyout = 0, cost = 5000, phaseId = 0, schem = 1, recipe = {
-    {id = 3864, name = "Citrine", count = 2, avgbuyout = 1087},
-    {id = 4234, name = "Heavy Leather", count = 6, avgbuyout = 471},
+  {id = 4393, name = "Craftsman's Monocle", spell_name = "Craftsman's Monocle", spell_id = 3966, craft_count = 1, colors = {185,205,215,225}, learnedat = 185, nskillup = 1, quality = 2, avgbuyout = 0, cost = 5206, phaseId = 0, schemprice = 76749, schemid = 4415, recipe = {
+    {id = 3864, name = "Citrine", count = 2, avgbuyout = 1115},
+    {id = 4234, name = "Heavy Leather", count = 6, avgbuyout = 496},
   }},
-  {id = 4852, name = "Flash Bomb", spell_name = "Flash Bomb", spell_id = 8243, craft_count = 1, colors = {185,185,205,225}, learnedat = 185, nskillup = 1, quality = 1, avgbuyout = 9360, cost = 5792, phaseId = 0, schem = 1, recipe = {
-    {id = 4306, name = "Silk Cloth", count = 1, avgbuyout = 216},
-    {id = 4377, name = "Heavy Blasting Powder", count = 1, avgbuyout = 837},
-    {id = 4611, name = "Blue Pearl", count = 1, avgbuyout = 4789},
+  {id = 4852, name = "Flash Bomb", spell_name = "Flash Bomb", spell_id = 8243, craft_count = 1, colors = {185,185,205,225}, learnedat = 185, nskillup = 1, quality = 1, avgbuyout = 12983, cost = 6153, phaseId = 0, schemprice = 50000, schemid = 6672, recipe = {
+    {id = 4306, name = "Silk Cloth", count = 1, avgbuyout = 219},
+    {id = 4377, name = "Heavy Blasting Powder", count = 1, avgbuyout = 889},
+    {id = 4611, name = "Blue Pearl", count = 1, avgbuyout = 5144},
   }},
-  {id = 4394, name = "Big Iron Bomb", spell_name = "Big Iron Bomb", spell_id = 3967, craft_count = 2, colors = {190,190,210,230}, learnedat = 190, nskillup = 1, quality = 1, avgbuyout = 3563, cost = 6979, phaseId = 0, schem = 0, recipe = {
-    {id = 3575, name = "Iron Bar", count = 3, avgbuyout = 1299},
-    {id = 4377, name = "Heavy Blasting Powder", count = 3, avgbuyout = 837},
+  {id = 4394, name = "Big Iron Bomb", spell_name = "Big Iron Bomb", spell_id = 3967, craft_count = 2, colors = {190,190,210,230}, learnedat = 190, nskillup = 1, quality = 1, avgbuyout = 3800, cost = 7181, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3575, name = "Iron Bar", count = 3, avgbuyout = 1360},
+    {id = 4377, name = "Heavy Blasting Powder", count = 3, avgbuyout = 889},
     {id = 4404, name = "Silver Contact", count = 1, avgbuyout = 56},
   }},
-  {id = 17716, name = "SnowMaster 9000", spell_name = "SnowMaster 9000", spell_id = 21940, craft_count = 1, colors = {190,190,210,230}, learnedat = 190, nskillup = 1, quality = 1, avgbuyout = 250000, cost = 56307, phaseId = 0, schem = 0, recipe = {
-    {id = 3829, name = "Frost Oil", count = 1, avgbuyout = 23895},
-    {id = 3860, name = "Mithril Bar", count = 8, avgbuyout = 2098},
-    {id = 4389, name = "Gyrochronatom", count = 4, avgbuyout = 4483},
-    {id = 17202, name = "Snowball", count = 4, avgbuyout = 955},
+  {id = 17716, name = "SnowMaster 9000", spell_name = "SnowMaster 9000", spell_id = 21940, craft_count = 1, colors = {190,190,210,230}, learnedat = 190, nskillup = 1, quality = 1, avgbuyout = 250000, cost = 60907, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3829, name = "Frost Oil", count = 1, avgbuyout = 25575},
+    {id = 3860, name = "Mithril Bar", count = 8, avgbuyout = 2167},
+    {id = 4389, name = "Gyrochronatom", count = 4, avgbuyout = 4633},
+    {id = 17202, name = "Snowball", count = 4, avgbuyout = 1502},
   }},
-  {id = 4395, name = "Goblin Land Mine", spell_name = "Goblin Land Mine", spell_id = 3968, craft_count = 1, colors = {195,215,225,235}, learnedat = 195, nskillup = 1, quality = 1, avgbuyout = 9261, cost = 7911, phaseId = 0, schem = 1, recipe = {
-    {id = 3575, name = "Iron Bar", count = 2, avgbuyout = 1299},
-    {id = 4377, name = "Heavy Blasting Powder", count = 3, avgbuyout = 837},
-    {id = 4389, name = "Gyrochronatom", count = 1, avgbuyout = 4483},
+  {id = 4395, name = "Goblin Land Mine", spell_name = "Goblin Land Mine", spell_id = 3968, craft_count = 1, colors = {195,215,225,235}, learnedat = 195, nskillup = 1, quality = 1, avgbuyout = 9261, cost = 8087, phaseId = 0, schemprice = 7800, schemid = 4416, recipe = {
+    {id = 3575, name = "Iron Bar", count = 2, avgbuyout = 1360},
+    {id = 4377, name = "Heavy Blasting Powder", count = 3, avgbuyout = 889},
+    {id = 4389, name = "Gyrochronatom", count = 1, avgbuyout = 4633},
   }},
-  {id = 10559, name = "Mithril Tube", spell_name = "Mithril Tube", spell_id = 12589, craft_count = 1, colors = {195,195,215,235}, learnedat = 195, nskillup = 1, quality = 1, avgbuyout = 6730, cost = 6294, phaseId = 0, schem = 0, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 3, avgbuyout = 2098},
+  {id = 10559, name = "Mithril Tube", spell_name = "Mithril Tube", spell_id = 12589, craft_count = 1, colors = {195,195,215,235}, learnedat = 195, nskillup = 1, quality = 1, avgbuyout = 6672, cost = 6501, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 3, avgbuyout = 2167},
   }},
-  {id = 4396, name = "Mechanical Dragonling", spell_name = "Mechanical Dragonling", spell_id = 3969, craft_count = 1, colors = {200,220,230,240}, learnedat = 200, nskillup = 1, quality = 1, avgbuyout = 45041, cost = 58420, phaseId = 0, schem = 1, recipe = {
-    {id = 3864, name = "Citrine", count = 2, avgbuyout = 1087},
-    {id = 4382, name = "Bronze Framework", count = 1, avgbuyout = 1717},
-    {id = 4387, name = "Iron Strut", count = 4, avgbuyout = 2254},
-    {id = 4389, name = "Gyrochronatom", count = 4, avgbuyout = 4483},
-    {id = 7191, name = "Fused Wiring", count = 1, avgbuyout = 32798},
+  {id = 4396, name = "Mechanical Dragonling", spell_name = "Mechanical Dragonling", spell_id = 3969, craft_count = 1, colors = {200,220,230,240}, learnedat = 200, nskillup = 1, quality = 1, avgbuyout = 47500, cost = 60286, phaseId = 0, schemprice = 44500, schemid = 13311, recipe = {
+    {id = 3864, name = "Citrine", count = 2, avgbuyout = 1115},
+    {id = 4382, name = "Bronze Framework", count = 1, avgbuyout = 1810},
+    {id = 4387, name = "Iron Strut", count = 4, avgbuyout = 2480},
+    {id = 4389, name = "Gyrochronatom", count = 4, avgbuyout = 4633},
+    {id = 7191, name = "Fused Wiring", count = 1, avgbuyout = 33900},
   }},
-  {id = 4397, name = "Gnomish Cloaking Device", spell_name = "Gnomish Cloaking Device", spell_id = 3971, craft_count = 1, colors = {200,220,230,240}, learnedat = 200, nskillup = 1, quality = 1, avgbuyout = 123999, cost = 53336, phaseId = 0, schem = 1, recipe = {
-    {id = 1529, name = "Jade", count = 2, avgbuyout = 1834},
-    {id = 1705, name = "Lesser Moonstone", count = 2, avgbuyout = 1444},
-    {id = 3864, name = "Citrine", count = 2, avgbuyout = 1087},
-    {id = 4389, name = "Gyrochronatom", count = 4, avgbuyout = 4483},
-    {id = 7191, name = "Fused Wiring", count = 1, avgbuyout = 32798},
+  {id = 4397, name = "Gnomish Cloaking Device", spell_name = "Gnomish Cloaking Device", spell_id = 3971, craft_count = 1, colors = {200,220,230,240}, learnedat = 200, nskillup = 1, quality = 1, avgbuyout = 125750, cost = 54998, phaseId = 0, schemprice = 37401, schemid = 7742, recipe = {
+    {id = 1529, name = "Jade", count = 2, avgbuyout = 1783},
+    {id = 1705, name = "Lesser Moonstone", count = 2, avgbuyout = 1657},
+    {id = 3864, name = "Citrine", count = 2, avgbuyout = 1115},
+    {id = 4389, name = "Gyrochronatom", count = 4, avgbuyout = 4633},
+    {id = 7191, name = "Fused Wiring", count = 1, avgbuyout = 33900},
   }},
-  {id = 4398, name = "Large Seaforium Charge", spell_name = "Large Seaforium Charge", spell_id = 3972, craft_count = 1, colors = {200,200,220,240}, learnedat = 200, nskillup = 1, quality = 1, avgbuyout = 18800, cost = 6301, phaseId = 0, schem = 1, recipe = {
-    {id = 159, name = "Refreshing Spring Water", count = 1, avgbuyout = 647},
-    {id = 4234, name = "Heavy Leather", count = 2, avgbuyout = 471},
-    {id = 10505, name = "Solid Blasting Powder", count = 2, avgbuyout = 2806},
+  {id = 4398, name = "Large Seaforium Charge", spell_name = "Large Seaforium Charge", spell_id = 3972, craft_count = 1, colors = {200,200,220,240}, learnedat = 200, nskillup = 1, quality = 1, avgbuyout = 18977, cost = 6667, phaseId = 0, schemprice = 28600, schemid = 4417, recipe = {
+    {id = 159, name = "Refreshing Spring Water", count = 1, avgbuyout = 895},
+    {id = 4234, name = "Heavy Leather", count = 2, avgbuyout = 496},
+    {id = 10505, name = "Solid Blasting Powder", count = 2, avgbuyout = 2901},
   }},
-  {id = 10560, name = "Unstable Trigger", spell_name = "Unstable Trigger", spell_id = 12591, craft_count = 1, colors = {200,200,220,240}, learnedat = 200, nskillup = 1, quality = 1, avgbuyout = 8999, cost = 5113, phaseId = 0, schem = 0, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 1, avgbuyout = 2098},
-    {id = 4338, name = "Mageweave Cloth", count = 1, avgbuyout = 659},
-    {id = 10505, name = "Solid Blasting Powder", count = 1, avgbuyout = 2806},
+  {id = 10560, name = "Unstable Trigger", spell_name = "Unstable Trigger", spell_id = 12591, craft_count = 1, colors = {200,200,220,240}, learnedat = 200, nskillup = 1, quality = 1, avgbuyout = 9518, cost = 5206, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 1, avgbuyout = 2167},
+    {id = 4338, name = "Mageweave Cloth", count = 1, avgbuyout = 649},
+    {id = 10505, name = "Solid Blasting Powder", count = 1, avgbuyout = 2901},
   }},
-  {id = 11590, name = "Mechanical Repair Kit", spell_name = "Mechanical Repair Kit", spell_id = 15255, craft_count = 1, colors = {200,200,220,240}, learnedat = 200, nskillup = 1, quality = 1, avgbuyout = 4991, cost = 5113, phaseId = 0, schem = 0, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 1, avgbuyout = 2098},
-    {id = 4338, name = "Mageweave Cloth", count = 1, avgbuyout = 659},
-    {id = 10505, name = "Solid Blasting Powder", count = 1, avgbuyout = 2806},
+  {id = 11590, name = "Mechanical Repair Kit", spell_name = "Mechanical Repair Kit", spell_id = 15255, craft_count = 1, colors = {200,200,220,240}, learnedat = 200, nskillup = 1, quality = 1, avgbuyout = 4991, cost = 5206, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 1, avgbuyout = 2167},
+    {id = 4338, name = "Mageweave Cloth", count = 1, avgbuyout = 649},
+    {id = 10505, name = "Solid Blasting Powder", count = 1, avgbuyout = 2901},
   }},
-  {id = 18588, name = "Ez-Thro Dynamite II", spell_name = "EZ-Thro Dynamite II", spell_id = 23069, craft_count = 1, colors = {200,200,210,220}, learnedat = 200, nskillup = 1, quality = 1, avgbuyout = 5105, cost = 3674, phaseId = 0, schem = 0, recipe = {
-    {id = 4338, name = "Mageweave Cloth", count = 2, avgbuyout = 659},
-    {id = 10505, name = "Solid Blasting Powder", count = 1, avgbuyout = 2806},
+  {id = 18588, name = "Ez-Thro Dynamite II", spell_name = "EZ-Thro Dynamite II", spell_id = 23069, craft_count = 1, colors = {200,200,210,220}, learnedat = 200, nskillup = 1, quality = 1, avgbuyout = 5625, cost = 3688, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4338, name = "Mageweave Cloth", count = 2, avgbuyout = 649},
+    {id = 10505, name = "Solid Blasting Powder", count = 1, avgbuyout = 2901},
   }},
-  {id = 213383, name = "Polished Truesilver Gears", spell_name = "Polished Truesilver Gears", spell_id = 435956, craft_count = 1, colors = {0,200,210,220}, learnedat = 200, nskillup = 1, quality = 3, avgbuyout = 27577, cost = 2583, phaseId = 2, schem = 1, recipe = {
-    {id = 6037, name = "Truesilver Bar", count = 1, avgbuyout = 2583},
+  {id = 213383, name = "Polished Truesilver Gears", spell_name = "Polished Truesilver Gears", spell_id = 435956, craft_count = 1, colors = {0,200,210,220}, learnedat = 200, nskillup = 1, quality = 3, avgbuyout = 27577, cost = 3164, phaseId = 2, schemprice = 10000, schemid = 215429, recipe = {
+    {id = 6037, name = "Truesilver Bar", count = 1, avgbuyout = 3164},
     {id = 213381, name = "Pile of Tarnished Gears", count = 5, avgbuyout = 0},
   }},
-  {id = 10500, name = "Fire Goggles", spell_name = "Fire Goggles", spell_id = 12594, craft_count = 1, colors = {205,225,235,245}, learnedat = 205, nskillup = 1, quality = 2, avgbuyout = 49998, cost = 60890, phaseId = 0, schem = 0, recipe = {
-    {id = 3864, name = "Citrine", count = 2, avgbuyout = 1087},
-    {id = 4234, name = "Heavy Leather", count = 4, avgbuyout = 471},
-    {id = 4385, name = "Green Tinted Goggles", count = 1, avgbuyout = 7532},
-    {id = 7068, name = "Elemental Fire", count = 2, avgbuyout = 25799},
+  {id = 10500, name = "Fire Goggles", spell_name = "Fire Goggles", spell_id = 12594, craft_count = 1, colors = {205,225,235,245}, learnedat = 205, nskillup = 1, quality = 2, avgbuyout = 80000, cost = 60244, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3864, name = "Citrine", count = 2, avgbuyout = 1115},
+    {id = 4234, name = "Heavy Leather", count = 4, avgbuyout = 496},
+    {id = 4385, name = "Green Tinted Goggles", count = 1, avgbuyout = 8095},
+    {id = 7068, name = "Elemental Fire", count = 2, avgbuyout = 24856},
   }},
-  {id = 10508, name = "Mithril Blunderbuss", spell_name = "Mithril Blunderbuss", spell_id = 12595, craft_count = 1, colors = {205,225,235,245}, learnedat = 205, nskillup = 1, quality = 2, avgbuyout = 45334, cost = 75762, phaseId = 0, schem = 0, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 4, avgbuyout = 2098},
-    {id = 4400, name = "Heavy Stock", count = 1, avgbuyout = 4365},
-    {id = 7068, name = "Elemental Fire", count = 2, avgbuyout = 25799},
-    {id = 10559, name = "Mithril Tube", count = 1, avgbuyout = 6730},
-    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 8999},
+  {id = 10508, name = "Mithril Blunderbuss", spell_name = "Mithril Blunderbuss", spell_id = 12595, craft_count = 1, colors = {205,225,235,245}, learnedat = 205, nskillup = 1, quality = 2, avgbuyout = 45438, cost = 73694, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 4, avgbuyout = 2167},
+    {id = 4400, name = "Heavy Stock", count = 1, avgbuyout = 3607},
+    {id = 7068, name = "Elemental Fire", count = 2, avgbuyout = 24856},
+    {id = 10559, name = "Mithril Tube", count = 1, avgbuyout = 6672},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
   }},
-  {id = 10542, name = "Goblin Mining Helmet", spell_name = "Goblin Mining Helmet", spell_id = 12717, craft_count = 1, colors = {205,225,235,245}, learnedat = 205, nskillup = 1, quality = 2, avgbuyout = 0, cost = 95795, phaseId = 0, schem = 1, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 8, avgbuyout = 2098},
-    {id = 3864, name = "Citrine", count = 1, avgbuyout = 1087},
-    {id = 7067, name = "Elemental Earth", count = 4, avgbuyout = 19481},
+  {id = 10542, name = "Goblin Mining Helmet", spell_name = "Goblin Mining Helmet", spell_id = 12717, craft_count = 1, colors = {205,225,235,245}, learnedat = 205, nskillup = 1, quality = 2, avgbuyout = 0, cost = 101171, phaseId = 0, schemprice = 10000, schemid = 221336, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 8, avgbuyout = 2167},
+    {id = 3864, name = "Citrine", count = 1, avgbuyout = 1115},
+    {id = 7067, name = "Elemental Earth", count = 4, avgbuyout = 20680},
   }},
-  {id = 10543, name = "Goblin Construction Helmet", spell_name = "Goblin Construction Helmet", spell_id = 12718, craft_count = 1, colors = {205,225,235,245}, learnedat = 205, nskillup = 1, quality = 2, avgbuyout = 0, cost = 121067, phaseId = 0, schem = 1, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 8, avgbuyout = 2098},
-    {id = 3864, name = "Citrine", count = 1, avgbuyout = 1087},
-    {id = 7068, name = "Elemental Fire", count = 4, avgbuyout = 25799},
+  {id = 10543, name = "Goblin Construction Helmet", spell_name = "Goblin Construction Helmet", spell_id = 12718, craft_count = 1, colors = {205,225,235,245}, learnedat = 205, nskillup = 1, quality = 2, avgbuyout = 0, cost = 117875, phaseId = 0, schemprice = 10000, schemid = 221335, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 8, avgbuyout = 2167},
+    {id = 3864, name = "Citrine", count = 1, avgbuyout = 1115},
+    {id = 7068, name = "Elemental Fire", count = 4, avgbuyout = 24856},
   }},
-  {id = 10577, name = "Goblin Mortar", spell_name = "The Mortar: Reloaded", spell_id = 13240, craft_count = 1, colors = {}, learnedat = 205, nskillup = 1, quality = 1, avgbuyout = 92500, cost = 18332, phaseId = 0, schem = 1, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 1, avgbuyout = 2098},
-    {id = 10505, name = "Solid Blasting Powder", count = 3, avgbuyout = 2806},
-    {id = 10577, name = "Goblin Mortar", count = 1, avgbuyout = 92500},
+  {id = 10577, name = "Goblin Mortar", spell_name = "The Mortar: Reloaded", spell_id = 13240, craft_count = 1, colors = {}, learnedat = 205, nskillup = 1, quality = 1, avgbuyout = 140000, cost = 18674, phaseId = 0, schemprice = 10000, schemid = 221337, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 1, avgbuyout = 2167},
+    {id = 10505, name = "Solid Blasting Powder", count = 3, avgbuyout = 2901},
+    {id = 10577, name = "Goblin Mortar", count = 1, avgbuyout = 140000},
   }},
-  {id = 10644, name = "Recipe: Goblin Rocket Fuel", spell_name = "Goblin Rocket Fuel Recipe", spell_id = 12715, craft_count = 1, colors = {205,205,205,205}, learnedat = 205, nskillup = 1, quality = 1, avgbuyout = 19950, cost = 3087, phaseId = 0, schem = 0, recipe = {
+  {id = 10644, name = "Recipe: Goblin Rocket Fuel", spell_name = "Goblin Rocket Fuel Recipe", spell_id = 12715, craft_count = 1, colors = {205,205,205,205}, learnedat = 205, nskillup = 1, quality = 1, avgbuyout = 20190, cost = 7459, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
     {id = 10647, name = "Engineer's Ink", count = 1, avgbuyout = 3087},
-    {id = 10648, name = "Blank Parchment", count = 1, avgbuyout = 0},
+    {id = 10648, name = "Blank Parchment", count = 1, avgbuyout = 4372},
   }},
-  {id = 10646, name = "Goblin Sapper Charge", spell_name = "Goblin Sapper Charge", spell_id = 12760, craft_count = 1, colors = {205,205,225,245}, learnedat = 205, nskillup = 1, quality = 1, avgbuyout = 36979, cost = 12840, phaseId = 0, schem = 1, recipe = {
-    {id = 4338, name = "Mageweave Cloth", count = 1, avgbuyout = 659},
-    {id = 10505, name = "Solid Blasting Powder", count = 3, avgbuyout = 2806},
-    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 8999},
+  {id = 10646, name = "Goblin Sapper Charge", spell_name = "Goblin Sapper Charge", spell_id = 12760, craft_count = 1, colors = {205,205,225,245}, learnedat = 205, nskillup = 1, quality = 1, avgbuyout = 35289, cost = 13025, phaseId = 0, schemprice = 10000, schemid = 221338, recipe = {
+    {id = 4338, name = "Mageweave Cloth", count = 1, avgbuyout = 649},
+    {id = 10505, name = "Solid Blasting Powder", count = 3, avgbuyout = 2901},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
   }},
-  {id = 10713, name = "Plans: Inlaid Mithril Cylinder", spell_name = "Inlaid Mithril Cylinder Plans", spell_id = 12895, craft_count = 1, colors = {205,205,205,205}, learnedat = 205, nskillup = 1, quality = 1, avgbuyout = 11529, cost = 3087, phaseId = 0, schem = 0, recipe = {
+  {id = 10713, name = "Plans: Inlaid Mithril Cylinder", spell_name = "Inlaid Mithril Cylinder Plans", spell_id = 12895, craft_count = 1, colors = {205,205,205,205}, learnedat = 205, nskillup = 1, quality = 1, avgbuyout = 11733, cost = 7459, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
     {id = 10647, name = "Engineer's Ink", count = 1, avgbuyout = 3087},
-    {id = 10648, name = "Blank Parchment", count = 1, avgbuyout = 0},
+    {id = 10648, name = "Blank Parchment", count = 1, avgbuyout = 4372},
   }},
-  {id = 10716, name = "Gnomish Shrink Ray", spell_name = "Gnomish Shrink Ray", spell_id = 12899, craft_count = 1, colors = {205,225,235,245}, learnedat = 205, nskillup = 1, quality = 1, avgbuyout = 55000, cost = 24771, phaseId = 0, schem = 1, recipe = {
-    {id = 1529, name = "Jade", count = 2, avgbuyout = 1834},
-    {id = 3860, name = "Mithril Bar", count = 4, avgbuyout = 2098},
-    {id = 8151, name = "Flask of Mojo", count = 4, avgbuyout = 326},
-    {id = 10559, name = "Mithril Tube", count = 1, avgbuyout = 6730},
-    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 8999},
+  {id = 10716, name = "Gnomish Shrink Ray", spell_name = "Gnomish Shrink Ray", spell_id = 12899, craft_count = 1, colors = {205,225,235,245}, learnedat = 205, nskillup = 1, quality = 1, avgbuyout = 55000, cost = 25333, phaseId = 0, schemprice = 10000, schemid = 221327, recipe = {
+    {id = 1529, name = "Jade", count = 2, avgbuyout = 1783},
+    {id = 3860, name = "Mithril Bar", count = 4, avgbuyout = 2167},
+    {id = 8151, name = "Flask of Mojo", count = 4, avgbuyout = 348},
+    {id = 10559, name = "Mithril Tube", count = 1, avgbuyout = 6672},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
   }},
-  {id = 11825, name = "Pet Bombling", spell_name = "Pet Bombling", spell_id = 15628, craft_count = 1, colors = {205,205,205,205}, learnedat = 205, nskillup = 1, quality = 1, avgbuyout = 0, cost = 55370, phaseId = 0, schem = 1, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 6, avgbuyout = 2098},
-    {id = 4394, name = "Big Iron Bomb", count = 1, avgbuyout = 3563},
-    {id = 7077, name = "Heart of Fire", count = 1, avgbuyout = 3005},
-    {id = 7191, name = "Fused Wiring", count = 1, avgbuyout = 32798},
+  {id = 11825, name = "Pet Bombling", spell_name = "Pet Bombling", spell_id = 15628, craft_count = 1, colors = {205,205,205,205}, learnedat = 205, nskillup = 1, quality = 1, avgbuyout = 0, cost = 57116, phaseId = 0, schemprice = 10000, schemid = 11828, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 6, avgbuyout = 2167},
+    {id = 4394, name = "Big Iron Bomb", count = 1, avgbuyout = 3800},
+    {id = 7077, name = "Heart of Fire", count = 1, avgbuyout = 3033},
+    {id = 7191, name = "Fused Wiring", count = 1, avgbuyout = 33900},
   }},
-  {id = 11826, name = "Lil' Smoky", spell_name = "Lil' Smoky", spell_id = 15633, craft_count = 1, colors = {205,205,205,205}, learnedat = 205, nskillup = 1, quality = 1, avgbuyout = 0, cost = 46467, phaseId = 0, schem = 1, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 2, avgbuyout = 2098},
-    {id = 4389, name = "Gyrochronatom", count = 2, avgbuyout = 4483},
-    {id = 6037, name = "Truesilver Bar", count = 1, avgbuyout = 2583},
-    {id = 7075, name = "Core of Earth", count = 1, avgbuyout = 986},
-    {id = 7191, name = "Fused Wiring", count = 1, avgbuyout = 32798},
+  {id = 11826, name = "Lil' Smoky", spell_name = "Lil' Smoky", spell_id = 15633, craft_count = 1, colors = {205,205,205,205}, learnedat = 205, nskillup = 1, quality = 1, avgbuyout = 0, cost = 48371, phaseId = 0, schemprice = 10000, schemid = 11827, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 2, avgbuyout = 2167},
+    {id = 4389, name = "Gyrochronatom", count = 2, avgbuyout = 4633},
+    {id = 6037, name = "Truesilver Bar", count = 1, avgbuyout = 3164},
+    {id = 7075, name = "Core of Earth", count = 1, avgbuyout = 979},
+    {id = 7191, name = "Fused Wiring", count = 1, avgbuyout = 33900},
   }},
-  {id = 211427, name = "Soul Vessel", spell_name = "Soul Vessel", spell_id = 431362, craft_count = 1, colors = {0,205,210,215}, learnedat = 205, nskillup = 1, quality = 3, avgbuyout = 28995, cost = 22824, phaseId = 2, schem = 1, recipe = {
-    {id = 1210, name = "Shadowgem", count = 4, avgbuyout = 271},
-    {id = 9262, name = "Black Vitriol", count = 1, avgbuyout = 2164},
+  {id = 211427, name = "Soul Vessel", spell_name = "Soul Vessel", spell_id = 431362, craft_count = 1, colors = {0,205,210,215}, learnedat = 205, nskillup = 1, quality = 3, avgbuyout = 29600, cost = 22870, phaseId = 2, schemprice = 10000, schemid = 212230, recipe = {
+    {id = 1210, name = "Shadowgem", count = 4, avgbuyout = 285},
+    {id = 9262, name = "Black Vitriol", count = 1, avgbuyout = 2154},
     {id = 16583, name = "Demonic Figurine", count = 1, avgbuyout = 19576},
   }},
-  {id = 10512, name = "Hi-Impact Mithril Slugs", spell_name = "Hi-Impact Mithril Slugs", spell_id = 12596, craft_count = 200, colors = {210,210,230,250}, learnedat = 210, nskillup = 1, quality = 2, avgbuyout = 8, cost = 4454, phaseId = 0, schem = 0, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 1, avgbuyout = 2098},
-    {id = 10505, name = "Solid Blasting Powder", count = 1, avgbuyout = 2806},
+  {id = 10512, name = "Hi-Impact Mithril Slugs", spell_name = "Hi-Impact Mithril Slugs", spell_id = 12596, craft_count = 200, colors = {210,210,230,250}, learnedat = 210, nskillup = 1, quality = 2, avgbuyout = 9, cost = 4557, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 1, avgbuyout = 2167},
+    {id = 10505, name = "Solid Blasting Powder", count = 1, avgbuyout = 2901},
   }},
-  {id = 10545, name = "Gnomish Goggles", spell_name = "Gnomish Goggles", spell_id = 12897, craft_count = 1, colors = {210,230,240,250}, learnedat = 210, nskillup = 1, quality = 2, avgbuyout = 0, cost = 72084, phaseId = 0, schem = 1, recipe = {
-    {id = 4234, name = "Heavy Leather", count = 2, avgbuyout = 471},
-    {id = 8151, name = "Flask of Mojo", count = 2, avgbuyout = 326},
-    {id = 10500, name = "Fire Goggles", count = 1, avgbuyout = 49998},
-    {id = 10558, name = "Gold Power Core", count = 2, avgbuyout = 1227},
-    {id = 10559, name = "Mithril Tube", count = 1, avgbuyout = 6730},
+  {id = 10545, name = "Gnomish Goggles", spell_name = "Gnomish Goggles", spell_id = 12897, craft_count = 1, colors = {210,230,240,250}, learnedat = 210, nskillup = 1, quality = 2, avgbuyout = 0, cost = 71707, phaseId = 0, schemprice = 10000, schemid = 221328, recipe = {
+    {id = 4234, name = "Heavy Leather", count = 2, avgbuyout = 496},
+    {id = 8151, name = "Flask of Mojo", count = 2, avgbuyout = 348},
+    {id = 10500, name = "Fire Goggles", count = 1, avgbuyout = 80000},
+    {id = 10558, name = "Gold Power Core", count = 2, avgbuyout = 1295},
+    {id = 10559, name = "Mithril Tube", count = 1, avgbuyout = 6672},
   }},
-  {id = 10546, name = "Deadly Scope", spell_name = "Deadly Scope", spell_id = 12597, craft_count = 1, colors = {210,230,240,250}, learnedat = 210, nskillup = 1, quality = 1, avgbuyout = 30806, cost = 13782, phaseId = 0, schem = 1, recipe = {
-    {id = 4304, name = "Thick Leather", count = 2, avgbuyout = 769},
-    {id = 7909, name = "Aquamarine", count = 2, avgbuyout = 2975},
-    {id = 10559, name = "Mithril Tube", count = 1, avgbuyout = 6730},
+  {id = 10546, name = "Deadly Scope", spell_name = "Deadly Scope", spell_id = 12597, craft_count = 1, colors = {210,230,240,250}, learnedat = 210, nskillup = 1, quality = 1, avgbuyout = 30444, cost = 14169, phaseId = 0, schemprice = 16200, schemid = 10602, recipe = {
+    {id = 4304, name = "Thick Leather", count = 2, avgbuyout = 828},
+    {id = 7909, name = "Aquamarine", count = 2, avgbuyout = 3006},
+    {id = 10559, name = "Mithril Tube", count = 1, avgbuyout = 6672},
   }},
-  {id = 10720, name = "Gnomish Net-o-Matic Projector", spell_name = "Gnomish Net-o-Matic Projector", spell_id = 12902, craft_count = 1, colors = {210,230,240,250}, learnedat = 210, nskillup = 1, quality = 1, avgbuyout = 80000, cost = 24588, phaseId = 0, schem = 0, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 4, avgbuyout = 2098},
-    {id = 4337, name = "Thick Spider's Silk", count = 4, avgbuyout = 772},
-    {id = 10285, name = "Shadow Silk", count = 2, avgbuyout = 1051},
-    {id = 10505, name = "Solid Blasting Powder", count = 2, avgbuyout = 2806},
-    {id = 10559, name = "Mithril Tube", count = 1, avgbuyout = 6730},
+  {id = 10720, name = "Gnomish Net-o-Matic Projector", spell_name = "Gnomish Net-o-Matic Projector", spell_id = 12902, craft_count = 1, colors = {210,230,240,250}, learnedat = 210, nskillup = 1, quality = 1, avgbuyout = 84999, cost = 25131, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 4, avgbuyout = 2167},
+    {id = 4337, name = "Thick Spider's Silk", count = 4, avgbuyout = 771},
+    {id = 10285, name = "Shadow Silk", count = 2, avgbuyout = 1049},
+    {id = 10505, name = "Solid Blasting Powder", count = 2, avgbuyout = 2901},
+    {id = 10559, name = "Mithril Tube", count = 1, avgbuyout = 6672},
   }},
-  {id = 10514, name = "Mithril Frag Bomb", spell_name = "Mithril Frag Bomb", spell_id = 12603, craft_count = 3, colors = {215,215,235,255}, learnedat = 215, nskillup = 1, quality = 1, avgbuyout = 2375, cost = 13763, phaseId = 0, schem = 0, recipe = {
-    {id = 10505, name = "Solid Blasting Powder", count = 1, avgbuyout = 2806},
-    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 8999},
-    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5537},
+  {id = 10514, name = "Mithril Frag Bomb", spell_name = "Mithril Frag Bomb", spell_id = 12603, craft_count = 3, colors = {215,215,235,255}, learnedat = 215, nskillup = 1, quality = 1, avgbuyout = 2375, cost = 14097, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 10505, name = "Solid Blasting Powder", count = 1, avgbuyout = 2901},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
+    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5706},
   }},
-  {id = 10561, name = "Mithril Casing", spell_name = "Mithril Casing", spell_id = 12599, craft_count = 1, colors = {215,215,235,255}, learnedat = 215, nskillup = 1, quality = 1, avgbuyout = 5537, cost = 6294, phaseId = 0, schem = 0, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 3, avgbuyout = 2098},
+  {id = 10561, name = "Mithril Casing", spell_name = "Mithril Casing", spell_id = 12599, craft_count = 1, colors = {215,215,235,255}, learnedat = 215, nskillup = 1, quality = 1, avgbuyout = 5706, cost = 6501, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 3, avgbuyout = 2167},
   }},
-  {id = 10721, name = "Gnomish Harm Prevention Belt", spell_name = "Gnomish Harm Prevention Belt", spell_id = 12903, craft_count = 1, colors = {215,235,245,255}, learnedat = 215, nskillup = 1, quality = 2, avgbuyout = 76777, cost = 38609, phaseId = 0, schem = 1, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 4, avgbuyout = 2098},
-    {id = 6037, name = "Truesilver Bar", count = 2, avgbuyout = 2583},
-    {id = 7387, name = "Dusky Belt", count = 1, avgbuyout = 13988},
-    {id = 7909, name = "Aquamarine", count = 2, avgbuyout = 2975},
-    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 8999},
+  {id = 10721, name = "Gnomish Harm Prevention Belt", spell_name = "Gnomish Harm Prevention Belt", spell_id = 12903, craft_count = 1, colors = {215,235,245,255}, learnedat = 215, nskillup = 1, quality = 2, avgbuyout = 76777, cost = 41239, phaseId = 0, schemprice = 10000, schemid = 221330, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 4, avgbuyout = 2167},
+    {id = 6037, name = "Truesilver Bar", count = 2, avgbuyout = 3164},
+    {id = 7387, name = "Dusky Belt", count = 1, avgbuyout = 15025},
+    {id = 7909, name = "Aquamarine", count = 2, avgbuyout = 3006},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
   }},
-  {id = 10501, name = "Catseye Ultra Goggles", spell_name = "Catseye Ultra Goggles", spell_id = 12607, craft_count = 1, colors = {220,240,250,260}, learnedat = 220, nskillup = 1, quality = 2, avgbuyout = 50876, cost = 12726, phaseId = 0, schem = 1, recipe = {
-    {id = 4304, name = "Thick Leather", count = 4, avgbuyout = 769},
-    {id = 7909, name = "Aquamarine", count = 2, avgbuyout = 2975},
-    {id = 10592, name = "Catseye Elixir", count = 1, avgbuyout = 3700},
+  {id = 10501, name = "Catseye Ultra Goggles", spell_name = "Catseye Ultra Goggles", spell_id = 12607, craft_count = 1, colors = {220,240,250,260}, learnedat = 220, nskillup = 1, quality = 2, avgbuyout = 61600, cost = 13342, phaseId = 0, schemprice = 7399, schemid = 10603, recipe = {
+    {id = 4304, name = "Thick Leather", count = 4, avgbuyout = 828},
+    {id = 7909, name = "Aquamarine", count = 2, avgbuyout = 3006},
+    {id = 10592, name = "Catseye Elixir", count = 1, avgbuyout = 4018},
   }},
-  {id = 10510, name = "Mithril Heavy-bore Rifle", spell_name = "Mithril Heavy-bore Rifle", spell_id = 12614, craft_count = 1, colors = {220,240,250,260}, learnedat = 220, nskillup = 1, quality = 2, avgbuyout = 54380, cost = 36828, phaseId = 0, schem = 1, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 6, avgbuyout = 2098},
-    {id = 3864, name = "Citrine", count = 2, avgbuyout = 1087},
-    {id = 4400, name = "Heavy Stock", count = 1, avgbuyout = 4365},
-    {id = 10559, name = "Mithril Tube", count = 2, avgbuyout = 6730},
-    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 8999},
+  {id = 10510, name = "Mithril Heavy-bore Rifle", spell_name = "Mithril Heavy-bore Rifle", spell_id = 12614, craft_count = 1, colors = {220,240,250,260}, learnedat = 220, nskillup = 1, quality = 2, avgbuyout = 54380, cost = 37047, phaseId = 0, schemprice = 6384, schemid = 10604, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 6, avgbuyout = 2167},
+    {id = 3864, name = "Citrine", count = 2, avgbuyout = 1115},
+    {id = 4400, name = "Heavy Stock", count = 1, avgbuyout = 3607},
+    {id = 10559, name = "Mithril Tube", count = 2, avgbuyout = 6672},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
   }},
-  {id = 7189, name = "Goblin Rocket Boots", spell_name = "Goblin Rocket Boots", spell_id = 8895, craft_count = 1, colors = {225,245,255,265}, learnedat = 225, nskillup = 1, quality = 2, avgbuyout = 165089, cost = 92903, phaseId = 0, schem = 1, recipe = {
-    {id = 4234, name = "Heavy Leather", count = 4, avgbuyout = 471},
-    {id = 9061, name = "Goblin Rocket Fuel", count = 2, avgbuyout = 19700},
-    {id = 10026, name = "Black Mageweave Boots", count = 1, avgbuyout = 33918},
-    {id = 10559, name = "Mithril Tube", count = 2, avgbuyout = 6730},
-    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 8999},
+  {id = 7189, name = "Goblin Rocket Boots", spell_name = "Goblin Rocket Boots", spell_id = 8895, craft_count = 1, colors = {225,245,255,265}, learnedat = 225, nskillup = 1, quality = 2, avgbuyout = 159500, cost = 96310, phaseId = 0, schemprice = 993526, schemid = 7192, recipe = {
+    {id = 4234, name = "Heavy Leather", count = 4, avgbuyout = 496},
+    {id = 9061, name = "Goblin Rocket Fuel", count = 2, avgbuyout = 21427},
+    {id = 10026, name = "Black Mageweave Boots", count = 1, avgbuyout = 33264},
+    {id = 10559, name = "Mithril Tube", count = 2, avgbuyout = 6672},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
   }},
-  {id = 10502, name = "Spellpower Goggles Xtreme", spell_name = "Spellpower Goggles Xtreme", spell_id = 12615, craft_count = 1, colors = {225,245,255,265}, learnedat = 225, nskillup = 1, quality = 2, avgbuyout = 29869, cost = 16000, phaseId = 0, schem = 1, recipe = {
-    {id = 4304, name = "Thick Leather", count = 4, avgbuyout = 769},
-    {id = 7910, name = "Star Ruby", count = 2, avgbuyout = 6462},
+  {id = 10502, name = "Spellpower Goggles Xtreme", spell_name = "Spellpower Goggles Xtreme", spell_id = 12615, craft_count = 1, colors = {225,245,255,265}, learnedat = 225, nskillup = 1, quality = 2, avgbuyout = 30000, cost = 16120, phaseId = 0, schemprice = 30050, schemid = 10605, recipe = {
+    {id = 4304, name = "Thick Leather", count = 4, avgbuyout = 828},
+    {id = 7910, name = "Star Ruby", count = 2, avgbuyout = 6404},
   }},
-  {id = 10518, name = "Parachute Cloak", spell_name = "Parachute Cloak", spell_id = 12616, craft_count = 1, colors = {225,245,255,265}, learnedat = 225, nskillup = 1, quality = 2, avgbuyout = 77673, cost = 30235, phaseId = 0, schem = 1, recipe = {
-    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3399},
-    {id = 10285, name = "Shadow Silk", count = 2, avgbuyout = 1051},
-    {id = 10505, name = "Solid Blasting Powder", count = 4, avgbuyout = 2806},
-    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 8999},
+  {id = 10518, name = "Parachute Cloak", spell_name = "Parachute Cloak", spell_id = 12616, craft_count = 1, colors = {225,245,255,265}, learnedat = 225, nskillup = 1, quality = 2, avgbuyout = 70000, cost = 30428, phaseId = 0, schemprice = 14625, schemid = 10606, recipe = {
+    {id = 4339, name = "Bolt of Mageweave", count = 4, avgbuyout = 3391},
+    {id = 10285, name = "Shadow Silk", count = 2, avgbuyout = 1049},
+    {id = 10505, name = "Solid Blasting Powder", count = 4, avgbuyout = 2901},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
   }},
-  {id = 10724, name = "Gnomish Rocket Boots", spell_name = "Gnomish Rocket Boots", spell_id = 12905, craft_count = 1, colors = {225,245,255,265}, learnedat = 225, nskillup = 1, quality = 2, avgbuyout = 131500, cost = 79046, phaseId = 0, schem = 1, recipe = {
-    {id = 4234, name = "Heavy Leather", count = 4, avgbuyout = 471},
-    {id = 4389, name = "Gyrochronatom", count = 4, avgbuyout = 4483},
-    {id = 10026, name = "Black Mageweave Boots", count = 1, avgbuyout = 33918},
-    {id = 10505, name = "Solid Blasting Powder", count = 8, avgbuyout = 2806},
-    {id = 10559, name = "Mithril Tube", count = 2, avgbuyout = 6730},
+  {id = 10724, name = "Gnomish Rocket Boots", spell_name = "Gnomish Rocket Boots", spell_id = 12905, craft_count = 1, colors = {225,245,255,265}, learnedat = 225, nskillup = 1, quality = 2, avgbuyout = 139999, cost = 79358, phaseId = 0, schemprice = 10000, schemid = 221331, recipe = {
+    {id = 4234, name = "Heavy Leather", count = 4, avgbuyout = 496},
+    {id = 4389, name = "Gyrochronatom", count = 4, avgbuyout = 4633},
+    {id = 10026, name = "Black Mageweave Boots", count = 1, avgbuyout = 33264},
+    {id = 10505, name = "Solid Blasting Powder", count = 8, avgbuyout = 2901},
+    {id = 10559, name = "Mithril Tube", count = 2, avgbuyout = 6672},
   }},
-  {id = 21569, name = "Firework Launcher", spell_name = "Firework Launcher", spell_id = 26442, craft_count = 1, colors = {225,245,255,265}, learnedat = 225, nskillup = 1, quality = 1, avgbuyout = 0, cost = 58103, phaseId = 0, schem = 1, recipe = {
-    {id = 9060, name = "Inlaid Mithril Cylinder", count = 1, avgbuyout = 26996},
-    {id = 9061, name = "Goblin Rocket Fuel", count = 1, avgbuyout = 19700},
-    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 8999},
-    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5537},
+  {id = 21569, name = "Firework Launcher", spell_name = "Firework Launcher", spell_id = 26442, craft_count = 1, colors = {225,245,255,265}, learnedat = 225, nskillup = 1, quality = 1, avgbuyout = 0, cost = 60824, phaseId = 0, schemprice = 194500, schemid = 21738, recipe = {
+    {id = 9060, name = "Inlaid Mithril Cylinder", count = 1, avgbuyout = 27690},
+    {id = 9061, name = "Goblin Rocket Fuel", count = 1, avgbuyout = 21427},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
+    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5706},
   }},
-  {id = 21571, name = "Blue Rocket Cluster", spell_name = "Blue Rocket Cluster", spell_id = 26423, craft_count = 3, colors = {225,225,237,250}, learnedat = 225, nskillup = 1, quality = 1, avgbuyout = 0, cost = 3125, phaseId = 0, schem = 1, recipe = {
-    {id = 4304, name = "Thick Leather", count = 1, avgbuyout = 769},
-    {id = 10505, name = "Solid Blasting Powder", count = 1, avgbuyout = 2806},
+  {id = 21571, name = "Blue Rocket Cluster", spell_name = "Blue Rocket Cluster", spell_id = 26423, craft_count = 3, colors = {225,225,237,250}, learnedat = 225, nskillup = 1, quality = 1, avgbuyout = 0, cost = 3218, phaseId = 0, schemprice = 10000, schemid = 21730, recipe = {
+    {id = 4304, name = "Thick Leather", count = 1, avgbuyout = 828},
+    {id = 10505, name = "Solid Blasting Powder", count = 1, avgbuyout = 2901},
   }},
-  {id = 21574, name = "Green Rocket Cluster", spell_name = "Green Rocket Cluster", spell_id = 26424, craft_count = 3, colors = {225,225,237,250}, learnedat = 225, nskillup = 1, quality = 1, avgbuyout = 0, cost = 3125, phaseId = 0, schem = 1, recipe = {
-    {id = 4304, name = "Thick Leather", count = 1, avgbuyout = 769},
-    {id = 10505, name = "Solid Blasting Powder", count = 1, avgbuyout = 2806},
+  {id = 21574, name = "Green Rocket Cluster", spell_name = "Green Rocket Cluster", spell_id = 26424, craft_count = 3, colors = {225,225,237,250}, learnedat = 225, nskillup = 1, quality = 1, avgbuyout = 0, cost = 3218, phaseId = 0, schemprice = 10000, schemid = 21731, recipe = {
+    {id = 4304, name = "Thick Leather", count = 1, avgbuyout = 828},
+    {id = 10505, name = "Solid Blasting Powder", count = 1, avgbuyout = 2901},
   }},
-  {id = 21576, name = "Red Rocket Cluster", spell_name = "Red Rocket Cluster", spell_id = 26425, craft_count = 3, colors = {225,225,237,250}, learnedat = 225, nskillup = 1, quality = 1, avgbuyout = 0, cost = 3125, phaseId = 0, schem = 1, recipe = {
-    {id = 4304, name = "Thick Leather", count = 1, avgbuyout = 769},
-    {id = 10505, name = "Solid Blasting Powder", count = 1, avgbuyout = 2806},
+  {id = 21576, name = "Red Rocket Cluster", spell_name = "Red Rocket Cluster", spell_id = 26425, craft_count = 3, colors = {225,225,237,250}, learnedat = 225, nskillup = 1, quality = 1, avgbuyout = 0, cost = 3218, phaseId = 0, schemprice = 10000, schemid = 21732, recipe = {
+    {id = 4304, name = "Thick Leather", count = 1, avgbuyout = 828},
+    {id = 10505, name = "Solid Blasting Powder", count = 1, avgbuyout = 2901},
   }},
-  {id = 213390, name = "Whirling Truesilver Gearwall", spell_name = "Whirling Truesilver Gearwall", spell_id = 435958, craft_count = 1, colors = {0,225,232,240}, learnedat = 225, nskillup = 1, quality = 4, avgbuyout = 0, cost = 276937, phaseId = 2, schem = 1, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 15, avgbuyout = 2098},
-    {id = 4389, name = "Gyrochronatom", count = 2, avgbuyout = 4483},
-    {id = 10561, name = "Mithril Casing", count = 2, avgbuyout = 5537},
+  {id = 213390, name = "Whirling Truesilver Gearwall", spell_name = "Whirling Truesilver Gearwall", spell_id = 435958, craft_count = 1, colors = {0,225,232,240}, learnedat = 225, nskillup = 1, quality = 4, avgbuyout = 0, cost = 281381, phaseId = 2, schemprice = 10000, schemid = 215153, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 15, avgbuyout = 2167},
+    {id = 4389, name = "Gyrochronatom", count = 2, avgbuyout = 4633},
+    {id = 10561, name = "Mithril Casing", count = 2, avgbuyout = 5706},
     {id = 213369, name = "Faintly Glowing Leather", count = 2, avgbuyout = 32078},
     {id = 213376, name = "Low-Background Truesilver Plates", count = 3, avgbuyout = 49968},
     {id = 213383, name = "Polished Truesilver Gears", count = 5, avgbuyout = 27577},
   }},
-  {id = 215115, name = "Hyperconductive Goldwrap", spell_name = "Hyperconductive Goldwap", spell_id = 435960, craft_count = 1, colors = {0,225,230,235}, learnedat = 225, nskillup = 1, quality = 4, avgbuyout = 0, cost = 221483, phaseId = 2, schem = 1, recipe = {
-    {id = 3577, name = "Gold Bar", count = 10, avgbuyout = 1653},
+  {id = 215115, name = "Hyperconductive Goldwrap", spell_name = "Hyperconductive Goldwap", spell_id = 435960, craft_count = 1, colors = {0,225,230,235}, learnedat = 225, nskillup = 1, quality = 4, avgbuyout = 0, cost = 223066, phaseId = 2, schemprice = 10000, schemid = 215156, recipe = {
+    {id = 3577, name = "Gold Bar", count = 10, avgbuyout = 1637},
     {id = 213369, name = "Faintly Glowing Leather", count = 1, avgbuyout = 32078},
     {id = 213379, name = "Hyperconductive Arcano-Filament", count = 3, avgbuyout = 55042},
     {id = 213383, name = "Polished Truesilver Gears", count = 3, avgbuyout = 27577},
   }},
-  {id = 215127, name = "High-Yield Radiation Bomb", spell_name = "High-Yield Radiation Bomb", spell_id = 435964, craft_count = 2, colors = {0,225,230,235}, learnedat = 225, nskillup = 1, quality = 2, avgbuyout = 3298, cost = 9538, phaseId = 2, schem = 1, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 2, avgbuyout = 2098},
-    {id = 10505, name = "Solid Blasting Powder", count = 1, avgbuyout = 2806},
-    {id = 215430, name = "Gnomeregan Fallout", count = 1, avgbuyout = 2986},
+  {id = 215127, name = "High-Yield Radiation Bomb", spell_name = "High-Yield Radiation Bomb", spell_id = 435964, craft_count = 2, colors = {0,225,230,235}, learnedat = 225, nskillup = 1, quality = 2, avgbuyout = 3298, cost = 11871, phaseId = 2, schemprice = 10000, schemid = 215431, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 2, avgbuyout = 2167},
+    {id = 10505, name = "Solid Blasting Powder", count = 1, avgbuyout = 2901},
+    {id = 215430, name = "Gnomeregan Fallout", count = 1, avgbuyout = 5147},
   }},
-  {id = 215168, name = "Ez-Thro Radiation Bomb", spell_name = "Ez-Thro Radiation Bomb", spell_id = 435966, craft_count = 2, colors = {0,225,230,235}, learnedat = 225, nskillup = 1, quality = 2, avgbuyout = 3395, cost = 11894, phaseId = 2, schem = 1, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 2, avgbuyout = 2098},
-    {id = 10505, name = "Solid Blasting Powder", count = 2, avgbuyout = 2806},
-    {id = 215430, name = "Gnomeregan Fallout", count = 1, avgbuyout = 2986},
+  {id = 215168, name = "Ez-Thro Radiation Bomb", spell_name = "Ez-Thro Radiation Bomb", spell_id = 435966, craft_count = 2, colors = {0,225,230,235}, learnedat = 225, nskillup = 1, quality = 2, avgbuyout = 3395, cost = 14261, phaseId = 2, schemprice = 10000, schemid = 215432, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 2, avgbuyout = 2167},
+    {id = 10505, name = "Solid Blasting Powder", count = 2, avgbuyout = 2901},
+    {id = 215430, name = "Gnomeregan Fallout", count = 1, avgbuyout = 5147},
   }},
-  {id = 10503, name = "Rose Colored Goggles", spell_name = "Rose Colored Goggles", spell_id = 12618, craft_count = 1, colors = {230,250,260,270}, learnedat = 230, nskillup = 1, quality = 2, avgbuyout = 10002, cost = 17538, phaseId = 0, schem = 0, recipe = {
-    {id = 4304, name = "Thick Leather", count = 6, avgbuyout = 769},
-    {id = 7910, name = "Star Ruby", count = 2, avgbuyout = 6462},
+  {id = 10503, name = "Rose Colored Goggles", spell_name = "Rose Colored Goggles", spell_id = 12618, craft_count = 1, colors = {230,250,260,270}, learnedat = 230, nskillup = 1, quality = 2, avgbuyout = 10002, cost = 17776, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 4304, name = "Thick Leather", count = 6, avgbuyout = 828},
+    {id = 7910, name = "Star Ruby", count = 2, avgbuyout = 6404},
   }},
-  {id = 10506, name = "Deepdive Helmet", spell_name = "Deepdive Helmet", spell_id = 12617, craft_count = 1, colors = {230,250,260,270}, learnedat = 230, nskillup = 1, quality = 2, avgbuyout = 44999, cost = 26517, phaseId = 0, schem = 1, recipe = {
-    {id = 774, name = "Malachite", count = 4, avgbuyout = 24},
-    {id = 818, name = "Tigerseye", count = 4, avgbuyout = 190},
-    {id = 3860, name = "Mithril Bar", count = 8, avgbuyout = 2098},
-    {id = 6037, name = "Truesilver Bar", count = 1, avgbuyout = 2583},
-    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5537},
+  {id = 10506, name = "Deepdive Helmet", spell_name = "Deepdive Helmet", spell_id = 12617, craft_count = 1, colors = {230,250,260,270}, learnedat = 230, nskillup = 1, quality = 2, avgbuyout = 44999, cost = 27929, phaseId = 0, schemprice = 36855, schemid = 10607, recipe = {
+    {id = 774, name = "Malachite", count = 4, avgbuyout = 27},
+    {id = 818, name = "Tigerseye", count = 4, avgbuyout = 205},
+    {id = 3860, name = "Mithril Bar", count = 8, avgbuyout = 2167},
+    {id = 6037, name = "Truesilver Bar", count = 1, avgbuyout = 3164},
+    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5706},
   }},
-  {id = 10587, name = "Goblin Bomb Dispenser", spell_name = "Goblin Bomb Dispenser", spell_id = 12755, craft_count = 1, colors = {230,230,250,270}, learnedat = 230, nskillup = 1, quality = 1, avgbuyout = 0, cost = 51393, phaseId = 0, schem = 1, recipe = {
-    {id = 4407, name = "Accurate Scope", count = 2, avgbuyout = 13800},
-    {id = 6037, name = "Truesilver Bar", count = 6, avgbuyout = 2583},
-    {id = 10505, name = "Solid Blasting Powder", count = 4, avgbuyout = 2806},
-    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 8999},
-    {id = 10561, name = "Mithril Casing", count = 2, avgbuyout = 5537},
+  {id = 10587, name = "Goblin Bomb Dispenser", spell_name = "Goblin Bomb Dispenser", spell_id = 12755, craft_count = 1, colors = {230,230,250,270}, learnedat = 230, nskillup = 1, quality = 1, avgbuyout = 0, cost = 55532, phaseId = 0, schemprice = 10000, schemid = 221340, recipe = {
+    {id = 4407, name = "Accurate Scope", count = 2, avgbuyout = 13987},
+    {id = 6037, name = "Truesilver Bar", count = 6, avgbuyout = 3164},
+    {id = 10505, name = "Solid Blasting Powder", count = 4, avgbuyout = 2901},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
+    {id = 10561, name = "Mithril Casing", count = 2, avgbuyout = 5706},
   }},
-  {id = 10725, name = "Gnomish Battle Chicken", spell_name = "Gnomish Battle Chicken", spell_id = 12906, craft_count = 1, colors = {230,250,260,270}, learnedat = 230, nskillup = 1, quality = 1, avgbuyout = 0, cost = 93693, phaseId = 0, schem = 1, recipe = {
-    {id = 1529, name = "Jade", count = 2, avgbuyout = 1834},
-    {id = 3860, name = "Mithril Bar", count = 6, avgbuyout = 2098},
-    {id = 6037, name = "Truesilver Bar", count = 6, avgbuyout = 2583},
-    {id = 9060, name = "Inlaid Mithril Cylinder", count = 2, avgbuyout = 26996},
-    {id = 10558, name = "Gold Power Core", count = 1, avgbuyout = 1227},
-    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5537},
+  {id = 10725, name = "Gnomish Battle Chicken", spell_name = "Gnomish Battle Chicken", spell_id = 12906, craft_count = 1, colors = {230,250,260,270}, learnedat = 230, nskillup = 1, quality = 1, avgbuyout = 0, cost = 99070, phaseId = 0, schemprice = 10000, schemid = 221332, recipe = {
+    {id = 1529, name = "Jade", count = 2, avgbuyout = 1783},
+    {id = 3860, name = "Mithril Bar", count = 6, avgbuyout = 2167},
+    {id = 6037, name = "Truesilver Bar", count = 6, avgbuyout = 3164},
+    {id = 9060, name = "Inlaid Mithril Cylinder", count = 2, avgbuyout = 27690},
+    {id = 10558, name = "Gold Power Core", count = 1, avgbuyout = 1295},
+    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5706},
   }},
-  {id = 10562, name = "Hi-Explosive Bomb", spell_name = "Hi-Explosive Bomb", spell_id = 12619, craft_count = 4, colors = {235,235,255,275}, learnedat = 235, nskillup = 1, quality = 1, avgbuyout = 4059, cost = 22413, phaseId = 0, schem = 0, recipe = {
-    {id = 10505, name = "Solid Blasting Powder", count = 2, avgbuyout = 2806},
-    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 8999},
-    {id = 10561, name = "Mithril Casing", count = 2, avgbuyout = 5537},
+  {id = 10562, name = "Hi-Explosive Bomb", spell_name = "Hi-Explosive Bomb", spell_id = 12619, craft_count = 4, colors = {235,235,255,275}, learnedat = 235, nskillup = 1, quality = 1, avgbuyout = 3949, cost = 22988, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 10505, name = "Solid Blasting Powder", count = 2, avgbuyout = 2901},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
+    {id = 10561, name = "Mithril Casing", count = 2, avgbuyout = 5706},
   }},
-  {id = 10586, name = "The Big One", spell_name = "The Big One", spell_id = 12754, craft_count = 2, colors = {235,235,255,275}, learnedat = 235, nskillup = 1, quality = 1, avgbuyout = 34981, cost = 46539, phaseId = 0, schem = 1, recipe = {
-    {id = 9061, name = "Goblin Rocket Fuel", count = 1, avgbuyout = 19700},
-    {id = 10507, name = "Solid Dynamite", count = 6, avgbuyout = 2272},
-    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 8999},
-    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5537},
+  {id = 10586, name = "The Big One", spell_name = "The Big One", spell_id = 12754, craft_count = 2, colors = {235,235,255,275}, learnedat = 235, nskillup = 1, quality = 1, avgbuyout = 33795, cost = 48788, phaseId = 0, schemprice = 10000, schemid = 221341, recipe = {
+    {id = 9061, name = "Goblin Rocket Fuel", count = 1, avgbuyout = 21427},
+    {id = 10507, name = "Solid Dynamite", count = 6, avgbuyout = 2520},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
+    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5706},
   }},
-  {id = 10726, name = "Gnomish Mind Control Cap", spell_name = "Gnomish Mind Control Cap", spell_id = 12907, craft_count = 1, colors = {235,255,265,275}, learnedat = 235, nskillup = 1, quality = 2, avgbuyout = 139900, cost = 48525, phaseId = 0, schem = 1, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 10, avgbuyout = 2098},
-    {id = 4338, name = "Mageweave Cloth", count = 4, avgbuyout = 659},
-    {id = 6037, name = "Truesilver Bar", count = 4, avgbuyout = 2583},
-    {id = 7910, name = "Star Ruby", count = 2, avgbuyout = 6462},
-    {id = 10558, name = "Gold Power Core", count = 1, avgbuyout = 1227},
+  {id = 10726, name = "Gnomish Mind Control Cap", spell_name = "Gnomish Mind Control Cap", spell_id = 12907, craft_count = 1, colors = {235,255,265,275}, learnedat = 235, nskillup = 1, quality = 2, avgbuyout = 148500, cost = 51367, phaseId = 0, schemprice = 10000, schemid = 221333, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 10, avgbuyout = 2167},
+    {id = 4338, name = "Mageweave Cloth", count = 4, avgbuyout = 649},
+    {id = 6037, name = "Truesilver Bar", count = 4, avgbuyout = 3164},
+    {id = 7910, name = "Star Ruby", count = 2, avgbuyout = 6404},
+    {id = 10558, name = "Gold Power Core", count = 1, avgbuyout = 1295},
   }},
-  {id = 10548, name = "Sniper Scope", spell_name = "Sniper Scope", spell_id = 12620, craft_count = 1, colors = {240,260,270,280}, learnedat = 240, nskillup = 1, quality = 1, avgbuyout = 48171, cost = 17922, phaseId = 0, schem = 1, recipe = {
-    {id = 6037, name = "Truesilver Bar", count = 2, avgbuyout = 2583},
-    {id = 7910, name = "Star Ruby", count = 1, avgbuyout = 6462},
-    {id = 10559, name = "Mithril Tube", count = 1, avgbuyout = 6730},
+  {id = 10548, name = "Sniper Scope", spell_name = "Sniper Scope", spell_id = 12620, craft_count = 1, colors = {240,260,270,280}, learnedat = 240, nskillup = 1, quality = 1, avgbuyout = 47800, cost = 19233, phaseId = 0, schemprice = 329999, schemid = 10608, recipe = {
+    {id = 6037, name = "Truesilver Bar", count = 2, avgbuyout = 3164},
+    {id = 7910, name = "Star Ruby", count = 1, avgbuyout = 6404},
+    {id = 10559, name = "Mithril Tube", count = 1, avgbuyout = 6672},
   }},
-  {id = 10645, name = "Gnomish Death Ray", spell_name = "Gnomish Death Ray", spell_id = 12759, craft_count = 1, colors = {240,260,270,280}, learnedat = 240, nskillup = 1, quality = 1, avgbuyout = 0, cost = 58054, phaseId = 0, schem = 1, recipe = {
-    {id = 7972, name = "Ichor of Undeath", count = 4, avgbuyout = 568},
-    {id = 9060, name = "Inlaid Mithril Cylinder", count = 1, avgbuyout = 26996},
-    {id = 10559, name = "Mithril Tube", count = 2, avgbuyout = 6730},
-    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 8999},
-    {id = 12808, name = "Essence of Undeath", count = 1, avgbuyout = 11085},
+  {id = 10645, name = "Gnomish Death Ray", spell_name = "Gnomish Death Ray", spell_id = 12759, craft_count = 1, colors = {240,260,270,280}, learnedat = 240, nskillup = 1, quality = 1, avgbuyout = 0, cost = 61752, phaseId = 0, schemprice = 10000, schemid = 221334, recipe = {
+    {id = 7972, name = "Ichor of Undeath", count = 4, avgbuyout = 563},
+    {id = 9060, name = "Inlaid Mithril Cylinder", count = 1, avgbuyout = 27690},
+    {id = 10559, name = "Mithril Tube", count = 2, avgbuyout = 6672},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
+    {id = 12808, name = "Essence of Undeath", count = 1, avgbuyout = 13602},
   }},
-  {id = 10727, name = "Goblin Dragon Gun", spell_name = "Goblin Dragon Gun", spell_id = 12908, craft_count = 1, colors = {240,260,270,280}, learnedat = 240, nskillup = 1, quality = 1, avgbuyout = 0, cost = 124587, phaseId = 0, schem = 1, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 6, avgbuyout = 2098},
-    {id = 6037, name = "Truesilver Bar", count = 6, avgbuyout = 2583},
-    {id = 9061, name = "Goblin Rocket Fuel", count = 4, avgbuyout = 19700},
-    {id = 10559, name = "Mithril Tube", count = 2, avgbuyout = 6730},
-    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 8999},
+  {id = 10727, name = "Goblin Dragon Gun", spell_name = "Goblin Dragon Gun", spell_id = 12908, craft_count = 1, colors = {240,260,270,280}, learnedat = 240, nskillup = 1, quality = 1, avgbuyout = 0, cost = 135902, phaseId = 0, schemprice = 10000, schemid = 221342, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 6, avgbuyout = 2167},
+    {id = 6037, name = "Truesilver Bar", count = 6, avgbuyout = 3164},
+    {id = 9061, name = "Goblin Rocket Fuel", count = 4, avgbuyout = 21427},
+    {id = 10559, name = "Mithril Tube", count = 2, avgbuyout = 6672},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
   }},
-  {id = 10504, name = "Green Lens", spell_name = "Green Lens", spell_id = 12622, craft_count = 1, colors = {245,265,275,285}, learnedat = 245, nskillup = 1, quality = 3, avgbuyout = 53500, cost = 33189, phaseId = 0, schem = 0, recipe = {
-    {id = 1529, name = "Jade", count = 3, avgbuyout = 1834},
-    {id = 4304, name = "Thick Leather", count = 8, avgbuyout = 769},
-    {id = 7909, name = "Aquamarine", count = 3, avgbuyout = 2975},
-    {id = 8153, name = "Wildvine", count = 2, avgbuyout = 5484},
-    {id = 10286, name = "Heart of the Wild", count = 2, avgbuyout = 821},
+  {id = 10504, name = "Green Lens", spell_name = "Green Lens", spell_id = 12622, craft_count = 1, colors = {245,265,275,285}, learnedat = 245, nskillup = 1, quality = 3, avgbuyout = 54189, cost = 33783, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 1529, name = "Jade", count = 3, avgbuyout = 1783},
+    {id = 4304, name = "Thick Leather", count = 8, avgbuyout = 828},
+    {id = 7909, name = "Aquamarine", count = 3, avgbuyout = 3006},
+    {id = 8153, name = "Wildvine", count = 2, avgbuyout = 5596},
+    {id = 10286, name = "Heart of the Wild", count = 2, avgbuyout = 800},
   }},
-  {id = 10513, name = "Mithril Gyro-Shot", spell_name = "Mithril Gyro-Shot", spell_id = 12621, craft_count = 200, colors = {245,245,265,285}, learnedat = 245, nskillup = 1, quality = 2, avgbuyout = 43, cost = 8908, phaseId = 0, schem = 0, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 2, avgbuyout = 2098},
-    {id = 10505, name = "Solid Blasting Powder", count = 2, avgbuyout = 2806},
+  {id = 10513, name = "Mithril Gyro-Shot", spell_name = "Mithril Gyro-Shot", spell_id = 12621, craft_count = 200, colors = {245,245,265,285}, learnedat = 245, nskillup = 1, quality = 2, avgbuyout = 43, cost = 9114, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 2, avgbuyout = 2167},
+    {id = 10505, name = "Solid Blasting Powder", count = 2, avgbuyout = 2901},
   }},
-  {id = 10588, name = "Goblin Rocket Helmet", spell_name = "Goblin Rocket Helmet", spell_id = 12758, craft_count = 1, colors = {245,265,275,285}, learnedat = 245, nskillup = 1, quality = 2, avgbuyout = 409000, cost = 213372, phaseId = 0, schem = 1, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 4, avgbuyout = 2098},
-    {id = 9061, name = "Goblin Rocket Fuel", count = 4, avgbuyout = 19700},
+  {id = 10588, name = "Goblin Rocket Helmet", spell_name = "Goblin Rocket Helmet", spell_id = 12758, craft_count = 1, colors = {245,265,275,285}, learnedat = 245, nskillup = 1, quality = 2, avgbuyout = 500000, cost = 217457, phaseId = 0, schemprice = 10000, schemid = 221343, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 4, avgbuyout = 2167},
+    {id = 9061, name = "Goblin Rocket Fuel", count = 4, avgbuyout = 21427},
     {id = 10543, name = "Goblin Construction Helmet", count = 1, avgbuyout = 0},
-    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 8999},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
   }},
-  {id = 10576, name = "Mithril Mechanical Dragonling", spell_name = "Mithril Mechanical Dragonling", spell_id = 12624, craft_count = 1, colors = {250,270,280,290}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 443363, cost = 158040, phaseId = 0, schem = 1, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 14, avgbuyout = 2098},
-    {id = 6037, name = "Truesilver Bar", count = 4, avgbuyout = 2583},
-    {id = 7077, name = "Heart of Fire", count = 4, avgbuyout = 3005},
-    {id = 7910, name = "Star Ruby", count = 2, avgbuyout = 6462},
-    {id = 9060, name = "Inlaid Mithril Cylinder", count = 2, avgbuyout = 26996},
-    {id = 9061, name = "Goblin Rocket Fuel", count = 2, avgbuyout = 19700},
+  {id = 10576, name = "Mithril Mechanical Dragonling", spell_name = "Mithril Mechanical Dragonling", spell_id = 12624, craft_count = 1, colors = {250,270,280,290}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 443363, cost = 166168, phaseId = 0, schemprice = 47500, schemid = 10609, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 14, avgbuyout = 2167},
+    {id = 6037, name = "Truesilver Bar", count = 4, avgbuyout = 3164},
+    {id = 7077, name = "Heart of Fire", count = 4, avgbuyout = 3033},
+    {id = 7910, name = "Star Ruby", count = 2, avgbuyout = 6404},
+    {id = 9060, name = "Inlaid Mithril Cylinder", count = 2, avgbuyout = 27690},
+    {id = 9061, name = "Goblin Rocket Fuel", count = 2, avgbuyout = 21427},
   }},
-  {id = 15846, name = "Salt Shaker", spell_name = "Salt Shaker", spell_id = 19567, craft_count = 1, colors = {250,270,280,290}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 86399, cost = 46183, phaseId = 0, schem = 0, recipe = {
-    {id = 10558, name = "Gold Power Core", count = 1, avgbuyout = 1227},
-    {id = 10560, name = "Unstable Trigger", count = 4, avgbuyout = 8999},
-    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5537},
-    {id = 12359, name = "Thorium Bar", count = 6, avgbuyout = 2964},
+  {id = 15846, name = "Salt Shaker", spell_name = "Salt Shaker", spell_id = 19567, craft_count = 1, colors = {250,270,280,290}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 85384, cost = 48318, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 10558, name = "Gold Power Core", count = 1, avgbuyout = 1295},
+    {id = 10560, name = "Unstable Trigger", count = 4, avgbuyout = 9518},
+    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5706},
+    {id = 12359, name = "Thorium Bar", count = 6, avgbuyout = 3226},
   }},
-  {id = 15992, name = "Dense Blasting Powder", spell_name = "Dense Blasting Powder", spell_id = 19788, craft_count = 1, colors = {250,250,255,260}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 3948, cost = 2544, phaseId = 0, schem = 0, recipe = {
-    {id = 12365, name = "Dense Stone", count = 2, avgbuyout = 1272},
+  {id = 15992, name = "Dense Blasting Powder", spell_name = "Dense Blasting Powder", spell_id = 19788, craft_count = 1, colors = {250,250,255,260}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 4456, cost = 2824, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 12365, name = "Dense Stone", count = 2, avgbuyout = 1412},
   }},
-  {id = 18641, name = "Dense Dynamite", spell_name = "Dense Dynamite", spell_id = 23070, craft_count = 2, colors = {250,250,260,270}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 30000, cost = 8190, phaseId = 0, schem = 0, recipe = {
-    {id = 14047, name = "Runecloth", count = 3, avgbuyout = 1034},
-    {id = 15992, name = "Dense Blasting Powder", count = 2, avgbuyout = 3948},
+  {id = 18641, name = "Dense Dynamite", spell_name = "Dense Dynamite", spell_id = 23070, craft_count = 2, colors = {250,250,260,270}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 24599, cost = 9089, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 14047, name = "Runecloth", count = 3, avgbuyout = 1147},
+    {id = 15992, name = "Dense Blasting Powder", count = 2, avgbuyout = 4456},
   }},
-  {id = 19026, name = "Snake Burst Firework", spell_name = "Snake Burst Firework", spell_id = 23507, craft_count = 4, colors = {250,250,260,270}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 0, cost = 7619, phaseId = 0, schem = 1, recipe = {
-    {id = 8150, name = "Deeprock Salt", count = 1, avgbuyout = 463},
-    {id = 14047, name = "Runecloth", count = 2, avgbuyout = 1034},
-    {id = 15992, name = "Dense Blasting Powder", count = 2, avgbuyout = 3948},
+  {id = 19026, name = "Snake Burst Firework", spell_name = "Snake Burst Firework", spell_id = 23507, craft_count = 4, colors = {250,250,260,270}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 0, cost = 8468, phaseId = 0, schemprice = 10000, schemid = 19027, recipe = {
+    {id = 8150, name = "Deeprock Salt", count = 1, avgbuyout = 526},
+    {id = 14047, name = "Runecloth", count = 2, avgbuyout = 1147},
+    {id = 15992, name = "Dense Blasting Powder", count = 2, avgbuyout = 4456},
   }},
-  {id = 21277, name = "Tranquil Mechanical Yeti", spell_name = "Tranquil Mechanical Yeti", spell_id = 26011, craft_count = 1, colors = {250,320,330,340}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 200000, cost = 342583, phaseId = 0, schem = 0, recipe = {
-    {id = 7079, name = "Globe of Water", count = 2, avgbuyout = 1266},
-    {id = 10558, name = "Gold Power Core", count = 1, avgbuyout = 1227},
-    {id = 15407, name = "Cured Rugged Hide", count = 1, avgbuyout = 207498},
-    {id = 15994, name = "Thorium Widget", count = 4, avgbuyout = 8591},
-    {id = 18631, name = "Truesilver Transformer", count = 2, avgbuyout = 87495},
+  {id = 21277, name = "Tranquil Mechanical Yeti", spell_name = "Tranquil Mechanical Yeti", spell_id = 26011, craft_count = 1, colors = {250,320,330,340}, learnedat = 250, nskillup = 1, quality = 1, avgbuyout = 200000, cost = 348522, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 7079, name = "Globe of Water", count = 2, avgbuyout = 1310},
+    {id = 10558, name = "Gold Power Core", count = 1, avgbuyout = 1295},
+    {id = 15407, name = "Cured Rugged Hide", count = 1, avgbuyout = 201493},
+    {id = 15994, name = "Thorium Widget", count = 4, avgbuyout = 8770},
+    {id = 18631, name = "Truesilver Transformer", count = 2, avgbuyout = 109988},
   }},
-  {id = 221025, name = "Void-Powered Invoker's Vambraces", spell_name = "Void-Powered Invoker's Vambraces", spell_id = 446236, craft_count = 1, colors = {0,250,255,260}, learnedat = 250, nskillup = 1, quality = 4, avgbuyout = 0, cost = 790748, phaseId = 3, schem = 0, recipe = {
-    {id = 10558, name = "Gold Power Core", count = 2, avgbuyout = 1227},
-    {id = 15994, name = "Thorium Widget", count = 2, avgbuyout = 8591},
+  {id = 221025, name = "Void-Powered Invoker's Vambraces", spell_name = "Void-Powered Invoker's Vambraces", spell_id = 446236, craft_count = 1, colors = {0,250,255,260}, learnedat = 250, nskillup = 1, quality = 4, avgbuyout = 0, cost = 769924, phaseId = 3, schemprice = 0, schemid = 0, recipe = {
+    {id = 10558, name = "Gold Power Core", count = 2, avgbuyout = 1295},
+    {id = 15994, name = "Thorium Widget", count = 2, avgbuyout = 8770},
     {id = 220688, name = "Inert Mantle of Nightmares", count = 1, avgbuyout = 0},
     {id = 220689, name = "Void-Powered Vambraces", count = 1, avgbuyout = 0},
-    {id = 221021, name = "Nightmare Seed", count = 10, avgbuyout = 76759},
+    {id = 221021, name = "Nightmare Seed", count = 10, avgbuyout = 74500},
   }},
-  {id = 221026, name = "Void-Powered Slayer's Vambraces", spell_name = "Void-Powered Slayer's Vambraces", spell_id = 446237, craft_count = 1, colors = {0,250,255,260}, learnedat = 250, nskillup = 1, quality = 4, avgbuyout = 0, cost = 788146, phaseId = 3, schem = 0, recipe = {
-    {id = 7910, name = "Star Ruby", count = 2, avgbuyout = 6462},
-    {id = 15992, name = "Dense Blasting Powder", count = 3, avgbuyout = 3948},
+  {id = 221026, name = "Void-Powered Slayer's Vambraces", spell_name = "Void-Powered Slayer's Vambraces", spell_id = 446237, craft_count = 1, colors = {0,250,255,260}, learnedat = 250, nskillup = 1, quality = 4, avgbuyout = 0, cost = 766280, phaseId = 3, schemprice = 0, schemid = 0, recipe = {
+    {id = 7910, name = "Star Ruby", count = 2, avgbuyout = 6404},
+    {id = 15992, name = "Dense Blasting Powder", count = 3, avgbuyout = 4456},
     {id = 220688, name = "Inert Mantle of Nightmares", count = 1, avgbuyout = 0},
     {id = 220689, name = "Void-Powered Vambraces", count = 1, avgbuyout = 0},
-    {id = 221021, name = "Nightmare Seed", count = 10, avgbuyout = 76759},
+    {id = 221021, name = "Nightmare Seed", count = 10, avgbuyout = 74500},
   }},
-  {id = 221027, name = "Void-Powered Protector's Vambraces", spell_name = "Void-Powered Protector's Vambraces", spell_id = 446238, craft_count = 1, colors = {0,250,255,260}, learnedat = 250, nskillup = 1, quality = 4, avgbuyout = 0, cost = 806464, phaseId = 3, schem = 0, recipe = {
-    {id = 10558, name = "Gold Power Core", count = 2, avgbuyout = 1227},
-    {id = 16000, name = "Thorium Tube", count = 2, avgbuyout = 9186},
+  {id = 221027, name = "Void-Powered Protector's Vambraces", spell_name = "Void-Powered Protector's Vambraces", spell_id = 446238, craft_count = 1, colors = {0,250,255,260}, learnedat = 250, nskillup = 1, quality = 4, avgbuyout = 0, cost = 786986, phaseId = 3, schemprice = 0, schemid = 0, recipe = {
+    {id = 10558, name = "Gold Power Core", count = 2, avgbuyout = 1295},
+    {id = 16000, name = "Thorium Tube", count = 2, avgbuyout = 17063},
     {id = 220688, name = "Inert Mantle of Nightmares", count = 1, avgbuyout = 0},
     {id = 220689, name = "Void-Powered Vambraces", count = 1, avgbuyout = 0},
-    {id = 221021, name = "Nightmare Seed", count = 10, avgbuyout = 76759},
+    {id = 221021, name = "Nightmare Seed", count = 10, avgbuyout = 74500},
   }},
-  {id = 15993, name = "Thorium Grenade", spell_name = "Thorium Grenade", spell_id = 19790, craft_count = 3, colors = {260,280,290,300}, learnedat = 260, nskillup = 1, quality = 1, avgbuyout = 16799, cost = 29552, phaseId = 0, schem = 1, recipe = {
-    {id = 12359, name = "Thorium Bar", count = 3, avgbuyout = 2964},
-    {id = 14047, name = "Runecloth", count = 3, avgbuyout = 1034},
-    {id = 15992, name = "Dense Blasting Powder", count = 3, avgbuyout = 3948},
-    {id = 15994, name = "Thorium Widget", count = 1, avgbuyout = 8591},
+  {id = 237023, name = "Pop-Up Shrub", spell_name = "Pop-Up Shrub", spell_id = 1228088, craft_count = 1, colors = {0,255,257,260}, learnedat = 255, nskillup = 1, quality = 1, avgbuyout = 159281, cost = 17319, phaseId = 8, schemprice = 10000, schemid = 239222, recipe = {
+    {id = 4382, name = "Bronze Framework", count = 1, avgbuyout = 1810},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
+    {id = 15994, name = "Thorium Widget", count = 1, avgbuyout = 8770},
   }},
-  {id = 15994, name = "Thorium Widget", spell_name = "Thorium Widget", spell_id = 19791, craft_count = 1, colors = {260,280,290,300}, learnedat = 260, nskillup = 1, quality = 1, avgbuyout = 8591, cost = 9926, phaseId = 0, schem = 1, recipe = {
-    {id = 12359, name = "Thorium Bar", count = 3, avgbuyout = 2964},
-    {id = 14047, name = "Runecloth", count = 1, avgbuyout = 1034},
+  {id = 15993, name = "Thorium Grenade", spell_name = "Thorium Grenade", spell_id = 19790, craft_count = 3, colors = {260,280,290,300}, learnedat = 260, nskillup = 1, quality = 1, avgbuyout = 18100, cost = 32416, phaseId = 0, schemprice = 25600, schemid = 16041, recipe = {
+    {id = 12359, name = "Thorium Bar", count = 3, avgbuyout = 3226},
+    {id = 14047, name = "Runecloth", count = 3, avgbuyout = 1147},
+    {id = 15992, name = "Dense Blasting Powder", count = 3, avgbuyout = 4456},
+    {id = 15994, name = "Thorium Widget", count = 1, avgbuyout = 8770},
   }},
-  {id = 15995, name = "Thorium Rifle", spell_name = "Thorium Rifle", spell_id = 19792, craft_count = 1, colors = {260,280,290,300}, learnedat = 260, nskillup = 1, quality = 2, avgbuyout = 169999, cost = 70666, phaseId = 0, schem = 1, recipe = {
-    {id = 10546, name = "Deadly Scope", count = 1, avgbuyout = 30806},
-    {id = 10559, name = "Mithril Tube", count = 2, avgbuyout = 6730},
-    {id = 10561, name = "Mithril Casing", count = 2, avgbuyout = 5537},
-    {id = 12359, name = "Thorium Bar", count = 4, avgbuyout = 2964},
-    {id = 15994, name = "Thorium Widget", count = 2, avgbuyout = 8591},
+  {id = 15994, name = "Thorium Widget", spell_name = "Thorium Widget", spell_id = 19791, craft_count = 1, colors = {260,280,290,300}, learnedat = 260, nskillup = 1, quality = 1, avgbuyout = 8770, cost = 10825, phaseId = 0, schemprice = 44856, schemid = 16042, recipe = {
+    {id = 12359, name = "Thorium Bar", count = 3, avgbuyout = 3226},
+    {id = 14047, name = "Runecloth", count = 1, avgbuyout = 1147},
   }},
-  {id = 18631, name = "Truesilver Transformer", spell_name = "Truesilver Transformer", spell_id = 23071, craft_count = 1, colors = {260,270,275,280}, learnedat = 260, nskillup = 1, quality = 1, avgbuyout = 87495, cost = 45598, phaseId = 0, schem = 1, recipe = {
-    {id = 6037, name = "Truesilver Bar", count = 2, avgbuyout = 2583},
-    {id = 7067, name = "Elemental Earth", count = 2, avgbuyout = 19481},
-    {id = 7069, name = "Elemental Air", count = 1, avgbuyout = 1470},
+  {id = 15995, name = "Thorium Rifle", spell_name = "Thorium Rifle", spell_id = 19792, craft_count = 1, colors = {260,280,290,300}, learnedat = 260, nskillup = 1, quality = 2, avgbuyout = 169999, cost = 74727, phaseId = 0, schemprice = 11600, schemid = 16043, recipe = {
+    {id = 10546, name = "Deadly Scope", count = 1, avgbuyout = 30444},
+    {id = 10559, name = "Mithril Tube", count = 2, avgbuyout = 6672},
+    {id = 10561, name = "Mithril Casing", count = 2, avgbuyout = 5706},
+    {id = 12359, name = "Thorium Bar", count = 4, avgbuyout = 3226},
+    {id = 15994, name = "Thorium Widget", count = 2, avgbuyout = 8770},
   }},
-  {id = 18634, name = "Gyrofreeze Ice Reflector", spell_name = "Gyrofreeze Ice Reflector", spell_id = 23077, craft_count = 1, colors = {260,280,290,300}, learnedat = 260, nskillup = 1, quality = 3, avgbuyout = 1198124, cost = 601040, phaseId = 0, schem = 1, recipe = {
-    {id = 3829, name = "Frost Oil", count = 2, avgbuyout = 23895},
-    {id = 7078, name = "Essence of Fire", count = 4, avgbuyout = 31728},
-    {id = 12361, name = "Blue Sapphire", count = 2, avgbuyout = 128449},
-    {id = 13467, name = "Icecap", count = 4, avgbuyout = 4672},
-    {id = 15994, name = "Thorium Widget", count = 6, avgbuyout = 8591},
-    {id = 18631, name = "Truesilver Transformer", count = 2, avgbuyout = 87495},
+  {id = 18631, name = "Truesilver Transformer", spell_name = "Truesilver Transformer", spell_id = 23071, craft_count = 1, colors = {260,270,275,280}, learnedat = 260, nskillup = 1, quality = 1, avgbuyout = 109988, cost = 49736, phaseId = 0, schemprice = 41317, schemid = 18651, recipe = {
+    {id = 6037, name = "Truesilver Bar", count = 2, avgbuyout = 3164},
+    {id = 7067, name = "Elemental Earth", count = 2, avgbuyout = 20680},
+    {id = 7069, name = "Elemental Air", count = 1, avgbuyout = 2048},
   }},
-  {id = 18660, name = "World Enlarger", spell_name = "World Enlarger", spell_id = 23129, craft_count = 1, colors = {260,260,265,270}, learnedat = 260, nskillup = 1, quality = 2, avgbuyout = 22999, cost = 33999, phaseId = 0, schem = 1, recipe = {
-    {id = 3864, name = "Citrine", count = 1, avgbuyout = 1087},
-    {id = 10558, name = "Gold Power Core", count = 1, avgbuyout = 1227},
-    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 8999},
-    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5537},
-    {id = 15994, name = "Thorium Widget", count = 2, avgbuyout = 8591},
+  {id = 18634, name = "Gyrofreeze Ice Reflector", spell_name = "Gyrofreeze Ice Reflector", spell_id = 23077, craft_count = 1, colors = {260,280,290,300}, learnedat = 260, nskillup = 1, quality = 3, avgbuyout = 1270080, cost = 615288, phaseId = 0, schemprice = 29800, schemid = 18652, recipe = {
+    {id = 3829, name = "Frost Oil", count = 2, avgbuyout = 25575},
+    {id = 7078, name = "Essence of Fire", count = 4, avgbuyout = 29548},
+    {id = 12361, name = "Blue Sapphire", count = 2, avgbuyout = 130500},
+    {id = 13467, name = "Icecap", count = 4, avgbuyout = 5131},
+    {id = 15994, name = "Thorium Widget", count = 6, avgbuyout = 8770},
+    {id = 18631, name = "Truesilver Transformer", count = 2, avgbuyout = 109988},
   }},
-  {id = 15996, name = "Lifelike Mechanical Toad", spell_name = "Lifelike Mechanical Toad", spell_id = 19793, craft_count = 1, colors = {265,285,295,305}, learnedat = 265, nskillup = 1, quality = 1, avgbuyout = 90500, cost = 65026, phaseId = 0, schem = 1, recipe = {
-    {id = 8170, name = "Rugged Leather", count = 1, avgbuyout = 1607},
-    {id = 10558, name = "Gold Power Core", count = 1, avgbuyout = 1227},
-    {id = 12803, name = "Living Essence", count = 1, avgbuyout = 22062},
-    {id = 15994, name = "Thorium Widget", count = 4, avgbuyout = 8591},
+  {id = 18660, name = "World Enlarger", spell_name = "World Enlarger", spell_id = 23129, craft_count = 1, colors = {260,260,265,270}, learnedat = 260, nskillup = 1, quality = 2, avgbuyout = 22999, cost = 36109, phaseId = 0, schemprice = 6463, schemid = 18661, recipe = {
+    {id = 3864, name = "Citrine", count = 1, avgbuyout = 1115},
+    {id = 10558, name = "Gold Power Core", count = 1, avgbuyout = 1295},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
+    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5706},
+    {id = 15994, name = "Thorium Widget", count = 2, avgbuyout = 8770},
   }},
-  {id = 18587, name = "Goblin Jumper Cables XL", spell_name = "Goblin Jumper Cables XL", spell_id = 23078, craft_count = 1, colors = {265,285,295,305}, learnedat = 265, nskillup = 1, quality = 1, avgbuyout = 364999, cost = 204210, phaseId = 0, schem = 1, recipe = {
-    {id = 7191, name = "Fused Wiring", count = 2, avgbuyout = 32798},
-    {id = 7910, name = "Star Ruby", count = 2, avgbuyout = 6462},
-    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7321},
-    {id = 15994, name = "Thorium Widget", count = 2, avgbuyout = 8591},
-    {id = 18631, name = "Truesilver Transformer", count = 2, avgbuyout = 87495},
+  {id = 238737, name = "Tinkerbox", spell_name = "Tinkerbox", spell_id = 1226206, craft_count = 2, colors = {0,260,270,280}, learnedat = 260, nskillup = 1, quality = 1, avgbuyout = 13999, cost = 9775, phaseId = 8, schemprice = 10000, schemid = 238782, recipe = {
+    {id = 10558, name = "Gold Power Core", count = 2, avgbuyout = 1295},
+    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5706},
   }},
-  {id = 18645, name = "Gnomish Alarm-O-Bot", spell_name = "Alarm-O-Bot", spell_id = 23096, craft_count = 1, colors = {265,275,280,285}, learnedat = 265, nskillup = 1, quality = 1, avgbuyout = 397950, cost = 77396, phaseId = 0, schem = 1, recipe = {
-    {id = 7191, name = "Fused Wiring", count = 1, avgbuyout = 32798},
-    {id = 7910, name = "Star Ruby", count = 1, avgbuyout = 6462},
-    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1607},
-    {id = 12359, name = "Thorium Bar", count = 4, avgbuyout = 2964},
-    {id = 15994, name = "Thorium Widget", count = 2, avgbuyout = 8591},
+  {id = 15996, name = "Lifelike Mechanical Toad", spell_name = "Lifelike Mechanical Toad", spell_id = 19793, craft_count = 1, colors = {265,285,295,305}, learnedat = 265, nskillup = 1, quality = 1, avgbuyout = 90500, cost = 68421, phaseId = 0, schemprice = 109950, schemid = 16044, recipe = {
+    {id = 8170, name = "Rugged Leather", count = 1, avgbuyout = 1784},
+    {id = 10558, name = "Gold Power Core", count = 1, avgbuyout = 1295},
+    {id = 12803, name = "Living Essence", count = 1, avgbuyout = 21700},
+    {id = 15994, name = "Thorium Widget", count = 4, avgbuyout = 8770},
   }},
-  {id = 15999, name = "Spellpower Goggles Xtreme Plus", spell_name = "Spellpower Goggles Xtreme Plus", spell_id = 19794, craft_count = 1, colors = {270,290,300,310}, learnedat = 270, nskillup = 1, quality = 2, avgbuyout = 0, cost = 128888, phaseId = 0, schem = 1, recipe = {
-    {id = 7910, name = "Star Ruby", count = 4, avgbuyout = 6462},
-    {id = 10502, name = "Spellpower Goggles Xtreme", count = 1, avgbuyout = 29869},
-    {id = 12810, name = "Enchanted Leather", count = 2, avgbuyout = 39384},
-    {id = 14047, name = "Runecloth", count = 8, avgbuyout = 1034},
+  {id = 18587, name = "Goblin Jumper Cables XL", spell_name = "Goblin Jumper Cables XL", spell_id = 23078, craft_count = 1, colors = {265,285,295,305}, learnedat = 265, nskillup = 1, quality = 1, avgbuyout = 390000, cost = 216824, phaseId = 0, schemprice = 48016, schemid = 18653, recipe = {
+    {id = 7191, name = "Fused Wiring", count = 2, avgbuyout = 33900},
+    {id = 7910, name = "Star Ruby", count = 2, avgbuyout = 6404},
+    {id = 14227, name = "Ironweb Spider Silk", count = 2, avgbuyout = 7547},
+    {id = 15994, name = "Thorium Widget", count = 2, avgbuyout = 8770},
+    {id = 18631, name = "Truesilver Transformer", count = 2, avgbuyout = 109988},
   }},
-  {id = 16000, name = "Thorium Tube", spell_name = "Thorium Tube", spell_id = 19795, craft_count = 1, colors = {275,295,305,315}, learnedat = 275, nskillup = 1, quality = 1, avgbuyout = 9186, cost = 17784, phaseId = 0, schem = 1, recipe = {
-    {id = 12359, name = "Thorium Bar", count = 6, avgbuyout = 2964},
+  {id = 18645, name = "Gnomish Alarm-O-Bot", spell_name = "Alarm-O-Bot", spell_id = 23096, craft_count = 1, colors = {265,275,280,285}, learnedat = 265, nskillup = 1, quality = 1, avgbuyout = 397950, cost = 81994, phaseId = 0, schemprice = 6800, schemid = 18654, recipe = {
+    {id = 7191, name = "Fused Wiring", count = 1, avgbuyout = 33900},
+    {id = 7910, name = "Star Ruby", count = 1, avgbuyout = 6404},
+    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1784},
+    {id = 12359, name = "Thorium Bar", count = 4, avgbuyout = 3226},
+    {id = 15994, name = "Thorium Widget", count = 2, avgbuyout = 8770},
   }},
-  {id = 16004, name = "Dark Iron Rifle", spell_name = "Dark Iron Rifle", spell_id = 19796, craft_count = 1, colors = {275,295,305,315}, learnedat = 275, nskillup = 1, quality = 3, avgbuyout = 399900, cost = 827714, phaseId = 0, schem = 1, recipe = {
-    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1607},
-    {id = 10546, name = "Deadly Scope", count = 2, avgbuyout = 30806},
-    {id = 11371, name = "Dark Iron Bar", count = 6, avgbuyout = 80325},
-    {id = 12361, name = "Blue Sapphire", count = 2, avgbuyout = 128449},
-    {id = 12799, name = "Large Opal", count = 2, avgbuyout = 9653},
-    {id = 16000, name = "Thorium Tube", count = 2, avgbuyout = 9186},
+  {id = 15999, name = "Spellpower Goggles Xtreme Plus", spell_name = "Spellpower Goggles Xtreme Plus", spell_id = 19794, craft_count = 1, colors = {270,290,300,310}, learnedat = 270, nskillup = 1, quality = 2, avgbuyout = 49975, cost = 129458, phaseId = 0, schemprice = 19500, schemid = 16045, recipe = {
+    {id = 7910, name = "Star Ruby", count = 4, avgbuyout = 6404},
+    {id = 10502, name = "Spellpower Goggles Xtreme", count = 1, avgbuyout = 30000},
+    {id = 12810, name = "Enchanted Leather", count = 2, avgbuyout = 39273},
+    {id = 14047, name = "Runecloth", count = 8, avgbuyout = 1147},
   }},
-  {id = 16023, name = "Masterwork Target Dummy", spell_name = "Masterwork Target Dummy", spell_id = 19814, craft_count = 1, colors = {275,295,305,315}, learnedat = 275, nskillup = 1, quality = 1, avgbuyout = 253275, cost = 53863, phaseId = 0, schem = 1, recipe = {
-    {id = 6037, name = "Truesilver Bar", count = 1, avgbuyout = 2583},
-    {id = 8170, name = "Rugged Leather", count = 2, avgbuyout = 1607},
-    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5537},
-    {id = 14047, name = "Runecloth", count = 4, avgbuyout = 1034},
-    {id = 15994, name = "Thorium Widget", count = 2, avgbuyout = 8591},
-    {id = 16000, name = "Thorium Tube", count = 1, avgbuyout = 9186},
+  {id = 238734, name = "Tinkerbox: Teleport", spell_name = "Tinkerbox: Teleport", spell_id = 1226207, craft_count = 1, colors = {0,270,280,290}, learnedat = 270, nskillup = 1, quality = 2, avgbuyout = 76581, cost = 25806, phaseId = 8, schemprice = 10000, schemid = 238783, recipe = {
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
+    {id = 15994, name = "Thorium Widget", count = 1, avgbuyout = 8770},
+    {id = 238737, name = "Tinkerbox", count = 1, avgbuyout = 13999},
   }},
-  {id = 18594, name = "Powerful Seaforium Charge", spell_name = "Powerful Seaforium Charge", spell_id = 23080, craft_count = 1, colors = {275,275,285,295}, learnedat = 275, nskillup = 1, quality = 1, avgbuyout = 44299, cost = 31345, phaseId = 0, schem = 1, recipe = {
-    {id = 159, name = "Refreshing Spring Water", count = 1, avgbuyout = 647},
-    {id = 8170, name = "Rugged Leather", count = 2, avgbuyout = 1607},
-    {id = 15992, name = "Dense Blasting Powder", count = 3, avgbuyout = 3948},
-    {id = 15994, name = "Thorium Widget", count = 2, avgbuyout = 8591},
+  {id = 238735, name = "Tinkerbox: Nitro Boosts", spell_name = "Tinkerbox: Nitro Boosts", spell_id = 1226208, craft_count = 1, colors = {0,270,280,290}, learnedat = 270, nskillup = 1, quality = 2, avgbuyout = 69998, cost = 34337, phaseId = 8, schemprice = 10000, schemid = 238784, recipe = {
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
+    {id = 16000, name = "Thorium Tube", count = 1, avgbuyout = 17063},
+    {id = 238737, name = "Tinkerbox", count = 1, avgbuyout = 13999},
   }},
-  {id = 18637, name = "Major Recombobulator", spell_name = "Major Recombobulator", spell_id = 23079, craft_count = 1, colors = {275,285,290,295}, learnedat = 275, nskillup = 1, quality = 2, avgbuyout = 292999, cost = 83234, phaseId = 0, schem = 1, recipe = {
-    {id = 14047, name = "Runecloth", count = 2, avgbuyout = 1034},
-    {id = 16000, name = "Thorium Tube", count = 2, avgbuyout = 9186},
-    {id = 18631, name = "Truesilver Transformer", count = 1, avgbuyout = 87495},
+  {id = 238736, name = "Tinkerbox: Magnetic Displacement", spell_name = "Tinkerbox: Magnetic Displacement", spell_id = 1226209, craft_count = 1, colors = {0,270,280,290}, learnedat = 270, nskillup = 1, quality = 2, avgbuyout = 44350, cost = 20421, phaseId = 8, schemprice = 10000, schemid = 238785, recipe = {
+    {id = 4387, name = "Iron Strut", count = 2, avgbuyout = 2480},
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
+    {id = 238737, name = "Tinkerbox", count = 1, avgbuyout = 13999},
   }},
-  {id = 21570, name = "Cluster Launcher", spell_name = "Firework Cluster Launcher", spell_id = 26443, craft_count = 1, colors = {275,295,305,315}, learnedat = 275, nskillup = 1, quality = 1, avgbuyout = 5080, cost = 284274, phaseId = 0, schem = 1, recipe = {
-    {id = 9060, name = "Inlaid Mithril Cylinder", count = 4, avgbuyout = 26996},
-    {id = 9061, name = "Goblin Rocket Fuel", count = 4, avgbuyout = 19700},
-    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5537},
-    {id = 18631, name = "Truesilver Transformer", count = 2, avgbuyout = 87495},
+  {id = 16000, name = "Thorium Tube", spell_name = "Thorium Tube", spell_id = 19795, craft_count = 1, colors = {275,295,305,315}, learnedat = 275, nskillup = 1, quality = 1, avgbuyout = 17063, cost = 19356, phaseId = 0, schemprice = 48800, schemid = 16047, recipe = {
+    {id = 12359, name = "Thorium Bar", count = 6, avgbuyout = 3226},
   }},
-  {id = 21714, name = "Large Blue Rocket Cluster", spell_name = "Large Blue Rocket Cluster", spell_id = 26426, craft_count = 3, colors = {275,275,280,285}, learnedat = 275, nskillup = 1, quality = 1, avgbuyout = 14296, cost = 4151, phaseId = 0, schem = 1, recipe = {
-    {id = 8170, name = "Rugged Leather", count = 1, avgbuyout = 1607},
-    {id = 15992, name = "Dense Blasting Powder", count = 1, avgbuyout = 3948},
+  {id = 16004, name = "Dark Iron Rifle", spell_name = "Dark Iron Rifle", spell_id = 19796, craft_count = 1, colors = {275,295,305,315}, learnedat = 275, nskillup = 1, quality = 3, avgbuyout = 399900, cost = 817976, phaseId = 0, schemprice = 29500, schemid = 16048, recipe = {
+    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1784},
+    {id = 10546, name = "Deadly Scope", count = 2, avgbuyout = 30444},
+    {id = 11371, name = "Dark Iron Bar", count = 6, avgbuyout = 76500},
+    {id = 12361, name = "Blue Sapphire", count = 2, avgbuyout = 130500},
+    {id = 12799, name = "Large Opal", count = 2, avgbuyout = 11895},
+    {id = 16000, name = "Thorium Tube", count = 2, avgbuyout = 17063},
   }},
-  {id = 21716, name = "Large Green Rocket Cluster", spell_name = "Large Green Rocket Cluster", spell_id = 26427, craft_count = 3, colors = {275,275,280,285}, learnedat = 275, nskillup = 1, quality = 1, avgbuyout = 0, cost = 4151, phaseId = 0, schem = 1, recipe = {
-    {id = 8170, name = "Rugged Leather", count = 1, avgbuyout = 1607},
-    {id = 15992, name = "Dense Blasting Powder", count = 1, avgbuyout = 3948},
+  {id = 16023, name = "Masterwork Target Dummy", spell_name = "Masterwork Target Dummy", spell_id = 19814, craft_count = 1, colors = {275,295,305,315}, learnedat = 275, nskillup = 1, quality = 1, avgbuyout = 129999, cost = 58827, phaseId = 0, schemprice = 23900, schemid = 16046, recipe = {
+    {id = 6037, name = "Truesilver Bar", count = 1, avgbuyout = 3164},
+    {id = 8170, name = "Rugged Leather", count = 2, avgbuyout = 1784},
+    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5706},
+    {id = 14047, name = "Runecloth", count = 4, avgbuyout = 1147},
+    {id = 15994, name = "Thorium Widget", count = 2, avgbuyout = 8770},
+    {id = 16000, name = "Thorium Tube", count = 1, avgbuyout = 17063},
   }},
-  {id = 21718, name = "Large Red Rocket Cluster", spell_name = "Large Red Rocket Cluster", spell_id = 26428, craft_count = 3, colors = {275,275,280,285}, learnedat = 275, nskillup = 1, quality = 1, avgbuyout = 12069, cost = 4151, phaseId = 0, schem = 1, recipe = {
-    {id = 8170, name = "Rugged Leather", count = 1, avgbuyout = 1607},
-    {id = 15992, name = "Dense Blasting Powder", count = 1, avgbuyout = 3948},
+  {id = 18594, name = "Powerful Seaforium Charge", spell_name = "Powerful Seaforium Charge", spell_id = 23080, craft_count = 1, colors = {275,275,285,295}, learnedat = 275, nskillup = 1, quality = 1, avgbuyout = 46800, cost = 34585, phaseId = 0, schemprice = 26599, schemid = 18656, recipe = {
+    {id = 159, name = "Refreshing Spring Water", count = 1, avgbuyout = 895},
+    {id = 8170, name = "Rugged Leather", count = 2, avgbuyout = 1784},
+    {id = 15992, name = "Dense Blasting Powder", count = 3, avgbuyout = 4456},
+    {id = 15994, name = "Thorium Widget", count = 2, avgbuyout = 8770},
   }},
-  {id = 22728, name = "Steam Tonk Controller", spell_name = "Steam Tonk Controller", spell_id = 28327, craft_count = 1, colors = {275,295,305,315}, learnedat = 275, nskillup = 1, quality = 1, avgbuyout = 0, cost = 27799, phaseId = 0, schem = 1, recipe = {
-    {id = 10558, name = "Gold Power Core", count = 1, avgbuyout = 1227},
-    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5537},
-    {id = 15994, name = "Thorium Widget", count = 2, avgbuyout = 8591},
+  {id = 18637, name = "Major Recombobulator", spell_name = "Major Recombobulator", spell_id = 23079, craft_count = 1, colors = {275,285,290,295}, learnedat = 275, nskillup = 1, quality = 2, avgbuyout = 450000, cost = 90742, phaseId = 0, schemprice = 28550, schemid = 18655, recipe = {
+    {id = 14047, name = "Runecloth", count = 2, avgbuyout = 1147},
+    {id = 16000, name = "Thorium Tube", count = 2, avgbuyout = 17063},
+    {id = 18631, name = "Truesilver Transformer", count = 1, avgbuyout = 109988},
   }},
-  {id = 236871, name = "Creepy Censor Sensors", spell_name = "Creepy Censor Sensors", spell_id = 1221012, craft_count = 1, colors = {0,275,277,280}, learnedat = 275, nskillup = 1, quality = 3, avgbuyout = 409956, cost = 73212, phaseId = 7, schem = 1, recipe = {
-    {id = 8170, name = "Rugged Leather", count = 8, avgbuyout = 1607},
-    {id = 12800, name = "Azerothian Diamond", count = 2, avgbuyout = 30178},
+  {id = 21570, name = "Cluster Launcher", spell_name = "Firework Cluster Launcher", spell_id = 26443, craft_count = 1, colors = {275,295,305,315}, learnedat = 275, nskillup = 1, quality = 1, avgbuyout = 5080, cost = 302441, phaseId = 0, schemprice = 250000, schemid = 21737, recipe = {
+    {id = 9060, name = "Inlaid Mithril Cylinder", count = 4, avgbuyout = 27690},
+    {id = 9061, name = "Goblin Rocket Fuel", count = 4, avgbuyout = 21427},
+    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5706},
+    {id = 18631, name = "Truesilver Transformer", count = 2, avgbuyout = 109988},
   }},
-  {id = 15997, name = "Thorium Shells", spell_name = "Thorium Shells", spell_id = 19800, craft_count = 200, colors = {285,305,315,325}, learnedat = 285, nskillup = 1, quality = 2, avgbuyout = 68, cost = 8472, phaseId = 0, schem = 1, recipe = {
-    {id = 12359, name = "Thorium Bar", count = 2, avgbuyout = 2964},
-    {id = 15992, name = "Dense Blasting Powder", count = 1, avgbuyout = 3948},
+  {id = 21714, name = "Large Blue Rocket Cluster", spell_name = "Large Blue Rocket Cluster", spell_id = 26426, craft_count = 3, colors = {275,275,280,285}, learnedat = 275, nskillup = 1, quality = 1, avgbuyout = 14296, cost = 4608, phaseId = 0, schemprice = 10000, schemid = 21733, recipe = {
+    {id = 8170, name = "Rugged Leather", count = 1, avgbuyout = 1784},
+    {id = 15992, name = "Dense Blasting Powder", count = 1, avgbuyout = 4456},
   }},
-  {id = 16005, name = "Dark Iron Bomb", spell_name = "Dark Iron Bomb", spell_id = 19799, craft_count = 3, colors = {285,305,315,325}, learnedat = 285, nskillup = 1, quality = 1, avgbuyout = 20000, cost = 110911, phaseId = 0, schem = 1, recipe = {
-    {id = 11371, name = "Dark Iron Bar", count = 1, avgbuyout = 80325},
-    {id = 14047, name = "Runecloth", count = 3, avgbuyout = 1034},
-    {id = 15992, name = "Dense Blasting Powder", count = 3, avgbuyout = 3948},
-    {id = 15994, name = "Thorium Widget", count = 2, avgbuyout = 8591},
+  {id = 21716, name = "Large Green Rocket Cluster", spell_name = "Large Green Rocket Cluster", spell_id = 26427, craft_count = 3, colors = {275,275,280,285}, learnedat = 275, nskillup = 1, quality = 1, avgbuyout = 0, cost = 4608, phaseId = 0, schemprice = 10000, schemid = 21734, recipe = {
+    {id = 8170, name = "Rugged Leather", count = 1, avgbuyout = 1784},
+    {id = 15992, name = "Dense Blasting Powder", count = 1, avgbuyout = 4456},
   }},
-  {id = 16006, name = "Delicate Arcanite Converter", spell_name = "Delicate Arcanite Converter", spell_id = 19815, craft_count = 1, colors = {285,305,315,325}, learnedat = 285, nskillup = 1, quality = 1, avgbuyout = 583982, cost = 515821, phaseId = 0, schem = 1, recipe = {
-    {id = 12360, name = "Arcanite Bar", count = 1, avgbuyout = 508500},
-    {id = 14227, name = "Ironweb Spider Silk", count = 1, avgbuyout = 7321},
+  {id = 21718, name = "Large Red Rocket Cluster", spell_name = "Large Red Rocket Cluster", spell_id = 26428, craft_count = 3, colors = {275,275,280,285}, learnedat = 275, nskillup = 1, quality = 1, avgbuyout = 12069, cost = 4608, phaseId = 0, schemprice = 10000, schemid = 21735, recipe = {
+    {id = 8170, name = "Rugged Leather", count = 1, avgbuyout = 1784},
+    {id = 15992, name = "Dense Blasting Powder", count = 1, avgbuyout = 4456},
   }},
-  {id = 18984, name = "Dimensional Ripper - Everlook", spell_name = "Dimensional Ripper - Everlook", spell_id = 23486, craft_count = 1, colors = {0,285,295,305}, learnedat = 285, nskillup = 1, quality = 2, avgbuyout = 369996, cost = 138061, phaseId = 0, schem = 0, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 10, avgbuyout = 2098},
-    {id = 7077, name = "Heart of Fire", count = 4, avgbuyout = 3005},
-    {id = 7910, name = "Star Ruby", count = 2, avgbuyout = 6462},
-    {id = 10586, name = "The Big One", count = 1, avgbuyout = 34981},
-    {id = 18631, name = "Truesilver Transformer", count = 1, avgbuyout = 87495},
+  {id = 22728, name = "Steam Tonk Controller", spell_name = "Steam Tonk Controller", spell_id = 28327, craft_count = 1, colors = {275,295,305,315}, learnedat = 275, nskillup = 1, quality = 1, avgbuyout = 0, cost = 29788, phaseId = 0, schemprice = 10000, schemid = 22729, recipe = {
+    {id = 10558, name = "Gold Power Core", count = 1, avgbuyout = 1295},
+    {id = 10561, name = "Mithril Casing", count = 1, avgbuyout = 5706},
+    {id = 15994, name = "Thorium Widget", count = 2, avgbuyout = 8770},
   }},
-  {id = 18986, name = "Ultrasafe Transporter: Gadgetzan", spell_name = "Ultrasafe Transporter - Gadgetzan", spell_id = 23489, craft_count = 1, colors = {0,285,295,305}, learnedat = 285, nskillup = 1, quality = 2, avgbuyout = 369800, cost = 161744, phaseId = 0, schem = 0, recipe = {
-    {id = 3860, name = "Mithril Bar", count = 12, avgbuyout = 2098},
-    {id = 7075, name = "Core of Earth", count = 4, avgbuyout = 986},
-    {id = 7079, name = "Globe of Water", count = 2, avgbuyout = 1266},
-    {id = 7909, name = "Aquamarine", count = 4, avgbuyout = 2975},
-    {id = 9060, name = "Inlaid Mithril Cylinder", count = 1, avgbuyout = 26996},
-    {id = 18631, name = "Truesilver Transformer", count = 2, avgbuyout = 87495},
+  {id = 236871, name = "Creepy Censor Sensors", spell_name = "Creepy Censor Sensors", spell_id = 1221012, craft_count = 1, colors = {0,275,277,280}, learnedat = 275, nskillup = 1, quality = 3, avgbuyout = 409956, cost = 77872, phaseId = 7, schemprice = 10000, schemid = 236872, recipe = {
+    {id = 8170, name = "Rugged Leather", count = 8, avgbuyout = 1784},
+    {id = 12800, name = "Azerothian Diamond", count = 2, avgbuyout = 31800},
   }},
-  {id = 16008, name = "Master Engineer's Goggles", spell_name = "Master Engineer's Goggles", spell_id = 19825, craft_count = 1, colors = {290,310,320,330}, learnedat = 290, nskillup = 1, quality = 2, avgbuyout = 110000, cost = 267174, phaseId = 0, schem = 1, recipe = {
-    {id = 10500, name = "Fire Goggles", count = 1, avgbuyout = 49998},
-    {id = 12364, name = "Huge Emerald", count = 2, avgbuyout = 24374},
-    {id = 12810, name = "Enchanted Leather", count = 4, avgbuyout = 39384},
+  {id = 15997, name = "Thorium Shells", spell_name = "Thorium Shells", spell_id = 19800, craft_count = 200, colors = {285,305,315,325}, learnedat = 285, nskillup = 1, quality = 2, avgbuyout = 73, cost = 9276, phaseId = 0, schemprice = 76472, schemid = 16051, recipe = {
+    {id = 12359, name = "Thorium Bar", count = 2, avgbuyout = 3226},
+    {id = 15992, name = "Dense Blasting Powder", count = 1, avgbuyout = 4456},
   }},
-  {id = 16009, name = "Voice Amplification Modulator", spell_name = "Voice Amplification Modulator", spell_id = 19819, craft_count = 1, colors = {290,310,320,330}, learnedat = 290, nskillup = 1, quality = 2, avgbuyout = 0, cost = 1052874, phaseId = 0, schem = 1, recipe = {
-    {id = 10558, name = "Gold Power Core", count = 1, avgbuyout = 1227},
-    {id = 12799, name = "Large Opal", count = 1, avgbuyout = 9653},
-    {id = 15994, name = "Thorium Widget", count = 1, avgbuyout = 8591},
-    {id = 16006, name = "Delicate Arcanite Converter", count = 2, avgbuyout = 583982},
+  {id = 16005, name = "Dark Iron Bomb", spell_name = "Dark Iron Bomb", spell_id = 19799, craft_count = 3, colors = {285,305,315,325}, learnedat = 285, nskillup = 1, quality = 1, avgbuyout = 30000, cost = 110063, phaseId = 0, schemprice = 22900, schemid = 16049, recipe = {
+    {id = 11371, name = "Dark Iron Bar", count = 1, avgbuyout = 76500},
+    {id = 14047, name = "Runecloth", count = 3, avgbuyout = 1147},
+    {id = 15992, name = "Dense Blasting Powder", count = 3, avgbuyout = 4456},
+    {id = 15994, name = "Thorium Widget", count = 2, avgbuyout = 8770},
   }},
-  {id = 18638, name = "Hyper-Radiant Flame Reflector", spell_name = "Hyper-Radiant Flame Reflector", spell_id = 23081, craft_count = 1, colors = {290,310,320,330}, learnedat = 290, nskillup = 1, quality = 3, avgbuyout = 1807499, cost = 1299068, phaseId = 0, schem = 1, recipe = {
-    {id = 7080, name = "Essence of Water", count = 6, avgbuyout = 125795},
-    {id = 7910, name = "Star Ruby", count = 4, avgbuyout = 6462},
-    {id = 11371, name = "Dark Iron Bar", count = 4, avgbuyout = 80325},
-    {id = 12800, name = "Azerothian Diamond", count = 2, avgbuyout = 30178},
-    {id = 18631, name = "Truesilver Transformer", count = 3, avgbuyout = 87495},
+  {id = 16006, name = "Delicate Arcanite Converter", spell_name = "Delicate Arcanite Converter", spell_id = 19815, craft_count = 1, colors = {285,305,315,325}, learnedat = 285, nskillup = 1, quality = 1, avgbuyout = 609990, cost = 548547, phaseId = 0, schemprice = 40778, schemid = 16050, recipe = {
+    {id = 12360, name = "Arcanite Bar", count = 1, avgbuyout = 541000},
+    {id = 14227, name = "Ironweb Spider Silk", count = 1, avgbuyout = 7547},
   }},
-  {id = 16007, name = "Flawless Arcanite Rifle", spell_name = "Flawless Arcanite Rifle", spell_id = 19833, craft_count = 1, colors = {300,320,330,340}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 0, cost = 5407130, phaseId = 0, schem = 1, recipe = {
-    {id = 7076, name = "Essence of Earth", count = 2, avgbuyout = 41991},
-    {id = 7078, name = "Essence of Fire", count = 2, avgbuyout = 31728},
-    {id = 12360, name = "Arcanite Bar", count = 10, avgbuyout = 508500},
-    {id = 12800, name = "Azerothian Diamond", count = 2, avgbuyout = 30178},
-    {id = 12810, name = "Enchanted Leather", count = 2, avgbuyout = 39384},
-    {id = 16000, name = "Thorium Tube", count = 2, avgbuyout = 9186},
+  {id = 18984, name = "Dimensional Ripper - Everlook", spell_name = "Dimensional Ripper - Everlook", spell_id = 23486, craft_count = 1, colors = {0,285,295,305}, learnedat = 285, nskillup = 1, quality = 2, avgbuyout = 450000, cost = 145134, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 10, avgbuyout = 2167},
+    {id = 7077, name = "Heart of Fire", count = 4, avgbuyout = 3033},
+    {id = 7910, name = "Star Ruby", count = 2, avgbuyout = 6404},
+    {id = 10586, name = "The Big One", count = 1, avgbuyout = 33795},
+    {id = 18631, name = "Truesilver Transformer", count = 1, avgbuyout = 109988},
   }},
-  {id = 16022, name = "Arcanite Dragonling", spell_name = "Arcanite Dragonling", spell_id = 19830, craft_count = 1, colors = {300,320,330,340}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 23000103, cost = 4867110, phaseId = 0, schem = 1, recipe = {
-    {id = 10558, name = "Gold Power Core", count = 4, avgbuyout = 1227},
+  {id = 18986, name = "Ultrasafe Transporter: Gadgetzan", spell_name = "Ultrasafe Transporter - Gadgetzan", spell_id = 23489, craft_count = 1, colors = {0,285,295,305}, learnedat = 285, nskillup = 1, quality = 2, avgbuyout = 519024, cost = 171726, phaseId = 0, schemprice = 0, schemid = 0, recipe = {
+    {id = 3860, name = "Mithril Bar", count = 12, avgbuyout = 2167},
+    {id = 7075, name = "Core of Earth", count = 4, avgbuyout = 979},
+    {id = 7079, name = "Globe of Water", count = 2, avgbuyout = 1310},
+    {id = 7909, name = "Aquamarine", count = 4, avgbuyout = 3006},
+    {id = 9060, name = "Inlaid Mithril Cylinder", count = 1, avgbuyout = 27690},
+    {id = 18631, name = "Truesilver Transformer", count = 2, avgbuyout = 109988},
+  }},
+  {id = 16008, name = "Master Engineer's Goggles", spell_name = "Master Engineer's Goggles", spell_id = 19825, craft_count = 1, colors = {290,310,320,330}, learnedat = 290, nskillup = 1, quality = 2, avgbuyout = 110000, cost = 281336, phaseId = 0, schemprice = 45000, schemid = 16053, recipe = {
+    {id = 10500, name = "Fire Goggles", count = 1, avgbuyout = 80000},
+    {id = 12364, name = "Huge Emerald", count = 2, avgbuyout = 32000},
+    {id = 12810, name = "Enchanted Leather", count = 4, avgbuyout = 39273},
+  }},
+  {id = 16009, name = "Voice Amplification Modulator", spell_name = "Voice Amplification Modulator", spell_id = 19819, craft_count = 1, colors = {290,310,320,330}, learnedat = 290, nskillup = 1, quality = 2, avgbuyout = 0, cost = 1121451, phaseId = 0, schemprice = 40741, schemid = 16052, recipe = {
+    {id = 10558, name = "Gold Power Core", count = 1, avgbuyout = 1295},
+    {id = 12799, name = "Large Opal", count = 1, avgbuyout = 11895},
+    {id = 15994, name = "Thorium Widget", count = 1, avgbuyout = 8770},
+    {id = 16006, name = "Delicate Arcanite Converter", count = 2, avgbuyout = 609990},
+  }},
+  {id = 18638, name = "Hyper-Radiant Flame Reflector", spell_name = "Hyper-Radiant Flame Reflector", spell_id = 23081, craft_count = 1, colors = {290,310,320,330}, learnedat = 290, nskillup = 1, quality = 3, avgbuyout = 2389800, cost = 1301768, phaseId = 0, schemprice = 1270254, schemid = 18657, recipe = {
+    {id = 7080, name = "Essence of Water", count = 6, avgbuyout = 126224},
+    {id = 7910, name = "Star Ruby", count = 4, avgbuyout = 6404},
+    {id = 11371, name = "Dark Iron Bar", count = 4, avgbuyout = 76500},
+    {id = 12800, name = "Azerothian Diamond", count = 2, avgbuyout = 31800},
+    {id = 18631, name = "Truesilver Transformer", count = 3, avgbuyout = 109988},
+  }},
+  {id = 16007, name = "Flawless Arcanite Rifle", spell_name = "Flawless Arcanite Rifle", spell_id = 19833, craft_count = 1, colors = {300,320,330,340}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 0, cost = 5728548, phaseId = 0, schemprice = 89900, schemid = 16056, recipe = {
+    {id = 7076, name = "Essence of Earth", count = 2, avgbuyout = 39297},
+    {id = 7078, name = "Essence of Fire", count = 2, avgbuyout = 29548},
+    {id = 12360, name = "Arcanite Bar", count = 10, avgbuyout = 541000},
+    {id = 12800, name = "Azerothian Diamond", count = 2, avgbuyout = 31800},
+    {id = 12810, name = "Enchanted Leather", count = 2, avgbuyout = 39273},
+    {id = 16000, name = "Thorium Tube", count = 2, avgbuyout = 17063},
+  }},
+  {id = 16022, name = "Arcanite Dragonling", spell_name = "Arcanite Dragonling", spell_id = 19830, craft_count = 1, colors = {300,320,330,340}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 23000103, cost = 5149200, phaseId = 0, schemprice = 239991, schemid = 16054, recipe = {
+    {id = 10558, name = "Gold Power Core", count = 4, avgbuyout = 1295},
     {id = 10576, name = "Mithril Mechanical Dragonling", count = 1, avgbuyout = 443363},
-    {id = 12655, name = "Enchanted Thorium Bar", count = 10, avgbuyout = 28003},
-    {id = 12810, name = "Enchanted Leather", count = 6, avgbuyout = 39384},
-    {id = 15994, name = "Thorium Widget", count = 6, avgbuyout = 8591},
-    {id = 16006, name = "Delicate Arcanite Converter", count = 8, avgbuyout = 583982},
+    {id = 12655, name = "Enchanted Thorium Bar", count = 10, avgbuyout = 28752},
+    {id = 12810, name = "Enchanted Leather", count = 6, avgbuyout = 39273},
+    {id = 15994, name = "Thorium Widget", count = 6, avgbuyout = 8770},
+    {id = 16006, name = "Delicate Arcanite Converter", count = 8, avgbuyout = 609990},
   }},
-  {id = 16040, name = "Arcane Bomb", spell_name = "Arcane Bomb", spell_id = 19831, craft_count = 3, colors = {300,320,330,340}, learnedat = 300, nskillup = 1, quality = 1, avgbuyout = 230000, cost = 525747, phaseId = 0, schem = 1, recipe = {
-    {id = 12359, name = "Thorium Bar", count = 3, avgbuyout = 2964},
-    {id = 14047, name = "Runecloth", count = 1, avgbuyout = 1034},
-    {id = 16006, name = "Delicate Arcanite Converter", count = 1, avgbuyout = 583982},
+  {id = 16040, name = "Arcane Bomb", spell_name = "Arcane Bomb", spell_id = 19831, craft_count = 3, colors = {300,320,330,340}, learnedat = 300, nskillup = 1, quality = 1, avgbuyout = 314083, cost = 559372, phaseId = 0, schemprice = 219999, schemid = 16055, recipe = {
+    {id = 12359, name = "Thorium Bar", count = 3, avgbuyout = 3226},
+    {id = 14047, name = "Runecloth", count = 1, avgbuyout = 1147},
+    {id = 16006, name = "Delicate Arcanite Converter", count = 1, avgbuyout = 609990},
   }},
-  {id = 18168, name = "Force Reactive Disk", spell_name = "Force Reactive Disk", spell_id = 22797, craft_count = 1, colors = {300,320,330,340}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 5994985, cost = 6091314, phaseId = 0, schem = 1, recipe = {
-    {id = 7076, name = "Essence of Earth", count = 8, avgbuyout = 41991},
-    {id = 7082, name = "Essence of Air", count = 8, avgbuyout = 176000},
-    {id = 12360, name = "Arcanite Bar", count = 6, avgbuyout = 508500},
-    {id = 12803, name = "Living Essence", count = 12, avgbuyout = 22062},
-    {id = 16006, name = "Delicate Arcanite Converter", count = 2, avgbuyout = 583982},
+  {id = 18168, name = "Force Reactive Disk", spell_name = "Force Reactive Disk", spell_id = 22797, craft_count = 1, colors = {300,320,330,340}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 5994985, cost = 6331726, phaseId = 0, schemprice = 10000, schemid = 18291, recipe = {
+    {id = 7076, name = "Essence of Earth", count = 8, avgbuyout = 39297},
+    {id = 7082, name = "Essence of Air", count = 8, avgbuyout = 176732},
+    {id = 12360, name = "Arcanite Bar", count = 6, avgbuyout = 541000},
+    {id = 12803, name = "Living Essence", count = 12, avgbuyout = 21700},
+    {id = 16006, name = "Delicate Arcanite Converter", count = 2, avgbuyout = 609990},
   }},
-  {id = 18232, name = "Field Repair Bot 74A", spell_name = "Field Repair Bot 74A", spell_id = 22704, craft_count = 1, colors = {300,320,330,340}, learnedat = 300, nskillup = 1, quality = 1, avgbuyout = 312500, cost = 139555, phaseId = 0, schem = 1, recipe = {
-    {id = 7067, name = "Elemental Earth", count = 2, avgbuyout = 19481},
-    {id = 7068, name = "Elemental Fire", count = 1, avgbuyout = 25799},
-    {id = 7191, name = "Fused Wiring", count = 1, avgbuyout = 32798},
-    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1607},
-    {id = 12359, name = "Thorium Bar", count = 12, avgbuyout = 2964},
+  {id = 18232, name = "Field Repair Bot 74A", spell_name = "Field Repair Bot 74A", spell_id = 22704, craft_count = 1, colors = {300,320,330,340}, learnedat = 300, nskillup = 1, quality = 1, avgbuyout = 321964, cost = 145964, phaseId = 0, schemprice = 10000, schemid = 18235, recipe = {
+    {id = 7067, name = "Elemental Earth", count = 2, avgbuyout = 20680},
+    {id = 7068, name = "Elemental Fire", count = 1, avgbuyout = 24856},
+    {id = 7191, name = "Fused Wiring", count = 1, avgbuyout = 33900},
+    {id = 8170, name = "Rugged Leather", count = 4, avgbuyout = 1784},
+    {id = 12359, name = "Thorium Bar", count = 12, avgbuyout = 3226},
   }},
-  {id = 18282, name = "Core Marksman Rifle", spell_name = "Core Marksman Rifle", spell_id = 22795, craft_count = 1, colors = {300,320,330,340}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 6250000, cost = 4915760, phaseId = 0, schem = 1, recipe = {
-    {id = 12360, name = "Arcanite Bar", count = 6, avgbuyout = 508500},
-    {id = 16000, name = "Thorium Tube", count = 2, avgbuyout = 9186},
-    {id = 16006, name = "Delicate Arcanite Converter", count = 2, avgbuyout = 583982},
-    {id = 17010, name = "Fiery Core", count = 4, avgbuyout = 141375},
-    {id = 17011, name = "Lava Core", count = 2, avgbuyout = 116025},
+  {id = 18282, name = "Core Marksman Rifle", spell_name = "Core Marksman Rifle", spell_id = 22795, craft_count = 1, colors = {300,320,330,340}, learnedat = 300, nskillup = 1, quality = 4, avgbuyout = 6250000, cost = 5093882, phaseId = 0, schemprice = 10000, schemid = 18292, recipe = {
+    {id = 12360, name = "Arcanite Bar", count = 6, avgbuyout = 541000},
+    {id = 16000, name = "Thorium Tube", count = 2, avgbuyout = 17063},
+    {id = 16006, name = "Delicate Arcanite Converter", count = 2, avgbuyout = 609990},
+    {id = 17010, name = "Fiery Core", count = 4, avgbuyout = 127498},
+    {id = 17011, name = "Lava Core", count = 2, avgbuyout = 101042},
   }},
-  {id = 18283, name = "Biznicks 247x128 Accurascope", spell_name = "Biznicks 247x128 Accurascope", spell_id = 22793, craft_count = 1, colors = {300,320,330,340}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 3500000, cost = 2879050, phaseId = 0, schem = 1, recipe = {
-    {id = 7076, name = "Essence of Earth", count = 2, avgbuyout = 41991},
-    {id = 11371, name = "Dark Iron Bar", count = 6, avgbuyout = 80325},
-    {id = 16000, name = "Thorium Tube", count = 1, avgbuyout = 9186},
-    {id = 16006, name = "Delicate Arcanite Converter", count = 4, avgbuyout = 583982},
-    {id = 17011, name = "Lava Core", count = 2, avgbuyout = 116025},
+  {id = 18283, name = "Biznicks 247x128 Accurascope", spell_name = "Biznicks 247x128 Accurascope", spell_id = 22793, craft_count = 1, colors = {300,320,330,340}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 3785252, cost = 2953222, phaseId = 0, schemprice = 10000, schemid = 18290, recipe = {
+    {id = 7076, name = "Essence of Earth", count = 2, avgbuyout = 39297},
+    {id = 11371, name = "Dark Iron Bar", count = 6, avgbuyout = 76500},
+    {id = 16000, name = "Thorium Tube", count = 1, avgbuyout = 17063},
+    {id = 16006, name = "Delicate Arcanite Converter", count = 4, avgbuyout = 609990},
+    {id = 17011, name = "Lava Core", count = 2, avgbuyout = 101042},
   }},
-  {id = 18639, name = "Ultra-Flash Shadow Reflector", spell_name = "Ultra-Flash Shadow Reflector", spell_id = 23082, craft_count = 1, colors = {300,320,330,340}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1660004, cost = 1081366, phaseId = 0, schem = 1, recipe = {
-    {id = 11371, name = "Dark Iron Bar", count = 8, avgbuyout = 80325},
-    {id = 12799, name = "Large Opal", count = 2, avgbuyout = 9653},
-    {id = 12800, name = "Azerothian Diamond", count = 2, avgbuyout = 30178},
-    {id = 12803, name = "Living Essence", count = 6, avgbuyout = 22062},
-    {id = 12808, name = "Essence of Undeath", count = 4, avgbuyout = 11085},
-    {id = 18631, name = "Truesilver Transformer", count = 4, avgbuyout = 87495},
+  {id = 18639, name = "Ultra-Flash Shadow Reflector", spell_name = "Ultra-Flash Shadow Reflector", spell_id = 23082, craft_count = 1, colors = {300,320,330,340}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 1660004, cost = 1082942, phaseId = 0, schemprice = 209999, schemid = 18658, recipe = {
+    {id = 11371, name = "Dark Iron Bar", count = 8, avgbuyout = 76500},
+    {id = 12799, name = "Large Opal", count = 2, avgbuyout = 11895},
+    {id = 12800, name = "Azerothian Diamond", count = 2, avgbuyout = 31800},
+    {id = 12803, name = "Living Essence", count = 6, avgbuyout = 21700},
+    {id = 12808, name = "Essence of Undeath", count = 4, avgbuyout = 13602},
+    {id = 18631, name = "Truesilver Transformer", count = 4, avgbuyout = 109988},
   }},
-  {id = 19998, name = "Bloodvine Lens", spell_name = "Bloodvine Lens", spell_id = 24357, craft_count = 1, colors = {300,320,330,340}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 0, cost = 1826598, phaseId = 0, schem = 1, recipe = {
-    {id = 12804, name = "Powerful Mojo", count = 8, avgbuyout = 3407},
-    {id = 12810, name = "Enchanted Leather", count = 4, avgbuyout = 39384},
-    {id = 16006, name = "Delicate Arcanite Converter", count = 1, avgbuyout = 583982},
-    {id = 19726, name = "Bloodvine", count = 5, avgbuyout = 211000},
-    {id = 19774, name = "Souldarite", count = 5, avgbuyout = 14197},
+  {id = 19998, name = "Bloodvine Lens", spell_name = "Bloodvine Lens", spell_id = 24357, craft_count = 1, colors = {300,320,330,340}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 690000, cost = 1843022, phaseId = 0, schemprice = 10000, schemid = 20001, recipe = {
+    {id = 12804, name = "Powerful Mojo", count = 8, avgbuyout = 3486},
+    {id = 12810, name = "Enchanted Leather", count = 4, avgbuyout = 39273},
+    {id = 16006, name = "Delicate Arcanite Converter", count = 1, avgbuyout = 609990},
+    {id = 19726, name = "Bloodvine", count = 5, avgbuyout = 207500},
+    {id = 19774, name = "Souldarite", count = 5, avgbuyout = 14399},
   }},
-  {id = 19999, name = "Bloodvine Goggles", spell_name = "Bloodvine Goggles", spell_id = 24356, craft_count = 1, colors = {300,320,330,340}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 550000, cost = 2131419, phaseId = 0, schem = 1, recipe = {
-    {id = 12804, name = "Powerful Mojo", count = 8, avgbuyout = 3407},
-    {id = 12810, name = "Enchanted Leather", count = 4, avgbuyout = 39384},
-    {id = 16006, name = "Delicate Arcanite Converter", count = 2, avgbuyout = 583982},
-    {id = 19726, name = "Bloodvine", count = 4, avgbuyout = 211000},
-    {id = 19774, name = "Souldarite", count = 5, avgbuyout = 14197},
+  {id = 19999, name = "Bloodvine Goggles", spell_name = "Bloodvine Goggles", spell_id = 24356, craft_count = 1, colors = {300,320,330,340}, learnedat = 300, nskillup = 1, quality = 3, avgbuyout = 550000, cost = 2184069, phaseId = 0, schemprice = 10000, schemid = 20000, recipe = {
+    {id = 12804, name = "Powerful Mojo", count = 8, avgbuyout = 3486},
+    {id = 12810, name = "Enchanted Leather", count = 4, avgbuyout = 39273},
+    {id = 16006, name = "Delicate Arcanite Converter", count = 2, avgbuyout = 609990},
+    {id = 19726, name = "Bloodvine", count = 4, avgbuyout = 207500},
+    {id = 19774, name = "Souldarite", count = 5, avgbuyout = 14399},
   }},
-  {id = 233984, name = "Arcane Megabomb", spell_name = "Arcane Megabomb", spell_id = 1213573, craft_count = 5, colors = {0,315,322,330}, learnedat = 315, nskillup = 1, quality = 1, avgbuyout = 59947, cost = 624741, phaseId = 6, schem = 1, recipe = {
-    {id = 14047, name = "Runecloth", count = 1, avgbuyout = 1034},
-    {id = 16006, name = "Delicate Arcanite Converter", count = 1, avgbuyout = 583982},
-    {id = 20725, name = "Nexus Crystal", count = 1, avgbuyout = 107886},
+  {id = 238781, name = "Semisafe Transporter: New Avalon", spell_name = "Semisafe Transporter: New Avalon", spell_id = 1226213, craft_count = 1, colors = {0,305,305,305}, learnedat = 305, nskillup = 1, quality = 2, avgbuyout = 4999990, cost = 1480860, phaseId = 8, schemprice = 10000, schemid = 238789, recipe = {
+    {id = 10560, name = "Unstable Trigger", count = 1, avgbuyout = 9518},
+    {id = 10561, name = "Mithril Casing", count = 2, avgbuyout = 5706},
+    {id = 10588, name = "Goblin Rocket Helmet", count = 2, avgbuyout = 500000},
+    {id = 12811, name = "Righteous Orb", count = 1, avgbuyout = 379719},
+    {id = 16006, name = "Delicate Arcanite Converter", count = 1, avgbuyout = 609990},
+    {id = 18631, name = "Truesilver Transformer", count = 2, avgbuyout = 109988},
   }},
-  {id = 233985, name = "The Fumigator", spell_name = "The Fumigator", spell_id = 1213576, craft_count = 1, colors = {0,315,322,330}, learnedat = 315, nskillup = 1, quality = 1, avgbuyout = 134100, cost = 113582, phaseId = 6, schem = 1, recipe = {
-    {id = 14047, name = "Runecloth", count = 1, avgbuyout = 1034},
-    {id = 234005, name = "Obsidian Blasting Powder", count = 2, avgbuyout = 39996},
-    {id = 234011, name = "Qiraji Stalker Venom", count = 1, avgbuyout = 59180},
+  {id = 233984, name = "Arcane Megabomb", spell_name = "Arcane Megabomb", spell_id = 1213573, craft_count = 5, colors = {0,315,322,330}, learnedat = 315, nskillup = 1, quality = 1, avgbuyout = 69998, cost = 643812, phaseId = 6, schemprice = 10000, schemid = 234261, recipe = {
+    {id = 14047, name = "Runecloth", count = 1, avgbuyout = 1147},
+    {id = 16006, name = "Delicate Arcanite Converter", count = 1, avgbuyout = 609990},
+    {id = 20725, name = "Nexus Crystal", count = 1, avgbuyout = 94118},
   }},
-  {id = 233986, name = "Obsidian Bomb", spell_name = "Obsidian Bomb", spell_id = 1213578, craft_count = 3, colors = {0,315,322,330}, learnedat = 315, nskillup = 1, quality = 1, avgbuyout = 46872, cost = 113582, phaseId = 6, schem = 1, recipe = {
-    {id = 12365, name = "Dense Stone", count = 1, avgbuyout = 1272},
-    {id = 234005, name = "Obsidian Blasting Powder", count = 3, avgbuyout = 39996},
-    {id = 234007, name = "Spiked Silithid Chitin", count = 1, avgbuyout = 31108},
-    {id = 234008, name = "Qiraji Silk", count = 1, avgbuyout = 1150},
+  {id = 233985, name = "The Fumigator", spell_name = "The Fumigator", spell_id = 1213576, craft_count = 1, colors = {0,315,322,330}, learnedat = 315, nskillup = 1, quality = 1, avgbuyout = 130067, cost = 91674, phaseId = 6, schemprice = 10000, schemid = 234262, recipe = {
+    {id = 14047, name = "Runecloth", count = 1, avgbuyout = 1147},
+    {id = 234005, name = "Obsidian Blasting Powder", count = 2, avgbuyout = 24988},
+    {id = 234011, name = "Qiraji Stalker Venom", count = 1, avgbuyout = 54527},
   }},
-  {id = 233987, name = "G00 DV-1B3 Generator", spell_name = "G00 DV-1B3 Generator", spell_id = 1213586, craft_count = 1, colors = {0,315,322,330}, learnedat = 315, nskillup = 1, quality = 3, avgbuyout = 0, cost = 2376532, phaseId = 6, schem = 1, recipe = {
-    {id = 234005, name = "Obsidian Blasting Powder", count = 20, avgbuyout = 39996},
-    {id = 234007, name = "Spiked Silithid Chitin", count = 8, avgbuyout = 31108},
-    {id = 234009, name = "Bolt of Qiraji Silk", count = 8, avgbuyout = 16896},
-    {id = 234010, name = "Ancient Sandworm Bile", count = 8, avgbuyout = 23400},
-    {id = 234011, name = "Qiraji Stalker Venom", count = 8, avgbuyout = 59180},
-    {id = 234012, name = "Hive Thistle", count = 30, avgbuyout = 26606},
+  {id = 233986, name = "Obsidian Bomb", spell_name = "Obsidian Bomb", spell_id = 1213578, craft_count = 3, colors = {0,315,322,330}, learnedat = 315, nskillup = 1, quality = 1, avgbuyout = 46872, cost = 99300, phaseId = 6, schemprice = 10000, schemid = 234263, recipe = {
+    {id = 12365, name = "Dense Stone", count = 1, avgbuyout = 1412},
+    {id = 234005, name = "Obsidian Blasting Powder", count = 3, avgbuyout = 24988},
+    {id = 234007, name = "Spiked Silithid Chitin", count = 1, avgbuyout = 40715},
+    {id = 234008, name = "Qiraji Silk", count = 1, avgbuyout = 3173},
   }},
-  {id = 233988, name = "Tuned Force Reactive Disk", spell_name = "Tuned Force Reactive Disk", spell_id = 1213588, craft_count = 1, colors = {0,315,322,330}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 23999999, cost = 22349158, phaseId = 6, schem = 1, recipe = {
+  {id = 233987, name = "G00 DV-1B3 Generator", spell_name = "G00 DV-1B3 Generator", spell_id = 1213586, craft_count = 1, colors = {0,315,322,330}, learnedat = 315, nskillup = 1, quality = 3, avgbuyout = 0, cost = 2286710, phaseId = 6, schemprice = 10000, schemid = 234264, recipe = {
+    {id = 234005, name = "Obsidian Blasting Powder", count = 20, avgbuyout = 24988},
+    {id = 234007, name = "Spiked Silithid Chitin", count = 8, avgbuyout = 40715},
+    {id = 234009, name = "Bolt of Qiraji Silk", count = 8, avgbuyout = 22221},
+    {id = 234010, name = "Ancient Sandworm Bile", count = 8, avgbuyout = 25197},
+    {id = 234011, name = "Qiraji Stalker Venom", count = 8, avgbuyout = 54527},
+    {id = 234012, name = "Hive Thistle", count = 30, avgbuyout = 26181},
+  }},
+  {id = 233988, name = "Tuned Force Reactive Disk", spell_name = "Tuned Force Reactive Disk", spell_id = 1213588, craft_count = 1, colors = {0,315,322,330}, learnedat = 315, nskillup = 1, quality = 4, avgbuyout = 23999999, cost = 19780578, phaseId = 6, schemprice = 10000, schemid = 234265, recipe = {
     {id = 18168, name = "Force Reactive Disk", count = 1, avgbuyout = 5994985},
-    {id = 234003, name = "Obsidian-Infused Thorium Bar", count = 8, avgbuyout = 1999999},
-    {id = 234005, name = "Obsidian Blasting Powder", count = 5, avgbuyout = 39996},
-    {id = 234007, name = "Spiked Silithid Chitin", count = 4, avgbuyout = 31108},
+    {id = 234003, name = "Obsidian-Infused Thorium Bar", count = 8, avgbuyout = 1649499},
+    {id = 234005, name = "Obsidian Blasting Powder", count = 5, avgbuyout = 24988},
+    {id = 234007, name = "Spiked Silithid Chitin", count = 4, avgbuyout = 40715},
   }},
-  {id = 234005, name = "Obsidian Blasting Powder", spell_name = "Obsidian Blasting Powder", spell_id = 1213646, craft_count = 1, colors = {0,315,322,330}, learnedat = 315, nskillup = 1, quality = 1, avgbuyout = 39996, cost = 26684, phaseId = 6, schem = 1, recipe = {
-    {id = 22202, name = "Small Obsidian Shard", count = 2, avgbuyout = 13342},
+  {id = 234005, name = "Obsidian Blasting Powder", spell_name = "Obsidian Blasting Powder", spell_id = 1213646, craft_count = 1, colors = {0,315,322,330}, learnedat = 315, nskillup = 1, quality = 1, avgbuyout = 24988, cost = 18000, phaseId = 6, schemprice = 10000, schemid = 234280, recipe = {
+    {id = 22202, name = "Small Obsidian Shard", count = 2, avgbuyout = 9000},
   }},
-  {id = 227849, name = "Fiery Core Sharpshooter Rifle", spell_name = "Fiery Core Sharpshooter Rifle", spell_id = 461710, craft_count = 1, colors = {0,320,330,340}, learnedat = 320, nskillup = 1, quality = 4, avgbuyout = 2229725, cost = 4915760, phaseId = 4, schem = 1, recipe = {
-    {id = 12360, name = "Arcanite Bar", count = 6, avgbuyout = 508500},
-    {id = 16000, name = "Thorium Tube", count = 2, avgbuyout = 9186},
-    {id = 16006, name = "Delicate Arcanite Converter", count = 2, avgbuyout = 583982},
-    {id = 17010, name = "Fiery Core", count = 4, avgbuyout = 141375},
-    {id = 17011, name = "Lava Core", count = 2, avgbuyout = 116025},
+  {id = 227849, name = "Fiery Core Sharpshooter Rifle", spell_name = "Fiery Core Sharpshooter Rifle", spell_id = 461710, craft_count = 1, colors = {0,320,330,340}, learnedat = 320, nskillup = 1, quality = 4, avgbuyout = 2229725, cost = 5093882, phaseId = 4, schemprice = 10000, schemid = 228304, recipe = {
+    {id = 12360, name = "Arcanite Bar", count = 6, avgbuyout = 541000},
+    {id = 16000, name = "Thorium Tube", count = 2, avgbuyout = 17063},
+    {id = 16006, name = "Delicate Arcanite Converter", count = 2, avgbuyout = 609990},
+    {id = 17010, name = "Fiery Core", count = 4, avgbuyout = 127498},
+    {id = 17011, name = "Lava Core", count = 2, avgbuyout = 101042},
   }},
-  {id = 234434, name = "Obsidian Shotgun", spell_name = "Obsidian Shotgun", spell_id = 1214145, craft_count = 1, colors = {0,320,330,340}, learnedat = 320, nskillup = 1, quality = 4, avgbuyout = 0, cost = 33295050, phaseId = 6, schem = 1, recipe = {
-    {id = 12360, name = "Arcanite Bar", count = 30, avgbuyout = 508500},
-    {id = 20725, name = "Nexus Crystal", count = 3, avgbuyout = 107886},
-    {id = 20868, name = "Lambent Idol", count = 3, avgbuyout = 60000},
-    {id = 20870, name = "Jasper Idol", count = 3, avgbuyout = 145470},
-    {id = 20881, name = "Idol of Strife", count = 2, avgbuyout = 549995},
-    {id = 234003, name = "Obsidian-Infused Thorium Bar", count = 8, avgbuyout = 1999999},
+  {id = 234434, name = "Obsidian Shotgun", spell_name = "Obsidian Shotgun", spell_id = 1214145, craft_count = 1, colors = {0,320,330,340}, learnedat = 320, nskillup = 1, quality = 4, avgbuyout = 0, cost = 31476458, phaseId = 6, schemprice = 10000, schemid = 234435, recipe = {
+    {id = 12360, name = "Arcanite Bar", count = 30, avgbuyout = 541000},
+    {id = 20725, name = "Nexus Crystal", count = 3, avgbuyout = 94118},
+    {id = 20868, name = "Lambent Idol", count = 3, avgbuyout = 62999},
+    {id = 20870, name = "Jasper Idol", count = 3, avgbuyout = 153039},
+    {id = 20881, name = "Idol of Strife", count = 2, avgbuyout = 559999},
+    {id = 234003, name = "Obsidian-Infused Thorium Bar", count = 8, avgbuyout = 1649499},
   }},
-  {id = 235529, name = "Obsidian Scope", spell_name = "Obsidian Scope", spell_id = 1217207, craft_count = 1, colors = {0,320,330,340}, learnedat = 320, nskillup = 1, quality = 3, avgbuyout = 2609846, cost = 2489382, phaseId = 6, schem = 1, recipe = {
-    {id = 12363, name = "Arcane Crystal", count = 1, avgbuyout = 471599},
-    {id = 16000, name = "Thorium Tube", count = 1, avgbuyout = 9186},
-    {id = 234003, name = "Obsidian-Infused Thorium Bar", count = 1, avgbuyout = 1999999},
+  {id = 235529, name = "Obsidian Scope", spell_name = "Obsidian Scope", spell_id = 1217207, craft_count = 1, colors = {0,320,330,340}, learnedat = 320, nskillup = 1, quality = 3, avgbuyout = 2499978, cost = 2141085, phaseId = 6, schemprice = 10000, schemid = 235530, recipe = {
+    {id = 12363, name = "Arcane Crystal", count = 1, avgbuyout = 472230},
+    {id = 16000, name = "Thorium Tube", count = 1, avgbuyout = 17063},
+    {id = 234003, name = "Obsidian-Infused Thorium Bar", count = 1, avgbuyout = 1649499},
   }},
 }

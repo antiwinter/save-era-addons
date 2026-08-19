@@ -105,12 +105,33 @@ function Runtime:CurrentAction()
 	return ac
 end
 
+function Runtime:LearnScroll(itemName)
+	local db = ns.db[self:ProfKey()]
+	local r = db and db[itemName]
+	if not r or not r.schemid or r.schemid <= 0 then return nil end
+	local sid = r.schemid
+	if sid <= 0 then return nil end
+	for b = 0, 4 do
+		for slot = 1, (GetContainerNumSlots(b) or 0) do
+			if GetContainerItemID(b, slot) == sid then
+				UseContainerItem(b, slot)
+				return "Learned " .. itemName .. ", craft again"
+			end
+		end
+	end
+	return "Need scroll (id " .. sid .. ") to learn " .. itemName
+end
+
 -- Craft the next batch for the current action. Player/driver-initiated only.
 function Runtime:DoAction()
 	local ac = self:CurrentAction()
 	if not ac then return "Plan complete" end
 	local rec = self.data[ac.item]
-	if not rec then return "Recipe not learned: " .. ac.item end
+	if not rec then
+		local msg = self:LearnScroll(ac.item)
+		if msg then return msg end
+		return "Recipe not learned: " .. ac.item
+	end
 	local batch = math.max(1, math.min(math.ceil(ac.count), ac.to - self.skill.lvl))
 	DoTradeSkill(rec.index, batch)
 	return string.format("Crafting %s x%d", ac.item, batch)
