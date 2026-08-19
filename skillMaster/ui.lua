@@ -64,4 +64,49 @@ SlashCmdList.SKILLMASTER = function(msg)
 	end
 end
 
-print(GetProfessionInfo(1))
+-- TEST: era sources of localized profession names
+do
+	print("|cff00b4ff[skm]|r locale=" .. (GetLocale() or "?") .. " build=" .. tostring(select(4, GetBuildInfo())))
+	print("|cff00b4ff[skm]|r GetTradeSkillLine()=" .. tostring(GetTradeSkillLine()))
+
+	local n = GetNumSkillLines()
+	print("|cff00b4ff[skm]|r GetNumSkillLines()=" .. tostring(n))
+	for i = 1, n do
+		local name, header, _, rank, _, _, maxRank = GetSkillLineInfo(i)
+		if not name then break end
+		print(string.format("|cff00b4ff[skm]|r   [%d]%s %s  %d/%d",
+			i, header and "H:" or "", name, rank or 0, maxRank or 0))
+	end
+
+	local bySkill = {}
+	for i = 1, n do
+		local name, header = GetSkillLineInfo(i)
+		if not name then break end
+		if not header then bySkill[name] = true end
+	end
+
+	-- profession == 4 rank spells (Apprentice..Artisan) with stable classic
+	-- ids; GetSpellInfo(id) yields the localized skill-line name regardless
+	-- of which rank the player trained (锻造 / Blacksmithing / ...).
+	local PROF_SPELL = {
+		{ "eng",   {4036, 4037, 4038, 12656} },
+		{ "tailor",{3908, 3909, 3910, 12180} },
+		{ "alch",  {2259, 3101, 3464, 11611} },
+		{ "bs",    {2018, 3100, 3538, 9785} },
+		{ "ench",  {7411, 7412, 7413, 13920} },
+		{ "cook",  {2550, 3102, 3413, 18260} },
+		{ "fish",  {7620, 7731, 7732, 18248} },
+		{ "fa",    {3273, 3274, 7924, 10846} },
+		{ "herb",  {2366, 2368, 3570, 11993} },
+		{ "mine",  {2575, 2576, 3564, 10248} },
+		{ "skin",  {8613, 8617, 8618, 10768} },
+	}
+	print("|cff00b4ff[skm]|r profession spell names (matched against skill list):")
+	for _, p in ipairs(PROF_SPELL) do
+		for _, sid in ipairs(p[2]) do
+			local loc = GetSpellInfo(sid)
+			print(string.format("|cff00b4ff[skm]|r   %-6s id=%d -> %s  (in skill list: %s)",
+				p[1], sid, tostring(loc), tostring(loc and bySkill[loc] == true)))
+		end
+	end
+end
