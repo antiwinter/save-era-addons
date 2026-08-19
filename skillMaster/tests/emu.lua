@@ -16,6 +16,7 @@ local prof = arg[1] or "eng"
 local target = tonumber(arg[2]) or 300
 local startLvl = tonumber(arg[3]) or 1
 local PROF_NAME = { eng = "Engineering", tailor = "Tailoring" }
+_G.PROF_NAME = PROF_NAME  -- fake-wow's CastSpellByID stub looks it up here
 
 local fw = dofile("../fake-wow/init.lua")
 fw.GM.SetSeed(tonumber(os.getenv("SKM_SEED") or "") or os.time())
@@ -32,8 +33,7 @@ assert(raw, "no data table for profession: " .. prof)
 fw.GM.LoadRecipes(raw)
 fw.GM.SetTradeSkillLine(PROF_NAME[prof] or prof, startLvl, target)
 
--- Boot the engine: trade window opens -> runtime scans -> build the plan.
-fw.fire("TRADE_SKILL_SHOW")
+
 local R = ns.Runtime
 R:BuildPlan()
 
@@ -43,6 +43,7 @@ if os.getenv("SKM_NOPLAN") ~= "1" then
 end
 
 -- Stock the bag with the planned shopping list, tracking budget, then rescan.
+-- SetBag fires BAG_UPDATE itself, so no manual pump is needed.
 local db = ns.db[prof]
 local budget = 0
 for name, count in pairs(R.material) do
@@ -50,21 +51,17 @@ for name, count in pairs(R.material) do
 	fw.GM.SetBag(name, c)
 	budget = budget + (db:price(name) or 0) * c
 end
-fw.fire("BAG_UPDATE")
-
--- Drive: click "Craft next" until the plan is done or a craft makes no progress.
--- DoTradeSkill inside fake-wow fires TRADE_SKILL_UPDATE + BAG_UPDATE itself, so
--- the runtime refreshes through its own event frame — no manual pumping here.
 local world = fw.world
 local start_lvl = world.skill.lvl
 local guard = 0
 while world.skill.lvl < target do
 	local before = world.skill.lvl
-	local msg = R:DoAction()
-	if msg == "Plan complete" then break end
+	fw.click("SkillMaster_CraftBtn")
 	guard = guard + 1
-	if world.skill.lvl == before and guard > 100000 then
-		print("STALL: no progress"); break
+	if world.skill.lvl == before then
+		if guard > 100000 then print("STALL: no progress"); break end
+	else
+		guard = 0
 	end
 end
 

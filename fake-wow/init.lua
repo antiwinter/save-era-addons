@@ -1,17 +1,3 @@
--- init.lua — entry point for the fake WoW client. Installs the client shell +
--- trade-skill world + GM console into the global table, and provides a .toc
--- loader that runs an addon exactly as the game would: each file gets the
--- (addonName, ns) varargs, backslash paths are normalized, and ADDON_LOADED
--- fires once every file has run.
---
--- Usage (from a driver, run at the repo root):
---   local fw = dofile("fake-wow/init.lua")
---   fw.GM.SetTradeSkillLine("Engineering", 1, 300)
---   fw.GM.LoadRecipes(eng_data)
---   local ns = fw.loadAddon("skillMaster/skillMaster.toc")
---   fw.fire("TRADE_SKILL_SHOW")
---   ns.Runtime:DoAction()
-
 -- Resolve THIS file's directory (works under dofile, where arg[0] is the
 -- caller's path, not ours) so the sibling modules load regardless of cwd.
 local src = debug.getinfo(1, "S").source:gsub("^@", "")
@@ -59,6 +45,7 @@ return {
 	loadAddon = loadAddon,
 	fire = env.__fire,
 	slash = env.__slash,
+	click = function(name) env[name]:Click() end,
 	world = world,
 	env = env,
 }

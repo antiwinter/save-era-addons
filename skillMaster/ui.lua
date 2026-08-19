@@ -22,7 +22,7 @@ local status = panel:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
 status:SetPoint("TOP", title, "BOTTOM", 0, -6)
 status:SetText("Open a trade skill.")
 
-local craftBtn = CreateFrame("Button", nil, panel, "UIPanelButtonTemplate")
+local craftBtn = CreateFrame("Button", "SkillMaster_CraftBtn", panel, "UIPanelButtonTemplate")
 craftBtn:SetSize(180, 24)
 craftBtn:SetPoint("BOTTOM", 0, 12)
 craftBtn:SetText("Craft next")
@@ -63,3 +63,5 @@ SlashCmdList.SKILLMASTER = function(msg)
 		ns.OnRuntimeUpdate()
 	end
 end
+
+print(GetProfessionInfo(1))

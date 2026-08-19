@@ -144,23 +144,38 @@ local function install(env, world)
 		world.skill.name = name
 		world.skill.lvl = lvl or 1
 		world.skill.cap = cap or lvl or 1
+		env.__fire("TRADE_SKILL_UPDATE")
+	end
+
+	-- Open the trade-skill window — equivalent to the player clicking the
+	-- tradeskill button. Fires TRADE_SKILL_SHOW so the addon's TRADE_SKILL_SHOW
+	-- handler runs RefreshSkill.
+	function GM.OpenTradeSkill()
+		env.__fire("TRADE_SKILL_SHOW")
+	end
+
+	function env.CastSpellByID(id)
+		env.__fire("TRADE_SKILL_SHOW")
 	end
 
 	-- Stock by item name: resolve name->id, store the count, and record the name
 	-- so GetContainerItemInfo can return it (the addon's bag is name-keyed).
 	function GM.SetBag(a, b)
+		local changed = false
 		if type(a) == "table" then
 			for name, count in pairs(a) do
 				local id = nameToId[name]
-				if id then world.bag[id] = count; world.item[id] = name end
+				if id then world.bag[id] = count; world.item[id] = name; changed = true end
 			end
 		else
 			local id = nameToId[a]
 			if id then
 				world.bag[id] = (world.bag[id] or 0) + (b or 0)
 				world.item[id] = a
+				changed = true
 			end
 		end
+		if changed then env.__fire("BAG_UPDATE") end
 	end
 
 	function GM.LoadRecipes(raw)
@@ -183,6 +198,7 @@ local function install(env, world)
 				end
 			end
 		end
+		env.__fire("TRADE_SKILL_UPDATE")
 	end
 
 	function GM.ResetProgress()

@@ -18,20 +18,12 @@ local PROF_KEY = {
 	Tailoring = "tailor",
 }
 
-local function makeBag(src)
-	local b = setmetatable({}, { __index = function() return 0 end })
-	if src then for k, v in pairs(src) do b[k] = v end end
-	return b
-end
-
 -- ---- Runtime: the craft engine -------------------------------------------
 local Runtime = {}
 Runtime.__index = Runtime
 
 function Runtime.new()
 	return setmetatable({
-		data = {},          -- recipe name -> { name, recipe, index }
-		bag = makeBag(),    -- item name -> count (defaults to 0)
 		plan = {},          -- ordered actions from the planner
 		material = {},      -- shopping list from the planner
 		idx = 1,
@@ -48,36 +40,6 @@ function Runtime:RefreshSkill()
 	if name and name ~= "UNKNOWN" then
 		self.skill.name, self.skill.lvl, self.skill.cap = name, rank, maxRank
 	end
-end
-
-function Runtime:RefreshRecipes()
-	local data = {}
-	for i = 1, GetNumTradeSkills() do
-		local name, kind = GetTradeSkillInfo(i)
-		if kind and kind ~= "header" then
-			local recipe = {}
-			for j = 1, GetTradeSkillNumReagents(i) do
-				local rname, _, rcount = GetTradeSkillReagentInfo(i, j)
-				recipe[#recipe + 1] = { name = rname, count = rcount }
-			end
-			data[name] = { name = name, recipe = recipe, index = i }
-		end
-	end
-	self.data = data
-end
-
-function Runtime:RefreshBag()
-	local bag = {}
-	for b = 0, 4 do
-		for slot = 1, (GetContainerNumSlots(b) or 0) do
-			local _, count, _, _, _, _, link = GetContainerItemInfo(b, slot)
-			if link then
-				local name = GetItemInfo(link)
-				if name then bag[name] = (bag[name] or 0) + count end
-			end
-		end
-	end
-	self.bag = makeBag(bag)
 end
 
 -- Build a plan for the currently open profession using the shared planner.
@@ -122,31 +84,55 @@ function Runtime:LearnScroll(itemName)
 	return "Need scroll (id " .. sid .. ") to learn " .. itemName
 end
 
--- Craft the next batch for the current action. Player/driver-initiated only.
 function Runtime:DoAction()
+	local name = self.skill.name
+	if not name or name == "" then
+		local openName = GetTradeSkillLine()
+		if not openName or openName == "UNKNOWN" then
+			local prof = self:ProfKey() or (ns.cfg and ns.cfg.profession)
+			local sid = self:FindProfSpellID()
+			if sid then
+				CastSpellByID(sid)
+				return "Opening " .. (prof or "profession") .. " window, click again"
+			end
+			return "Learn the profession first, then click again"
+		end
+		self.skill.name = openName
+		name = openName
+	end
+
 	local ac = self:CurrentAction()
 	if not ac then return "Plan complete" end
-	local rec = self.data[ac.item]
-	if not rec then
-		local msg = self:LearnScroll(ac.item)
-		if msg then return msg end
-		return "Recipe not learned: " .. ac.item
+
+	local index
+	for i = 1, GetNumTradeSkills() do
+		local n, kind = GetTradeSkillInfo(i)
+		if n == ac.item and kind and kind ~= "header" then
+			index = i
+			break
+		end
 	end
+
+	if not index then
+		local db = ns.db[self:ProfKey()]
+		local r = db and db[ac.item]
+		if r and r.schemid and r.schemid > 0 then
+			local smsg = self:LearnScroll(ac.item)
+			if smsg then return smsg end
+			return "Recipe not learned (scroll missing): " .. ac.item
+		end
+		return "Go to trainer and learn: " .. ac.item
+	end
+
 	local batch = math.max(1, math.min(math.ceil(ac.count), ac.to - self.skill.lvl))
-	DoTradeSkill(rec.index, batch)
+	DoTradeSkill(index, batch)
 	return string.format("Crafting %s x%d", ac.item, batch)
 end
 
 -- Event entrypoints, fired by the event frame below (and, in-game, by real
--- TRADE_SKILL_UPDATE / BAG_UPDATE; off-client by fake-wow's DoTradeSkill).
+-- TRADE_SKILL_UPDATE; off-client by fake-wow's DoTradeSkill).
 function Runtime:OnTradeSkillUpdate()
 	self:RefreshSkill()
-	self:RefreshRecipes()
-	if ns.OnRuntimeUpdate then ns.OnRuntimeUpdate() end
-end
-
-function Runtime:OnBagUpdate()
-	self:RefreshBag()
 	if ns.OnRuntimeUpdate then ns.OnRuntimeUpdate() end
 end
 
@@ -159,7 +145,6 @@ local f = CreateFrame("Frame")
 f:RegisterEvent("ADDON_LOADED")
 f:RegisterEvent("TRADE_SKILL_SHOW")
 f:RegisterEvent("TRADE_SKILL_UPDATE")
-f:RegisterEvent("BAG_UPDATE")
 f:SetScript("OnEvent", function(_, event, arg1)
 	if event == "ADDON_LOADED" then
 		if arg1 ~= addonName then return end
@@ -169,8 +154,6 @@ f:SetScript("OnEvent", function(_, event, arg1)
 		end
 		ns.cfg = skillMasterDB
 		ns.Runtime = Runtime.new()
-	elseif event == "BAG_UPDATE" then
-		if ns.Runtime then ns.Runtime:OnBagUpdate() end
 	else
 		if ns.Runtime then ns.Runtime:OnTradeSkillUpdate() end
 	end
