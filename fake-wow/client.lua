@@ -84,8 +84,10 @@ local function install(env)
 		end
 	end
 
-	-- Misc globals addons touch at load / debug time.
+	-- Misc globals addons touch at load / debug time. The sim world is enUS
+	-- (era.db carries English names), so GetLocale reports that.
 	env.GetBuildInfo = function() return "1.15.7", "60000", nil, 11507 end
+	env.GetLocale = function() return "enUS" end
 	env.date = function(fmt) return os.date(fmt) end
 	env.print = print
 end

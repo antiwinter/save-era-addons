@@ -3,10 +3,10 @@
 -- fake-wow, so tests exercise the shipped algorithm. See AGENTS.md.
 --
 -- BuildPlan(db, opts) -> actions, materials
---   db       : a db object from data.lua (NewDB)
+--   db       : a db object from data.lua (NewDB), keyed by item id
 --   opts     : { start=1, target=<cap>, phase=3, pGain=0, wishlist={}, debug=false }
---   actions  : ordered list of { item, count, from, to }
---   materials: map of reagent name -> count to buy (non-craftable leaves)
+--   actions  : ordered list of { item=<id>, count, from, to }
+--   materials: map of reagent id -> count to buy (non-craftable leaves)
 
 local _, ns = ...
 
@@ -53,7 +53,7 @@ local function BuildPlan(db, opts)
 	local function find(lvl)
 		local res, best, frac
 		for _, r in ipairs(db.data) do
-			local p, i = chance(r.name, lvl)
+			local p, i = chance(r.skill_id, lvl)
 			if p ~= 0 and r.phaseId <= PHASE then
 				local m, n = r.colors[i - 1], r.colors[i]
 				local p1 = (n - m) / rolls(m, n, p)
@@ -94,20 +94,20 @@ local function BuildPlan(db, opts)
 	-- needed to produce its craftable reagents; non-craftable reagents accrue
 	-- into `material`. `force` spills overflow up to the next level.
 	local function try_push(lvl, r, frac, force, indent)
-		dbg(string.rep("  ", indent) .. "[%d] << [%s]x%.1f", lvl, r.name, frac)
-		local p = chance(r.name, lvl)
+		dbg(string.rep("  ", indent) .. "[%d] << [%d]x%.1f", lvl, r.skill_id, frac)
+		local p = chance(r.skill_id, lvl)
 		local remain = frac
 		if not slot.data[lvl] or slot.data[lvl].point > 0 or p == 0 then
 			END = math.max(END, lvl)
-			remain = slot:push(lvl, r.name, frac)
+			remain = slot:push(lvl, r.skill_id, frac)
 			local placed = frac - remain
 			if placed > 0 then
 				for _, reagent in ipairs(r.recipe) do
-					local rg = db[reagent.name]
+					local rg = db[reagent.id]
 					if rg then
 						try_push(rg.colors[1], rg, placed * reagent.count, true, indent + 1)
 					else
-						material[reagent.name] = (material[reagent.name] or 0) + placed * reagent.count
+						material[reagent.id] = (material[reagent.id] or 0) + placed * reagent.count
 					end
 				end
 			end
@@ -126,17 +126,17 @@ local function BuildPlan(db, opts)
 	local function fix_buffer(actions)
 		local function add(r, m)
 			for _, ac in ipairs(actions) do
-				if ac.item == r.name then
+				if ac.item == r.skill_id then
 					ac.count = ac.count + m
 					break
 				end
 			end
 			for _, rg in ipairs(r.recipe) do
-				local _r = db[rg.name]
+				local _r = db[rg.id]
 				if _r then
 					add(_r, m * rg.count / (_r.craft_count or 1))
 				else
-					material[rg.name] = (material[rg.name] or 0) + m * rg.count
+					material[rg.id] = (material[rg.id] or 0) + m * rg.count
 				end
 			end
 		end
@@ -152,8 +152,8 @@ local function BuildPlan(db, opts)
 	end
 
 	-- Seed the wishlist (make N of each requested item regardless of ROI).
-	for name, count in pairs(wishlist) do
-		local r = db[name]
+	for item, count in pairs(wishlist) do
+		local r = db[item]
 		if r then
 			for _ = 1, count do
 				try_push(r.colors[1], r, 1, true, 0)
@@ -201,12 +201,12 @@ local function BuildPlan(db, opts)
 
 	local actions = gen_plan()
 
-	-- Each schematic-taught recipe the plan crafts needs its teaching item
-	-- ("Schematic: X") once — it teaches the recipe and stays in the bag.
+	-- Each schematic-taught recipe the plan crafts needs its teaching item once
+	-- — it teaches the recipe and stays in the bag.
 	for _, ac in ipairs(actions) do
 		local r = db[ac.item]
-		if r and r.schemid and r.schemid > 0 and db.schemPrefix then
-			material[db.schemPrefix .. ac.item] = 1
+		if r and r.teach_id and r.teach_id > 0 then
+			material[r.teach_id] = 1
 		end
 	end
 

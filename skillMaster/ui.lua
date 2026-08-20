@@ -41,7 +41,8 @@ function ns.OnRuntimeUpdate()
 	local ac = R:CurrentAction()
 	if ac then
 		status:SetText(string.format("%s %d/%d\nNext: %s -> %d",
-			R.skill.name, R.skill.lvl, ns.cfg.target or R.skill.cap, ac.item, ac.to))
+			R.skill.name, R.skill.lvl, ns.cfg.target or R.skill.cap,
+			GetItemInfo(ac.item) or ac.item, ac.to))
 	else
 		status:SetText(string.format("%s %d — plan complete", R.skill.name, R.skill.lvl))
 	end
@@ -55,7 +56,7 @@ SlashCmdList.SKILLMASTER = function(msg)
 	elseif msg == "plan" then
 		local R = ns.Runtime
 		if #R.plan == 0 then R:BuildPlan() end
-		ns.Format.Print(R.plan, R.material, function(line) print("|cff00b4ff[skm]|r " .. line) end)
+		ns.Format.Print(R.plan, R.material, GetItemInfo, function(line) print("|cff00b4ff[skm]|r " .. line) end)
 	elseif msg == "hide" then
 		panel:Hide()
 	else

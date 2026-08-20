@@ -8,52 +8,38 @@
 
 local _, ns = ...
 
-ns.SchemPrefix = {
-	eng = "Schematic: ",
-	tailor = "Pattern: ",
-	bs = "Plans: ",
-	lw = "Pattern: ",
-	alch = "Recipe: ",
-	ench = "Formula: ",
-	jc = "Design: ",
-	insc = "Formula: ",
-}
-
--- Wrap a raw recipe array (as emitted by scripts/dl.js) into a db object:
---   db[name|id]  -> recipe table (nil if unknown or has no color thresholds)
---   db.data      -> the underlying array, ordered low->high by learnedat
---   db:price(k)  -> avgbuyout for a recipe output, any reagent, or a teaching
---                   item ("Schematic: X"), else nil
-local function NewDB(data, key)
+-- Wrap a raw recipe array (as emitted by scripts/gen-data.lua) into a db
+-- object, keyed by item id:
+--   db[id]      -> recipe table (nil if unknown or has no color thresholds)
+--   db.data     -> the underlying array, ordered low->high by learnedat
+--   db:price(id)-> avgbuyout for a recipe output, reagent, or teaching item
+local function NewDB(data)
 	local db = {
 		data = data,
-		schemPrefix = ns.SchemPrefix[key] or "",
-		__index = function(self, key)
+		__index = function(self, id)
+			if type(id) ~= "number" then return nil end
 			for _, item in ipairs(self.data) do
-				if item.id == key or item.name == key then
+				if item.skill_id == id then
 					if not item.colors or #item.colors == 0 then
 						return nil
 					end
 					return item
 				end
 			end
-			return nil
 		end,
-		price = function(self, key)
+		price = function(self, id)
+			if type(id) ~= "number" then return nil end
 			for _, item in ipairs(self.data) do
-				if item.name == key then
+				if item.skill_id == id then
 					return item.avgbuyout
 				end
 				for _, rg in ipairs(item.recipe) do
-					if rg.name == key then
+					if rg.id == id then
 						return rg.avgbuyout
 					end
 				end
-			end
-			-- Teaching items ("Schematic: X") resolve to the schematic's buyout.
-			for _, item in ipairs(self.data) do
-				if item.schemid and item.schemid > 0 and self.schemPrefix .. item.name == key then
-					return item.schemprice
+				if item.teach_id == id then
+					return item.teach_price
 				end
 			end
 		end,
@@ -66,5 +52,5 @@ ns.NewDB = NewDB
 ns.db = ns.db or {}
 -- Generated tables are loaded before this file (see .toc) and expose
 -- <prof>_data globals; register whichever ones shipped in this build.
-if eng_data then ns.db.eng = NewDB(eng_data, "eng") end
-if tailor_data then ns.db.tailor = NewDB(tailor_data, "tailor") end
+if eng_data then ns.db.eng = NewDB(eng_data) end
+if tailor_data then ns.db.tailor = NewDB(tailor_data) end

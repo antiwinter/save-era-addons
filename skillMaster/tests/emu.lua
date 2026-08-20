@@ -22,23 +22,23 @@ local fw = dofile("../fake-wow/init.lua")
 fw.GM.SetSeed(tonumber(os.getenv("SKM_SEED") or "") or os.time())
 
 -- Load the addon the way the client does: run every .toc file, fire ADDON_LOADED.
--- This also sets the <prof>_data globals and builds ns.db.
+-- This also loads data/<prof>.lua and builds ns.db.
 local ns = fw.loadAddon("skillMaster.toc")
 
--- Seed the world: load the recipe catalog (trainer-taught load learned,
+-- Seed the world from the shared era db (trainer-taught recipes load learned,
 -- scroll-taught unlearned — the addon learns those from their teaching item
 -- mid-run) and open the skill line at the start level.
-local raw = _G[prof .. "_data"]
-assert(raw, "no data table for profession: " .. prof)
-fw.GM.LoadRecipes(raw)
+fw.GM.LoadEra("../fake-wow/data/era.db")
 fw.GM.SetTradeSkillLine(PROF_NAME[prof] or prof, startLvl, target)
 
 
 local R = ns.Runtime
 R:BuildPlan()
 
+local function itemName(id) return fw.world.item[id] or tostring(id) end
+
 if os.getenv("SKM_NOPLAN") ~= "1" then
-	ns.Format.Print(R.plan, R.material)
+	ns.Format.Print(R.plan, R.material, itemName)
 	print()
 end
 
@@ -46,10 +46,10 @@ end
 -- SetBag fires BAG_UPDATE itself, so no manual pump is needed.
 local db = ns.db[prof]
 local budget = 0
-for name, count in pairs(R.material) do
+for id, count in pairs(R.material) do
 	local c = math.ceil(count)
-	fw.GM.SetBag(name, c)
-	budget = budget + (db:price(name) or 0) * c
+	fw.GM.SetBag(id, c)
+	budget = budget + (db:price(id) or 0) * c
 end
 local world = fw.world
 local start_lvl = world.skill.lvl
@@ -68,7 +68,7 @@ end
 -- Tally leftover materials (waste) vs crafted value.
 local remain_val = 0
 for k, c in pairs(world.bag) do
-	if c > 0 and not db[k] then remain_val = remain_val + (db:price(world.item[k]) or 0) * c end
+	if c > 0 and not db[k] then remain_val = remain_val + (db:price(k) or 0) * c end
 end
 
 local ok = world.skill.lvl >= target

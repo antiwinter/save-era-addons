@@ -67,21 +67,21 @@ function Runtime:CurrentAction()
 	return ac
 end
 
-function Runtime:LearnScroll(itemName)
+function Runtime:LearnScroll(itemId)
+	local name = GetItemInfo(itemId) or itemId
 	local db = ns.db[self:ProfKey()]
-	local r = db and db[itemName]
-	if not r or not r.schemid or r.schemid <= 0 then return nil end
-	local sid = r.schemid
-	if sid <= 0 then return nil end
+	local r = db and db[itemId]
+	if not r or not r.teach_id or r.teach_id <= 0 then return nil end
+	local tid = r.teach_id
 	for b = 0, 4 do
 		for slot = 1, (GetContainerNumSlots(b) or 0) do
-			if GetContainerItemID(b, slot) == sid then
+			if GetContainerItemID(b, slot) == tid then
 				UseContainerItem(b, slot)
-				return "Learned " .. itemName .. ", craft again"
+				return "Learned " .. name .. ", craft again"
 			end
 		end
 	end
-	return "Need scroll (id " .. sid .. ") to learn " .. itemName
+	return "Need scroll (id " .. tid .. ") to learn " .. name
 end
 
 function Runtime:DoAction()
@@ -104,10 +104,13 @@ function Runtime:DoAction()
 	local ac = self:CurrentAction()
 	if not ac then return "Plan complete" end
 
+	-- The window reports localized names; the plan is id-keyed, so resolve the
+	-- crafted item's name the same way the client does (GetItemInfo(id)).
+	local want = GetItemInfo(ac.item) or ac.item
 	local index
 	for i = 1, GetNumTradeSkills() do
 		local n, kind = GetTradeSkillInfo(i)
-		if n == ac.item and kind and kind ~= "header" then
+		if n == want and kind and kind ~= "header" then
 			index = i
 			break
 		end
@@ -116,12 +119,12 @@ function Runtime:DoAction()
 	if not index then
 		local db = ns.db[self:ProfKey()]
 		local r = db and db[ac.item]
-		if r and r.schemid and r.schemid > 0 then
+		if r and r.teach_id and r.teach_id > 0 then
 			local smsg = self:LearnScroll(ac.item)
 			if smsg then return smsg end
-			return "Recipe not learned (scroll missing): " .. ac.item
+			return "Recipe not learned (scroll missing): " .. want
 		end
-		return "Go to trainer and learn: " .. ac.item
+		return "Go to trainer and learn: " .. want
 	end
 
 	local batch = math.max(1, math.min(math.ceil(ac.count), ac.to - self.skill.lvl))

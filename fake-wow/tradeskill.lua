@@ -1,25 +1,26 @@
-
 local function install(env, world)
 	world.skill = world.skill or { name = "", lvl = 1, cap = 1 }
 	world.bag = world.bag or setmetatable({}, { __index = function() return 0 end })
-	world.catalog = world.catalog or {} -- array: {id, name, recipe, colors, craft_count, learned}
-	world.item = world.item or {}       -- item id -> name (populated by SetBag)
+	world.catalog = world.catalog or {} -- array: {id, recipe, colors, craft_count, learned, teach_id}
+	world.item = world.item or {}       -- item id -> name
+	world.price = world.price or {}     -- item id -> avgbuyout
 	world.crafts = world.crafts or 0
 
-	local nameToId = {} -- item name -> id; setup-only, for SetBag
+	local byId = {} -- item id -> catalog row; setup-only
 
-	local function find(name)
-		for _, r in ipairs(world.catalog) do
-			if r.name == name then return r end
-		end
-		return nil
+	-- Resolve the lsqlite3 binding committed as source and built locally.
+	local dir = (debug.getinfo(1, "S").source:gsub("^@", ""):match("^(.*)/[^/]*$") or ".") .. "/"
+	package.cpath = dir .. "scripts/vendor/?.so;" .. package.cpath
+
+	local function find(id)
+		return byId[id]
 	end
 
 	local function craftOne(r)
 		if world.skill.lvl < r.colors[1] then return false end
 		for _, rg in ipairs(r.recipe or {}) do
 			while world.bag[rg.id] < rg.count do
-				local sub = find(rg.name)
+				local sub = find(rg.id)
 				if not sub or sub.learned ~= 1 then return false end
 				if not craftOne(sub) then return false end
 			end
@@ -53,7 +54,7 @@ local function install(env, world)
 	function env.GetTradeSkillInfo(i)
 		local r = world.catalog[i]
 		if not r then return nil end
-		return r.name, r.learned == 1 and "optimal" or "header"
+		return world.item[r.id], r.learned == 1 and "optimal" or "header"
 	end
 
 	function env.GetTradeSkillNumReagents(i)
@@ -65,7 +66,25 @@ local function install(env, world)
 		local r = world.catalog[i]
 		local rg = r and r.recipe and r.recipe[j]
 		if not rg then return nil end
-		return rg.name, nil, rg.count
+		return world.item[rg.id], nil, rg.count
+	end
+
+	function env.GetItemInfo(id)
+		return world.item[id]
+	end
+
+	-- Skill-line / spell lookups: the sim only models the open tradeskill line,
+	-- so the skill list is empty and spell names are unknown.
+	function env.GetNumSkillLines()
+		return 0
+	end
+
+	function env.GetSkillLineInfo()
+		return nil
+	end
+
+	function env.GetSpellInfo()
+		return nil
 	end
 
 	function env.DoTradeSkill(index, batch)
@@ -77,25 +96,17 @@ local function install(env, world)
 		env.__fire("BAG_UPDATE")
 	end
 
-	local TEACH_PREFIXES = { "Schematic: ", "Pattern: ", "Plans: ", "Plan: ",
-		"Recipe: ", "Formula: ", "Design: ", "Blueprint: " }
-
-	-- The addon finds the teaching item by id (locale-independent); here we parse
-	-- its name to locate the recipe — sim-only, the data is English.
+	-- The addon finds the teaching item by id (locale-independent); a teach item
+	-- click marks its recipe learned.
 	function env.UseContainerItem(bag, slot)
 		if bag ~= 0 then return end
 		local id = env.GetContainerItemID(bag, slot)
-		local name = world.item[id]
-		if not name then return end
-		for _, p in ipairs(TEACH_PREFIXES) do
-			if name:sub(1, #p) == p then
-				local r = find(name:sub(#p + 1))
-				if r then
-					r.learned = 1
-					world.bag[id] = 0
-					env.__fire("TRADE_SKILL_UPDATE")
-					env.__fire("BAG_UPDATE")
-				end
+		for _, r in ipairs(world.catalog) do
+			if r.teach_id == id then
+				r.learned = 1
+				world.bag[id] = 0
+				env.__fire("TRADE_SKILL_UPDATE")
+				env.__fire("BAG_UPDATE")
 				return
 			end
 		end
@@ -123,8 +134,6 @@ local function install(env, world)
 		return nil
 	end
 
-	function env.GetItemInfo(link) return link end
-
 	function env.GetContainerItemID(bag, slot)
 		if bag ~= 0 then return nil end
 		local i = 0
@@ -139,6 +148,49 @@ local function install(env, world)
 
 	-- ---- GM console (test setup, NOT WoW APIs) -----------------------------
 	local GM = env.GM
+
+	-- Load the shared era database into the world: catalog + names + prices.
+	function GM.LoadEra(dbPath)
+		local sqlite3 = require("lsqlite3")
+		local db = assert(sqlite3.open(dbPath))
+		world.catalog = {}
+		world.item = {}
+		world.price = {}
+		byId = {}
+
+		local st = assert(db:prepare([[
+			SELECT ts.prof_key, ts.skill_id, ts.craft_count, ts.colors, ts.teach_id
+			FROM trade_skill ts
+			ORDER BY ts.prof_key, ts.skill_id]]))
+		while st:step() == sqlite3.ROW do
+			local r = {
+				id = st:get_value(1),
+				recipe = {},
+				colors = {},
+				craft_count = st:get_value(2),
+				learned = st:get_value(4) > 0 and 0 or 1,
+				teach_id = st:get_value(4),
+			}
+			if st:get_value(3) ~= "" then
+				for n in st:get_value(3):gmatch("[^,]+") do r.colors[#r.colors + 1] = tonumber(n) end
+			end
+			world.catalog[#world.catalog + 1] = r
+			byId[r.id] = r
+		end
+		st = assert(db:prepare("SELECT skill_id, reagent_id, count FROM recipe"))
+		while st:step() == sqlite3.ROW do
+			local r = assert(byId[st:get_value(0)])
+			local rg = { id = st:get_value(1), count = st:get_value(2) }
+			r.recipe[#r.recipe + 1] = rg
+		end
+		st = assert(db:prepare("SELECT id, name, avgbuyout FROM item"))
+		while st:step() == sqlite3.ROW do
+			world.item[st:get_value(0)] = st:get_value(1)
+			world.price[st:get_value(0)] = st:get_value(2)
+		end
+		db:close()
+		env.__fire("TRADE_SKILL_UPDATE")
+	end
 
 	function GM.SetTradeSkillLine(name, lvl, cap)
 		world.skill.name = name
@@ -158,47 +210,19 @@ local function install(env, world)
 		env.__fire("TRADE_SKILL_SHOW")
 	end
 
-	-- Stock by item name: resolve name->id, store the count, and record the name
-	-- so GetContainerItemInfo can return it (the addon's bag is name-keyed).
+	-- Stock the bag by item id (see GM.LoadEra: ids come from era.db).
 	function GM.SetBag(a, b)
 		local changed = false
 		if type(a) == "table" then
-			for name, count in pairs(a) do
-				local id = nameToId[name]
-				if id then world.bag[id] = count; world.item[id] = name; changed = true end
-			end
-		else
-			local id = nameToId[a]
-			if id then
-				world.bag[id] = (world.bag[id] or 0) + (b or 0)
-				world.item[id] = a
+			for id, count in pairs(a) do
+				world.bag[id] = count
 				changed = true
 			end
+		else
+			world.bag[a] = (world.bag[a] or 0) + (b or 0)
+			changed = a ~= nil
 		end
 		if changed then env.__fire("BAG_UPDATE") end
-	end
-
-	function GM.LoadRecipes(raw)
-		world.catalog = {}
-		world.item = {}
-		nameToId = {}
-		for _, r in ipairs(raw) do
-			world.catalog[#world.catalog + 1] = {
-				id = r.id, name = r.name, recipe = r.recipe,
-				colors = r.colors, craft_count = r.craft_count,
-				learned = (r.schem_id and r.schem_id > 0) and 0 or 1,
-			}
-			nameToId[r.name] = r.id
-			for _, rg in ipairs(r.recipe or {}) do
-				nameToId[rg.name] = rg.id
-			end
-			if r.schem_id and r.schem_id > 0 then
-				for _, p in ipairs(TEACH_PREFIXES) do
-					nameToId[p .. r.name] = r.schem_id
-				end
-			end
-		end
-		env.__fire("TRADE_SKILL_UPDATE")
 	end
 
 	function GM.ResetProgress()
