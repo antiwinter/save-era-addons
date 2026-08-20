@@ -18,11 +18,12 @@ See root `AGENTS.md` for shared references (wow-ui-source) and design principles
 The prototype splits cleanly into three concerns; skillMaster keeps that split.
 
 1. Data (offline): `fake-wow/scripts/dl.js` scrapes recipe/reagent/price data
-   from Wowhead into the shared SQLite db `fake-wow/data/era.db`, and
-   `scripts/gen-data.lua` projects the addon's trimmed closure out of it,
-   emitting `data/era/skills.lua` + `data/era/item_prices.lua` (checked-in generated
-   artifacts; do not hand-edit). The architecture supports all 8 professions
-   dl.js knows; only ENG and Tailoring data are fine-tuned for now.
+   from Wowhead into versioned SQLite dbs (`fake-wow/data/<version>.db`), and
+   `scripts/gen-data.lua <version>` boots fake-wow via `fw.init(version)` and
+   emits `data/<version>/skills.lua` + `data/<version>/item_prices.lua`
+   (checked-in generated artifacts; do not hand-edit) from the GM schema
+   queries. The architecture supports all 8 professions dl.js knows; only ENG
+   and Tailoring data are fine-tuned for now.
 2. Planner (pure Lua): given a profession's recipe table + a target level + a
    wishlist, produce an ordered action list and a shopping list. Zero WoW
    globals — the caller passes `db`.
@@ -61,9 +62,9 @@ addons (BugPanel, Peddler, whoaThickCC) can reuse the generic client shell.
 Currently it only implements what skillMaster needs (~15 APIs), but the
 architecture supports growth. See `ARCH.md` for file roles.
 
-The emulator (`tests/emu.lua`) loads fake-wow, loads the addon from its .toc,
-seeds the world via `GM.SetTradeSkillLine` / `GM.LoadEra` / `GM.SetBag`,
-fires `TRADE_SKILL_SHOW`, then clicks `DoAction` in a loop. fake-wow's
+The emulator (`tests/emu.lua`) loads fake-wow, boots it via `fw.init("era")`,
+loads the addon from its .toc, seeds the world via `GM.SetTradeSkillLine` /
+`GM.SetBag`, fires `TRADE_SKILL_SHOW`, then clicks `DoAction` in a loop. fake-wow's
 `DoTradeSkill` handles craft mechanics (skill-up rolls, recursive sub-reagent
 crafting, reagent consumption) and fires `TRADE_SKILL_UPDATE` + `BAG_UPDATE`
 synchronously, so the addon's own event frame drives the refresh — same path as

@@ -40,7 +40,7 @@ local function loadAddon(tocPath)
 	return ns
 end
 
-return {
+local M = {
 	GM = env.GM,
 	loadAddon = loadAddon,
 	fire = env.__fire,
@@ -49,3 +49,16 @@ return {
 	world = world,
 	env = env,
 }
+
+-- Boot a version: load fake-wow/data/<version>.db into the sim world. This is
+-- how gen-data and test drivers attach a game version — they never touch db.lua
+-- or the db path directly.
+function M.init(version)
+	local path = dir .. "data/" .. version .. ".db"
+	assert(version, "usage: fw.init('<version>') — loads fake-wow/data/<version>.db")
+	assert(io.open(path), "no such version db: " .. path)
+	env.GM.LoadDB(path)
+	return M
+end
+
+return M

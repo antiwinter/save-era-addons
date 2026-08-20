@@ -32,27 +32,31 @@ Widget methods: `SetSize`, `SetPoint`, `SetMovable`, `EnableMouse`,
 - `GetItemInfo(link)` → `link` (link == name in the sim)
 - `UseContainerItem(bag, slot)` — a teaching item learns its recipe (`learned=1`), is consumed; fires `TRADE_SKILL_UPDATE` + `BAG_UPDATE`
 
-### Database reader (era.lua)
-- `era.lua` — the single reader of the shared SQLite db `data/era.db`
+### Database reader (db.lua)
+- `db.lua` — the single reader of a shared versioned SQLite db
   (vendored `lsqlite3` binding, `scripts/vendor/build.sh`). Returns
-  `{skills, recipe, items}` from `load(dbPath)`. Used by `GM.LoadEra` (below)
-  and by the addon data generator `skillMaster/scripts/gen-data.lua`, so both
-  consumers agree on table semantics.
+  `{skills, recipe, items}` from `load(dbPath)`; the version's filename is
+  chosen by the caller (`init(version)` resolves `data/<version>.db`).
 
 ### GM console — test setup, NOT a WoW API
 The shared `GM` table is created by `client.lua`; each domain module attaches
 its own knobs (setup helpers live with the domain they mutate).
 - `GM.SetSeed(n)` — generic (client.lua)
 - `GM.SetTradeSkillLine(name, lvl, cap)` — tradeskill.lua
-- `GM.LoadEra(dbPath)` — load the shared db via era.lua into the catalog; trainer-taught load learned, scroll-taught unlearned (tradeskill.lua)
+- `GM.LoadDB(dbPath)` — load a db via db.lua into the catalog; trainer-taught load learned, scroll-taught unlearned; keeps the raw schema on `world.schema` (tradeskill.lua)
+- `GM:ListProfessions()` → `{"eng", "tailor", ...}` — tradeskill.lua
+- `GM:ListSkills('eng')` → skills of one prof, learnedat order (id, name, craft_count, colors, phaseId, teach_id) — tradeskill.lua
+- `GM:GetRecipe(skill_id)` → `{{id, count}, ...}` — tradeskill.lua
+- `GM:GetPrice(item_id)` → avgbuyout (0 if absent) — tradeskill.lua
 - `GM.SetBag(name, count)` or `GM.SetBag({[name]=count, ...})` — stock the id-keyed bag by item name (tradeskill.lua)
 - `GM.ResetProgress()` — tradeskill.lua
 
 ### Loader (init.lua)
+- `init(version)` — boot a game version: `GM.LoadDB(dir .. "data/<version>.db")`; drivers and gen-data never touch db.lua or db paths directly
 - `loadAddon(tocPath)` → `ns` — parse .toc, run each file with `(addonName, ns)`, fire `ADDON_LOADED`
 - `fire(event, ...)` — dispatch an event to all registered frames
 - `slash(line)` — dispatch a slash command (e.g., `"/skm plan"`)
-- `world` — the mutable sim state (skill, bag, catalog, item, crafts)
+- `world` — the mutable sim state (skill, bag, catalog, item, crafts, schema)
 - `env` — the global table (`_G`)
 
 ## Growth path
@@ -64,9 +68,9 @@ in the shell.
 ## Usage (from a test driver)
 ```lua
 local fw = dofile("fake-wow/init.lua")
+fw.init("era")                       -- load fake-wow/data/era.db
 fw.GM.SetSeed(1)
 fw.GM.SetTradeSkillLine("Engineering", 1, 300)
-fw.GM.LoadEra("fake-wow/data/era.db")
 local ns = fw.loadAddon("skillMaster/skillMaster.toc")
 fw.fire("TRADE_SKILL_SHOW")
 ns.Runtime:DoAction()

@@ -1,7 +1,9 @@
--- era.lua — the single reader of the shared era database (fake-wow/data/era.db).
--- Returns the canonical normalized tables; the emulator (tradeskill.lua's
--- GM.LoadEra) and the addon data generator (skillMaster/scripts/gen-data.lua)
--- both consume this shape, so db access and the table semantics live in one place.
+-- db.lua — the single reader of a shared versioned SQLite db
+-- (fake-wow/data/<version>.db). Returns the canonical normalized tables; the
+-- emulator (tradeskill.lua's GM.LoadDB) and the addon data generator
+-- (skillMaster/scripts/gen-data.lua) both consume this shape, so db access and
+-- the table semantics live in one place. The version's filename is chosen by
+-- the CALLER — init.lua's init(version) resolves it.
 
 local dir = (debug.getinfo(1, "S").source:gsub("^@", ""):match("^(.*)/[^/]*$") or ".") .. "/"
 package.cpath = dir .. "scripts/vendor/?.so;" .. package.cpath

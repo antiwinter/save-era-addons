@@ -8,7 +8,7 @@ local function install(env, world)
 
 	local byId = {} -- item id -> catalog row; setup-only
 
-	-- era.lua is the single sqlite reader (sets up the vendor binding itself).
+	-- db.lua is the single sqlite reader (sets up the vendor binding itself).
 	local dir = (debug.getinfo(1, "S").source:gsub("^@", ""):match("^(.*)/[^/]*$") or ".") .. "/"
 
 	local function find(id)
@@ -148,9 +148,11 @@ local function install(env, world)
 	-- ---- GM console (test setup, NOT WoW APIs) -----------------------------
 	local GM = env.GM
 
-	-- Load the shared era database into the world: catalog + names + prices.
-	function GM.LoadEra(dbPath)
-		local data = dofile(dir .. "era.lua").load(dbPath)
+	-- Load a versioned database into the world: catalog + names + prices. The
+	-- raw schema is kept on world.schema for the GM query API below.
+	function GM.LoadDB(dbPath)
+		local data = dofile(dir .. "db.lua").load(dbPath)
+		world.schema = data
 		world.catalog = {}
 		world.item = {}
 		world.price = {}
@@ -178,6 +180,42 @@ local function install(env, world)
 		env.__fire("TRADE_SKILL_UPDATE")
 	end
 
+	-- ---- GM schema queries (read-only windows onto world.schema) -------------
+	function GM:ListProfessions()
+		local seen, out = {}, {}
+		for _, s in ipairs(world.schema.skills) do
+			if not seen[s.prof] then
+				seen[s.prof] = true
+				out[#out + 1] = s.prof
+			end
+		end
+		return out
+	end
+
+	-- learnedat order — the addon data emitter adopts it as the planner's level
+	-- ordering (the field itself is not shipped).
+	function GM:ListSkills(prof)
+		local rows = {}
+		for _, s in ipairs(world.schema.skills) do
+			if s.prof == prof then rows[#rows + 1] = s end
+		end
+		table.sort(rows, function(a, b) return a.learnedat < b.learnedat end)
+		return rows
+	end
+
+	function GM:GetRecipe(skill_id)
+		local out = {}
+		for _, r in ipairs(world.schema.recipe) do
+			if r.skill_id == skill_id then out[#out + 1] = { id = r.reagent_id, count = r.count } end
+		end
+		return out
+	end
+
+	function GM:GetPrice(id)
+		local it = world.schema.items[id]
+		return it and it.avgbuyout or 0
+	end
+
 	function GM.SetTradeSkillLine(name, lvl, cap)
 		world.skill.name = name
 		world.skill.lvl = lvl or 1
@@ -196,7 +234,7 @@ local function install(env, world)
 		env.__fire("TRADE_SKILL_SHOW")
 	end
 
-	-- Stock the bag by item id (see GM.LoadEra: ids come from era.db).
+	-- Stock the bag by item id (see GM.LoadDB: ids come from the version db).
 	function GM.SetBag(a, b)
 		local changed = false
 		if type(a) == "table" then

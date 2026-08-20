@@ -25,10 +25,10 @@ fw.GM.SetSeed(tonumber(os.getenv("SKM_SEED") or "") or os.time())
 -- This also loads data/<prof>.lua and builds ns.db.
 local ns = fw.loadAddon("skillMaster.toc")
 
--- Seed the world from the shared era db (trainer-taught recipes load learned,
--- scroll-taught unlearned — the addon learns those from their teaching item
--- mid-run) and open the skill line at the start level.
-fw.GM.LoadEra("../fake-wow/data/era.db")
+-- Boot the era version into the sim world (trainer-taught recipes load
+-- learned, scroll-taught unlearned — the addon learns those from their
+-- teaching item mid-run) and open the skill line at the start level.
+fw.init("era")
 fw.GM.SetTradeSkillLine(PROF_NAME[prof] or prof, startLvl, target)
 
 
