@@ -5,8 +5,8 @@
 ## Version: 0.1
 ## SavedVariables: skillMasterDB
 
-data\eng.lua
-data\tailor.lua
+data\era\skills.lua
+data\era\item_prices.lua
 data.lua
 planner.lua
 format.lua

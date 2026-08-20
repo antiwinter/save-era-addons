@@ -32,12 +32,19 @@ Widget methods: `SetSize`, `SetPoint`, `SetMovable`, `EnableMouse`,
 - `GetItemInfo(link)` → `link` (link == name in the sim)
 - `UseContainerItem(bag, slot)` — a teaching item learns its recipe (`learned=1`), is consumed; fires `TRADE_SKILL_UPDATE` + `BAG_UPDATE`
 
+### Database reader (era.lua)
+- `era.lua` — the single reader of the shared SQLite db `data/era.db`
+  (vendored `lsqlite3` binding, `scripts/vendor/build.sh`). Returns
+  `{skills, recipe, items}` from `load(dbPath)`. Used by `GM.LoadEra` (below)
+  and by the addon data generator `skillMaster/scripts/gen-data.lua`, so both
+  consumers agree on table semantics.
+
 ### GM console — test setup, NOT a WoW API
 The shared `GM` table is created by `client.lua`; each domain module attaches
 its own knobs (setup helpers live with the domain they mutate).
 - `GM.SetSeed(n)` — generic (client.lua)
 - `GM.SetTradeSkillLine(name, lvl, cap)` — tradeskill.lua
-- `GM.LoadRecipes(raw)` — load a `<prof>_data` array into the catalog; trainer-taught load learned, scroll-taught unlearned (tradeskill.lua)
+- `GM.LoadEra(dbPath)` — load the shared db via era.lua into the catalog; trainer-taught load learned, scroll-taught unlearned (tradeskill.lua)
 - `GM.SetBag(name, count)` or `GM.SetBag({[name]=count, ...})` — stock the id-keyed bag by item name (tradeskill.lua)
 - `GM.ResetProgress()` — tradeskill.lua
 
@@ -59,7 +66,7 @@ in the shell.
 local fw = dofile("fake-wow/init.lua")
 fw.GM.SetSeed(1)
 fw.GM.SetTradeSkillLine("Engineering", 1, 300)
-fw.GM.LoadRecipes(eng_data)
+fw.GM.LoadEra("fake-wow/data/era.db")
 local ns = fw.loadAddon("skillMaster/skillMaster.toc")
 fw.fire("TRADE_SKILL_SHOW")
 ns.Runtime:DoAction()

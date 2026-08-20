@@ -17,11 +17,12 @@ See root `AGENTS.md` for shared references (wow-ui-source) and design principles
 # Architecture
 The prototype splits cleanly into three concerns; skillMaster keeps that split.
 
-1. Data (offline): a Node scraper pulls recipe/reagent/price data from Wowhead
-   and emits per-profession Lua tables (`data/<prof>.lua`). Checked in as
-   generated artifacts; regenerated with the pipeline in `scripts/`. The
-   architecture supports all 8 professions dl.js knows; only ENG and Tailoring
-   data are fine-tuned for now.
+1. Data (offline): `fake-wow/scripts/dl.js` scrapes recipe/reagent/price data
+   from Wowhead into the shared SQLite db `fake-wow/data/era.db`, and
+   `scripts/gen-data.lua` projects the addon's trimmed closure out of it,
+   emitting `data/era/skills.lua` + `data/era/item_prices.lua` (checked-in generated
+   artifacts; do not hand-edit). The architecture supports all 8 professions
+   dl.js knows; only ENG and Tailoring data are fine-tuned for now.
 2. Planner (pure Lua): given a profession's recipe table + a target level + a
    wishlist, produce an ordered action list and a shopping list. Zero WoW
    globals — the caller passes `db`.
@@ -49,8 +50,10 @@ Rules that keep it dual-use:
 - The .toc loader in `fake-wow/init.lua` runs each file with the same
   `(addonName, ns)` varargs the client uses, so `local _, ns = ...` works
   identically in both worlds.
-- No top-level `dofile`/`require` of data — the generated `<prof>_data` globals
-  are set by the .toc load order (both in-game and via fake-wow's loader).
+- No top-level `dofile`/`require` of data — the generated `skills` /
+  `item_prices` globals are set by the .toc load order (both in-game and via
+  fake-wow's loader). Names are version-agnostic: a .toc loads exactly one
+  version's files, so `data/era/`, `data/tbc/`, ... can't clash.
 
 ## fake-wow: the simulated client
 `fake-wow/` is a **repo-shared** fake WoW environment, structured so other
@@ -59,7 +62,7 @@ Currently it only implements what skillMaster needs (~15 APIs), but the
 architecture supports growth. See `ARCH.md` for file roles.
 
 The emulator (`tests/emu.lua`) loads fake-wow, loads the addon from its .toc,
-seeds the world via `GM.SetTradeSkillLine` / `GM.LoadRecipes` / `GM.SetBag`,
+seeds the world via `GM.SetTradeSkillLine` / `GM.LoadEra` / `GM.SetBag`,
 fires `TRADE_SKILL_SHOW`, then clicks `DoAction` in a loop. fake-wow's
 `DoTradeSkill` handles craft mechanics (skill-up rolls, recursive sub-reagent
 crafting, reagent consumption) and fires `TRADE_SKILL_UPDATE` + `BAG_UPDATE`
@@ -78,7 +81,7 @@ live.
 - Core files (`data`, `planner`, `format`, `core`) call WoW globals directly
   but never branch on "am I in-game?" If they need client state, read it from
   the WoW API (fake-wow provides stubs off-client).
-- Recipe data files (`data/*.lua`) are generated. Do not hand-edit; change the
-  scraper in `scripts/` and regenerate.
+- Data files (`data/era/*.lua`) are generated. Do not hand-edit; change
+  `fake-wow/scripts/dl.js` or `scripts/gen-data.lua` and regenerate.
 - Skill-up color convention throughout: `colors = {orange, yellow, green, gray}`
   thresholds, chances `{[1]=1.0, [2]=0.75, [3]=0.25, [4]=0}`.

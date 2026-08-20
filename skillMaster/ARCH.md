@@ -9,18 +9,30 @@ exact code that ships.
 ## One core, two clients
 
 ```
-        OFFLINE DATA PIPELINE                      SHARED CORE (pure Lua, no WoW globals)
-       ┌───────────────────────┐                 ┌──────────────────────────────────────┐
-       │  scripts/dl.js         │                 │  data.lua     recipe-table wrapper     │
-       │  (Wowhead scraper)     │──generates──▶   │  planner.lua  BuildPlan(db,opts)       │
-       └───────────────────────┘                 │  format.lua   plan → human text        │
-                   │                              │  core.lua     Runtime + bootstrap      │
-                   ▼                              └──────────────────────────────────────┘
-       ┌───────────────────────┐                      ▲                        ▲
-       │  data/eng.lua          │                      │ real WoW APIs          │ fake WoW APIs
-       │  data/tailor.lua       │───loaded by both─────┤ (CreateFrame,          │ (from fake-wow/)
-       │  (generated tables)    │                      │  GetTradeSkill*, ...)  │
-       └───────────────────────┘             ┌────────┴─────────┐    ┌─────────┴──────────┐
+       OFFLINE DATA PIPELINE                        SHARED CORE (pure Lua, no WoW globals)
+       ┌────────────────────────┐                   ┌──────────────────────────────────────┐
+       │ fake-wow/scripts/dl.js │                   │  data.lua     recipe-table wrapper     │
+       │ (Wowhead scraper)      │                   │  planner.lua  BuildPlan(db,opts)       │
+       └────────────────────────┘                   │  format.lua   plan → human text        │
+                 │                                  │  core.lua     Runtime + bootstrap      │
+                 ▼                                  └──────────────────────────────────────┘
+       ┌────────────────────────┐                        ▲                        ▲
+       │ fake-wow/data/era.db   │                        │ real WoW APIs          │ fake WoW APIs
+       │ (SQLite, normalized)   │──era.lua──             │ (CreateFrame,          │ (from fake-wow/,
+       └────────────────────────┘   (the reader,         │  GetTradeSkill*, ...)  │  incl. era.lua)
+                 │                    also used by       │                        │
+                 ▼                  GM.LoadEra)          │                        │
+       ┌───────────────────────┐                        │                        │
+       │ scripts/gen-data.lua    │                        │                        │
+       │ (addon data emitter)    │                        │                        │
+       └───────────────────────┘                        │                        │
+                 │                                       │                        │
+                 ▼                                       │                        │
+       ┌───────────────────────┐                        │                        │
+       │ data/era/skills.lua     │──loaded by both────────┤                        │
+       │ data/era/item_prices.lua│ (via .toc load order)  │                        │
+       │ (checked-in, generated) │                        │                        │
+       └───────────────────────┘               ┌────────┴─────────┐    ┌─────────┴──────────┐
                                               │   IN-GAME        │    │   EMULATOR         │
                                               │                  │    │                    │
                                               │ ui.lua    panel  │    │ tests/emu.lua      │
@@ -50,7 +62,8 @@ architecture supports growth.
 |------|------|
 | `init.lua` | Entry point: installs globals into `_G`, provides a .toc loader that runs an addon exactly as the game would (each file gets `(addonName, ns)` varargs, backslashes are normalized, `ADDON_LOADED` fires after all files load), and exposes `GM.*` for test setup. |
 | `client.lua` | Generic client shell: `CreateFrame` + widget stubs, event registration + dispatch, slash commands, `UIParent`, and the shared `GM` table (with generic `GM.SetSeed`). The **reusable** part, no trade-skill specifics. |
-| `tradeskill.lua` | Trade-skill world state + C-APIs: `GetTradeSkillLine`, `GetNumTradeSkills`, `GetTradeSkillInfo`, `GetTradeSkillNumReagents`, `GetTradeSkillReagentInfo`, `DoTradeSkill`, `GetContainerNumSlots`, `GetContainerItemInfo`, `GetItemInfo`, `GetBuildInfo`, `date`. This is where craft **mechanics** (skill-up rolls, recursive sub-reagent crafting, reagent consumption) live off-client. It also attaches its own GM knobs (`GM.SetTradeSkillLine`, `GM.LoadRecipes`, `GM.SetBag`, `GM.ResetProgress`) — setup helpers live with the domain they mutate, not in a catch-all. |
+| `tradeskill.lua` | Trade-skill world state + C-APIs: `GetTradeSkillLine`, `GetNumTradeSkills`, `GetTradeSkillInfo`, `GetTradeSkillNumReagents`, `GetTradeSkillReagentInfo`, `DoTradeSkill`, `GetContainerNumSlots`, `GetContainerItemInfo`, `GetItemInfo`, `GetBuildInfo`, `date`. This is where craft **mechanics** (skill-up rolls, recursive sub-reagent crafting, reagent consumption) live off-client. It also attaches its own GM knobs (`GM.SetTradeSkillLine`, `GM.LoadEra`, `GM.SetBag`, `GM.ResetProgress`) — setup helpers live with the domain they mutate, not in a catch-all. |
+| `era.lua` | The single reader of the shared SQLite db (`fake-wow/data/era.db`), vendored `lsqlite3` binding included. Returns normalized `{skills, recipe, items}` — both `GM.LoadEra` and `scripts/gen-data.lua` consume this shape, so db access and table semantics live in one place. |
 
 `DoTradeSkill` in fake-wow fires `TRADE_SKILL_UPDATE` + `BAG_UPDATE`
 synchronously, so the addon's own event frame drives the refresh in both worlds.
@@ -88,7 +101,7 @@ player-initiated (avoids action-blocking taint).
 ### Shared core (pure Lua — loaded in-game via .toc, off-client via fake-wow's loader)
 | File | Role |
 |------|------|
-| `data.lua` | Wraps a raw recipe array into a queryable `db` (`db[name]`, `db.data`, `db:price`). In-game registers `ns.db.eng`/`ns.db.tailor` from the generated `<prof>_data` globals; off-client does the same via the loader. |
+| `data.lua` | Wraps the generated `skills` / `item_prices` globals into per-prof queryable `db` objects (`db[id]`, `db.data`, `db:price`) and derives each recipe's craft cost (memoized, self-reference-safe) from `item_prices` at load. In-game registers `ns.db.eng`/`ns.db.tailor`; off-client does the same via the loader. |
 | `planner.lua` | The solver. `BuildPlan(db, opts) → actions, materials`: ROI recipe pick per level, fractional skill-up allocation, recursive reagent expansion, safety buffer. Zero WoW globals, caller passes `db`. |
 | `format.lua` | Renders the structured plan into the human `PLAN`/`BAG` review text. `Print(actions, materials, printer)` — `print` off-client, chat frame in-game. |
 | `core.lua` | Runtime + bootstrap. `Runtime` methods call WoW globals directly (`GetTradeSkillLine`, `DoTradeSkill`, ...) and read `ns.db`/`ns.Planner`. Instance + event frame built inside the `ADDON_LOADED` handler so every .toc file (data, planner, ui) has loaded first. No .toc reorder needed. |
@@ -98,26 +111,30 @@ player-initiated (avoids action-blocking taint).
 |------|------|
 | `ui.lua` | Movable panel: shows next action + shopping list, a single "Craft next" button (the only crafting path), and the `/skm` slash command (`plan`, `debug`, `hide`). |
 | `debug.lua` | `/skm debug` snapshots planner + runtime state into SavedVariables for off-disk inspection. |
-| `skillMaster.toc` | Addon manifest + load order: `data/*.lua → data.lua → planner → format → core → ui → debug`. Core loads last (before ui) so `ns.db`/`ns.Planner` exist when `ADDON_LOADED` builds the runtime. |
+| `skillMaster.toc` | Addon manifest + load order: `data/era/*.lua → data.lua → planner → format → core → ui → debug`. Core loads last (before ui) so `ns.db`/`ns.Planner` exist when `ADDON_LOADED` builds the runtime. |
 
 ### Off-client host (plain `lua`)
 | File | Role |
 |------|------|
-| `tests/emu.lua` | Loads fake-wow, loads the addon from its .toc, seeds the world via `GM.SetTradeSkillLine` / `GM.LoadRecipes` / `GM.SetBag`, fires `TRADE_SKILL_SHOW`, then clicks `DoAction` in a loop. Prints the plan, then reports reach/budget/waste/use-rate using `ns.db:price` + `fake-wow.world` stats. |
+| `tests/emu.lua` | Loads fake-wow, loads the addon from its .toc, seeds the world via `GM.SetTradeSkillLine` / `GM.LoadEra` / `GM.SetBag`, fires `TRADE_SKILL_SHOW`, then clicks `DoAction` in a loop. Prints the plan, then reports reach/budget/waste/use-rate using `ns.db:price` + `fake-wow.world` stats. |
 | `tests/run.sh` | Regression gate: runs the emulator over eng + tailor at a fixed seed; fails if any plan comes up SHORT. Green here ⇒ the shipped engine reaches target. |
 
-### Data pipeline (offline, Node)
+### Data pipeline (offline)
 | File | Role |
 |------|------|
-| `scripts/dl.js` | Scrapes Wowhead for recipe/reagent/price data and emits `data/<prof>.lua`. Supports all 8 professions; only eng + tailor are fine-tuned for now. |
-| `scripts/package.json`, `scripts/yarn.lock` | Node deps for the scraper. |
-| `data/eng.lua`, `data/tailor.lua` | Generated recipe tables (checked-in artifacts — do not hand-edit). Set `<prof>_data` globals. |
+| `fake-wow/scripts/dl.js` | Scrapes Wowhead into `fake-wow/data/era.db` (normalized SQLite: `trade_skill` / `recipe` / `item`). Supports all 8 professions; only eng + tailor are fine-tuned for now. |
+| `fake-wow/data/era.db` | The shared db — source of truth. Consumed only through `era.lua`. |
+| `fake-wow/era.lua` | Canonical reader (see the fake-wow table above). |
+| `scripts/gen-data.lua` | Reads era.db via `era.lua`, projects the addon's closure (every skill row, its recipes, and the transitive item set for prices — outputs, reagents, teaching schematics), and emits `data/era/skills.lua` + `data/era/item_prices.lua`. |
+| `fake-wow/scripts/vendor/` | Vendored `lsqlite3` binding (`build.sh`; the `.so` is a gitignored local build). |
+| `data/era/skills.lua` | Generated: `skills` (per-prof skill rows as positional arrays, learnedat order, recipe inlined per row). Checked in — do not hand-edit. |
+| `data/era/item_prices.lua` | Generated: `item_prices` (item id → avgbuyout for the closure). The single price source — costs derive from it at load, nothing else ships prices. Checked in — do not hand-edit. |
 
 ## Load order
 
 **In-game** (.toc order):
-1. `data/eng.lua`, `data/tailor.lua` — set `<prof>_data` globals
-2. `data.lua` — wraps `<prof>_data` into `ns.db.eng` / `ns.db.tailor`
+1. `data/era/skills.lua`, `data/era/item_prices.lua` — set the `skills` / `item_prices` globals (bare names are safe: a .toc loads exactly one version's files)
+2. `data.lua` — wraps the `skills` / `item_prices` globals into `ns.db.eng` / `ns.db.tailor`
 3. `planner.lua` — attaches `ns.Planner`
 4. `format.lua` — attaches `ns.Format`
 5. `core.lua` — registers `ADDON_LOADED` handler

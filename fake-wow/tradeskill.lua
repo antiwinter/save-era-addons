@@ -8,9 +8,8 @@ local function install(env, world)
 
 	local byId = {} -- item id -> catalog row; setup-only
 
-	-- Resolve the lsqlite3 binding committed as source and built locally.
+	-- era.lua is the single sqlite reader (sets up the vendor binding itself).
 	local dir = (debug.getinfo(1, "S").source:gsub("^@", ""):match("^(.*)/[^/]*$") or ".") .. "/"
-	package.cpath = dir .. "scripts/vendor/?.so;" .. package.cpath
 
 	local function find(id)
 		return byId[id]
@@ -151,44 +150,31 @@ local function install(env, world)
 
 	-- Load the shared era database into the world: catalog + names + prices.
 	function GM.LoadEra(dbPath)
-		local sqlite3 = require("lsqlite3")
-		local db = assert(sqlite3.open(dbPath))
+		local data = dofile(dir .. "era.lua").load(dbPath)
 		world.catalog = {}
 		world.item = {}
 		world.price = {}
 		byId = {}
-
-		local st = assert(db:prepare([[
-			SELECT ts.prof_key, ts.skill_id, ts.craft_count, ts.colors, ts.teach_id
-			FROM trade_skill ts
-			ORDER BY ts.prof_key, ts.skill_id]]))
-		while st:step() == sqlite3.ROW do
+		for _, s in ipairs(data.skills) do
 			local r = {
-				id = st:get_value(1),
+				id = s.id,
 				recipe = {},
-				colors = {},
-				craft_count = st:get_value(2),
-				learned = st:get_value(4) > 0 and 0 or 1,
-				teach_id = st:get_value(4),
+				colors = s.colors,
+				craft_count = s.craft_count,
+				learned = s.teach_id > 0 and 0 or 1,
+				teach_id = s.teach_id,
 			}
-			if st:get_value(3) ~= "" then
-				for n in st:get_value(3):gmatch("[^,]+") do r.colors[#r.colors + 1] = tonumber(n) end
-			end
 			world.catalog[#world.catalog + 1] = r
 			byId[r.id] = r
 		end
-		st = assert(db:prepare("SELECT skill_id, reagent_id, count FROM recipe"))
-		while st:step() == sqlite3.ROW do
-			local r = assert(byId[st:get_value(0)])
-			local rg = { id = st:get_value(1), count = st:get_value(2) }
-			r.recipe[#r.recipe + 1] = rg
+		for _, rc in ipairs(data.recipe) do
+			local r = assert(byId[rc.skill_id])
+			r.recipe[#r.recipe + 1] = { id = rc.reagent_id, count = rc.count }
 		end
-		st = assert(db:prepare("SELECT id, name, avgbuyout FROM item"))
-		while st:step() == sqlite3.ROW do
-			world.item[st:get_value(0)] = st:get_value(1)
-			world.price[st:get_value(0)] = st:get_value(2)
+		for id, it in pairs(data.items) do
+			world.item[id] = it.name
+			world.price[id] = it.avgbuyout
 		end
-		db:close()
 		env.__fire("TRADE_SKILL_UPDATE")
 	end
 

@@ -1,95 +1,105 @@
 #!/usr/bin/env lua
--- gen-data.lua — read fake-wow/data/era.db, emit the addon's trimmed recipe
--- tables into skillMaster/data/<prof_key>.lua. Drops everything the game
--- provides via GetItemInfo(id) (names); keeps player economy facts the client
--- cannot tell us (buyouts, teach items, skill-up thresholds).
+-- gen-data.lua — read fake-wow/data/era.db through its canonical loader (era.lua)
+-- and emit the addon's trimmed data into skillMaster/data/era/:
+--   skills.lua — skills (per-prof skill rows, positional arrays, recipe inlined)
+--   item_prices.lua — item_prices: item id -> avgbuyout for every id the addon can touch
+-- Projection trims what the client supplies at runtime (names, quality) and what
+-- the addon derives at load (craft costs — see data.lua), keeping items the
+-- single price source. Bare table names are safe: the .toc loads exactly one
+-- version's files, so versions can't clash.
 
 -- Resolve repo paths from THIS file's location (works under any cwd).
 local here = (debug.getinfo(1, "S").source:gsub("^@", ""):match("^(.*)/[^/]*$") or ".") .. "/"
 local root = here .. "../.."
+local data = dofile(root .. "/fake-wow/era.lua").load(root .. "/fake-wow/data/era.db")
 
-package.cpath = root .. "/fake-wow/scripts/vendor/?.so;" .. package.cpath
-local sqlite3 = require("lsqlite3")
-
-local db = assert(sqlite3.open(root .. "/fake-wow/data/era.db"))
-
-local price = {}
-local st = assert(db:prepare("SELECT id, avgbuyout FROM item"))
-while st:step() == sqlite3.ROW do price[st:get_value(0)] = st:get_value(1) end
-
-local recipes = {} -- prof_key -> array of {recipe row, reagents = {{id, count}}}
-local byId = {}    -- (prof,skill_id) -> recipe entry
-st = assert(db:prepare("SELECT prof_key, skill_id, craft_count, colors, learnedat, nskillup, phaseId, teach_id FROM trade_skill"))
-while st:step() == sqlite3.ROW do
-	local prof = st:get_value(0)
-	local entry = {
-		skill_id = st:get_value(1),
-		craft_count = st:get_value(2),
-		colors = {},
-		learnedat = st:get_value(4),
-		nskillup = st:get_value(5),
-		phaseId = st:get_value(6),
-		teach_id = st:get_value(7),
-		reagents = {},
-	}
-	for n in st:get_value(3):gmatch("[^,]+") do entry.colors[#entry.colors + 1] = tonumber(n) end
-	recipes[prof] = recipes[prof] or {}
-	recipes[prof][#recipes[prof] + 1] = entry
-	byId[prof .. ":" .. entry.skill_id] = entry
-end
-
-st = assert(db:prepare("SELECT prof_key, skill_id, reagent_id, count FROM recipe"))
-while st:step() == sqlite3.ROW do
-	local entry = assert(byId[st:get_value(0) .. ":" .. st:get_value(1)])
-	entry.reagents[#entry.reagents + 1] = { id = st:get_value(2), count = st:get_value(3) }
-end
-db:close()
-
--- Craft cost = sum over reagents of (craftable recipe's cost | item price) * count.
-local costMemo = {}
-local function cost(prof, skill_id)
-	local key = prof .. ":" .. skill_id
-	if costMemo[key] then return costMemo[key] end
-	local entry = byId[key]
-	if not entry then return 0 end
-	costMemo[key] = -1 -- guard against reagent cycles
-	local total = 0
-	for _, rg in ipairs(entry.reagents) do
-		local sub = byId[prof .. ":" .. rg.id]
-		total = total + rg.count * (sub and cost(prof, rg.id) or (price[rg.id] or 0))
+-- Skill rows keep their emitted order as the planner's level ordering, so sort
+-- by learnedat once here; the field itself is not shipped.
+local profs = {} -- insertion order (era.lua returns them sorted by prof_key)
+local skills = {}
+for _, s in ipairs(data.skills) do
+	if not skills[s.prof] then
+		skills[s.prof] = {}
+		profs[#profs + 1] = s.prof
 	end
-	costMemo[key] = total
-	return total
+	skills[s.prof][#skills[s.prof] + 1] = s
+end
+local recipes = {} -- prof -> skill_id -> {{reagent_id, count}, ...}
+for _, r in ipairs(data.recipe) do
+	recipes[r.prof] = recipes[r.prof] or {}
+	local bySkill = recipes[r.prof]
+	bySkill[r.skill_id] = bySkill[r.skill_id] or {}
+	bySkill[r.skill_id][#bySkill[r.skill_id] + 1] = { r.reagent_id, r.count }
 end
 
-local function emit(prof)
-	local rows = recipes[prof] or {}
-	table.sort(rows, function(a, b) return (a.learnedat or 0) < (b.learnedat or 0) end)
-	local out = {}
-	out[#out + 1] = prof .. "_data = {"
-	for _, r in ipairs(rows) do
-		local c = cost(prof, r.skill_id)
-		local teach = r.teach_id > 0 and string.format("teach_price = %d, ", price[r.teach_id] or 0) or ""
-		out[#out + 1] = string.format(
-			"  {skill_id = %d, craft_count = %d, colors = {%s}, learnedat = %d, nskillup = %d, phaseId = %d, teach_id = %d, %savgbuyout = %d, cost = %d, recipe = {",
-			r.skill_id, r.craft_count, table.concat(r.colors, ","), r.learnedat, r.nskillup,
-			r.phaseId, r.teach_id, teach, price[r.skill_id] or 0, c)
-		for i, rg in ipairs(r.reagents) do
-			out[#out + 1] = string.format("    {id = %d, count = %d, avgbuyout = %d}%s",
-				rg.id, rg.count, price[rg.id] or 0, i < #r.reagents and "," or "")
+-- Item closure: every output, reagent (transitively — reagents may themselves
+-- be crafts), and teaching schematic the addon can price.
+local recipeOf = {}
+for _, r in ipairs(data.recipe) do
+	recipeOf[r.skill_id] = recipeOf[r.skill_id] or {}
+	recipeOf[r.skill_id][#recipeOf[r.skill_id] + 1] = r
+end
+local craftId = {}
+for _, s in ipairs(data.skills) do craftId[s.id] = true end
+
+local needed = {}
+local queue, head = {}, 1
+for _, s in ipairs(data.skills) do
+	queue[#queue + 1] = s.id
+	if s.teach_id > 0 then queue[#queue + 1] = s.teach_id end
+end
+while head <= #queue do
+	local id = queue[head]
+	head = head + 1
+	if not needed[id] then
+		needed[id] = true
+		if craftId[id] then
+			for _, r in ipairs(recipeOf[id] or {}) do queue[#queue + 1] = r.reagent_id end
 		end
-		out[#out + 1] = "  }},"
 	end
-	out[#out + 1] = "}"
-	local dir = root .. "/skillMaster/data"
-	os.execute("mkdir -p " .. dir)
-	local f = assert(io.open(dir .. "/" .. prof .. ".lua", "w"))
-	f:write(table.concat(out, "\n"), "\n")
-	f:close()
-	print("wrote " .. dir .. "/" .. prof .. ".lua (" .. #rows .. " recipes)")
 end
 
-local keys = {}
-for k in pairs(recipes) do keys[#keys + 1] = k end
-table.sort(keys)
-for _, k in ipairs(keys) do emit(k) end
+local header = "-- generated by skillMaster/scripts/gen-data.lua from fake-wow/data/era.db; do not hand-edit.\n"
+local function lit(list) return "{" .. table.concat(list, ",") .. "}" end
+local function litRec(list) -- {{reagent_id,count}, ...}
+	local parts = {}
+	for _, r in ipairs(list) do parts[#parts + 1] = "{" .. r[1] .. "," .. r[2] .. "}" end
+	return "{" .. table.concat(parts, ",") .. "}"
+end
+
+-- ---- skills.lua ------------------------------------------------------------
+local out = { header, "skills = {" }
+for _, prof in ipairs(profs) do
+	out[#out + 1] = "  " .. prof .. " = {"
+	table.sort(skills[prof], function(a, b) return a.learnedat < b.learnedat end)
+	local profRecipes = recipes[prof] or {}
+	for _, s in ipairs(skills[prof]) do
+		-- {skill_id, craft_count, colors, phaseId, teach_id, {{reagent_id,count},...}}
+		out[#out + 1] = string.format("    {%d, %d, %s, %d, %d, %s},",
+			s.id, s.craft_count, lit(s.colors), s.phaseId, s.teach_id,
+			litRec(profRecipes[s.id] or {}))
+	end
+	out[#out + 1] = "  },"
+end
+out[#out + 1] = "}"
+
+-- ---- item_prices.lua -------------------------------------------------------
+local ids = {}
+for id in pairs(needed) do ids[#ids + 1] = id end
+table.sort(ids)
+local it = { header, "item_prices = {" }
+for _, id in ipairs(ids) do
+	it[#it + 1] = string.format("  [%d] = %d,", id, (data.items[id] and data.items[id].avgbuyout) or 0)
+end
+it[#it + 1] = "}"
+
+local dir = root .. "/skillMaster/data/era"
+os.execute("mkdir -p " .. dir)
+local f = assert(io.open(dir .. "/skills.lua", "w"))
+f:write(table.concat(out, "\n"), "\n")
+f:close()
+f = assert(io.open(dir .. "/item_prices.lua", "w"))
+f:write(table.concat(it, "\n"), "\n")
+f:close()
+print("wrote " .. dir .. "/skills.lua (" .. #data.skills .. " skills, " .. #data.recipe .. " recipe rows)")
+print("wrote " .. dir .. "/item_prices.lua (" .. #ids .. " items)")

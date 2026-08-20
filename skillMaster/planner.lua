@@ -3,7 +3,7 @@
 -- fake-wow, so tests exercise the shipped algorithm. See AGENTS.md.
 --
 -- BuildPlan(db, opts) -> actions, materials
---   db       : a db object from data.lua (NewDB), keyed by item id
+--   db       : a db object built by data.lua, keyed by item id
 --   opts     : { start=1, target=<cap>, phase=3, pGain=0, wishlist={}, debug=false }
 --   actions  : ordered list of { item=<id>, count, from, to }
 --   materials: map of reagent id -> count to buy (non-craftable leaves)
