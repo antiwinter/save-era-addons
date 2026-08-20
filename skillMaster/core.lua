@@ -18,6 +18,18 @@ local PROF_KEY = {
 	Tailoring = "tailor",
 }
 
+-- Data key -> localized skill-line name for CastSpellByName; ranks the
+-- player hasn't trained may read as nil, so probe all four.
+local function FindProfName(key)
+	local ids = profs[key]
+	if not ids then return nil end
+	for _, sid in ipairs(ids) do
+		local name = GetSpellInfo(sid)
+		if name then return name end
+	end
+end
+ns.FindProfName = FindProfName
+
 -- ---- Runtime: the craft engine -------------------------------------------
 local Runtime = {}
 Runtime.__index = Runtime
@@ -90,9 +102,9 @@ function Runtime:DoAction()
 		local openName = GetTradeSkillLine()
 		if not openName or openName == "UNKNOWN" then
 			local prof = self:ProfKey() or (ns.cfg and ns.cfg.profession)
-			local sid = self:FindProfSpellID()
-			if sid then
-				CastSpellByID(sid)
+			local pname = FindProfName(prof)
+			if pname then
+				CastSpellByName(pname)
 				return "Opening " .. (prof or "profession") .. " window, click again"
 			end
 			return "Learn the profession first, then click again"

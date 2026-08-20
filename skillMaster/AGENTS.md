@@ -84,5 +84,7 @@ live.
   the WoW API (fake-wow provides stubs off-client).
 - Data files (`data/era/*.lua`) are generated. Do not hand-edit; change
   `fake-wow/scripts/dl.js` or `scripts/gen-data.lua` and regenerate.
+  (`data/era/profs.lua` is the exception — static profession spell ids,
+  hand-maintained.)
 - Skill-up color convention throughout: `colors = {orange, yellow, green, gray}`
   thresholds, chances `{[1]=1.0, [2]=0.75, [3]=0.25, [4]=0}`.

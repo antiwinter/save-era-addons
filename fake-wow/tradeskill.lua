@@ -223,14 +223,8 @@ local function install(env, world)
 		env.__fire("TRADE_SKILL_UPDATE")
 	end
 
-	-- Open the trade-skill window — equivalent to the player clicking the
-	-- tradeskill button. Fires TRADE_SKILL_SHOW so the addon's TRADE_SKILL_SHOW
-	-- handler runs RefreshSkill.
-	function GM.OpenTradeSkill()
-		env.__fire("TRADE_SKILL_SHOW")
-	end
 
-	function env.CastSpellByID(id)
+	function env.CastSpellByName(name)
 		env.__fire("TRADE_SKILL_SHOW")
 	end
 

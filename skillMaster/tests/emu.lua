@@ -15,8 +15,8 @@ package.path = "./?.lua;" .. package.path
 local prof = arg[1] or "eng"
 local target = tonumber(arg[2]) or 300
 local startLvl = tonumber(arg[3]) or 1
+-- sim knows no spell names (GetSpellInfo is nil); these feed SetTradeSkillLine
 local PROF_NAME = { eng = "Engineering", tailor = "Tailoring" }
-_G.PROF_NAME = PROF_NAME  -- fake-wow's CastSpellByID stub looks it up here
 
 local fw = dofile("../fake-wow/init.lua")
 fw.GM.SetSeed(tonumber(os.getenv("SKM_SEED") or "") or os.time())
