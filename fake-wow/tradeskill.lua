@@ -4,6 +4,7 @@ local function install(env, world)
 	world.catalog = world.catalog or {} -- array: {id, recipe, colors, craft_count, learned, teach_id}
 	world.item = world.item or {}       -- item id -> name
 	world.price = world.price or {}     -- item id -> avgbuyout
+	world.spellName = world.spellName or {} -- spell id -> profession display name
 	world.crafts = world.crafts or 0
 
 	local byId = {} -- item id -> catalog row; setup-only
@@ -72,8 +73,13 @@ local function install(env, world)
 		return world.item[id]
 	end
 
+	-- Flat bag total for one item (fake-wow's bag is id->count already).
+	function env.GetItemCount(id)
+		return world.bag[id] or 0
+	end
+
 	-- Skill-line / spell lookups: the sim only models the open tradeskill line,
-	-- so the skill list is empty and spell names are unknown.
+	-- so the skill list is empty.
 	function env.GetNumSkillLines()
 		return 0
 	end
@@ -82,8 +88,11 @@ local function install(env, world)
 		return nil
 	end
 
-	function env.GetSpellInfo()
-		return nil
+	-- Rank-spell names come from the version db's professions table (loaded via
+	-- GM.LoadDB → world.spellName), mirroring the real client where rank spells
+	-- carry the profession's display name.
+	function env.GetSpellInfo(spellId)
+		return world.spellName[spellId]
 	end
 
 	function env.DoTradeSkill(index, batch)
@@ -177,6 +186,12 @@ local function install(env, world)
 			world.item[id] = it.name
 			world.price[id] = it.avgbuyout
 		end
+		world.spellName = {}
+		for _, p in ipairs(data.professions) do
+			for _, sid in ipairs(p.spellIds) do
+				world.spellName[sid] = p.name
+			end
+		end
 		env.__fire("TRADE_SKILL_UPDATE")
 	end
 
@@ -201,6 +216,15 @@ local function install(env, world)
 		end
 		table.sort(rows, function(a, b) return a.learnedat < b.learnedat end)
 		return rows
+	end
+
+	-- Professions with rank spells (spellIds drive profs.lua generation).
+	function GM:ListProfSpells()
+		local out = {}
+		for _, p in ipairs(world.schema.professions) do
+			if #(p.spellIds or {}) > 0 then out[#out + 1] = { prof = p.prof, spells = p.spellIds } end
+		end
+		return out
 	end
 
 	function GM:GetRecipe(skill_id)

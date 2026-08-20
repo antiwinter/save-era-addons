@@ -15,8 +15,6 @@ package.path = "./?.lua;" .. package.path
 local prof = arg[1] or "eng"
 local target = tonumber(arg[2]) or 300
 local startLvl = tonumber(arg[3]) or 1
--- sim knows no spell names (GetSpellInfo is nil); these feed SetTradeSkillLine
-local PROF_NAME = { eng = "Engineering", tailor = "Tailoring" }
 
 local fw = dofile("../fake-wow/init.lua")
 fw.GM.SetSeed(tonumber(os.getenv("SKM_SEED") or "") or os.time())
@@ -28,17 +26,20 @@ local ns = fw.loadAddon("skillMaster.toc")
 -- Boot the era version into the sim world (trainer-taught recipes load
 -- learned, scroll-taught unlearned — the addon learns those from their
 -- teaching item mid-run) and open the skill line at the start level.
+-- FindProfName resolves the localized line name via the sim's GetSpellInfo.
 fw.init("era")
-fw.GM.SetTradeSkillLine(PROF_NAME[prof] or prof, startLvl, target)
+fw.GM.SetTradeSkillLine(ns.FindProfName(prof), startLvl, target)
 
-
-local R = ns.Runtime
-R:BuildPlan()
+-- The same command a player runs; the window is already up, so the plan
+-- builds immediately and persists into skillMasterDB.plans.
+local ok, msg = ns.CreatePlan(prof, target)
+assert(ok, msg)
+local plan = ns.plans[prof]
 
 local function itemName(id) return fw.world.item[id] or tostring(id) end
 
 if os.getenv("SKM_NOPLAN") ~= "1" then
-	ns.Format.Print(R.plan, R.material, itemName)
+	ns.Format.Print(plan.actions, plan.materials, itemName)
 	print()
 end
 
@@ -46,7 +47,7 @@ end
 -- SetBag fires BAG_UPDATE itself, so no manual pump is needed.
 local db = ns.db[prof]
 local budget = 0
-for id, count in pairs(R.material) do
+for id, count in pairs(plan.materials) do
 	local c = math.ceil(count)
 	fw.GM.SetBag(id, c)
 	budget = budget + (db:price(id) or 0) * c
@@ -71,11 +72,20 @@ for k, c in pairs(world.bag) do
 	if c > 0 and not db[k] then remain_val = remain_val + (db:price(k) or 0) * c end
 end
 
-local ok = world.skill.lvl >= target
+local rc = world.skill.lvl >= target
 local use_rate = budget > 0 and math.floor((budget - remain_val) / budget * 100) or 100
 
-print(string.format("prof=%s  %d -> %d/%d  %s", prof, start_lvl, world.skill.lvl, target, ok and "OK" or "SHORT"))
+-- Progress bookkeeping: the plan must never claim MORE crafts than the world
+-- did (the world also recurses helper sub-crafts the plan doesn't attribute).
+local crafted = 0
+for _, ac in ipairs(plan.actions) do crafted = crafted + ac.crafted end
+if crafted > world.crafts then
+	print(string.format("MISMATCH: plan crafted=%d vs world crafts=%d", crafted, world.crafts))
+	rc = false
+end
+
+print(string.format("prof=%s  %d -> %d/%d  %s", prof, start_lvl, world.skill.lvl, target, rc and "OK" or "SHORT"))
 print(string.format("crafts=%d  budget=%.2fg  waste=%.2fg  use_rate=%d%%",
 	world.crafts, budget / 10000, remain_val / 10000, use_rate))
 
-os.exit(ok and 0 or 1)
+os.exit(rc and 0 or 1)

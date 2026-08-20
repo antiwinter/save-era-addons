@@ -1,0 +1,9 @@
+{
+  "name": "skillmaster-dl",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "commander": "^13.1.0",
+    "got": "^14.4.6"
+  }
+}

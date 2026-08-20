@@ -8,15 +8,17 @@ import { DatabaseSync } from "node:sqlite";
 
 // teach: item-name prefix for recipes learned from an item rather than a
 // trainer (Schematic: <name>, Pattern: <name>, ...).
+// spellIds: the Apprentice..Artisan rank spells — they carry the profession's
+// display name in every locale, so the addon resolves names from them.
 const profs = {
-  eng: { id: 202, name: "engineering", item: "Rough Stone", teach: "Schematic" },
-  bs: { id: 164, name: "blacksmithing", teach: "Plans" },
-  lw: { id: 165, name: "leatherworking", teach: "Pattern" },
-  alch: { id: 171, name: "alchemy", teach: "Recipe" },
-  ench: { id: 333, name: "enchanting", teach: "Formula" },
-  tailor: { id: 197, name: "tailoring", item: '"Linen Cloth"', teach: "Pattern" },
-  jc: { id: 755, name: "jewelcrafting", teach: "Design" },
-  insc: { id: 773, name: "inscription", teach: "Formula" },
+  eng: { id: 202, name: "engineering", item: "Rough Stone", teach: "Schematic", spellIds: [4036, 4037, 4038, 12656] },
+  bs: { id: 164, name: "blacksmithing", teach: "Plans", spellIds: [2018, 3100, 3538, 9785] },
+  lw: { id: 165, name: "leatherworking", teach: "Pattern", spellIds: [] },
+  alch: { id: 171, name: "alchemy", teach: "Recipe", spellIds: [2259, 3101, 3464, 11611] },
+  ench: { id: 333, name: "enchanting", teach: "Formula", spellIds: [7411, 7412, 7413, 13920] },
+  tailor: { id: 197, name: "tailoring", item: '"Linen Cloth"', teach: "Pattern", spellIds: [3908, 3909, 3910, 12180] },
+  jc: { id: 755, name: "jewelcrafting", teach: "Design", spellIds: [] },
+  insc: { id: 773, name: "inscription", teach: "Formula", spellIds: [] },
 };
 
 const prog = new Command();
@@ -177,10 +179,21 @@ prog
     });
   });
 
+// Sync the professions table from the profs map (static data, offline).
+function upsertProf(db) {
+  const ins = db.prepare(
+    `INSERT OR REPLACE INTO professions (prof_key, name, scroll_prefix, spell_ids)
+     VALUES (?, ?, ?, ?)`,
+  );
+  for (const [k, p] of Object.entries(profs)) {
+    ins.run(k, p.name, p.teach || "", (p.spellIds || []).join(","));
+  }
+}
+
 prog
   .name("dl")
   .description("Scrape profession recipes from Wowhead into data/era.db")
-  .argument("[prof]", "Profession short name, or * for all", "eng")
+  .argument("[prof]", "Profession short name, or * for all (no arg: sync professions table)")
   .action(async (p) => {
     const db = new DatabaseSync(DB);
     db.exec(`CREATE TABLE IF NOT EXISTS trade_skill (
@@ -209,6 +222,18 @@ prog
       count      INTEGER NOT NULL,
       PRIMARY KEY (prof_key, skill_id, reagent_id)
     )`);
+    db.exec(`CREATE TABLE IF NOT EXISTS professions (
+      prof_key      TEXT PRIMARY KEY,
+      name          TEXT NOT NULL,
+      scroll_prefix TEXT NOT NULL DEFAULT '',
+      spell_ids     TEXT NOT NULL DEFAULT ''
+    )`);
+
+    upsertProf(db);
+    if (!p) {
+      console.log(`Upserted ${Object.keys(profs).length} professions into ${DB}`);
+      return;
+    }
 
     const keys = p === "*" ? Object.keys(profs) : [`${p}`];
     for (const k of keys) {

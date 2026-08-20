@@ -105,7 +105,10 @@ local function BuildPlan(db, opts)
 				for _, reagent in ipairs(r.recipe) do
 					local rg = db[reagent.id]
 					if rg then
-						try_push(rg.colors[1], rg, placed * reagent.count, true, indent + 1)
+						-- a sub-craft whose color floor sits below the planning
+						-- window must be budgeted at the window floor, else its
+						-- own reagents never reach the shopping list
+						try_push(math.max(rg.colors[1], START), rg, placed * reagent.count, true, indent + 1)
 					else
 						material[reagent.id] = (material[reagent.id] or 0) + placed * reagent.count
 					end

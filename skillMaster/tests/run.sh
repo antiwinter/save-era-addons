@@ -23,4 +23,11 @@ for prof in eng tailor; do
 	echo
 done
 
+echo "== resume =="
+if ! SKM_SEED="$SEED" "$LUA" tests/resume.lua eng 300; then
+	echo "FAIL: plan progress did not survive a relog" >&2
+	fail=1
+fi
+echo
+
 exit $fail

@@ -65,6 +65,14 @@ for _, id in ipairs(ids) do
 end
 it[#it + 1] = "}"
 
+-- ---- profs.lua -------------------------------------------------------------
+-- professions with rank spells -> their spell ids (see data/era/profs.lua use).
+local pf = final("profs = {")
+for _, p in ipairs(GM:ListProfSpells()) do
+	pf[#pf + 1] = "  " .. p.prof .. " = " .. lit(p.spells) .. ","
+end
+pf[#pf + 1] = "}"
+
 local dir = root .. "/skillMaster/data/" .. version
 os.execute("mkdir -p " .. dir)
 local f = assert(io.open(dir .. "/skills.lua", "w"))
@@ -73,7 +81,13 @@ f:close()
 f = assert(io.open(dir .. "/item_prices.lua", "w"))
 f:write(table.concat(it, "\n"), "\n")
 f:close()
+f = assert(io.open(dir .. "/profs.lua", "w"))
+f:write(table.concat(pf, "\n"), "\n")
+f:close()
 local nskills = 0
 for _, prof in ipairs(GM:ListProfessions()) do nskills = nskills + #skills[prof] end
+local nprofs = 0
+for _ in pairs(GM:ListProfSpells()) do nprofs = nprofs + 1 end
 print("wrote " .. dir .. "/skills.lua (" .. nskills .. " skills)")
 print("wrote " .. dir .. "/item_prices.lua (" .. #ids .. " items)")
+print("wrote " .. dir .. "/profs.lua (" .. nprofs .. " professions)")

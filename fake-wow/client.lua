@@ -86,6 +86,15 @@ local function install(env)
 
 	-- Misc globals addons touch at load / debug time. The sim world is enUS
 	-- (era.db carries English names), so GetLocale reports that.
+	-- Dropdown stubs (era's UIDropDownMenu API): the sim never opens a menu,
+	-- so initialize records the builder and the rest are no-ops.
+	env.UIDropDownMenu_Initialize = function(frame, initFn) frame.__menuInit = initFn end
+	env.UIDropDownMenu_CreateInfo = function() return {} end
+	env.UIDropDownMenu_AddButton = noop
+	env.UIDropDownMenu_Close = noop
+	env.UIDropDownMenu_SetWidth = noop
+	env.UIDropDownMenu_SetText = noop
+
 	env.GetBuildInfo = function() return "1.15.7", "60000", nil, 11507 end
 	env.GetLocale = function() return "enUS" end
 	env.date = function(fmt) return os.date(fmt) end

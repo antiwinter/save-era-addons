@@ -1,5 +1,7 @@
 # Scraper cache & intermediate scrape artifacts
 cache/
-*.json
+schem.json
+item.json
+spell.json
 # lsqlite3 binding build output (rebuild via vendor/build.sh)
 vendor/*.so

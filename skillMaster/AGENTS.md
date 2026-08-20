@@ -27,10 +27,17 @@ The prototype splits cleanly into three concerns; skillMaster keeps that split.
 2. Planner (pure Lua): given a profession's recipe table + a target level + a
    wishlist, produce an ordered action list and a shopping list. Zero WoW
    globals — the caller passes `db`.
-3. Runtime (craft engine in `core.lua`): tracks progress against the plan and
-   crafts the next batch on demand (one click per batch — player-initiated
-   `DoTradeSkill`, no auto-fire, to stay clear of action-blocking taint).
-   Reacts to events (skill-up, bag change, recipe learned) rather than looping.
+3. Session + plans (craft engine in `core.lua`): plans are **persisted first-class
+   objects** (`skillMasterDB.plans[prof] = {prof, target, actions, materials}`),
+   created with `/skm plan <prof> [target]` and picked from a UI dropdown. Each
+   action carries a `crafted` counter — the single source of progress, so a
+   relog resumes exactly where crafting stopped. The data key ("eng") is the
+   only stable identifier; the localized window name is derived from it via
+   `FindProfName` (rank-spell ids), never the other way around. The session (a
+   thin per-session view: active plan + live skill line) crafts the next batch
+   on demand (one click per batch — player-initiated `DoTradeSkill`, no
+   auto-fire, to stay clear of action-blocking taint). Reacts to events
+   (skill-up, bag change, recipe learned) rather than looping.
 
 ## The shared core runs in both worlds
 `data.lua`, `planner.lua`, `format.lua`, and `core.lua` are loaded by BOTH the
@@ -64,19 +71,22 @@ architecture supports growth. See `ARCH.md` for file roles.
 
 The emulator (`tests/emu.lua`) loads fake-wow, boots it via `fw.init("era")`,
 loads the addon from its .toc, seeds the world via `GM.SetTradeSkillLine` /
-`GM.SetBag`, fires `TRADE_SKILL_SHOW`, then clicks `DoAction` in a loop. fake-wow's
-`DoTradeSkill` handles craft mechanics (skill-up rolls, recursive sub-reagent
-crafting, reagent consumption) and fires `TRADE_SKILL_UPDATE` + `BAG_UPDATE`
-synchronously, so the addon's own event frame drives the refresh — same path as
-live.
+`GM.SetBag`, builds the plan through the same `ns.CreatePlan` command a player
+runs, then clicks the panel's craft button in a loop. fake-wow's `DoTradeSkill`
+handles craft mechanics (skill-up rolls, recursive sub-reagent crafting, reagent
+consumption) and fires `TRADE_SKILL_UPDATE` + `BAG_UPDATE` synchronously, so the
+addon's own event frame drives the refresh — same path as live. fake-wow
+emulates `GetSpellInfo` for the profession rank-spell ids, so `FindProfName`
+resolves the open line exactly as the client would. `tests/resume.lua` guards
+the progress promise: partial progress must survive a reload.
 
 # Debugging
-- In-game: `/skm debug` dumps planner + runtime state to SavedVariables; read
-  `WTF/Account/<ACCOUNT>/SavedVariables/skillMaster.lua`.
-- Off-client: `lua tests/emu.lua <prof> <target>` replays a plan via Monte
-  Carlo and reports budget / material use-rate / total crafts.
+- In-game: `/skm debug` dumps session + active plan (with crafted counters) to
+  SavedVariables; read `WTF/Account/<ACCOUNT>/SavedVariables/skillMaster.lua`.
+- Off-client: `lua tests/emu.lua <prof> <target> [start]` replays a plan via
+  Monte Carlo and reports budget / material use-rate / total crafts.
 - Regression gate: `./tests/run.sh` runs the emulator over eng + tailor at a
-  fixed seed; fails if any plan comes up SHORT.
+  fixed seed plus the resume check; fails if any plan comes up SHORT.
 
 # Conventions
 - Core files (`data`, `planner`, `format`, `core`) call WoW globals directly
@@ -84,7 +94,8 @@ live.
   the WoW API (fake-wow provides stubs off-client).
 - Data files (`data/era/*.lua`) are generated. Do not hand-edit; change
   `fake-wow/scripts/dl.js` or `scripts/gen-data.lua` and regenerate.
-  (`data/era/profs.lua` is the exception — static profession spell ids,
-  hand-maintained.)
+  Profession rank-spell ids ship in dl.js's `profs` map (`spellIds`), sync to
+  the version db by running `node dl.js` (no arg — the professions upsert),
+  and reach `data/era/profs.lua` through gen-data like every other table.
 - Skill-up color convention throughout: `colors = {orange, yellow, green, gray}`
   thresholds, chances `{[1]=1.0, [2]=0.75, [3]=0.25, [4]=0}`.

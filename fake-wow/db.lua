@@ -13,7 +13,7 @@ local M = {}
 
 function M.load(dbPath)
 	local db = assert(sqlite3.open(dbPath))
-	local out = { skills = {}, recipe = {}, items = {} }
+	local out = { skills = {}, recipe = {}, items = {}, professions = {} }
 	local bySkill = {}
 
 	local st = assert(db:prepare([[
@@ -64,6 +64,23 @@ function M.load(dbPath)
 			quality = st:get_value(3),
 		}
 	end
+
+	st = assert(db:prepare([[
+		SELECT prof_key, name, scroll_prefix, spell_ids FROM professions
+		ORDER BY prof_key]]))
+	while st:step() == sqlite3.ROW do
+		local p = {
+			prof = st:get_value(0),
+			name = st:get_value(1),
+			scrollPrefix = st:get_value(2),
+			spellIds = {},
+		}
+		for n in (st:get_value(3) or ""):gmatch("[^,]+") do
+			p.spellIds[#p.spellIds + 1] = tonumber(n)
+		end
+		out.professions[#out.professions + 1] = p
+	end
+
 	db:close()
 	return out
 end
