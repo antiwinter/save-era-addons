@@ -1,11 +1,3 @@
--- data.lua — recipe-table wrapper, usable both in-game and off-client.
---
--- In-game: the .toc loads data/era/{skills,item_prices}.lua (each setting a global)
--- and then this file, which indexes them into per-profession db objects.
--- Off-client: tests load the addon from its .toc the same way (fake-wow).
---
--- No WoW globals here — keep it loadable under a plain `lua` interpreter.
-
 local _, ns = ...
 
 -- Skill row (positions match gen-data's emitter): [1]=id [2]=craft_count
@@ -33,10 +25,7 @@ local function Build(prof)
 		if #r.colors > 0 then db[r.skill_id] = r end
 	end
 	db.price = function(_, id) return item_prices[id] end
-	-- Craft cost: craftable reagents cost their own recipe, everything else its
-	-- buyout. Derived at load (it used to be generated) so item_prices stays the
-	-- single price source. Self-referencing reagents recurse into themselves;
-	-- the in-flight sentinel keeps that finite, mirroring the old generator.
+
 	local memo = {}
 	local function cost(sid)
 		if memo[sid] then return memo[sid] end

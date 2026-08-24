@@ -17,17 +17,14 @@ title:SetText("skillMaster")
 local planDrop = CreateFrame("Frame", "SkillMaster_PlansDrop", panel, "UIDropDownMenuTemplate")
 planDrop:SetPoint("TOP", title, "BOTTOM", 0, -4)
 UIDropDownMenu_Initialize(planDrop, function(self, level)
-	local keys = {}
-	for prof in pairs(ns.plans) do keys[#keys + 1] = prof end
-	table.sort(keys)
-	for _, prof in ipairs(keys) do
+	for pk, prof in pairs(ns.store.plans) do
 		local info = UIDropDownMenu_CreateInfo()
 		info.text = prof
-		info.checked = ns.Session.plan and ns.Session.plan.prof == prof
+		info.checked = ns.store.cur_pk == pk
 		info.func = function()
-			ns.Session:Select(prof)
+			ns.store.cur_pk = pk
+			ns.ss = ns.CreateSession(prof)
 			UIDropDownMenu_Close()
-			ns.OnSessionUpdate()
 		end
 		UIDropDownMenu_AddButton(info, level)
 	end
@@ -47,63 +44,29 @@ craftBtn:SetScript("OnClick", function()
 	status:SetText(ns.Session:DoAction())
 end)
 
--- Build followups land here, including CreatePlan's deferred open-window retry.
-ns.OnPlan = function(ok, msg)
-	print("|cff00b4ff[skm]|r " .. msg)
-	if ok then
-		panel:Show()
-		ns.OnSessionUpdate()
-	end
-end
-
--- Refresh display from live session state. Registered as the session callback.
-function ns.OnSessionUpdate()
-	UIDropDownMenu_SetText(planDrop, ns.Session.plan and ns.Session.plan.prof or "no plan")
-	local S = ns.Session
-	local p = S.plan
-	if not p then
-		status:SetText("No plan — /skm plan <prof> [target]")
-		return
-	end
-	if not ns.curProfName() then
-		status:SetText(string.format("%s %d/%d — window closed, click Craft",
-			p.prof, S.skill.lvl, p.target))
-		return
-	end
-	local ac = S:CurrentAction()
-	if ac then
-		status:SetText(string.format("%s %d/%d\nNext: %s x%d (%d/%d)",
-			p.prof, S.skill.lvl, p.target, GetItemInfo(ac.item) or ac.item,
-			math.ceil(ac.count - ac.crafted), ac.crafted, math.ceil(ac.count)))
-	elseif S.skill.lvl >= p.target then
-		status:SetText(string.format("%s reached %d — done", p.prof, S.skill.lvl))
-	else
-		status:SetText(string.format("%s %d/%d — plan done, re-run /skm plan %s %d",
-			p.prof, S.skill.lvl, p.target, p.prof, p.target))
-	end
+ns.hint = function (fmt, ...)
+	status:SetText(string.format(fmt, ...))
 end
 
 SLASH_SKILLMASTER1 = "/skm"
 SlashCmdList.SKILLMASTER = function(msg)
 	msg = (msg or ""):lower():gsub("^%s+", "")
 	if msg == "plan" or msg:match("^plan%s") then
-		local prof, target = msg:match("^plan%s+(%S+)%s*(%d*)")
-		if not prof then
-			print("|cff00b4ff[skm]|r usage: /skm plan <prof> [target]")
+		local pk, target = msg:match("^plan%s+(%S+)%s*(%d*)")
+		if not pk then
+			print("|cff00b4ff[skm]|r usage: /skm plan <pk> [target]")
 			return
 		end
-		local ok, out = ns.CreatePlan(prof, target ~= "" and tonumber(target) or nil)
-		print("|cff00b4ff[skm]|r " .. out)
-		if ok then
-			local p = ns.plans[prof]
-			ns.Format.Print(p.actions, p.materials, GetItemInfo, function(line) print("|cff00b4ff[skm]|r " .. line) end)
+		local p = ns.CreatePlan(pk, target ~= "" and tonumber(target) or nil)
+		if p then
+			ns.store.cur_pk = pk
+			ns.store.plans[pk] = p
+			ns.Format.PrintPlan(p)
 			panel:Show()
-			ns.OnSessionUpdate()
 		end
 	elseif msg == "hide" then
 		panel:Hide()
 	else
 		panel:Show()
-		ns.OnSessionUpdate()
 	end
 end

@@ -8,11 +8,6 @@ local _, ns = ...
 
 local sqrt, floor, ceil, pow = math.sqrt, math.floor, math.ceil, function(a, b) return a ^ b end
 
--- Faithful port of the prototype's rolls(): expected crafts to gain (b-a)
--- skill points at per-craft skill-up chance p. NOTE: this is a normal-ish
--- approximation carried over verbatim so off-client results match the WA
--- baseline. The exact-binomial replacement from scripts/../buffer-research is a
--- planned follow-up; swap it in only alongside a refreshed test baseline.
 local function rolls(a, b, p)
 	local n = b - a
 	if n <= 0 then return 0 end

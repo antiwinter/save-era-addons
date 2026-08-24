@@ -10,20 +10,44 @@ local function FindProfName(key)
 end
 ns.FindProfName = FindProfName
 
--- The open trade-skill line's display name, or nil when nothing is open.
-local function curProfName()
-	local name = GetTradeSkillLine()
-	return name and name ~= "" and name ~= "UNKNOWN" and name or nil
-end
-ns.curProfName = curProfName
-
-local function openProfWindow(key)
-	local pname = FindProfName(key)
+local function openProfWindow()
+	local pname = FindProfName(ns.store.cur_pk)
 	if pname ~= curProfName() then
 		CastSpellByName(pname)
     end
 end
-ns.openProfWindow = openProfWindow
+
+-- The open trade-skill line's display name, or nil when nothing is open.
+ns.curProfName = function()
+    openProfWindow()
+	local name = GetTradeSkillLine()
+	return name and name ~= "" and name ~= "UNKNOWN" and name or nil
+end
+
+ns.skillLvl = function()
+    openProfWindow()
+    local name, _, lvl, cap = GetTradeSkillLine()
+    return lvl, cap
+end
+
+ns.skillIndex = function(itemId)
+    openProfWindow()
+    local name = GetItemInfo(itemId)
+    	for i = 1, GetNumTradeSkills() do
+		local n, kind = GetTradeSkillInfo(i)
+		if n == name and kind and kind ~= "header" then
+			return i
+		end
+	end
+end
+
+ns.skillScroll = function(itemId)
+	local db = ns.db[ns.store.cur_pk]
+    local r = db and db[itemId]
+    local sid = r and r.teach_id
+    local name = sid and GetItemInfo(sid)
+    return sid, name
+end
 
 function learnScroll(itemId)
 	local name = GetItemInfo(itemId)
@@ -39,12 +63,12 @@ function learnScroll(itemId)
 end
 ns.learnScroll = learnScroll
 
-function flush(prof, plan)
-    local saved = skillMasterDB or {}
-    if not saved.plans then
-        saved.plans = {}
+ns.store = setmetatable(skillMasterDB, { 
+    __index = function(key) return self[key] end,
+    set = function(key, value) self[key] = value end,
+    init = function()
+        if not self.plans then
+            self.plans = {}
+        end
     end
-    
-    saved.plans[prof] = plan
-end
-ns.flush = flush
+})
