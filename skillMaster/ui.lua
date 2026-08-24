@@ -69,7 +69,7 @@ function ns.OnSessionUpdate()
 		status:SetText("No plan — /skm plan <prof> [target]")
 		return
 	end
-	if not ns.LineOpen() then
+	if not ns.curProfName() then
 		status:SetText(string.format("%s %d/%d — window closed, click Craft",
 			p.prof, S.skill.lvl, p.target))
 		return

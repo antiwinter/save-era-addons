@@ -1,54 +1,10 @@
 local addonName, ns = ...
 
--- core.lua — bootstrap + the craft engine. Session reads the world and crafts
--- directly through WoW globals; off-client those globals are supplied by
--- fake-wow/, so this exact file runs in both worlds with no host/deps seam.
--- Load order (see .toc): data/*.lua -> data -> planner -> format -> core -> ui -> debug.
-
 ns.defaults = {
 	plans = {}, -- prof key -> { prof, target, actions={{item,count,from,to,crafted}}, materials }
 	debug = false,
 }
 
--- Data key -> localized skill-line name for CastSpellByName; ranks the
--- player hasn't trained may read as nil, so probe all four.
-local function FindProfName(key)
-	local ids = profs[key]
-	if not ids then return nil end
-	for _, sid in ipairs(ids) do
-		local name = GetSpellInfo(sid)
-		if name then return name end
-	end
-end
-ns.FindProfName = FindProfName
-
--- The open trade-skill line's display name, or nil when nothing is open.
-local function lineOpen()
-	local name = GetTradeSkillLine()
-	return name and name ~= "" and name ~= "UNKNOWN" and name or nil
-end
-ns.LineOpen = lineOpen
-
--- The trade-skill window must show the line `key`'s data belongs to. Window
--- names are localized; FindProfName resolves `key` to them the same way.
--- Returns true when the right window is already up, else opens it.
-local function OpenLine(key)
-	local open = lineOpen()
-	local pname = FindProfName(key)
-	if open == pname then return true end
-	if pname then
-		CastSpellByName(pname)
-		return false, open and ("Switching to " .. key) or ("Opening " .. key)
-	end
-	return false, "Learn " .. key .. " first"
-end
-
--- ---- Session: the craft engine --------------------------------------------
--- Session holds per-session view state (active plan + live skill line). The
--- plan itself lives in ns.plans (SavedVariables); its `crafted` counters are
--- the single source of progress, so a relog resumes exactly where craft left
--- off. The data key ("eng") is the only stable identifier throughout — the
--- localized name is derived from it, never the other way around.
 local Session = {}
 Session.__index = Session
 
@@ -70,9 +26,6 @@ function Session:RefreshSkill()
 	end
 end
 
--- Oldest action that still needs crafts. An action is done once its count is
--- crafted OR the live skill outran its range (lucky rolls overshoot the plan);
--- both signals must stay or a stalled plan would look done / over-craft.
 function Session:CurrentAction()
 	local p = self.plan
 	if not p then return nil end
@@ -84,27 +37,10 @@ function Session:CurrentAction()
 	return nil
 end
 
-function Session:LearnScroll(itemId)
-	local name = GetItemInfo(itemId) or itemId
-	local db = ns.db[self.plan.prof]
-	local r = db and db[itemId]
-	if not r or not r.teach_id or r.teach_id <= 0 then return nil end
-	local tid = r.teach_id
-	for b = 0, 4 do
-		for slot = 1, (GetContainerNumSlots(b) or 0) do
-			if GetContainerItemID(b, slot) == tid then
-				UseContainerItem(b, slot)
-				return "Learned " .. name .. ", craft again"
-			end
-		end
-	end
-	return "Need scroll (id " .. tid .. ") to learn " .. name
-end
-
 function Session:DoAction()
 	local p = self.plan
 	if not p then return "No plan — /skm plan <prof> [target]" end
-	local ok, msg = OpenLine(p.prof)
+	local ok, msg = openProfWindow(p.prof)
 	if not ok then return msg .. ", click again" end
 	self:RefreshSkill()
 
@@ -132,9 +68,10 @@ function Session:DoAction()
 		local db = ns.db[p.prof]
 		local r = db and db[ac.item]
 		if r and r.teach_id and r.teach_id > 0 then
-			local smsg = self:LearnScroll(ac.item)
-			if smsg then return smsg end
-			return "Recipe not learned (scroll missing): " .. want
+			local s = ns.learnScroll(r.teach_id)
+			if s then return "Recipe learned: " .. s else
+				return "Recipe not learned (scroll missing): " .. want
+			end
 		end
 		return "Go to trainer and learn: " .. want
 	end
@@ -163,19 +100,10 @@ function Session:OnTradeSkillUpdate()
 	if ns.OnSessionUpdate then ns.OnSessionUpdate() end
 end
 
--- Build a persistent plan for `key` covering the journey from the CURRENT
--- skill line to target (no arg = line cap), so crafted=0 always means "about
--- to begin". Needs the right window up; the first call opens it and defers
--- the build to the TRADE_SKILL_SHOW it triggers (retry marks that call).
 function ns.CreatePlan(prof, target, retry)
 	local db = ns.db[prof]
 	if not db then return false, "No data for " .. prof end
-	local ok, msg = OpenLine(prof)
-	if not ok then
-		if retry then return false, msg end
-		ns.Session.pending = { prof = prof, target = target }
-		return false, msg .. "..."
-	end
+	openProfWindow(prof)
 	local _, _, lvl, cap = GetTradeSkillLine()
 	target = target or cap
 	local actions, materials = ns.Planner.BuildPlan(db, { start = lvl, target = target })
@@ -201,12 +129,9 @@ f:RegisterEvent("TRADE_SKILL_UPDATE")
 f:SetScript("OnEvent", function(_, event, arg1)
 	if event == "ADDON_LOADED" then
 		if arg1 ~= addonName then return end
-		skillMasterDB = skillMasterDB or {}
-		for k, v in pairs(ns.defaults) do
-			if skillMasterDB[k] == nil then skillMasterDB[k] = v end
-		end
+		skillMasterDB = skillMasterDB or {plans={}}
 		ns.plans = skillMasterDB.plans
-		ns.Session = Session.new()
+		ns.Session = Session.load(skillMasterDB.prof)
 	else
 		if ns.Session then ns.Session:OnTradeSkillUpdate() end
 	end
