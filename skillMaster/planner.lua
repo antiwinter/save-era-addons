@@ -1,7 +1,3 @@
--- planner.lua — the craft-plan solver. Pure Lua: no WoW globals, and the caller
--- passes `db` in (no dofile/require of data). Runs identically in-game and under
--- fake-wow, so tests exercise the shipped algorithm. See AGENTS.md.
---
 -- BuildPlan(db, opts) -> actions, materials
 --   db       : a db object built by data.lua, keyed by item id
 --   opts     : { start=1, target=<cap>, phase=3, pGain=0, wishlist={} }

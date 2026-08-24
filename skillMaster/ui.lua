@@ -1,9 +1,5 @@
 local addonName, ns = ...
 
--- ui.lua — minimal panel: a dropdown to pick a stored plan, the next action +
--- shopping list, and a single "Craft" button. The button is the ONLY path to
--- crafting, keeping DoTradeSkill player-initiated (one click per batch).
-
 local panel = CreateFrame("Frame", "skillMasterPanel", UIParent, "BackdropTemplate")
 panel:SetSize(240, 150)
 panel:SetPoint("CENTER")

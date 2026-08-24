@@ -1,12 +1,3 @@
--- format.lua — shared plan formatter. Pure Lua, no WoW globals, so both the
--- emulator and the in-game engine render the SAME human-readable plan text.
--- Takes the structured plan from ns.Planner.BuildPlan and returns lines;
--- printing is left to the caller (print off-client, a chat frame in-game).
---
---   Lines(actions, materials, nameFn) -> { "PLAN", "item, count, from, to", ..., "BAG", ... }
---   Print(actions, materials, nameFn, printer)   printer defaults to print
---   nameFn(id) renders item ids (GetItemInfo in-game, world.item off-client)
-
 local _, ns = ...
 
 local ceil = math.ceil
