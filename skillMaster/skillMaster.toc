@@ -13,4 +13,3 @@ planner.lua
 format.lua
 core.lua
 ui.lua
-debug.lua

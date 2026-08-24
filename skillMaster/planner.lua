@@ -4,7 +4,7 @@
 --
 -- BuildPlan(db, opts) -> actions, materials
 --   db       : a db object built by data.lua, keyed by item id
---   opts     : { start=1, target=<cap>, phase=3, pGain=0, wishlist={}, debug=false }
+--   opts     : { start=1, target=<cap>, phase=3, pGain=0, wishlist={} }
 --   actions  : ordered list of { item=<id>, count, from, to }
 --   materials: map of reagent id -> count to buy (non-craftable leaves)
 
@@ -30,12 +30,11 @@ local function BuildPlan(db, opts)
 	local PHASE = opts.phase or 3
 	local p_gain = opts.pGain or 0
 	local wishlist = opts.wishlist or {}
-	local DEBUG = opts.debug or false
 	-- END grows as recipes get pushed to higher levels; seed from target/cap.
 	local END = opts.target or 0
 
 	local function dbg(fmt, ...)
-		if DEBUG then print(string.format(fmt, ...)) end
+		if ns.DEBUG then print(string.format(fmt, ...)) end
 	end
 
 	-- Skill-up chance for `item` at skill `lvl`, plus the color index hit.

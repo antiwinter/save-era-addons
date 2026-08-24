@@ -90,9 +90,7 @@ end
 SLASH_SKILLMASTER1 = "/skm"
 SlashCmdList.SKILLMASTER = function(msg)
 	msg = (msg or ""):lower():gsub("^%s+", "")
-	if msg == "debug" then
-		if ns.Debug then ns.Debug() end
-	elseif msg == "plan" or msg:match("^plan%s") then
+	if msg == "plan" or msg:match("^plan%s") then
 		local prof, target = msg:match("^plan%s+(%S+)%s*(%d*)")
 		if not prof then
 			print("|cff00b4ff[skm]|r usage: /skm plan <prof> [target]")

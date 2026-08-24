@@ -1,10 +1,5 @@
 local addonName, ns = ...
 
-ns.defaults = {
-	plans = {}, -- prof key -> { prof, target, actions={{item,count,from,to,crafted}}, materials }
-	debug = false,
-}
-
 local Session = {}
 Session.__index = Session
 
