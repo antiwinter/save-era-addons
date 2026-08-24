@@ -28,10 +28,10 @@ const DB = path.join(import.meta.dirname, "../data/era.db");
 // Fetch one profession's wowhead page (cache-first), then merge its recipes
 // into era.db: trade_skill/recipe rows are owned per prof_key (delete+insert),
 // item rows upsert by id so shared reagents appear once across professions.
-async function ingest(profKey, db) {
-  const prof = profs[profKey];
-  const url = `https://www.wowhead.com/classic/skill=${prof.id}/${prof.name}#recipes`;
-  const cache = `cache/${profKey}.html`;
+async function ingest(pk, db) {
+  const profession = profs[pk];
+  const url = `https://www.wowhead.com/classic/skill=${profession.id}/${profession.name}#recipes`;
+  const cache = `cache/${pk}.html`;
 
   let html;
   if (fs.existsSync(cache)) {
@@ -68,7 +68,7 @@ async function ingest(profKey, db) {
     },
     item: {
       regex: /WH\.Gatherer\.addData\(.*?({.*?name_enus.*?quality.*?})\);/,
-      key: prof.item,
+      key: profession.item,
     },
     schem: {
       regex: /data:\s*(\[.*?\})\);/s,
@@ -111,8 +111,8 @@ async function ingest(profKey, db) {
   db.exec("BEGIN");
   const delTs = db.prepare("DELETE FROM trade_skill WHERE prof_key = ?");
   const delRc = db.prepare("DELETE FROM recipe WHERE prof_key = ?");
-  delTs.run(profKey);
-  delRc.run(profKey);
+  delTs.run(pk);
+  delRc.run(pk);
   const insTs = db.prepare(
     `INSERT OR REPLACE INTO trade_skill (prof_key, skill_id, skill_name, craft_count, colors, learnedat, nskillup, phaseId, teach_id)
      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
@@ -145,28 +145,28 @@ async function ingest(profKey, db) {
     const made = sell(itemId);
     made.quality = s.quality || 0;
     insTs.run(
-      profKey, itemId, made.name, s.creates[1] || 1,
+      pk, itemId, made.name, s.creates[1] || 1,
       (s.colors || []).join(","), s.learnedat || 0, s.nskillup || 0,
       s.phaseId || 0, 0,
     );
     insIt.run(itemId, made.name, made.avgbuyout, made.quality, 0);
     for (const [rid, count] of s.reagents || []) {
       const rg = sell(rid);
-      insRc.run(profKey, itemId, rid, count);
+      insRc.run(pk, itemId, rid, count);
       insIt.run(rid, rg.name, rg.avgbuyout, rg.quality, 0);
     }
 
     // Teaching item (Schematic: X, Pattern: X, ...) — one per recipe, default
     // 1g (10000 copper) when no market data so the planner still prices it.
-    const schemName = `${prof.teach}: ${made.name}`;
+    const schemName = `${profession.teach}: ${made.name}`;
     const schem = data.schem?.find((x) => x.name === schemName);
     if (schem) {
-      setTeach.run(schem.id, profKey, itemId);
+      setTeach.run(schem.id, pk, itemId);
       insIt.run(schem.id, schem.name, data.item[schem.id]?.jsonequip?.avgbuyout || 10000, schem.quality || 0, 0);
     }
   }
   db.exec("COMMIT");
-  console.log(`Merged ${profKey} into ${DB}`);
+  console.log(`Merged ${pk} into ${DB}`);
 }
 
 prog
@@ -174,8 +174,8 @@ prog
   .description("List all supported professions")
   .action(() => {
     console.log("Professions:");
-    Object.entries(profs).forEach(([k, v]) => {
-      console.log(`${k.padEnd(8)} - ${v.name}`);
+    Object.entries(profs).forEach(([pk, profession]) => {
+      console.log(`${pk.padEnd(8)} - ${profession.name}`);
     });
   });
 
@@ -185,16 +185,16 @@ function upsertProf(db) {
     `INSERT OR REPLACE INTO professions (prof_key, name, scroll_prefix, spell_ids)
      VALUES (?, ?, ?, ?)`,
   );
-  for (const [k, p] of Object.entries(profs)) {
-    ins.run(k, p.name, p.teach || "", (p.spellIds || []).join(","));
+  for (const [pk, profession] of Object.entries(profs)) {
+    ins.run(pk, profession.name, profession.teach || "", (profession.spellIds || []).join(","));
   }
 }
 
 prog
   .name("dl")
   .description("Scrape profession recipes from Wowhead into data/era.db")
-  .argument("[prof]", "Profession short name, or * for all (no arg: sync professions table)")
-  .action(async (p) => {
+  .argument("[pk]", "Profession key, or * for all (no arg: sync professions table)")
+  .action(async (pk) => {
     const db = new DatabaseSync(DB);
     db.exec(`CREATE TABLE IF NOT EXISTS trade_skill (
       prof_key    TEXT NOT NULL,
@@ -230,18 +230,18 @@ prog
     )`);
 
     upsertProf(db);
-    if (!p) {
+    if (!pk) {
       console.log(`Upserted ${Object.keys(profs).length} professions into ${DB}`);
       return;
     }
 
-    const keys = p === "*" ? Object.keys(profs) : [`${p}`];
-    for (const k of keys) {
-      if (!profs[k]) {
-        console.error(`Unknown profession: ${k}. Run "dl list" to see options.`);
+    const keys = pk === "*" ? Object.keys(profs) : [`${pk}`];
+    for (const pk of keys) {
+      if (!profs[pk]) {
+        console.error(`Unknown profession: ${pk}. Run "dl list" to see options.`);
         process.exit(1);
       }
-      await ingest(k, db);
+      await ingest(pk, db);
     }
   });
 

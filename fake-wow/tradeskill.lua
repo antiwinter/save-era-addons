@@ -1,85 +1,100 @@
 local function install(env, world)
 	world.skill = world.skill or { name = "", lvl = 1, cap = 1 }
 	world.bag = world.bag or setmetatable({}, { __index = function() return 0 end })
-	world.catalog = world.catalog or {} -- array: {id, recipe, colors, craft_count, learned, teach_id}
-	world.item = world.item or {}       -- item id -> name
-	world.price = world.price or {}     -- item id -> avgbuyout
-	world.spellName = world.spellName or {} -- spell id -> profession display name
 	world.crafts = world.crafts or 0
+	world.repeatCount = world.repeatCount or 0
 
-	local byId = {} -- item id -> catalog row; setup-only
-
-	-- db.lua is the single sqlite reader (sets up the vendor binding itself).
 	local dir = (debug.getinfo(1, "S").source:gsub("^@", ""):match("^(.*)/[^/]*$") or ".") .. "/"
+	local db
 
-	local function find(id)
-		return byId[id]
+	local function skillId(index)
+		local skill = db:GetSkill(world.skill.pk, index)
+		if not skill then return nil end
+		local sid = skill.id
+		if world.learned[sid] or skill.teach_id <= 0 then return sid end
 	end
 
-	local function craftOne(r)
-		if world.skill.lvl < r.colors[1] then return false end
-		for _, rg in ipairs(r.recipe or {}) do
-			while world.bag[rg.id] < rg.count do
-				local sub = find(rg.id)
-				if not sub or sub.learned ~= 1 then return false end
-				if not craftOne(sub) then return false end
+	local function OpenProfWindow(pk)
+		local profession = db:GetProfession(pk)
+		if not profession then return end
+		local state = world.profSkill[pk] or { lvl = 1, cap = 300 }
+		world.profSkill[pk] = state
+		world.skill = { pk = pk, name = profession.name, lvl = state.lvl, cap = state.cap }
+		env.__fire("TRADE_SKILL_SHOW")
+		env.__fire("TRADE_SKILL_UPDATE")
+	end
+
+	local function craftOne(sid)
+		local skill = db:GetSkillById(sid)
+		if not skill or world.skill.lvl < skill.colors[1] then return false end
+		local recipe = db:GetRecipe(sid)
+		for _, reagent in ipairs(recipe) do
+			while world.bag[reagent.id] < reagent.count do
+				local sub = db:GetSkillById(reagent.id)
+				if not sub or (sub.teach_id > 0 and not world.learned[sub.id]) then return false end
+				if not craftOne(sub.id) then return false end
 			end
 		end
-		for _, rg in ipairs(r.recipe or {}) do
-			world.bag[rg.id] = world.bag[rg.id] - rg.count
+		for _, reagent in ipairs(recipe) do
+			world.bag[reagent.id] = world.bag[reagent.id] - reagent.count
 		end
-		world.bag[r.id] = world.bag[r.id] + (r.craft_count or 1)
+		world.bag[sid] = world.bag[sid] + (skill.craft_count or 1)
 		local roll = math.random(100)
-		local up = (world.skill.lvl < r.colors[2] and roll <= 100)
-			or (world.skill.lvl < r.colors[3] and roll <= 75)
-			or (world.skill.lvl < r.colors[4] and roll <= 25)
+		local up = (world.skill.lvl < skill.colors[2] and roll <= 100)
+			or (world.skill.lvl < skill.colors[3] and roll <= 75)
+			or (world.skill.lvl < skill.colors[4] and roll <= 25)
 			or false
-		if up then world.skill.lvl = world.skill.lvl + 1 end
+		if up then
+			world.skill.lvl = world.skill.lvl + 1
+			world.profSkill[world.skill.pk].lvl = world.skill.lvl
+		end
 		world.crafts = world.crafts + 1
 		return true
 	end
 
-	-- ---- Trade-skill C-API -------------------------------------------------
 	function env.GetTradeSkillLine()
-		local s = world.skill
-		return s.name, nil, s.lvl, s.cap
+		local skill = world.skill
+		return skill.name, nil, skill.lvl, skill.cap
 	end
 
 	function env.GetNumTradeSkills()
-		return #world.catalog
+		return world.skill.pk and db:GetSkillCount(world.skill.pk) or 0
 	end
 
-	-- Unlearned recipes report kind "header" so the addon skips them; the slot
-	-- index is the catalog array position, stable across learns.
-	function env.GetTradeSkillInfo(i)
-		local r = world.catalog[i]
-		if not r then return nil end
-		return world.item[r.id], r.learned == 1 and "optimal" or "header"
+	function env.GetTradeSkillInfo(index)
+		local sid = skillId(index)
+		if not sid then return nil end
+		local item = db:GetItem(sid)
+		return item and item.name, "optimal"
 	end
 
-	function env.GetTradeSkillNumReagents(i)
-		local r = world.catalog[i]
-		return r and #(r.recipe or {}) or 0
+	function env.GetTradeSkillNumReagents(index)
+		local sid = skillId(index)
+		return sid and #db:GetRecipe(sid) or 0
 	end
 
-	function env.GetTradeSkillReagentInfo(i, j)
-		local r = world.catalog[i]
-		local rg = r and r.recipe and r.recipe[j]
-		if not rg then return nil end
-		return world.item[rg.id], nil, rg.count
+	function env.GetTradeSkillReagentInfo(index, reagentIndex)
+		local sid = skillId(index)
+		if not sid then return nil end
+		local reagent = db:GetRecipe(sid)[reagentIndex]
+		if not reagent then return nil end
+		local item = db:GetItem(reagent.id)
+		return item and item.name, nil, reagent.count
 	end
 
 	function env.GetItemInfo(id)
-		return world.item[id]
+		local item = db:GetItem(id)
+		return item and item.name
 	end
 
-	-- Flat bag total for one item (fake-wow's bag is id->count already).
 	function env.GetItemCount(id)
 		return world.bag[id] or 0
 	end
 
-	-- Skill-line / spell lookups: the sim only models the open tradeskill line,
-	-- so the skill list is empty.
+	function env.GetTradeskillRepeatCount()
+		return world.repeatCount
+	end
+
 	function env.GetNumSkillLines()
 		return 0
 	end
@@ -88,171 +103,111 @@ local function install(env, world)
 		return nil
 	end
 
-	-- Rank-spell names come from the version db's professions table (loaded via
-	-- GM.LoadDB → world.spellName), mirroring the real client where rank spells
-	-- carry the profession's display name.
 	function env.GetSpellInfo(spellId)
-		return world.spellName[spellId]
+		local profession = db:FindProfessionBySpellId(spellId)
+		return profession and profession.name
 	end
 
 	function env.DoTradeSkill(index, batch)
-		local r = world.catalog[index]
-		for _ = 1, (batch or 1) do
-			if not r or not craftOne(r) then break end
+		local sid = skillId(index)
+		world.repeatCount = batch or 1
+		env.__fire("UPDATE_TRADESKILL_RECAST")
+		for _ = 1, world.repeatCount do
+			if not sid or not craftOne(sid) then break end
 		end
 		env.__fire("TRADE_SKILL_UPDATE")
 		env.__fire("BAG_UPDATE")
+		env.__fire("BAG_UPDATE_DELAYED")
+		world.repeatCount = 0
+		env.__fire("UPDATE_TRADESKILL_RECAST")
 	end
 
-	-- The addon finds the teaching item by id (locale-independent); a teach item
-	-- click marks its recipe learned.
 	function env.UseContainerItem(bag, slot)
 		if bag ~= 0 then return end
 		local id = env.GetContainerItemID(bag, slot)
-		for _, r in ipairs(world.catalog) do
-			if r.teach_id == id then
-				r.learned = 1
-				world.bag[id] = 0
-				env.__fire("TRADE_SKILL_UPDATE")
-				env.__fire("BAG_UPDATE")
-				return
-			end
-		end
+		local skill = id and db:FindSkillByTeachId(id)
+		if not skill then return end
+		world.learned[skill.id] = true
+		world.bag[id] = 0
+		env.__fire("TRADE_SKILL_UPDATE")
+		env.__fire("BAG_UPDATE")
+		env.__fire("BAG_UPDATE_DELAYED")
 	end
 
-	-- ---- Container / item C-API (bag is id->count, one virtual bag) ----------
 	function env.GetContainerNumSlots(bag)
 		if bag ~= 0 then return 0 end
-		local n = 0
-		for _, c in pairs(world.bag) do if c > 0 then n = n + 1 end end
-		return n
+		local count = 0
+		for _, amount in pairs(world.bag) do if amount > 0 then count = count + 1 end end
+		return count
 	end
 
 	function env.GetContainerItemInfo(bag, slot)
 		if bag ~= 0 then return nil end
-		local i = 0
+		local index = 0
 		for id, count in pairs(world.bag) do
 			if count > 0 then
-				i = i + 1
-				if i == slot then
-					return nil, count, nil, nil, nil, nil, world.item[id]
+				index = index + 1
+				if index == slot then
+					local item = db:GetItem(id)
+					return nil, count, nil, nil, nil, nil, item and item.name
 				end
 			end
 		end
-		return nil
 	end
 
 	function env.GetContainerItemID(bag, slot)
 		if bag ~= 0 then return nil end
-		local i = 0
+		local index = 0
 		for id, count in pairs(world.bag) do
 			if count > 0 then
-				i = i + 1
-				if i == slot then return id end
+				index = index + 1
+				if index == slot then return id end
 			end
 		end
-		return nil
 	end
 
-	-- ---- GM console (test setup, NOT WoW APIs) -----------------------------
 	local GM = env.GM
 
-	-- Load a versioned database into the world: catalog + names + prices. The
-	-- raw schema is kept on world.schema for the GM query API below.
 	function GM.LoadDB(dbPath)
-		local data = dofile(dir .. "db.lua").load(dbPath)
-		world.schema = data
-		world.catalog = {}
-		world.item = {}
-		world.price = {}
-		byId = {}
-		for _, s in ipairs(data.skills) do
-			local r = {
-				id = s.id,
-				recipe = {},
-				colors = s.colors,
-				craft_count = s.craft_count,
-				learned = s.teach_id > 0 and 0 or 1,
-				teach_id = s.teach_id,
-			}
-			world.catalog[#world.catalog + 1] = r
-			byId[r.id] = r
+		if db then db:Close() end
+		db = dofile(dir .. "db.lua").load(dbPath)
+		world.profSkill = {}
+		world.learned = {}
+		for _, pk in ipairs(db:ListProfessionKeys()) do
+			local pk = pk
+			local profession = db:GetProfession(pk)
+			env.__registerSpell(profession.name, function() OpenProfWindow(pk) end)
 		end
-		for _, rc in ipairs(data.recipe) do
-			local r = assert(byId[rc.skill_id])
-			r.recipe[#r.recipe + 1] = { id = rc.reagent_id, count = rc.count }
-		end
-		for id, it in pairs(data.items) do
-			world.item[id] = it.name
-			world.price[id] = it.avgbuyout
-		end
-		world.spellName = {}
-		for _, p in ipairs(data.professions) do
-			for _, sid in ipairs(p.spellIds) do
-				world.spellName[sid] = p.name
-			end
-		end
-		env.__fire("TRADE_SKILL_UPDATE")
 	end
 
-	-- ---- GM schema queries (read-only windows onto world.schema) -------------
 	function GM:ListProfessions()
-		local seen, out = {}, {}
-		for _, s in ipairs(world.schema.skills) do
-			if not seen[s.prof] then
-				seen[s.prof] = true
-				out[#out + 1] = s.prof
-			end
-		end
-		return out
+		return db:ListProfessionKeys()
 	end
 
-	-- learnedat order — the addon data emitter adopts it as the planner's level
-	-- ordering (the field itself is not shipped).
-	function GM:ListSkills(prof)
-		local rows = {}
-		for _, s in ipairs(world.schema.skills) do
-			if s.prof == prof then rows[#rows + 1] = s end
-		end
-		table.sort(rows, function(a, b) return a.learnedat < b.learnedat end)
-		return rows
+	function GM:ListSkills(pk)
+		return db:ListSkills(pk)
 	end
 
-	-- Professions with rank spells (spellIds drive profs.lua generation).
 	function GM:ListProfSpells()
-		local out = {}
-		for _, p in ipairs(world.schema.professions) do
-			if #(p.spellIds or {}) > 0 then out[#out + 1] = { prof = p.prof, spells = p.spellIds } end
-		end
-		return out
+		return db:ListProfSpells()
 	end
 
-	function GM:GetRecipe(skill_id)
-		local out = {}
-		for _, r in ipairs(world.schema.recipe) do
-			if r.skill_id == skill_id then out[#out + 1] = { id = r.reagent_id, count = r.count } end
-		end
-		return out
+	function GM:GetRecipe(sid)
+		return db:GetRecipe(sid)
 	end
 
 	function GM:GetPrice(id)
-		local it = world.schema.items[id]
-		return it and it.avgbuyout or 0
+		local item = db:GetItem(id)
+		return item and item.avgbuyout or 0
 	end
 
 	function GM.SetTradeSkillLine(name, lvl, cap)
-		world.skill.name = name
-		world.skill.lvl = lvl or 1
-		world.skill.cap = cap or lvl or 1
-		env.__fire("TRADE_SKILL_UPDATE")
+		local profession = assert(db:FindProfession(name), "unknown profession " .. tostring(name))
+		local pk = profession.pk
+		world.profSkill[pk] = { lvl = lvl or 1, cap = cap or lvl or 1 }
+		OpenProfWindow(pk)
 	end
 
-
-	function env.CastSpellByName(name)
-		env.__fire("TRADE_SKILL_SHOW")
-	end
-
-	-- Stock the bag by item id (see GM.LoadDB: ids come from the version db).
 	function GM.SetBag(a, b)
 		local changed = false
 		if type(a) == "table" then
@@ -265,6 +220,7 @@ local function install(env, world)
 			changed = a ~= nil
 		end
 		if changed then env.__fire("BAG_UPDATE") end
+		if changed then env.__fire("BAG_UPDATE_DELAYED") end
 	end
 
 	function GM.ResetProgress()

@@ -32,10 +32,13 @@ end
 local function loadAddon(tocPath)
 	local addonName = tocPath:match("([^/]+)%.toc$")
 	local ns = {}
+	env.__unloadAddon(addonName)
+	env.__beginAddon(addonName)
 	for _, file in ipairs(tocFiles(tocPath)) do
 		local chunk = assert(loadfile(file))
 		chunk(addonName, ns)
 	end
+	env.__endAddon()
 	env.__fire("ADDON_LOADED", addonName)
 	return ns
 end

@@ -13,7 +13,7 @@ local function install(env)
 	local function noop(self) return self end
 
 	local function newFontString()
-		return { SetText = noop, SetPoint = noop, SetFont = noop,
+		return { SetText = function(s, text) s.__text = text end, SetPoint = noop, SetFont = noop,
 			SetTextColor = noop, GetText = function(s) return s.__text end,
 			__text = "" }
 	end
@@ -21,13 +21,20 @@ local function install(env)
 	local function CreateFrame(_, name, _parent, _template)
 		local f
 		f = {
+			__name = name,
+			__addon = env.__loadingAddon,
 			__events = {},
+			__enabled = true,
 			-- layout / cosmetic stubs (chainable, state-free)
 			SetSize = noop, SetPoint = noop, SetWidth = noop, SetHeight = noop,
 			SetMovable = noop, EnableMouse = noop, RegisterForDrag = noop,
-			SetBackdrop = noop, SetBackdropColor = noop, SetText = noop,
+			SetBackdrop = noop, SetBackdropColor = noop,
+			SetText = function(s, text) s.__text = text end,
 			SetScale = noop, SetAlpha = noop, SetFrameStrata = noop,
 			StartMoving = noop, StopMovingOrSizing = noop,
+			Enable = function(s) s.__enabled = true end,
+			Disable = function(s) s.__enabled = false end,
+			IsEnabled = function(s) return s.__enabled end,
 			Show = function(s) s.__shown = true end,
 			Hide = function(s) s.__shown = false end,
 			IsShown = function(s) return s.__shown == true end,
@@ -40,7 +47,7 @@ local function install(env)
 			SetScript = function(s, kind, fn) s["__" .. kind] = fn end,
 			GetScript = function(s, kind) return s["__" .. kind] end,
 			-- button click helper for tests (drives OnClick like a player would)
-			Click = function(s) if s.__OnClick then s.__OnClick(s) end end,
+			Click = function(s) if s.__enabled and s.__OnClick then s.__OnClick(s) end end,
 		}
 		if name then env[name] = f end
 		frames[#frames + 1] = f
@@ -60,8 +67,26 @@ local function install(env)
 	env.CreateFrame = CreateFrame
 	env.__fire = fire
 	env.__frames = frames
+	env.__beginAddon = function(name) env.__loadingAddon = name end
+	env.__endAddon = function() env.__loadingAddon = nil end
+	env.__unloadAddon = function(name)
+		for i = #frames, 1, -1 do
+			local frame = frames[i]
+			if frame.__addon == name then
+				if frame.__name and env[frame.__name] == frame then env[frame.__name] = nil end
+				table.remove(frames, i)
+			end
+		end
+	end
 
 	env.UIParent = CreateFrame("Frame", "UIParent")
+
+	local spellHandlers = {}
+	env.__registerSpell = function(name, handler) spellHandlers[name] = handler end
+	function env.CastSpellByName(name)
+		local handler = spellHandlers[name]
+		if handler then return handler() end
+	end
 
 	-- The GM console table. Domain modules (tradeskill.lua, ...) attach their own
 	-- setup knobs to it; only truly generic ones live here.
@@ -91,9 +116,9 @@ local function install(env)
 	env.UIDropDownMenu_Initialize = function(frame, initFn) frame.__menuInit = initFn end
 	env.UIDropDownMenu_CreateInfo = function() return {} end
 	env.UIDropDownMenu_AddButton = noop
-	env.UIDropDownMenu_Close = noop
 	env.UIDropDownMenu_SetWidth = noop
-	env.UIDropDownMenu_SetText = noop
+	env.UIDropDownMenu_SetText = function(frame, text) frame.__text = text end
+	env.CloseDropDownMenus = noop
 
 	env.GetBuildInfo = function() return "1.15.7", "60000", nil, 11507 end
 	env.GetLocale = function() return "enUS" end

@@ -22,33 +22,32 @@ Widget methods: `SetSize`, `SetPoint`, `SetMovable`, `EnableMouse`,
 ### Trade-skill domain (tradeskill.lua)
 - `GetTradeSkillLine()` → `name, nil, rank, maxRank`
 - `GetNumTradeSkills()` → count
-- `GetTradeSkillInfo(i)` → `name, kind` ("header" if unlearned, else "optimal")
+- `GetTradeSkillInfo(i)` → `name, kind` for trainer-taught or learned scroll recipes
 - `GetTradeSkillNumReagents(i)` → count
 - `GetTradeSkillReagentInfo(i, j)` → `name, nil, count`
 - `DoTradeSkill(index, batch)` — fires `TRADE_SKILL_UPDATE` + `BAG_UPDATE`
 - `GetContainerNumSlots(bag)` → count (only bag 0 is populated; bag is id-keyed)
-- `GetContainerItemInfo(bag, slot)` → `nil, count, nil, nil, nil, nil, link` (link = name from `world.item[id]`)
+- `GetContainerItemInfo(bag, slot)` → `nil, count, nil, nil, nil, nil, link`
 - `GetContainerItemID(bag, slot)` → item id
-- `GetItemInfo(link)` → `link` (link == name in the sim)
-- `UseContainerItem(bag, slot)` — a teaching item learns its recipe (`learned=1`), is consumed; fires `TRADE_SKILL_UPDATE` + `BAG_UPDATE`
+- `GetItemInfo(id)` → item name
+- `UseContainerItem(bag, slot)` — a teaching item adds its recipe to `world.learned`, is consumed, and fires trade-skill/bag updates
 
 ### Database reader (db.lua)
 - `db.lua` — the single reader of a shared versioned SQLite db
-  (vendored `lsqlite3` binding, `scripts/vendor/build.sh`). Returns
-  `{skills, recipe, items}` from `load(dbPath)`; the version's filename is
-  chosen by the caller (`init(version)` resolves `data/<version>.db`).
+  (vendored `lsqlite3` binding, `scripts/vendor/build.sh`). `load(dbPath)`
+  returns a SQLite-backed query object; the caller chooses the version filename.
 
 ### GM console — test setup, NOT a WoW API
 The shared `GM` table is created by `client.lua`; each domain module attaches
 its own knobs (setup helpers live with the domain they mutate).
 - `GM.SetSeed(n)` — generic (client.lua)
-- `GM.SetTradeSkillLine(name, lvl, cap)` — tradeskill.lua
-- `GM.LoadDB(dbPath)` — load a db via db.lua into the catalog; trainer-taught load learned, scroll-taught unlearned; keeps the raw schema on `world.schema` (tradeskill.lua)
+- `GM.SetTradeSkillLine(name, lvl, cap)` — set profession state and open its DB-backed window (tradeskill.lua)
+- `GM.LoadDB(dbPath)` — open the database and reset scroll-learned state (tradeskill.lua)
 - `GM:ListProfessions()` → `{"eng", "tailor", ...}` — tradeskill.lua
-- `GM:ListSkills('eng')` → skills of one prof, learnedat order (id, name, craft_count, colors, phaseId, teach_id) — tradeskill.lua
+- `GM:ListSkills('eng')` → skills of one `pk`, learnedat order (id, name, craft_count, colors, phaseId, teach_id) — tradeskill.lua
 - `GM:GetRecipe(skill_id)` → `{{id, count}, ...}` — tradeskill.lua
 - `GM:GetPrice(item_id)` → avgbuyout (0 if absent) — tradeskill.lua
-- `GM.SetBag(name, count)` or `GM.SetBag({[name]=count, ...})` — stock the id-keyed bag by item name (tradeskill.lua)
+- `GM.SetBag(id, count)` or `GM.SetBag({[id]=count, ...})` — stock the id-keyed bag (tradeskill.lua)
 - `GM.ResetProgress()` — tradeskill.lua
 
 ### Loader (init.lua)
@@ -56,7 +55,7 @@ its own knobs (setup helpers live with the domain they mutate).
 - `loadAddon(tocPath)` → `ns` — parse .toc, run each file with `(addonName, ns)`, fire `ADDON_LOADED`
 - `fire(event, ...)` — dispatch an event to all registered frames
 - `slash(line)` — dispatch a slash command (e.g., `"/skm plan"`)
-- `world` — the mutable sim state (skill, bag, catalog, item, crafts, schema)
+- `world` — the mutable sim state (skill, bag, scroll-learned recipes, crafts)
 - `env` — the global table (`_G`)
 
 ## Growth path
@@ -70,8 +69,8 @@ in the shell.
 local fw = dofile("fake-wow/init.lua")
 fw.init("era")                       -- load fake-wow/data/era.db
 fw.GM.SetSeed(1)
-fw.GM.SetTradeSkillLine("Engineering", 1, 300)
 local ns = fw.loadAddon("skillMaster/skillMaster.toc")
-fw.fire("TRADE_SKILL_SHOW")
-ns.Runtime:DoAction()
+fw.GM.SetTradeSkillLine("engineering", 1, 300)
+fw.slash("/skm plan eng 300")
+fw.click("SkillMaster_CraftBtn")
 ```
