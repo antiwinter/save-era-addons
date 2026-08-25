@@ -1,4 +1,4 @@
-local addonName, ns = ...
+local _, ns = ...
 
 local panel = CreateFrame("Frame", "skillMasterPanel", UIParent, "BackdropTemplate")
 panel:SetSize(240, 150)
@@ -16,15 +16,15 @@ title:SetText("skillMaster")
 
 local planDrop = CreateFrame("Frame", "SkillMaster_PlansDrop", panel, "UIDropDownMenuTemplate")
 planDrop:SetPoint("TOP", title, "BOTTOM", 0, -4)
-UIDropDownMenu_Initialize(planDrop, function(self, level)
-	for pk, prof in pairs(ns.store.plans) do
+UIDropDownMenu_Initialize(planDrop, function(_, level)
+	for pk in pairs(ns.store.plans) do
 		local info = UIDropDownMenu_CreateInfo()
-		info.text = prof
+		info.text = pk
 		info.checked = ns.store.cur_pk == pk
 		info.func = function()
-			ns.store.cur_pk = pk
-			ns.ss = ns.CreateSession(prof)
-			UIDropDownMenu_Close()
+			ns.store:select(pk)
+			CloseDropDownMenus()
+			ns.hint("Selected " .. pk)
 		end
 		UIDropDownMenu_AddButton(info, level)
 	end
@@ -34,19 +34,30 @@ UIDropDownMenu_SetText(planDrop, "no plan")
 
 local status = panel:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
 status:SetPoint("TOP", planDrop, "BOTTOM", 0, -4)
-status:SetText("No plan — /skm plan <prof> [target]")
+status:SetText("No plan - /skm plan <pk> [target]")
 
 local craftBtn = CreateFrame("Button", "SkillMaster_CraftBtn", panel, "UIPanelButtonTemplate")
 craftBtn:SetSize(180, 24)
 craftBtn:SetPoint("BOTTOM", 0, 12)
 craftBtn:SetText("Craft next")
-craftBtn:SetScript("OnClick", function()
-	status:SetText(ns.Session:DoAction())
-end)
 
-ns.hint = function (fmt, ...)
-	status:SetText(string.format(fmt, ...))
+function ns.disable()
+	craftBtn:Disable()
 end
+
+function ns.enable()
+	craftBtn:Enable()
+end
+
+function ns.hint(message, ...)
+	if select("#", ...) > 0 then message = string.format(message, ...) end
+	status:SetText(message)
+	UIDropDownMenu_SetText(planDrop, ns.store.cur_pk or "no plan")
+end
+
+craftBtn:SetScript("OnClick", function()
+	if ns.ss then ns.ss:DoAction() else ns.hint("No plan - /skm plan <pk> [target]") end
+end)
 
 SLASH_SKILLMASTER1 = "/skm"
 SlashCmdList.SKILLMASTER = function(msg)
@@ -57,13 +68,17 @@ SlashCmdList.SKILLMASTER = function(msg)
 			print("|cff00b4ff[skm]|r usage: /skm plan <pk> [target]")
 			return
 		end
-		local p = ns.CreatePlan(pk, target ~= "" and tonumber(target) or nil)
-		if p then
-			ns.store.cur_pk = pk
-			ns.store.plans[pk] = p
-			ns.Format.PrintPlan(p)
-			panel:Show()
+		local plan, message = ns.CreatePlan(pk, target ~= "" and tonumber(target) or nil)
+		if not plan then
+			print("|cff00b4ff[skm]|r " .. message)
+			ns.hint(message)
+			return
 		end
+		ns.store:savePlan(plan)
+		print("|cff00b4ff[skm]|r " .. message)
+		ns.Format.PrintPlan(plan)
+		ns.hint(message)
+		panel:Show()
 	elseif msg == "hide" then
 		panel:Hide()
 	else

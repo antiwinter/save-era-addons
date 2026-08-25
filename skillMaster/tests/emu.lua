@@ -70,15 +70,6 @@ end
 local rc = world.skill.lvl >= target
 local use_rate = budget > 0 and math.floor((budget - remain_val) / budget * 100) or 100
 
--- Progress bookkeeping: the plan must never claim MORE crafts than the world
--- did (the world also recurses helper sub-crafts the plan doesn't attribute).
-local crafted = 0
-for _, ac in ipairs(plan.actions) do crafted = crafted + ac.crafted end
-if crafted > world.crafts then
-	print(string.format("MISMATCH: plan crafted=%d vs world crafts=%d", crafted, world.crafts))
-	rc = false
-end
-
 print(string.format("pk=%s  %d -> %d/%d  %s", pk, start_lvl, world.skill.lvl, target, rc and "OK" or "SHORT"))
 print(string.format("crafts=%d  budget=%.2fg  waste=%.2fg  use_rate=%d%%",
 	world.crafts, budget / 10000, remain_val / 10000, use_rate))

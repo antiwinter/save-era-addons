@@ -1,74 +1,91 @@
-local addonName, ns = ...
+local _, ns = ...
 
-local function FindProfName(key)
-	local ids = profs[key]
+function ns.FindProfName(pk)
+	local ids = profs[pk]
 	if not ids then return nil end
-	for _, sid in ipairs(ids) do
-		local name = GetSpellInfo(sid)
+	for _, spellId in ipairs(ids) do
+		local name = GetSpellInfo(spellId)
 		if name then return name end
 	end
 end
-ns.FindProfName = FindProfName
 
 local function openProfWindow()
-	local pname = FindProfName(ns.store.cur_pk)
-	if pname ~= curProfName() then
-		CastSpellByName(pname)
-    end
-end
+	local name = ns.FindProfName(ns.store.cur_pk)
+    if not name then return nil end
+	local n, _, lvl, cap = GetTradeSkillLine()
 
--- The open trade-skill line's display name, or nil when nothing is open.
-ns.curProfName = function()
-    openProfWindow()
-	local name = GetTradeSkillLine()
-	return name and name ~= "" and name ~= "UNKNOWN" and name or nil
-end
-
-ns.skillLvl = function()
-    openProfWindow()
-    local name, _, lvl, cap = GetTradeSkillLine()
-    return lvl, cap
-end
-
-ns.skillIndex = function(itemId)
-    openProfWindow()
-    local name = GetItemInfo(itemId)
-    	for i = 1, GetNumTradeSkills() do
-		local n, kind = GetTradeSkillInfo(i)
-		if n == name and kind and kind ~= "header" then
-			return i
-		end
+	if n ~= name then
+		CastSpellByName(name)
+		n, _, lvl, cap = GetTradeSkillLine()
 	end
+	return name, _, lvl, cap
 end
+ns.openProfWindow = openProfWindow
 
-ns.skillScroll = function(itemId)
-	local db = ns.db[ns.store.cur_pk]
-    local r = db and db[itemId]
-    local sid = r and r.teach_id
-    local name = sid and GetItemInfo(sid)
-    return sid, name
-end
-
-function learnScroll(itemId)
+function ns.craft(itemId, count)
+	openProfWindow()
 	local name = GetItemInfo(itemId)
-    if not name then return false end
-	for b = 0, 4 do
-		for slot = 1, (GetContainerNumSlots(b) or 0) do
-			if GetContainerItemID(b, slot) == itemId then
-				UseContainerItem(b, slot)
-				return true
+	if not name then return end
+    local index
+	for i = 1, GetNumTradeSkills() do
+		local skillName, kind = GetTradeSkillInfo(i)
+		if skillName == name and kind and kind ~= "header" then 
+            index = i
+            break
+        end
+	end
+    
+    if not index then return end
+    local batch = math.max(1, math.min(count, GetTradeskillRepeatCount()))
+    
+    ns.hint("Crafting %s x%d", name, batch)
+    DoTradeSkill(index, batch)
+    return true
+end
+
+function ns.learnScrollFor(itemId)
+    local db = ns.db[ns.store.cur_pk]
+	local recipe = db and db[itemId]
+	local sid = recipe and recipe.teach_id
+	if not sid then return ns.hint("Goto trainer") end
+
+	for bag = 0, 4 do
+		for slot = 1, (GetContainerNumSlots(bag) or 0) do
+			if GetContainerItemID(bag, slot) == sid then
+                ns.hint("Learning scroll: %s", GetItemInfo(sid))
+				UseContainerItem(bag, slot)
+				return
 			end
 		end
 	end
+    ns.hint("Missing scroll: %s", GetItemInfo(sid))
 end
-ns.learnScroll = learnScroll
 
-ns.store = setmetatable(skillMasterDB, { 
-    __index = function(key) return self[key] end,
-    set = function(key, value) self[key] = value end,
-    init = function()
-        if not self.plans then
-            self.plans = {}
-        end
-    end
+local state
+local store = {}
+
+function store:init()
+	skillMasterDB = skillMasterDB or {}
+	skillMasterDB.plans = skillMasterDB.plans or {}
+	state = skillMasterDB
+end
+
+function store:set(key, value)
+	state[key] = value
+end
+
+function store:select(pk)
+	self:set("cur_pk", pk)
+	ns.ss = ns.CreateSession(pk and self.plans[pk])
+end
+
+function store:savePlan(plan)
+	self.plans[plan.pk] = plan
+	self:select(plan.pk)
+end
+
+setmetatable(store, {
+	__index = function(_, key) return state and state[key] end,
+	__newindex = function(_, key, value) state[key] = value end,
 })
+ns.store = store

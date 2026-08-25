@@ -27,6 +27,7 @@ local crafts = fw.world.crafts
 fw.click("SkillMaster_CraftBtn")
 assert(GetTradeSkillLine() == profession, "craft wrapper did not switch professions")
 assert(fw.world.crafts > crafts, "craft click stopped after switching professions")
+assert(SkillMaster_CraftBtn:IsEnabled(), "craft button stayed disabled after batch")
 
 local castSpellByName = CastSpellByName
 CastSpellByName = function() end
