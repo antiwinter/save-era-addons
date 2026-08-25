@@ -16,7 +16,7 @@ local function skillRow(statement)
 		learnedat = statement:get_value(5),
 		nskillup = statement:get_value(6),
 		phaseId = statement:get_value(7),
-		teach_id = statement:get_value(8),
+		scroll_id = statement:get_value(8),
 	}
 	for value in statement:get_value(4):gmatch("[^,]+") do
 		skill.colors[#skill.colors + 1] = tonumber(value)
@@ -79,7 +79,7 @@ end
 function Data:GetSkill(pk, index)
 	return queryOne(self, [[
 		SELECT prof_key, skill_id, skill_name, craft_count, colors, learnedat,
-		       nskillup, phaseId, teach_id
+		       nskillup, phaseId, scroll_id
 		FROM trade_skill WHERE prof_key = ?
 		ORDER BY skill_id LIMIT 1 OFFSET ?]], skillRow, pk, index - 1)
 end
@@ -92,15 +92,15 @@ end
 function Data:GetSkillById(sid)
 	return queryOne(self, [[
 		SELECT prof_key, skill_id, skill_name, craft_count, colors, learnedat,
-		       nskillup, phaseId, teach_id
+		       nskillup, phaseId, scroll_id
 		FROM trade_skill WHERE skill_id = ?]], skillRow, sid)
 end
 
-function Data:FindSkillByTeachId(teachId)
+function Data:FindSkillByScrollId(scrollId)
 	return queryOne(self, [[
 		SELECT prof_key, skill_id, skill_name, craft_count, colors, learnedat,
-		       nskillup, phaseId, teach_id
-		FROM trade_skill WHERE teach_id = ?]], skillRow, teachId)
+		       nskillup, phaseId, scroll_id
+		FROM trade_skill WHERE scroll_id = ?]], skillRow, scrollId)
 end
 
 function Data:GetRecipe(sid)
@@ -128,7 +128,7 @@ end
 function Data:ListSkills(pk)
 	local statement = assert(self.handle:prepare([[
 		SELECT prof_key, skill_id, skill_name, craft_count, colors, learnedat,
-		       nskillup, phaseId, teach_id
+		       nskillup, phaseId, scroll_id
 		FROM trade_skill WHERE prof_key = ?
 		ORDER BY skill_id]]))
 	assert(statement:bind_values(pk))

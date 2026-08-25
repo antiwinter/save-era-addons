@@ -11,7 +11,7 @@ local function install(env, world)
 		local skill = db:GetSkill(world.skill.pk, index)
 		if not skill then return nil end
 		local sid = skill.id
-		if world.learned[sid] or skill.teach_id <= 0 then return sid end
+		if world.learned[sid] or skill.scroll_id <= 0 then return sid end
 	end
 
 	local function OpenProfWindow(pk)
@@ -31,7 +31,7 @@ local function install(env, world)
 		for _, reagent in ipairs(recipe) do
 			while world.bag[reagent.id] < reagent.count do
 				local sub = db:GetSkillById(reagent.id)
-				if not sub or (sub.teach_id > 0 and not world.learned[sub.id]) then return false end
+				if not sub or (sub.scroll_id > 0 and not world.learned[sub.id]) then return false end
 				if not craftOne(sub.id) then return false end
 			end
 		end
@@ -125,7 +125,7 @@ local function install(env, world)
 	function env.UseContainerItem(bag, slot)
 		if bag ~= 0 then return end
 		local id = env.GetContainerItemID(bag, slot)
-		local skill = id and db:FindSkillByTeachId(id)
+		local skill = id and db:FindSkillByScrollId(id)
 		if not skill then return end
 		world.learned[skill.id] = true
 		world.bag[id] = 0

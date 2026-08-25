@@ -114,7 +114,7 @@ async function ingest(pk, db) {
   delTs.run(pk);
   delRc.run(pk);
   const insTs = db.prepare(
-    `INSERT OR REPLACE INTO trade_skill (prof_key, skill_id, skill_name, craft_count, colors, learnedat, nskillup, phaseId, teach_id)
+    `INSERT OR REPLACE INTO trade_skill (prof_key, skill_id, skill_name, craft_count, colors, learnedat, nskillup, phaseId, scroll_id)
      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
   );
   const insIt = db.prepare(
@@ -125,8 +125,8 @@ async function ingest(pk, db) {
     `INSERT OR REPLACE INTO recipe (prof_key, skill_id, reagent_id, count)
      VALUES (?, ?, ?, ?)`,
   );
-  const setTeach = db.prepare(
-    `UPDATE trade_skill SET teach_id = ? WHERE prof_key = ? AND skill_id = ?`,
+  const setScroll = db.prepare(
+    `UPDATE trade_skill SET scroll_id = ? WHERE prof_key = ? AND skill_id = ?`,
   );
 
   const sell = (id) => {
@@ -161,7 +161,7 @@ async function ingest(pk, db) {
     const schemName = `${profession.teach}: ${made.name}`;
     const schem = data.schem?.find((x) => x.name === schemName);
     if (schem) {
-      setTeach.run(schem.id, pk, itemId);
+      setScroll.run(schem.id, pk, itemId);
       insIt.run(schem.id, schem.name, data.item[schem.id]?.jsonequip?.avgbuyout || 10000, schem.quality || 0, 0);
     }
   }
@@ -205,7 +205,7 @@ prog
       learnedat   INTEGER DEFAULT 0,
       nskillup    INTEGER DEFAULT 1,
       phaseId     INTEGER DEFAULT 0,
-      teach_id    INTEGER DEFAULT 0,
+      scroll_id   INTEGER DEFAULT 0,
       PRIMARY KEY (prof_key, skill_id)
     )`);
     db.exec(`CREATE TABLE IF NOT EXISTS item (

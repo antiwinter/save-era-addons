@@ -44,7 +44,7 @@ its own knobs (setup helpers live with the domain they mutate).
 - `GM.SetTradeSkillLine(name, lvl, cap)` — set profession state and open its DB-backed window (tradeskill.lua)
 - `GM.LoadDB(dbPath)` — open the database and reset scroll-learned state (tradeskill.lua)
 - `GM:ListProfessions()` → `{"eng", "tailor", ...}` — tradeskill.lua
-- `GM:ListSkills('eng')` → skills of one `pk`, learnedat order (id, name, craft_count, colors, phaseId, teach_id) — tradeskill.lua
+- `GM:ListSkills('eng')` → skills of one `pk`, learnedat order (id, name, craft_count, colors, phaseId, scroll_id) — tradeskill.lua
 - `GM:GetRecipe(skill_id)` → `{{id, count}, ...}` — tradeskill.lua
 - `GM:GetPrice(item_id)` → avgbuyout (0 if absent) — tradeskill.lua
 - `GM.SetBag(id, count)` or `GM.SetBag({[id]=count, ...})` — stock the id-keyed bag (tradeskill.lua)

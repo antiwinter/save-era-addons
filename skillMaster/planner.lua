@@ -199,8 +199,8 @@ local function BuildPlan(db, opts)
 	-- — it teaches the recipe and stays in the bag.
 	for _, ac in ipairs(actions) do
 		local r = db[ac.item]
-		if r and r.teach_id and r.teach_id > 0 then
-			material[r.teach_id] = 1
+		if r and r.scroll_id and r.scroll_id > 0 then
+			material[r.scroll_id] = 1
 		end
 	end
 

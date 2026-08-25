@@ -46,7 +46,7 @@ end
 function ns.learnScrollFor(itemId)
     local db = ns.db[ns.store.cur_pk]
 	local recipe = db and db[itemId]
-	local sid = recipe and recipe.teach_id
+	local sid = recipe and recipe.scroll_id
 	if not sid then return ns.hint("Goto trainer") end
 
 	for bag = 0, 4 do

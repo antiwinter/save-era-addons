@@ -29,7 +29,7 @@ for _, pk in ipairs(GM:ListProfessions()) do
 		skills[pk][#skills[pk] + 1] = s
 		prices[s.id] = GM:GetPrice(s.id)
 		for _, rg in ipairs(s.recipe) do prices[rg.id] = GM:GetPrice(rg.id) end
-		if s.teach_id > 0 then prices[s.teach_id] = GM:GetPrice(s.teach_id) end
+		if s.scroll_id > 0 then prices[s.scroll_id] = GM:GetPrice(s.scroll_id) end
 	end
 end
 
@@ -47,9 +47,9 @@ local out = final("skills = {")
 for _, pk in ipairs(GM:ListProfessions()) do
 	out[#out + 1] = "  " .. pk .. " = {"
 	for _, s in ipairs(skills[pk]) do
-		-- {skill_id, craft_count, colors, phaseId, teach_id, {{reagent_id,count},...}}
+		-- {skill_id, craft_count, colors, phaseId, scroll_id, {{reagent_id,count},...}}
 		out[#out + 1] = string.format("    {%d, %d, %s, %d, %d, %s},",
-			s.id, s.craft_count, lit(s.colors), s.phaseId, s.teach_id, litRec(s.recipe))
+			s.id, s.craft_count, lit(s.colors), s.phaseId, s.scroll_id, litRec(s.recipe))
 	end
 	out[#out + 1] = "  },"
 end

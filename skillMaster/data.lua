@@ -1,7 +1,7 @@
 local _, ns = ...
 
 -- Skill row (positions match gen-data's emitter): [1]=id [2]=craft_count
--- [3]=colors [4]=phaseId [5]=teach_id [6]=recipe {{reagent_id, count}, ...}.
+-- [3]=colors [4]=phaseId [5]=scroll_id [6]=recipe {{reagent_id, count}, ...}.
 local function Build(pk)
 	local db = { data = {} }
 	local all = {} -- every skill row id-keyed, incl. color-less (their recipes
@@ -12,7 +12,7 @@ local function Build(pk)
 			craft_count = row[2],
 			colors = row[3],
 			phaseId = row[4],
-			teach_id = row[5],
+			scroll_id = row[5],
 			recipe = {},
 		}
 		for _, rg in ipairs(row[6] or {}) do
