@@ -13,7 +13,7 @@ fw.GM.SetSeed(tonumber(os.getenv("SKM_SEED") or "") or os.time())
 fw.init("era")
 
 local ns = fw.loadAddon("skillMaster.toc")
-local profession = ns.FindProfName(pk)
+local profession = ns.getProfName(pk)
 fw.GM.SetTradeSkillLine(profession, 1, target)
 local plan, message = ns.CreatePlan(pk, target)
 assert(plan, message)
@@ -23,20 +23,20 @@ for id, count in pairs(plan.materials) do
 	fw.GM.SetBag(id, math.ceil(count))
 end
 -- Click until the CURRENT action is inside its skill bracket.
-local ac1
+local item1
 for i = 1, clicks * 10 do
 	fw.click("SkillMaster_CraftBtn")
-	ac1 = ns.ss:CurrentAction()
-	if ac1 then break end
+	item1 = ns.ss:ResovleAction()
+	if item1 then break end
 	if i == clicks * 10 then error("no mid-craft action after " .. i .. " clicks") end
 end
 
 -- Relog and restore the persisted session at the same skill bracket.
 local ns2 = fw.loadAddon("skillMaster.toc")
-local ac2 = ns2.ss:CurrentAction()
-assert(ac2 and ac2.item == ac1.item,
-	"resume mismatch: before " .. (ac1 and ac1.item or "?")
-	.. " after " .. (ac2 and ac2.item or "?"))
+local item2 = ns2.ss:ResovleAction()
+assert(item2 and item2 == item1,
+	"resume mismatch: before " .. (item1 or "?")
+	.. " after " .. (item2 or "?"))
 
 local guard = 0
 while fw.world.skill.lvl < target do
@@ -51,5 +51,5 @@ while fw.world.skill.lvl < target do
 end
 
 print(string.format("resume %s: resumed action %d, finished %d/%d OK",
-	pk, ac2.item, fw.world.skill.lvl, target))
+	pk, item2, fw.world.skill.lvl, target))
 os.exit(0)

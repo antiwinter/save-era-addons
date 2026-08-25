@@ -8,31 +8,34 @@ function ns.CreateSession(plan)
 	return setmetatable({ plan = plan }, Session)
 end
 
-function Session:CurrentAction()
-	local _, _, lvl = ns.openProfWindow()
-	if not lvl then return nil end
-	for _, action in ipairs(self.plan.actions) do
-		if lvl < action.to then return action end
+function Session:ResovleAction()
+	local _, _, lvl, cap = ns.openProfFrame()
+	if not lvl then 
+		ns.hint("Learn " .. self.plan.pk .. " first")
+		return
 	end
+
+	if lvl >= cap and lvl < self.plan.target then
+		ns.hint("Train the next " .. self.plan.pk .. " rank")
+		return
+	end
+
+	for _, action in ipairs(self.plan.actions) do
+		if lvl < action.to then
+			local count = math.max(1, math.min(math.ceil(action.count), action.to - lvl))
+			return action.item, count
+		end
+	end
+	ns.hint("Done")
 end
 
 function Session:DoAction()
-	local prof, _, lvl, cap = ns.openProfWindow()
-	if not lvl then return ns.hint("Learn " .. self.plan.pk .. " first") end
-	if lvl >= cap and lvl < self.plan.target then
-		return ns.hint("Train the next " .. self.plan.pk .. " rank")
-	end
-
-	local action = self:CurrentAction()
-	if not action then
-		return ns.hint("Done")
-	end
-
-	local batch = math.max(1, math.min(math.ceil(action.count), action.to - lvl))
+	local itemId, count = self:ResovleAction()
+	if not itemId then return end
 	ns.disable()
-	local ok = ns.craft(action.item, batch)
+	local ok = ns.craft(itemId, count)
 	if not ok then -- try learn scroll
-		ns.learnScrollFor(action.item)
+		ns.learnScrollFor(itemId)
 		ns.enable()
 	end
 end

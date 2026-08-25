@@ -1,6 +1,6 @@
 local _, ns = ...
 
-function ns.FindProfName(pk)
+function ns.getProfName(pk)
 	local ids = profs[pk]
 	if not ids then return nil end
 	for _, spellId in ipairs(ids) do
@@ -9,8 +9,8 @@ function ns.FindProfName(pk)
 	end
 end
 
-local function openProfWindow()
-	local name = ns.FindProfName(ns.store.cur_pk)
+function ns.openProfFrame()
+	local name = ns.getProfName(ns.store.cur_pk)
     if not name then return nil end
 	local n, _, lvl, cap = GetTradeSkillLine()
 
@@ -21,10 +21,9 @@ local function openProfWindow()
 	if n ~= name then return nil end
 	return name, _, lvl, cap
 end
-ns.openProfWindow = openProfWindow
 
 function ns.craft(itemId, count)
-	openProfWindow()
+	ns.openProfFrame()
 	local name = GetItemInfo(itemId)
 	if not name then return end
     local index

@@ -25,7 +25,7 @@ fw.init("era")
 local ns = fw.loadAddon("skillMaster.toc")
 
 -- Seed the requested profession at the requested starting level.
-local profession = ns.FindProfName(pk)
+local profession = ns.getProfName(pk)
 fw.GM.SetTradeSkillLine(profession, startLvl, target)
 
 -- Build and persist/select it as the slash command does.

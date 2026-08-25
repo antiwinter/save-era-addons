@@ -8,10 +8,10 @@ fw.init("era")
 
 local ns = fw.loadAddon("skillMaster.toc")
 local pk, otherPk = "eng", "tailor"
-local profession = ns.FindProfName(pk)
+local profession = ns.getProfName(pk)
 
 fw.GM.SetTradeSkillLine(profession, 75, 150)
-fw.GM.SetTradeSkillLine(ns.FindProfName(otherPk), 42, 75)
+fw.GM.SetTradeSkillLine(ns.getProfName(otherPk), 42, 75)
 
 local plan, message = ns.CreatePlan(pk, 150)
 assert(plan, message)
@@ -22,7 +22,7 @@ ns.store:savePlan(plan)
 for id, count in pairs(plan.materials) do
 	fw.GM.SetBag(id, math.ceil(count))
 end
-fw.GM.SetTradeSkillLine(ns.FindProfName(otherPk), 42, 75)
+fw.GM.SetTradeSkillLine(ns.getProfName(otherPk), 42, 75)
 local crafts = fw.world.crafts
 fw.click("SkillMaster_CraftBtn")
 assert(GetTradeSkillLine() == profession, "craft wrapper did not switch professions")
@@ -31,7 +31,7 @@ assert(SkillMaster_CraftBtn:IsEnabled(), "craft button stayed disabled after bat
 
 local castSpellByName = CastSpellByName
 CastSpellByName = function() end
-fw.GM.SetTradeSkillLine(ns.FindProfName(otherPk), 42, 75)
+fw.GM.SetTradeSkillLine(ns.getProfName(otherPk), 42, 75)
 local fallback, fallbackMessage = ns.CreatePlan(pk)
 CastSpellByName = castSpellByName
 assert(fallback, fallbackMessage)
