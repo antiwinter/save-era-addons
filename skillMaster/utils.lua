@@ -18,6 +18,7 @@ local function openProfWindow()
 		CastSpellByName(name)
 		n, _, lvl, cap = GetTradeSkillLine()
 	end
+	if n ~= name then return nil end
 	return name, _, lvl, cap
 end
 ns.openProfWindow = openProfWindow

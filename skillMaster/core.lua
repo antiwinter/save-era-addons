@@ -18,7 +18,7 @@ end
 
 function Session:DoAction()
 	local prof, _, lvl, cap = ns.openProfWindow()
-	if not lvl then return ns.hint("Learn " .. prof .. " first") end
+	if not lvl then return ns.hint("Learn " .. self.plan.pk .. " first") end
 	if lvl >= cap and lvl < self.plan.target then
 		return ns.hint("Train the next " .. self.plan.pk .. " rank")
 	end
