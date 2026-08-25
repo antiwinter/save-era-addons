@@ -28,7 +28,7 @@ The prototype splits cleanly into three concerns; skillMaster keeps that split.
    wishlist, produce an ordered action list and a shopping list. Zero WoW
    globals — the caller passes `db`.
 3. Session + plans (craft engine in `core.lua`): plans are **persisted first-class
-objects** (`skillMasterDB.plans[pk] = {pk, target, actions, materials}`),
+objects** (`skillMasterDB[char].plans[pk] = {pk, target, actions, materials}`),
 created with `/skm plan <pk> [target]` and picked from a UI dropdown. The live
 profession skill is the source of progress, so a relog resumes at the current
 skill bracket. The data key ("eng") is the
