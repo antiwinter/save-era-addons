@@ -42,6 +42,7 @@ end
 
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("ADDON_LOADED")
+frame:RegisterEvent("TRADE_SKILL_SHOW")
 frame:RegisterEvent("UPDATE_TRADESKILL_RECAST")
 frame:RegisterEvent("TRADE_SKILL_CLOSE")
 frame:RegisterEvent("UNIT_SPELLCAST_INTERRUPTED")
@@ -51,6 +52,10 @@ frame:SetScript("OnEvent", function(_, event, arg1)
 		if arg1 ~= addonName then return end
 		ns.store:init()
 		ns.store:select(ns.store.cur_pk)
+		return
+	end
+	if event == "TRADE_SKILL_SHOW" then
+		if ns.PlannerUI then ns.PlannerUI:OnTradeSkillShow() end
 		return
 	end
 	if event == "UPDATE_TRADESKILL_RECAST" and GetTradeskillRepeatCount() == 0 then

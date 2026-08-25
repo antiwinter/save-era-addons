@@ -1,5 +1,6 @@
 local _, ns = ...
 
+local Craft = {}
 local panel = CreateFrame("Frame", "skillMasterPanel", UIParent, "BackdropTemplate")
 panel:SetSize(240, 150)
 panel:SetPoint("CENTER")
@@ -17,7 +18,7 @@ title:SetText("skillMaster")
 local planDrop = CreateFrame("Frame", "SkillMaster_PlansDrop", panel, "UIDropDownMenuTemplate")
 planDrop:SetPoint("TOP", title, "BOTTOM", 0, -4)
 UIDropDownMenu_Initialize(planDrop, function(_, level)
-	for pk in pairs(ns.store.plans) do
+	for pk in pairs(ns.store.plans or {}) do
 		local info = UIDropDownMenu_CreateInfo()
 		info.text = pk
 		info.checked = ns.store.cur_pk == pk
@@ -40,6 +41,23 @@ local craftBtn = CreateFrame("Button", "SkillMaster_CraftBtn", panel, "UIPanelBu
 craftBtn:SetSize(180, 24)
 craftBtn:SetPoint("BOTTOM", 0, 12)
 craftBtn:SetText("Craft next")
+craftBtn:SetScript("OnClick", function()
+	if ns.ss then ns.ss:DoAction() else ns.hint("No plan - /skm plan <pk> [target]") end
+end)
+
+function Craft:Show()
+	panel:Show()
+end
+
+function Craft:Hide()
+	panel:Hide()
+end
+
+function Craft:SetStatus(message, ...)
+	if select("#", ...) > 0 then message = string.format(message, ...) end
+	status:SetText(message)
+	UIDropDownMenu_SetText(planDrop, ns.store.cur_pk or "no plan")
+end
 
 function ns.disable()
 	craftBtn:Disable()
@@ -50,38 +68,7 @@ function ns.enable()
 end
 
 function ns.hint(message, ...)
-	if select("#", ...) > 0 then message = string.format(message, ...) end
-	status:SetText(message)
-	UIDropDownMenu_SetText(planDrop, ns.store.cur_pk or "no plan")
+	Craft:SetStatus(message, ...)
 end
 
-craftBtn:SetScript("OnClick", function()
-	if ns.ss then ns.ss:DoAction() else ns.hint("No plan - /skm plan <pk> [target]") end
-end)
-
-SLASH_SKILLMASTER1 = "/skm"
-SlashCmdList.SKILLMASTER = function(msg)
-	msg = (msg or ""):lower():gsub("^%s+", "")
-	if msg == "plan" or msg:match("^plan%s") then
-		local pk, target = msg:match("^plan%s+(%S+)%s*(%d*)")
-		if not pk then
-			print("|cff00b4ff[skm]|r usage: /skm plan <pk> [target]")
-			return
-		end
-		local plan, message = ns.CreatePlan(pk, target ~= "" and tonumber(target) or nil)
-		if not plan then
-			print("|cff00b4ff[skm]|r " .. message)
-			ns.hint(message)
-			return
-		end
-		ns.store:savePlan(plan)
-		print("|cff00b4ff[skm]|r " .. message)
-		ns.Format.PrintPlan(plan)
-		ns.hint(message)
-		panel:Show()
-	elseif msg == "hide" then
-		panel:Hide()
-	else
-		panel:Show()
-	end
-end
+ns.CraftUI = Craft
