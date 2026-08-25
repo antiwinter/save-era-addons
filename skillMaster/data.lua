@@ -2,11 +2,11 @@ local _, ns = ...
 
 -- Skill row (positions match gen-data's emitter): [1]=id [2]=craft_count
 -- [3]=colors [4]=phaseId [5]=teach_id [6]=recipe {{reagent_id, count}, ...}.
-local function Build(prof)
+local function Build(pk)
 	local db = { data = {} }
 	local all = {} -- every skill row id-keyed, incl. color-less (their recipes
 	               -- still feed costs and the planner's ordered scan)
-	for _, row in ipairs(skills[prof]) do
+	for _, row in ipairs(skills[pk]) do
 		local r = {
 			skill_id = row[1],
 			craft_count = row[2],
@@ -49,6 +49,6 @@ end
 
 ns.db = ns.db or {}
 -- The era files ship in this .toc; register whichever professions they hold.
-for prof in pairs(skills) do
-	ns.db[prof] = Build(prof)
+for pk in pairs(skills) do
+	ns.db[pk] = Build(pk)
 end

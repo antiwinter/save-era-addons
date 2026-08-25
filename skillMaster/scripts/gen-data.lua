@@ -1,7 +1,7 @@
 #!/usr/bin/env lua
 -- gen-data.lua — launch fake-wow with a version, then emit the addon's trimmed
 -- data into skillMaster/data/<version>/ via the GM schema API:
---   skills.lua      — skills: per-prof rows, recipe inlined, learnedat order
+--   skills.lua      — skills: per-pk rows, recipe inlined, learnedat order
 --   item_prices.lua — item_prices: id -> avgbuyout for every id we touch
 -- Projection trims what the client supplies at runtime (names, quality) and what
 -- the addon derives at load (craft costs — see data.lua), keeping item_prices
@@ -22,11 +22,11 @@ local GM = fw.GM
 -- The whole projection: outputs, their reagents, and teaching schematics all
 -- get a price; skills get their recipes inlined.
 local skills, prices = {}, {}
-for _, prof in ipairs(GM:ListProfessions()) do
-	skills[prof] = {}
-	for _, s in ipairs(GM:ListSkills(prof)) do
+for _, pk in ipairs(GM:ListProfessions()) do
+	skills[pk] = {}
+	for _, s in ipairs(GM:ListSkills(pk)) do
 		s.recipe = GM:GetRecipe(s.id)
-		skills[prof][#skills[prof] + 1] = s
+		skills[pk][#skills[pk] + 1] = s
 		prices[s.id] = GM:GetPrice(s.id)
 		for _, rg in ipairs(s.recipe) do prices[rg.id] = GM:GetPrice(rg.id) end
 		if s.teach_id > 0 then prices[s.teach_id] = GM:GetPrice(s.teach_id) end
@@ -44,9 +44,9 @@ local function final(first) return { header, first } end
 
 -- ---- skills.lua ------------------------------------------------------------
 local out = final("skills = {")
-for _, prof in ipairs(GM:ListProfessions()) do
-	out[#out + 1] = "  " .. prof .. " = {"
-	for _, s in ipairs(skills[prof]) do
+for _, pk in ipairs(GM:ListProfessions()) do
+	out[#out + 1] = "  " .. pk .. " = {"
+	for _, s in ipairs(skills[pk]) do
 		-- {skill_id, craft_count, colors, phaseId, teach_id, {{reagent_id,count},...}}
 		out[#out + 1] = string.format("    {%d, %d, %s, %d, %d, %s},",
 			s.id, s.craft_count, lit(s.colors), s.phaseId, s.teach_id, litRec(s.recipe))
@@ -68,8 +68,8 @@ it[#it + 1] = "}"
 -- ---- profs.lua -------------------------------------------------------------
 -- professions with rank spells -> their spell ids (see data/era/profs.lua use).
 local pf = final("profs = {")
-for _, p in ipairs(GM:ListProfSpells()) do
-	pf[#pf + 1] = "  " .. p.prof .. " = " .. lit(p.spells) .. ","
+for _, profession in ipairs(GM:ListProfSpells()) do
+	pf[#pf + 1] = "  " .. profession.pk .. " = " .. lit(profession.spells) .. ","
 end
 pf[#pf + 1] = "}"
 
@@ -85,7 +85,7 @@ f = assert(io.open(dir .. "/profs.lua", "w"))
 f:write(table.concat(pf, "\n"), "\n")
 f:close()
 local nskills = 0
-for _, prof in ipairs(GM:ListProfessions()) do nskills = nskills + #skills[prof] end
+for _, pk in ipairs(GM:ListProfessions()) do nskills = nskills + #skills[pk] end
 local nprofs = 0
 for _ in pairs(GM:ListProfSpells()) do nprofs = nprofs + 1 end
 print("wrote " .. dir .. "/skills.lua (" .. nskills .. " skills)")

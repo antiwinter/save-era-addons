@@ -8,11 +8,11 @@ local _, ns = ...
 
 local sqrt, floor, ceil, pow = math.sqrt, math.floor, math.ceil, function(a, b) return a ^ b end
 
-local function rolls(a, b, p)
+local function rolls(a, b, p, z)
 	local n = b - a
 	if n <= 0 then return 0 end
 	if p == 1 then return n end
-	return n + n * (1 - p) / p + 2 * sqrt(n * (1 - p)) / p
+	return n + n * (1 - p) / p + (z or 2) * sqrt(n * (1 - p)) / p
 end
 
 local function BuildPlan(db, opts)
@@ -135,11 +135,12 @@ local function BuildPlan(db, opts)
 		end
 		for _, ac in ipairs(actions) do
 			local c = db[ac.item].colors
-			local n = rolls(math.max(c[2], ac.from), math.min(c[3], ac.to), 0.75)
-				+ rolls(math.max(c[3], ac.from), math.min(c[4], ac.to), 0.25)
+			local n = rolls(math.max(c[2], ac.from), math.min(c[3], ac.to), 0.75, 4)
+				+ rolls(math.max(c[3], ac.from), math.min(c[4], ac.to), 0.25, 4)
 				+ rolls(math.max(c[1], ac.from), math.min(c[2], ac.to), 1)
-			if n > ac.count then
-				add(db[ac.item], n - ac.count)
+			local buffered = math.ceil(n) + 1
+			if buffered > ac.count then
+				add(db[ac.item], buffered - ac.count)
 			end
 		end
 	end

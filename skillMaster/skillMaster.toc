@@ -11,5 +11,7 @@ data\era\profs.lua
 data.lua
 planner.lua
 format.lua
+utils.lua
+build.lua
 core.lua
 ui.lua

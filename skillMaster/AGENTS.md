@@ -28,8 +28,8 @@ The prototype splits cleanly into three concerns; skillMaster keeps that split.
    wishlist, produce an ordered action list and a shopping list. Zero WoW
    globals — the caller passes `db`.
 3. Session + plans (craft engine in `core.lua`): plans are **persisted first-class
-   objects** (`skillMasterDB.plans[prof] = {prof, target, actions, materials}`),
-   created with `/skm plan <prof> [target]` and picked from a UI dropdown. Each
+   objects** (`skillMasterDB.plans[pk] = {pk, target, actions, materials}`),
+   created with `/skm plan <pk> [target]` and picked from a UI dropdown. Each
    action carries a `crafted` counter — the single source of progress, so a
    relog resumes exactly where crafting stopped. The data key ("eng") is the
    only stable identifier; the localized window name is derived from it via
@@ -83,7 +83,7 @@ the progress promise: partial progress must survive a reload.
 # Debugging
 - In-game: `/skm debug` dumps session + active plan (with crafted counters) to
   SavedVariables; read `WTF/Account/<ACCOUNT>/SavedVariables/skillMaster.lua`.
-- Off-client: `lua tests/emu.lua <prof> <target> [start]` replays a plan via
+- Off-client: `lua tests/emu.lua <pk> <target> [start]` replays a plan via
   Monte Carlo and reports budget / material use-rate / total crafts.
 - Regression gate: `./tests/run.sh` runs the emulator over eng + tailor at a
   fixed seed plus the resume check; fails if any plan comes up SHORT.

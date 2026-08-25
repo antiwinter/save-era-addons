@@ -14,14 +14,21 @@ LUA="${LUA:-lua}"
 SEED="${SKM_SEED:-8}"
 
 fail=0
-for prof in eng tailor; do
-	echo "== $prof =="
-	if ! SKM_SEED="$SEED" "$LUA" tests/emu.lua "$prof" 300; then
-		echo "FAIL: $prof did not reach target" >&2
+for pk in eng tailor; do
+	echo "== $pk =="
+	if ! SKM_SEED="$SEED" "$LUA" tests/emu.lua "$pk" 300; then
+		echo "FAIL: $pk did not reach target" >&2
 		fail=1
 	fi
 	echo
 done
+
+echo "== window =="
+if ! "$LUA" tests/window.lua; then
+	echo "FAIL: profession window wrappers" >&2
+	fail=1
+fi
+echo
 
 echo "== resume =="
 if ! SKM_SEED="$SEED" "$LUA" tests/resume.lua eng 300; then
