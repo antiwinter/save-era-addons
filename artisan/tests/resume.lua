@@ -17,7 +17,9 @@ local profession = ns.getProfName(pk)
 fw.GM.SetTradeSkillLine(profession, 1, target)
 local plan, message = ns.CreatePlan(pk, target)
 assert(plan, message)
-ns.store:savePlan(plan)
+ns.store.plans[pk] = { target = plan.target, wishlist = {}, preferExisting = false, noAH = false }
+ns.store.cur_pk = pk
+ns.CraftUI:Show()
 
 for id, count in pairs(plan.materials) do
 	fw.GM.SetBag(id, math.ceil(count))

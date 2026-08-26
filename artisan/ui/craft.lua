@@ -15,37 +15,24 @@ local title = panel:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 title:SetPoint("TOP", 0, -8)
 title:SetText("artisan")
 
-local planDrop = CreateFrame("Frame", "Artisan_PlansDrop", panel, "UIDropDownMenuTemplate")
-planDrop:SetPoint("TOP", title, "BOTTOM", 0, -4)
-UIDropDownMenu_Initialize(planDrop, function(_, level)
-	for pk in pairs(ns.store.plans or {}) do
-		local info = UIDropDownMenu_CreateInfo()
-		info.text = pk
-		info.checked = ns.store.cur_pk == pk
-		info.func = function()
-			ns.store:select(pk)
-			CloseDropDownMenus()
-			ns.hint("Selected " .. pk)
-		end
-		UIDropDownMenu_AddButton(info, level)
-	end
-end)
-UIDropDownMenu_SetWidth(planDrop, 200)
-UIDropDownMenu_SetText(planDrop, "no plan")
-
 local status = panel:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-status:SetPoint("TOP", planDrop, "BOTTOM", 0, -4)
-status:SetText("No plan - /art plan <pk> [target]")
+status:SetPoint("TOP", title, "BOTTOM", 0, -4)
+status:SetText("No plan")
 
 local craftBtn = CreateFrame("Button", "Artisan_CraftBtn", panel, "UIPanelButtonTemplate")
 craftBtn:SetSize(180, 24)
 craftBtn:SetPoint("BOTTOM", 0, 12)
 craftBtn:SetText("Craft next")
 craftBtn:SetScript("OnClick", function()
-	if ns.ss then ns.ss:DoAction() else ns.hint("No plan - /art plan <pk> [target]") end
+	if ns.ss then ns.ss:DoAction() else ns.hint("No plan") end
 end)
 
 function Craft:Show()
+	local pk = ns.store.cur_pk
+	if not pk then return end
+	local saved = ns.store.plans[pk]
+	local plan = ns.CreatePlan(pk, saved.target, saved)
+	ns.ss = plan and ns.CreateSession(plan) or nil
 	panel:Show()
 end
 
@@ -56,7 +43,6 @@ end
 function Craft:SetStatus(message, ...)
 	if select("#", ...) > 0 then message = string.format(message, ...) end
 	status:SetText(message)
-	UIDropDownMenu_SetText(planDrop, ns.store.cur_pk or "no plan")
 end
 
 function ns.disable()

@@ -9,6 +9,7 @@ local function Build(pk)
 	for _, row in ipairs(skills[pk]) do
 		local r = {
 			skill_id = row[1],
+			name = GetItemInfo(row[1]),
 			craft_count = row[2],
 			colors = row[3],
 			phaseId = row[4],
@@ -25,7 +26,6 @@ local function Build(pk)
 		if #r.colors > 0 then db[r.skill_id] = r end
 	end
 	db.price = function(_, id) return item_prices[id] end
-
 	local memo = {}
 	local function cost(sid)
 		if memo[sid] then return memo[sid] end

@@ -11,8 +11,24 @@ local function reparent(parent)
 	Planner.frame:ClearAllPoints()
 end
 
+function Planner:State()
+	local state = ns.store.plans[self.pk]
+	if not state then
+		state = {
+			wishlist = {},
+			preferExisting = false,
+			noAH = false,
+		}
+		ns.store.plans[self.pk] = state
+	end
+	state.wishlist = state.wishlist or {}
+	return state
+end
+
 function Planner:Attach()
 	local parent = TradeSkillFrame
+	local name = GetTradeSkillLine()
+	self.pk = ns.getProfKey(name)
 	reparent(parent)
 	self.frame:SetPoint("TOPLEFT", parent, "TOPLEFT", 8, -42)
 	self.frame:SetPoint("BOTTOMRIGHT", parent, "BOTTOMRIGHT", -8, 8)
@@ -51,6 +67,7 @@ function Planner:Attach()
 		PanelTemplates_SetTab(parent, skillTab:GetID())
 	end
 	self.active = false
+	if self.Refresh and self.pk then self:Refresh() end
 end
 
 function Planner:Close()
@@ -70,6 +87,7 @@ function Planner:Open(pk, active)
 		reparent(UIParent)
 		self.frame:SetPoint("CENTER")
 		self.frame:Show()
+		if self.Refresh then self:Refresh() end
 	end
 end
 

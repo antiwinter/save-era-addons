@@ -17,7 +17,13 @@ local plan, message = ns.CreatePlan(pk, 150)
 assert(plan, message)
 assert(message:find("eng: 75 -> 150", 1, true), message)
 assert(GetTradeSkillLine() == profession, "skill wrapper did not switch professions")
-ns.store:savePlan(plan)
+ns.store.plans[pk] = { target = plan.target, wishlist = {}, preferExisting = false, noAH = false }
+ns.store.cur_pk = nil
+ns.PlannerUI:Refresh()
+fw.click("Artisan_StartCrafting")
+assert(ns.store.cur_pk == pk, "start crafting did not select the profession")
+assert(artisanPanel:IsShown(), "start crafting did not show the craft panel")
+assert(ns.ss, "start crafting did not create a session")
 
 for id, count in pairs(plan.materials) do
 	fw.GM.SetBag(id, math.ceil(count))

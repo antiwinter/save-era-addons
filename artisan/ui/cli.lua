@@ -14,6 +14,6 @@ SlashCmdList.ARTISAN = function(msg)
 		ns.CraftUI:Hide()
 		ns.PlannerUI:Close()
 	else
-		ns.CraftUI:Show()
+		ns.PlannerUI:Open(ns.store.cur_pk, true)
 	end
 end

@@ -12,9 +12,9 @@ data.lua
 planner.lua
 format.lua
 utils.lua
-build.lua
 core.lua
 ui\craft.lua
+ui\planner\model.lua
 ui\planner\control.lua
 ui\planner\content.lua
 ui\cli.lua

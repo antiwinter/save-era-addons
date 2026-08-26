@@ -28,10 +28,12 @@ local ns = fw.loadAddon("artisan.toc")
 local profession = ns.getProfName(pk)
 fw.GM.SetTradeSkillLine(profession, startLvl, target)
 
--- Build and persist/select it as the slash command does.
+-- Persist/select the planner inputs as the slash command does.
 local plan, msg = ns.CreatePlan(pk, target)
 assert(plan, msg)
-ns.store:savePlan(plan)
+ns.store.plans[pk] = { target = plan.target, wishlist = {}, preferExisting = false, noAH = false }
+ns.store.cur_pk = pk
+ns.CraftUI:Show()
 
 if os.getenv("ARTISAN_NOPLAN") ~= "1" then
 	ns.Format.PrintPlan(plan)

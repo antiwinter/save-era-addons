@@ -21,6 +21,7 @@ local function BuildPlan(db, opts)
 	local PHASE = opts.phase or 3
 	local p_gain = opts.pGain or 0
 	local wishlist = opts.wishlist or {}
+	local existing = opts.existing or {}
 	-- END grows as recipes get pushed to higher levels; seed from target/cap.
 	local END = opts.target or 0
 
@@ -47,7 +48,9 @@ local function BuildPlan(db, opts)
 			if p ~= 0 and r.phaseId <= PHASE then
 				local m, n = r.colors[i - 1], r.colors[i]
 				local p1 = (n - m) / rolls(m, n, p)
-				local roi = (r.avgbuyout * p_gain - r.cost) / p1
+				local buyout = r.avgbuyout
+				if existing[r.skill_id] then buyout = buyout * 0.8 end
+				local roi = (buyout * p_gain - r.cost) / p1
 				local perf = roi * pow(#r.recipe, 0.5)
 				if not best or perf > best then
 					best, res, frac = perf, r, 1 / p

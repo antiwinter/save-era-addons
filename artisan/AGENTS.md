@@ -27,17 +27,18 @@ The prototype splits cleanly into three concerns; artisan keeps that split.
 2. Planner (pure Lua): given a profession's recipe table + a target level + a
    wishlist, produce an ordered action list and a shopping list. Zero WoW
    globals — the caller passes `db`.
-3. Session + plans (craft engine in `core.lua`): plans are **persisted first-class
-objects** (`artisanDB[char].plans[pk] = {pk, target, actions, materials}`),
-created with `/art plan <pk> [target]` and picked from a UI dropdown. The live
-profession skill is the source of progress, so a relog resumes at the current
-skill bracket. The data key ("eng") is the
-   only stable identifier; the localized window name is derived from it via
-   `FindProfName` (rank-spell ids), never the other way around. The session (a
-   thin per-session view: active plan + live skill line) crafts the next batch
-   on demand (one click per batch — player-initiated `DoTradeSkill`, no
-   auto-fire, to stay clear of action-blocking taint). Reacts to events
-   (skill-up, bag change, recipe learned) rather than looping.
+3. Session + planner state (craft engine in `core.lua`): planner inputs are
+persisted per profession in `artisanDB[char].plans[pk]` (`target`, `wishlist`,
+`preferExisting`, `noAH`). Actions, materials, and summary values are derived
+from that state and the live bag/skill data; they are not a second source of
+truth. The live profession skill is the source of progress, so a relog resumes
+at the current skill bracket. The data key ("eng") is the only stable
+identifier; the localized window name is derived from it via `FindProfName`
+(rank-spell ids), never the other way around. The session (a thin per-session
+view: derived actions + live skill line) crafts the next batch on demand (one
+click per batch — player-initiated `DoTradeSkill`, no auto-fire, to stay clear
+of action-blocking taint). Reacts to events (skill-up, bag change, recipe
+learned) rather than looping.
 
 ## The shared core runs in both worlds
 `data.lua`, `planner.lua`, `format.lua`, and `core.lua` are loaded by BOTH the

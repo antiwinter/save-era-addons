@@ -2,10 +2,11 @@
 
 ## State and ownership
 
-Make `ns.store.state[pk]` the only source of truth for planner inputs:
+Make `ns.store.plans[pk]` the only source of truth for planner inputs. `ns.store`
+is a view over the current character's `artisanDB[char]` table:
 
 ```lua
-ns.store.state[pk] = {
+ns.store.plans[pk] = {
     target = <number>,
     wishlist = { [itemId] = amount },
     preferExisting = <boolean>,
@@ -32,15 +33,18 @@ coordination. Keep content code responsible for controls and rendering.
   controlled by the tab handlers.
 - Standalone `Open` reparents and shows the planner directly.
 - `Close` closes the Era trade-skill window and hides the planner.
+- The planner's Start Crafting button sets `cur_pk` and calls `CraftUI:Show()`;
+  profession selection is not exposed by the craft panel.
+- `CraftUI:Show()` rebuilds the session from `plans[cur_pk]` and shows the
+  panel only when `cur_pk` is set. Addon load delegates to this same entrypoint.
 
 ## Target level
 
 - Initialize the target from the current profession state and persisted state.
 - The slider's full scale is always 1 through 300.
-- The selectable interval is the player's current `[skill, cap]` region. The
-  thumb cannot move below the current skill or above the cap permitted by the
-  player's level and learned profession rank (for example, player level 5
-  permits 150 and level 35 permits 300).
+- The selectable interval is the live profession's current `[skill, cap]`
+  region. The thumb cannot move below the current skill or above the returned
+  profession cap (for example, `[5, 150]` or `[35, 300]`).
 - Visually distinguish the selectable interval from the rest of the 1–300
   track.
 - Clamp a persisted or newly invalid target into the current `[skill, cap]`
@@ -69,7 +73,7 @@ coordination. Keep content code responsible for controls and rendering.
 - Render Craft rows as `item`, amount, and target skill level (`to`).
 - Render BOM rows as item and available/required quantity.
 - Read existing material quantities from the bags for the available side.
-- Keep all row calculations derived from the current `state[pk]` and live bag
+- Keep all row calculations derived from the current `ns.store.plans[pk]` and live bag
   state; do not maintain a second editable copy in the frame.
 
 ## Prefer existing materials
@@ -110,7 +114,7 @@ code.
 - Recalculate after target, wishlist, `preferExisting`, or `noAH` changes.
 - Refresh after skill, bag, recipe, and profession-window events where those
   inputs can change.
-- Persist the complete `state[pk]` object whenever the user changes it.
+- Persist the complete `ns.store.plans[pk]` object whenever the user changes it.
 - Keep the active session and craft controls derived from the selected
   profession state rather than a duplicate plan-input structure.
 
@@ -126,7 +130,7 @@ code.
   - existing-material weighting and action selection;
   - BOM available/required calculations;
   - no-AH junk/vendor-return accounting;
-  - persistence and restoration of `state[pk]`.
+  - persistence and restoration of `ns.store.plans[pk]`.
 - Do not implement real UI behavior in fake-wow. Add only client API stubs
   needed to execute shared, UI-independent code.
 - Finish by running both `tests/test.sh` and `tests/run.sh`.

@@ -23,18 +23,4 @@ for pk in eng tailor; do
 	echo
 done
 
-echo "== window =="
-if ! "$LUA" tests/window.lua; then
-	echo "FAIL: profession window wrappers" >&2
-	fail=1
-fi
-echo
-
-echo "== resume =="
-if ! ARTISAN_SEED="$SEED" "$LUA" tests/resume.lua eng 300; then
-	echo "FAIL: plan progress did not survive a relog" >&2
-	fail=1
-fi
-echo
-
 exit $fail

@@ -30,6 +30,22 @@ function ns.openProfFrame(pk)
 	return name, _, lvl, cap
 end
 
+function ns.getTradeSkillRange(pk)
+	local _, _, skill, cap = ns.openProfFrame(pk)
+	return skill or 1, cap or 150
+end
+
+function ns.getExistingMaterials()
+	local existing = {}
+	for bag = 0, 4 do
+		for slot = 1, GetContainerNumSlots(bag) do
+			local id = GetContainerItemID(bag, slot)
+			if id then existing[id] = (existing[id] or 0) + (select(2, GetContainerItemInfo(bag, slot)) or 0) end
+		end
+	end
+	return existing
+end
+
 function ns.craft(itemId, count)
 	ns.openProfFrame()
 	local name = GetItemInfo(itemId)
@@ -77,22 +93,8 @@ function store:init()
 	local char = UnitName and UnitName("player") or "player"
 	char = char and char ~= "" and char or "player"
 	artisanDB[char] = artisanDB[char] or {}
-	artisanDB[char].plans = artisanDB[char].plans or {}
 	state = artisanDB[char]
-end
-
-function store:set(key, value)
-	state[key] = value
-end
-
-function store:select(pk)
-	self:set("cur_pk", pk)
-	ns.ss = ns.CreateSession(pk and self.plans[pk])
-end
-
-function store:savePlan(plan)
-	self.plans[plan.pk] = plan
-	self:select(plan.pk)
+	state.plans = state.plans or {}
 end
 
 setmetatable(store, {

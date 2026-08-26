@@ -51,7 +51,7 @@ frame:SetScript("OnEvent", function(_, event, arg1)
 	if event == "ADDON_LOADED" then
 		if arg1 ~= addonName then return end
 		ns.store:init()
-		ns.store:select(ns.store.cur_pk)
+		ns.CraftUI:Show()
 		return
 	end
 	if event == "TRADE_SKILL_SHOW" then
