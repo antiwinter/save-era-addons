@@ -1,7 +1,7 @@
 local _, ns = ...
 
 local Planner = { attached = false, profession = nil }
-local frame = CreateFrame("Frame", "skillMasterPlanner", UIParent, "BackdropTemplate")
+local frame = CreateFrame("Frame", "artisanPlanner", UIParent, "BackdropTemplate")
 frame:SetSize(430, 280)
 frame:SetPoint("CENTER")
 frame:SetMovable(true)
@@ -38,7 +38,7 @@ function Planner:Attach()
 	footer:SetText("Attached to the trade-skill window")
 
 	if not self.tab then
-		self.tab = CreateFrame("Button", "SkillMaster_PlannerTab", parent, "CharacterFrameTabButtonTemplate")
+		self.tab = CreateFrame("Button", "Artisan_PlannerTab", parent, "CharacterFrameTabButtonTemplate")
 		self.tab:SetText("Planner")
 		self.tab:SetPoint("TOPLEFT", parent, "TOPLEFT", 116, 0)
 		self.tab:SetScript("OnClick", function() self:Select() end)

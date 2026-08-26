@@ -6,7 +6,7 @@ local fw = dofile("../fake-wow/init.lua")
 fw.GM.SetSeed(8)
 fw.init("era")
 
-local ns = fw.loadAddon("skillMaster.toc")
+local ns = fw.loadAddon("artisan.toc")
 local pk, otherPk = "eng", "tailor"
 local profession = ns.getProfName(pk)
 
@@ -24,10 +24,10 @@ for id, count in pairs(plan.materials) do
 end
 fw.GM.SetTradeSkillLine(ns.getProfName(otherPk), 42, 75)
 local crafts = fw.world.crafts
-fw.click("SkillMaster_CraftBtn")
+fw.click("Artisan_CraftBtn")
 assert(GetTradeSkillLine() == profession, "craft wrapper did not switch professions")
 assert(fw.world.crafts > crafts, "craft click stopped after switching professions")
-assert(SkillMaster_CraftBtn:IsEnabled(), "craft button stayed disabled after batch")
+assert(Artisan_CraftBtn:IsEnabled(), "craft button stayed disabled after batch")
 
 local castSpellByName = CastSpellByName
 CastSpellByName = function() end

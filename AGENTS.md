@@ -2,7 +2,7 @@
 
 A collection of WoW Classic Era addons, each in its own subdirectory:
 - `Peddler` — auto-sell unwanted items at vendors.
-- `skillMaster` — half-automated trade-skill leveling assistant.
+- `artisan` — half-automated trade-skill leveling assistant.
 - `whoaThickCC` — minimal rewrite of whoaThickFrames_Classic.
 - `BugPanel` — current-session Lua error viewer (reads !BugGrabber's DB).
 

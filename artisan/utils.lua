@@ -65,12 +65,12 @@ local state
 local store = {}
 
 function store:init()
-	skillMasterDB = skillMasterDB or {}
+	artisanDB = artisanDB or {}
 	local char = UnitName and UnitName("player") or "player"
 	char = char and char ~= "" and char or "player"
-	skillMasterDB[char] = skillMasterDB[char] or {}
-	skillMasterDB[char].plans = skillMasterDB[char].plans or {}
-	state = skillMasterDB[char]
+	artisanDB[char] = artisanDB[char] or {}
+	artisanDB[char].plans = artisanDB[char].plans or {}
+	state = artisanDB[char]
 end
 
 function store:set(key, value)

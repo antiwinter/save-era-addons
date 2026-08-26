@@ -1,12 +1,12 @@
 # fake-wow bootstrap
 
 A **repo-shared** fake WoW client for running addons under a plain `lua`
-interpreter. Structured so skillMaster, BugPanel, Peddler, and whoaThickCC can
+interpreter. Structured so artisan, BugPanel, Peddler, and whoaThickCC can
 all reuse the generic client shell (`client.lua`). Domain-specific APIs (e.g.,
 trade-skill) are in separate modules so other addons don't inherit unrelated
 globals.
 
-## Current API surface (skillMaster-driven)
+## Current API surface (artisan-driven)
 
 ### Generic client (client.lua)
 - `CreateFrame(type, name, parent, template)` — widget + event stubs
@@ -54,7 +54,7 @@ its own knobs (setup helpers live with the domain they mutate).
 - `init(version)` — boot a game version: `GM.LoadDB(dir .. "data/<version>.db")`; drivers and gen-data never touch db.lua or db paths directly
 - `loadAddon(tocPath)` → `ns` — parse .toc, run each file with `(addonName, ns)`, fire `ADDON_LOADED`
 - `fire(event, ...)` — dispatch an event to all registered frames
-- `slash(line)` — dispatch a slash command (e.g., `"/skm plan"`)
+- `slash(line)` — dispatch a slash command (e.g., `"/art plan"`)
 - `world` — the mutable sim state (skill, bag, scroll-learned recipes, crafts)
 - `env` — the global table (`_G`)
 
@@ -69,8 +69,8 @@ in the shell.
 local fw = dofile("fake-wow/init.lua")
 fw.init("era")                       -- load fake-wow/data/era.db
 fw.GM.SetSeed(1)
-local ns = fw.loadAddon("skillMaster/skillMaster.toc")
+local ns = fw.loadAddon("artisan/artisan.toc")
 fw.GM.SetTradeSkillLine("engineering", 1, 300)
-fw.slash("/skm plan eng 300")
-fw.click("SkillMaster_CraftBtn")
+fw.slash("/art plan eng 300")
+fw.click("Artisan_CraftBtn")
 ```

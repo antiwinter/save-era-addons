@@ -1,9 +1,9 @@
 ## Interface: 11507
-## Title: skill|cFF00B4FFMaster|r
+## Title: artisan
 ## Notes: Half-automated trade-skill leveling: computes the cheapest craft plan and drives you through it.
 ## Author: warits
 ## Version: 0.1
-## SavedVariables: skillMasterDB
+## SavedVariables: artisanDB
 
 data\era\skills.lua
 data\era\item_prices.lua

@@ -1,7 +1,7 @@
 local _, ns = ...
 
 local Craft = {}
-local panel = CreateFrame("Frame", "skillMasterPanel", UIParent, "BackdropTemplate")
+local panel = CreateFrame("Frame", "artisanPanel", UIParent, "BackdropTemplate")
 panel:SetSize(240, 150)
 panel:SetPoint("CENTER")
 panel:SetMovable(true)
@@ -13,9 +13,9 @@ panel:Hide()
 
 local title = panel:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 title:SetPoint("TOP", 0, -8)
-title:SetText("skillMaster")
+title:SetText("artisan")
 
-local planDrop = CreateFrame("Frame", "SkillMaster_PlansDrop", panel, "UIDropDownMenuTemplate")
+local planDrop = CreateFrame("Frame", "Artisan_PlansDrop", panel, "UIDropDownMenuTemplate")
 planDrop:SetPoint("TOP", title, "BOTTOM", 0, -4)
 UIDropDownMenu_Initialize(planDrop, function(_, level)
 	for pk in pairs(ns.store.plans or {}) do
@@ -35,14 +35,14 @@ UIDropDownMenu_SetText(planDrop, "no plan")
 
 local status = panel:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
 status:SetPoint("TOP", planDrop, "BOTTOM", 0, -4)
-status:SetText("No plan - /skm plan <pk> [target]")
+status:SetText("No plan - /art plan <pk> [target]")
 
-local craftBtn = CreateFrame("Button", "SkillMaster_CraftBtn", panel, "UIPanelButtonTemplate")
+local craftBtn = CreateFrame("Button", "Artisan_CraftBtn", panel, "UIPanelButtonTemplate")
 craftBtn:SetSize(180, 24)
 craftBtn:SetPoint("BOTTOM", 0, 12)
 craftBtn:SetText("Craft next")
 craftBtn:SetScript("OnClick", function()
-	if ns.ss then ns.ss:DoAction() else ns.hint("No plan - /skm plan <pk> [target]") end
+	if ns.ss then ns.ss:DoAction() else ns.hint("No plan - /art plan <pk> [target]") end
 end)
 
 function Craft:Show()

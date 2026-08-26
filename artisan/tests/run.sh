@@ -11,12 +11,12 @@ set -euo pipefail
 cd "$(dirname "$0")/.."   # addon root
 
 LUA="${LUA:-lua}"
-SEED="${SKM_SEED:-8}"
+SEED="${ARTISAN_SEED:-8}"
 
 fail=0
 for pk in eng tailor; do
 	echo "== $pk =="
-	if ! SKM_SEED="$SEED" "$LUA" tests/emu.lua "$pk" 300; then
+	if ! ARTISAN_SEED="$SEED" "$LUA" tests/emu.lua "$pk" 300; then
 		echo "FAIL: $pk did not reach target" >&2
 		fail=1
 	fi
@@ -31,7 +31,7 @@ fi
 echo
 
 echo "== resume =="
-if ! SKM_SEED="$SEED" "$LUA" tests/resume.lua eng 300; then
+if ! ARTISAN_SEED="$SEED" "$LUA" tests/resume.lua eng 300; then
 	echo "FAIL: plan progress did not survive a relog" >&2
 	fail=1
 fi

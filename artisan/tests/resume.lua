@@ -9,10 +9,10 @@ local target = tonumber(arg[2]) or 300
 local clicks = tonumber(arg[3]) or 20
 
 local fw = dofile("../fake-wow/init.lua")
-fw.GM.SetSeed(tonumber(os.getenv("SKM_SEED") or "") or os.time())
+fw.GM.SetSeed(tonumber(os.getenv("ARTISAN_SEED") or "") or os.time())
 fw.init("era")
 
-local ns = fw.loadAddon("skillMaster.toc")
+local ns = fw.loadAddon("artisan.toc")
 local profession = ns.getProfName(pk)
 fw.GM.SetTradeSkillLine(profession, 1, target)
 local plan, message = ns.CreatePlan(pk, target)
@@ -25,14 +25,14 @@ end
 -- Click until the CURRENT action is inside its skill bracket.
 local item1
 for i = 1, clicks * 10 do
-	fw.click("SkillMaster_CraftBtn")
+	fw.click("Artisan_CraftBtn")
 	item1 = ns.ss:ResovleAction()
 	if item1 then break end
 	if i == clicks * 10 then error("no mid-craft action after " .. i .. " clicks") end
 end
 
 -- Relog and restore the persisted session at the same skill bracket.
-local ns2 = fw.loadAddon("skillMaster.toc")
+local ns2 = fw.loadAddon("artisan.toc")
 local item2 = ns2.ss:ResovleAction()
 assert(item2 and item2 == item1,
 	"resume mismatch: before " .. (item1 or "?")
@@ -41,7 +41,7 @@ assert(item2 and item2 == item1,
 local guard = 0
 while fw.world.skill.lvl < target do
 	local before = fw.world.skill.lvl
-	fw.click("SkillMaster_CraftBtn")
+	fw.click("Artisan_CraftBtn")
 	guard = guard + 1
 	if fw.world.skill.lvl == before then
 		if guard > 500000 then error("STALL: no progress") end

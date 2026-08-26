@@ -1,4 +1,4 @@
-# skillMaster
+# artisan
 
 A half-automated leveling assistant for WoW Classic Era trade skills. Given a
 profession and a target skill level, it computes the cheapest/fastest craft plan
@@ -7,7 +7,7 @@ player through it one click at a time using the live trade-skill window and bag
 state.
 
 Ported from a WeakAura prototype (`../../../../../Users/warits/code/murmur/wa/0trash/professor-draft`).
-The WA proved the concept; skillMaster is the standalone-addon rewrite.
+The WA proved the concept; artisan is the standalone-addon rewrite.
 
 # Related Projects
 See root `AGENTS.md` for shared references (wow-ui-source) and design principles.
@@ -15,7 +15,7 @@ See root `AGENTS.md` for shared references (wow-ui-source) and design principles
 - addon skeleton reference: `../whoaThickCC`
 
 # Architecture
-The prototype splits cleanly into three concerns; skillMaster keeps that split.
+The prototype splits cleanly into three concerns; artisan keeps that split.
 
 1. Data (offline): `fake-wow/scripts/dl.js` scrapes recipe/reagent/price data
    from Wowhead into versioned SQLite dbs (`fake-wow/data/<version>.db`), and
@@ -28,8 +28,8 @@ The prototype splits cleanly into three concerns; skillMaster keeps that split.
    wishlist, produce an ordered action list and a shopping list. Zero WoW
    globals — the caller passes `db`.
 3. Session + plans (craft engine in `core.lua`): plans are **persisted first-class
-objects** (`skillMasterDB[char].plans[pk] = {pk, target, actions, materials}`),
-created with `/skm plan <pk> [target]` and picked from a UI dropdown. The live
+objects** (`artisanDB[char].plans[pk] = {pk, target, actions, materials}`),
+created with `/art plan <pk> [target]` and picked from a UI dropdown. The live
 profession skill is the source of progress, so a relog resumes at the current
 skill bracket. The data key ("eng") is the
    only stable identifier; the localized window name is derived from it via
@@ -66,7 +66,7 @@ Rules that keep it dual-use:
 ## fake-wow: the simulated client
 `fake-wow/` is a **repo-shared** fake WoW environment, structured so other
 addons (BugPanel, Peddler, whoaThickCC) can reuse the generic client shell.
-Currently it only implements what skillMaster needs (~15 APIs), but the
+Currently it only implements what artisan needs (~15 APIs), but the
 architecture supports growth. See `ARCH.md` for file roles.
 
 The emulator (`tests/emu.lua`) loads fake-wow, boots it via `fw.init("era")`,
@@ -81,8 +81,8 @@ resolves the open line exactly as the client would. `tests/resume.lua` guards
 the progress promise: partial progress must survive a reload.
 
 # Debugging
-- In-game: `/skm debug` dumps session + active plan to
-  SavedVariables; read `WTF/Account/<ACCOUNT>/SavedVariables/skillMaster.lua`.
+- In-game: `/art debug` dumps session + active plan to
+  SavedVariables; read `WTF/Account/<ACCOUNT>/SavedVariables/artisan.lua`.
 - Off-client: `lua tests/emu.lua <pk> <target> [start]` replays a plan via
   Monte Carlo and reports budget / material use-rate / total crafts.
 - Regression gate: `./tests/run.sh` runs the emulator over eng + tailor at a
