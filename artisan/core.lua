@@ -55,11 +55,7 @@ frame:SetScript("OnEvent", function(_, event, arg1)
 		return
 	end
 	if event == "TRADE_SKILL_SHOW" then
-		local name = GetTradeSkillLine()
-		local pk = ns.getProfKey(name)
-		if ns.PlannerUI and pk then
-			ns.PlannerUI:Open(pk, false)
-		end
+		ns.PlannerUI:Attach()
 		return
 	end
 	if event == "UPDATE_TRADESKILL_RECAST" and GetTradeskillRepeatCount() == 0 then
