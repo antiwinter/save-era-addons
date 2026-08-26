@@ -7,6 +7,7 @@ fw.init("era")
 local ns = fw.loadAddon("artisan.toc")
 
 assert(ns.store.savePlan == nil, "store.savePlan must be removed")
+assert(ns.CreatePlan == nil, "CreatePlan must be folded into PlannerModel:Build")
 assert(ns.store.state == nil, "store must not create a nested state table")
 local direct = { target = 42, wishlist = {}, preferExisting = false, noAH = false }
 ns.store.plans.eng = direct

@@ -29,8 +29,9 @@ local profession = ns.getProfName(pk)
 fw.GM.SetTradeSkillLine(profession, startLvl, target)
 
 -- Persist/select the planner inputs as the slash command does.
-local plan, msg = ns.CreatePlan(pk, target)
-assert(plan, msg)
+local result, msg = ns.PlannerModel:Build(pk, { target = target })
+assert(result, msg)
+local plan = result.plan
 ns.store.plans[pk] = { target = plan.target, wishlist = {}, preferExisting = false, noAH = false }
 ns.store.cur_pk = pk
 ns.CraftUI:Show()

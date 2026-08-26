@@ -18,6 +18,16 @@ local function install(env)
 			__text = "" }
 	end
 
+	local function newTexture()
+		return {
+			SetSize = function(s, width, height) s.__width, s.__height = width, height end,
+			SetPoint = noop,
+			SetTexture = function(s, texture) s.__texture = texture end,
+			Show = function(s) s.__shown = true end,
+			Hide = function(s) s.__shown = false end,
+		}
+	end
+
 	local function CreateFrame(_, name, _parent, _template)
 		local f
 		f = {
@@ -63,6 +73,7 @@ local function install(env)
 			Hide = function(s) s.__shown = false end,
 			IsShown = function(s) return s.__shown == true end,
 			CreateFontString = function() return newFontString() end,
+			CreateTexture = function() return newTexture() end,
 			-- event plumbing
 			RegisterEvent = function(s, e)
 				s.__events[e] = true

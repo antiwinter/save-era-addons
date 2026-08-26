@@ -13,8 +13,9 @@ local profession = ns.getProfName(pk)
 fw.GM.SetTradeSkillLine(profession, 75, 150)
 fw.GM.SetTradeSkillLine(ns.getProfName(otherPk), 42, 75)
 
-local plan, message = ns.CreatePlan(pk, 150)
-assert(plan, message)
+local result, message = ns.PlannerModel:Build(pk, { target = 150 })
+assert(result, message)
+local plan = result.plan
 assert(message:find("eng: 75 -> 150", 1, true), message)
 assert(GetTradeSkillLine() == profession, "skill wrapper did not switch professions")
 ns.store.plans[pk] = { target = plan.target, wishlist = {}, preferExisting = false, noAH = false }
@@ -38,7 +39,8 @@ assert(Artisan_CraftBtn:IsEnabled(), "craft button stayed disabled after batch")
 local castSpellByName = CastSpellByName
 CastSpellByName = function() end
 fw.GM.SetTradeSkillLine(ns.getProfName(otherPk), 42, 75)
-local fallback, fallbackMessage = ns.CreatePlan(pk)
+local fallbackResult, fallbackMessage = ns.PlannerModel:Build(pk, {})
+local fallback = fallbackResult and fallbackResult.plan
 CastSpellByName = castSpellByName
 assert(fallback, fallbackMessage)
 assert(fallback.target == 150, "fallback cap is not 150")

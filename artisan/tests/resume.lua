@@ -15,8 +15,9 @@ fw.init("era")
 local ns = fw.loadAddon("artisan.toc")
 local profession = ns.getProfName(pk)
 fw.GM.SetTradeSkillLine(profession, 1, target)
-local plan, message = ns.CreatePlan(pk, target)
-assert(plan, message)
+local result, message = ns.PlannerModel:Build(pk, { target = target })
+assert(result, message)
+local plan = result.plan
 ns.store.plans[pk] = { target = plan.target, wishlist = {}, preferExisting = false, noAH = false }
 ns.store.cur_pk = pk
 ns.CraftUI:Show()

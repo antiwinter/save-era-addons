@@ -1,24 +1,5 @@
 local _, ns = ...
 
-function ns.CreatePlan(pk, target, opts)
-	local db = ns.db[pk]
-	if not db then return nil, "Invalid key: " .. pk end
-	opts = opts or {}
-	local _, _, lvl, cap = ns.openProfFrame(pk)
-	if not lvl then lvl, cap = 1, 150 end
-	target = target or cap
-	if target <= lvl then return nil, "Target must be > " .. lvl end
-	local actions, materials = ns.Planner.BuildPlan(db, {
-		start = lvl,
-		target = target,
-		wishlist = opts.wishlist,
-		existing = opts.existing,
-	})
-	local plan = { pk = pk, target = target, actions = {}, materials = materials }
-	for _, action in ipairs(actions) do plan.actions[#plan.actions + 1] = action end
-	return plan, string.format("%s: %d -> %d, %d actions", pk, lvl, target, #plan.actions)
-end
-
 local Model = {}
 
 function Model:Search(db, query)
@@ -43,23 +24,31 @@ function Model:ValidateWishlist(db, itemId, target, cap)
 end
 
 function Model:Build(pk, state)
+	local db = ns.db[pk]
+	if not db then return nil, "Invalid key: " .. pk end
+	state = state or {}
 	local skill, cap = ns.getTradeSkillRange(pk)
 	local target = math.max(skill, math.min(cap, state.target or cap))
 	state.target = target
 	local existing = ns.getExistingMaterials()
-	local plan, message = ns.CreatePlan(pk, target, {
+	if target <= skill then return nil, "Target must be > " .. skill end
+	local actions, materials = ns.Planner.BuildPlan(db, {
+		start = skill,
+		target = target,
 		wishlist = state.wishlist,
 		existing = state.preferExisting and existing or nil,
 	})
-	if not plan then return nil, message end
+	local plan = { pk = pk, target = target, actions = {}, materials = materials }
+	for _, action in ipairs(actions) do plan.actions[#plan.actions + 1] = action end
+	local message = string.format("%s: %d -> %d, %d actions", pk, skill, target, #plan.actions)
 	return {
 		skill = skill,
 		cap = cap,
 		target = target,
 		plan = plan,
 		existing = existing,
-		summary = self:Summary(ns.db[pk], plan, existing, state.noAH),
-	}
+		summary = self:Summary(db, plan, existing, state.noAH),
+	}, message
 end
 
 function Model:Summary(db, plan, existing, noAH)

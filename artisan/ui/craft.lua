@@ -31,8 +31,8 @@ function Craft:Show()
 	local pk = ns.store.cur_pk
 	if not pk then return end
 	local saved = ns.store.plans[pk]
-	local plan = ns.CreatePlan(pk, saved.target, saved)
-	ns.ss = plan and ns.CreateSession(plan) or nil
+	local result = ns.PlannerModel:Build(pk, saved)
+	ns.ss = result and ns.CreateSession(result.plan) or nil
 	panel:Show()
 end
 

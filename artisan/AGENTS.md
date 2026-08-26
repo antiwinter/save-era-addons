@@ -72,7 +72,7 @@ architecture supports growth. See `ARCH.md` for file roles.
 
 The emulator (`tests/emu.lua`) loads fake-wow, boots it via `fw.init("era")`,
 loads the addon from its .toc, seeds the world via `GM.SetTradeSkillLine` /
-`GM.SetBag`, builds the plan through the same `ns.CreatePlan` command a player
+`GM.SetBag`, builds the plan through the same `PlannerModel:Build` path a player
 runs, then clicks the panel's craft button in a loop. fake-wow's `DoTradeSkill`
 handles craft mechanics (skill-up rolls, recursive sub-reagent crafting, reagent
 consumption) and fires `TRADE_SKILL_UPDATE` + `BAG_UPDATE` synchronously, so the
