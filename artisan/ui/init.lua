@@ -1,24 +1,20 @@
 local _, ns = ...
 
 local function openPlan(pk, target)
-	ns.store:set("cur_pk", pk)
-	if not ns.openProfFrame() then
-		ns.PlannerUI:Open(pk)
-		return
-	end
+	ns.PlannerUI:Open(pk, true)
 
 	local plan, message = ns.CreatePlan(pk, target)
 	if not plan then
 		print("|cff00b4ff[art]|r " .. message)
 		ns.hint(message)
-		ns.PlannerUI:Show(pk)
+		ns.PlannerUI:Open(pk, true)
 		return
 	end
 
 	ns.store:savePlan(plan)
 	print("|cff00b4ff[art]|r " .. message)
 	ns.Format.PrintPlan(plan)
-	ns.PlannerUI:Show(pk, plan)
+	ns.PlannerUI:Open(pk, true)
 	ns.CraftUI:Show()
 	ns.hint(message)
 end
@@ -35,7 +31,7 @@ SlashCmdList.ARTISAN = function(msg)
 		openPlan(pk, target ~= "" and tonumber(target) or nil)
 	elseif msg == "hide" then
 		ns.CraftUI:Hide()
-		ns.PlannerUI:Hide()
+		ns.PlannerUI:Close()
 	else
 		ns.CraftUI:Show()
 	end

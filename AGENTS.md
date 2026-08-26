@@ -27,6 +27,20 @@ file holds the conventions common to all of them.
 11. Delete obsolete code instead of preserving history.
 12. Continuously improve the architecture while implementing changes.
 
+# Implementation Discipline
+1. Make behavior deterministic. Do not add speculative fallbacks or defensive
+   branches that hide a broken contract; use the real API and let invalid state
+   fail loudly.
+2. Treat every state flag as a design cost. Before adding one, check whether
+   the state can be derived from an existing object, relationship, or API.
+3. Add compatibility behavior to `fake-wow/` when the emulator lacks a real
+   client API. Do not put fake-versus-real client branches in addon code.
+4. Preserve direction and simplicity when the user do a manual rewrite. Fix wiring and
+   contracts around it without restoring removed behavior; ask before bringing
+   removed code back.
+5. Verify event payloads and client API contracts instead of guessing. When an
+   event carries no useful context, query the authoritative client API.
+
 # About comments in code
 don't write verbose comments!
 don't write verbose comments!

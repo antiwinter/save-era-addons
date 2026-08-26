@@ -9,9 +9,17 @@ function ns.getProfName(pk)
 	end
 end
 
-function ns.openProfFrame()
-	local name = ns.getProfName(ns.store.cur_pk)
-    if not name then return nil end
+function ns.getProfKey(name)
+	if not name then return nil end
+	for pk in pairs(profs) do
+		if ns.getProfName(pk) == name then return pk end
+	end
+end
+
+function ns.openProfFrame(pk)
+	pk = pk or ns.store.cur_pk
+	local name = ns.getProfName(pk)
+	if not name then return nil end
 	local n, _, lvl, cap = GetTradeSkillLine()
 
 	if n ~= name then

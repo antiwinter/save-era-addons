@@ -17,11 +17,17 @@ local function install(env, world)
 	local function OpenProfWindow(pk)
 		local profession = db:GetProfession(pk)
 		if not profession then return end
+		env.TradeSkillFrame:Show()
 		local state = world.profSkill[pk] or { lvl = 1, cap = 300 }
 		world.profSkill[pk] = state
 		world.skill = { pk = pk, name = profession.name, lvl = state.lvl, cap = state.cap }
 		env.__fire("TRADE_SKILL_SHOW")
 		env.__fire("TRADE_SKILL_UPDATE")
+	end
+
+	function env.CloseTradeSkill()
+		env.TradeSkillFrame:Hide()
+		env.__fire("TRADE_SKILL_CLOSE")
 	end
 
 	local function craftOne(sid)

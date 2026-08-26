@@ -22,11 +22,17 @@ local function install(env)
 		local f
 		f = {
 			__name = name,
+			__parent = _parent,
 			__addon = env.__loadingAddon,
 			__events = {},
 			__enabled = true,
 			-- layout / cosmetic stubs (chainable, state-free)
-			SetSize = noop, SetPoint = noop, SetWidth = noop, SetHeight = noop,
+			SetSize = noop, SetPoint = noop, ClearAllPoints = noop,
+			SetWidth = noop, SetHeight = noop,
+			SetParent = function(s, parent) s.__parent = parent end,
+			GetParent = function(s) return s.__parent end,
+			SetID = function(s, id) s.__id = id end,
+			GetID = function(s) return s.__id end,
 			SetMovable = noop, EnableMouse = noop, RegisterForDrag = noop,
 			SetBackdrop = noop, SetBackdropColor = noop,
 			SetText = function(s, text) s.__text = text end,
@@ -80,6 +86,7 @@ local function install(env)
 	end
 
 	env.UIParent = CreateFrame("Frame", "UIParent")
+	env.TradeSkillFrame = CreateFrame("Frame", "TradeSkillFrame", env.UIParent)
 
 	local spellHandlers = {}
 	env.__registerSpell = function(name, handler) spellHandlers[name] = handler end
@@ -119,6 +126,8 @@ local function install(env)
 	env.UIDropDownMenu_SetWidth = noop
 	env.UIDropDownMenu_SetText = function(frame, text) frame.__text = text end
 	env.CloseDropDownMenus = noop
+	env.PanelTemplates_SetNumTabs = function(frame, count) frame.__numTabs = count end
+	env.PanelTemplates_SetTab = function(frame, id) frame.__selectedTab = id end
 
 	env.GetBuildInfo = function() return "1.15.7", "60000", nil, 11507 end
 	env.GetLocale = function() return "enUS" end
