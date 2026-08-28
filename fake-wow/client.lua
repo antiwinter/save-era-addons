@@ -15,6 +15,7 @@ local function install(env)
 	local function newFontString()
 		return { SetText = function(s, text) s.__text = text end, SetPoint = noop, SetFont = noop,
 			SetTextColor = noop, GetText = function(s) return s.__text end,
+			Show = function(s) s.__shown = true end, Hide = function(s) s.__shown = false end,
 			__text = "" }
 	end
 
@@ -40,6 +41,8 @@ local function install(env)
 			SetSize = function(s, width, height) s.__width, s.__height = width, height end,
 			GetWidth = function(s) return s.__width or 0 end,
 			GetHeight = function(s) return s.__height or 0 end,
+			GetFrameLevel = function(s) return s.__frameLevel or 0 end,
+			SetFrameLevel = function(s, level) s.__frameLevel = level end,
 			SetPoint = noop, ClearAllPoints = noop, SetAllPoints = noop,
 			SetWidth = function(s, width) s.__width = width end,
 			SetHeight = function(s, height) s.__height = height end,
