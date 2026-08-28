@@ -12,21 +12,18 @@ function pm:load(pk)
 
 	self.pk = pk
 	local lo, hi = self:getclamp()
-	self.state = ns.store.plans[self.pk] or {
-		start = lo,
-		target = hi,
-		wishlist = {},
-		preferExisting = true,
-		noAH = false,
-		actions = {},
-		materials = {}
-	}
-	self.state.wishlist = self.state.wishlist or {}
-	self.state.actions = self.state.actions or {}
-	self.state.materials = self.state.materials or {}
-	self.state.start = self.state.start or lo
-	self.state.target = self:getclamp(self.state.target or hi)
-	ns.store.plans[self.pk] = self.state
+	local st = ns.store.plans[self.pk] or {}
+
+	-- assign defaults
+	st.wishlist = st.wishlist or {}
+	st.actions = st.actions or {}
+	st.materials = st.materials or {}
+	st.start = st.start or lo
+	st.target = self:getclamp(st.target or hi)
+	st.preferExisting = st.preferExisting == nil and true or st.preferExisting
+
+	ns.store.plans[self.pk] = st
+	self.state = st
 	self.replan_req = 1
 	return true
 end
