@@ -61,6 +61,7 @@ frame:SetScript("OnEvent", function(_, event, arg1)
 	if event == "UPDATE_TRADESKILL_RECAST" and GetTradeskillRepeatCount() == 0 then
 		ns.enable()
 	elseif event == "TRADE_SKILL_CLOSE" then
+		ns.pm:Hide()
 		ns.enable()
 	elseif (event == "UNIT_SPELLCAST_INTERRUPTED" or event == "UNIT_SPELLCAST_FAILED")
 		and arg1 == "player" then

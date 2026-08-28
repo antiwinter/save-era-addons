@@ -1,10 +1,11 @@
 local _, ns = ...
 
 local pm = ns.pm
-local function reparent(parent)
-	pm.frame:SetParent(parent)
+local function attachPlanner(parent)
+	pm.frame:SetParent(UIParent)
 	pm.frame:ClearAllPoints()
-	pm.frame:SetAllPoints(parent)
+	pm.frame:SetPoint("TOPLEFT", parent, "TOPRIGHT", 8, 0)
+	pm.frame:SetSize(492, 628)
 end
 
 function pm:Attach()
@@ -12,53 +13,35 @@ function pm:Attach()
 	local name = GetTradeSkillLine()
 	local pk = ns.getProfKey(name)
 	pm:load(pk)
-	reparent(parent)
-	ns.store.layoutDebug = {
-		parentWidth = parent:GetWidth(),
-		parentHeight = parent:GetHeight(),
-		plannerWidth = self.frame:GetWidth(),
-		plannerHeight = self.frame:GetHeight(),
-		attached = self.frame:GetParent() == parent,
-		shown = self.frame:IsShown(),
-	}
+	attachPlanner(parent)
 
-	local skillTab = self.skillTab
-	if not skillTab then
-		skillTab = CreateFrame("Button", "Artisan_SkillTab", parent, "CharacterFrameTabButtonTemplate")
-		skillTab:SetText("Skill")
-		skillTab:SetPoint("TOPLEFT", parent, "BOTTOMLEFT", 40, 76)
-		skillTab:SetID(1)
-		skillTab:SetScript("OnClick", function()
-			self.frame:Hide()
-			PanelTemplates_SetTab(parent, skillTab:GetID())
+	local arrow = self.arrow
+	if not arrow then
+		arrow = CreateFrame("Button", "Artisan_PlannerArrow", parent)
+		arrow:SetSize(32, 32)
+		arrow:SetNormalTexture("Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up")
+		arrow:SetPushedTexture("Interface\\Buttons\\UI-SpellbookIcon-NextPage-Down")
+		arrow:SetHighlightTexture("Interface\\Buttons\\UI-SpellbookIcon-NextPage-Highlight")
+		arrow:SetScript("OnClick", function()
+			if self.frame:IsShown() then self.frame:Hide() else self.frame:Show() end
 		end)
-		self.skillTab = skillTab
+		self.arrow = arrow
 	end
-
-	if not self.tab then
-		self.tab = CreateFrame("Button", "Artisan_PlannerTab", parent, "CharacterFrameTabButtonTemplate")
-		self.tab:SetText("Planner")
-		self.tab:SetPoint("TOPLEFT", parent, "BOTTOMLEFT", 100, 76)
-		self.tab:SetID(2)
-		self.tab:SetScript("OnClick", function()
-			self.frame:Show()
-			PanelTemplates_SetTab(parent, self.tab:GetID())
-		end)
-	end
-	parent.Tabs = parent.Tabs or {}
-	parent.Tabs[1] = skillTab
-	parent.Tabs[2] = self.tab
-	parent.numTabs = 2
-	PanelTemplates_SetNumTabs(parent, parent.numTabs)
+	arrow:ClearAllPoints()
+	arrow:SetPoint("LEFT", parent, "RIGHT", 0, 0)
+	arrow:Show()
 
 	if self.active then
 		self.frame:Show()
-		PanelTemplates_SetTab(parent, self.tab:GetID())
 	else
 		self.frame:Hide()
-		PanelTemplates_SetTab(parent, skillTab:GetID())
 	end
 	self.active = false
+end
+
+function pm:Hide()
+	self.frame:Hide()
+	if self.arrow then self.arrow:Hide() end
 end
 
 function pm:Close()
@@ -71,7 +54,8 @@ function pm:Open(pk, active)
 	if not self:load(pk) then self.active = false; return end
 	local opened = ns.openProfFrame(pk)
 	if not opened then
-		reparent(UIParent)
+		self.frame:SetParent(UIParent)
+		self.frame:ClearAllPoints()
 		self.frame:SetPoint("CENTER")
 		self.frame:Show()
 	end

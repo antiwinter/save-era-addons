@@ -4,6 +4,8 @@ local pm = ns.pm
 local frame = pm.frame
 frame:SetSize(384, 512)
 frame:SetPoint("CENTER")
+frame:SetBackdrop({ bgFile = "Interface\\ChatFrame\\ChatFrameBackground" })
+frame:SetBackdropColor(0, 0, 0, 0.5)
 frame:SetMovable(true)
 frame:EnableMouse(true)
 frame:RegisterForDrag("LeftButton")

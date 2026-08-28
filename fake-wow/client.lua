@@ -64,6 +64,7 @@ local function install(env)
 			SetChecked = function(s, checked) s.__checked = checked == true end,
 			GetChecked = function(s) return s.__checked == true end,
 			SetNormalTexture = noop,
+			SetPushedTexture = noop, SetHighlightTexture = noop,
 			SetScale = noop, SetAlpha = noop, SetFrameStrata = noop,
 			StartMoving = noop, StopMovingOrSizing = noop,
 			Enable = function(s) s.__enabled = true end,
