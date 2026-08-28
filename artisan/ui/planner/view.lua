@@ -48,11 +48,12 @@ rockTile(66, 49, 274, 351, 66 / 256, 49 / 256)
 local function blackPanel(panel)
 	panel:SetBackdrop({
 		bgFile = "Interface\\ChatFrame\\ChatFrameBackground",
-		edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",
+		edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
 		tile = true,
 		tileSize = 16,
-		edgeSize = 12,
-		insets = { left = 3, right = 3, top = 3, bottom = 3 },
+		tileEdge = true,
+		edgeSize = 8,
+		insets = { left = 5, right = 5, top = 5, bottom = 5 },
 	})
 	panel:SetBackdropColor(0, 0, 0, 1)
 end
