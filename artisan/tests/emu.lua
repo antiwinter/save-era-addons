@@ -29,11 +29,13 @@ local profession = ns.getProfName(pk)
 fw.GM.SetTradeSkillLine(profession, startLvl, target)
 
 -- Persist/select the planner inputs as the slash command does.
-local result, msg = ns.PlannerModel:Build(pk, { target = target })
-assert(result, msg)
-local plan = result.plan
-ns.store.plans[pk] = { target = plan.target, wishlist = {}, preferExisting = false, noAH = false }
+assert(ns.pm:Open(pk, true))
+ns.pm:settarget(target)
+ns.pm:Refresh()
 ns.store.cur_pk = pk
+fw.click("Artisan_StartCrafting")
+local plan = ns.pm.state.snapshot
+assert(plan, "start crafting did not save a plan snapshot")
 ns.CraftUI:Show()
 
 if os.getenv("ARTISAN_NOPLAN") ~= "1" then

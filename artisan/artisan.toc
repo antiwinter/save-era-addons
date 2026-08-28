@@ -15,6 +15,6 @@ utils.lua
 core.lua
 ui\craft.lua
 ui\planner\model.lua
+ui\planner\view.lua
 ui\planner\control.lua
-ui\planner\content.lua
 ui\cli.lua

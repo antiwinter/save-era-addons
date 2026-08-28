@@ -128,6 +128,8 @@ local function install(env)
 	-- setup knobs to it; only truly generic ones live here.
 	env.GM = env.GM or {}
 	function env.GM.SetSeed(seed) math.randomseed(seed) end
+	env.__playerLevel = 60
+	env.GM.SetUnitLevel = function(level) env.__playerLevel = level end
 
 	-- Slash-command registry: addons set SLASH_FOO1 = "/foo" and
 	-- SlashCmdList.FOO = handler. env.__slash("/foo bar") dispatches.
@@ -160,6 +162,7 @@ local function install(env)
 
 	env.GetBuildInfo = function() return "1.15.7", "60000", nil, 11507 end
 	env.GetLocale = function() return "enUS" end
+	env.UnitLevel = function(unit) return unit == "player" and env.__playerLevel or nil end
 	env.date = function(fmt) return os.date(fmt) end
 	env.print = print
 end

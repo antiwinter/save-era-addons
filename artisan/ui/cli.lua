@@ -9,11 +9,11 @@ SlashCmdList.ARTISAN = function(msg)
 			print("|cff00b4ff[art]|r usage: /art plan <pk> [target]")
 			return
 		end
-		ns.PlannerUI:Open(pk, true)
+		if ns.pm:Open(pk, true) and target ~= "" then ns.pm:settarget(tonumber(target)) end
 	elseif msg == "hide" then
 		ns.CraftUI:Hide()
-		ns.PlannerUI:Close()
+		ns.pm:Close()
 	else
-		ns.PlannerUI:Open(ns.store.cur_pk, true)
+		ns.pm:Open(ns.store.cur_pk, true)
 	end
 end

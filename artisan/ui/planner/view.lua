@@ -1,7 +1,7 @@
 local _, ns = ...
 
-local Planner = ns.PlannerUI
-local frame = Planner.frame
+local pm = ns.pm
+local frame = pm.frame
 frame:SetSize(492, 628)
 frame:SetPoint("CENTER")
 frame:SetMovable(true)
@@ -26,7 +26,7 @@ local target = CreateFrame("Slider", "Artisan_TargetSlider", frame, "OptionsSlid
 target:SetPoint("TOPLEFT", 186, -48)
 target:SetSize(274, 18)
 target:SetMinMaxValues(1, 300)
-target:SetValueStep(1)
+target:SetValueStep(5)
 
 local wishlistLabel = text(frame, "GameFontNormal", "TOPLEFT", 18, -116, "Wishlist")
 local search = CreateFrame("EditBox", "Artisan_WishlistSearch", frame, "InputBoxTemplate")
@@ -76,7 +76,6 @@ amount:SetAutoFocus(false)
 amount:SetNumeric(true)
 amount:Hide()
 
-local updating = false
 local rows = {}
 local wishlistButtons = {}
 
@@ -102,124 +101,141 @@ local function addRow(parent, list, y, name, value, tail)
 	return row
 end
 
-local function setTarget(value)
-	local state = Planner:State()
-	local skill, cap = ns.getTradeSkillRange(Planner.pk)
-	value = math.max(skill, math.min(cap, math.floor(value + 0.5)))
-	state.target = value
-	targetValue:SetText(tostring(value))
-	if not updating then Planner:Refresh() end
-end
-
 local function editWishlist(id)
-	Planner.editing = id
-	amount:SetText(tostring(Planner:State().wishlist[id] or 0))
+	pm.editing = id
+	amount:SetText(tostring(pm:State().wishlist[id] or 0))
 	amount:Show()
 	amount:SetFocus()
 	amount:HighlightText()
 end
 
 local function commitWishlist()
-	local id = Planner.editing
+	local id = pm.editing
 	if not id then return end
 	local value = tonumber(amount:GetText()) or 0
-	local state = Planner:State()
-	if value <= 0 then state.wishlist[id] = nil else state.wishlist[id] = math.floor(value) end
-	Planner.editing = nil
+	value = math.floor(value)
+
+	if value == pm.state.wishlist[id] then
+		return
+	end
+
+	pm.state.wishlist[id] = value <= 0 and nil or value
+	pm.replan_req = 1
+	pm.editing = nil
 	amount:Hide()
-	Planner:Refresh()
 end
 
 amount:SetScript("OnEnterPressed", commitWishlist)
-amount:SetScript("OnEscapePressed", function() Planner.editing = nil; amount:Hide() end)
+amount:SetScript("OnEscapePressed", function() pm.editing = nil; amount:Hide() end)
 
 local function showResults()
-	local db = ns.db[Planner.pk]
-	local old = Planner.resultButtons or {}
+	local db = ns.db[pm.pk]
+	local old = pm.resultButtons or {}
+	-- fixme: shoud here be hide or remove?
 	for _, button in ipairs(old) do button:Hide() end
-	Planner.resultButtons = {}
-	for i, recipe in ipairs(ns.PlannerModel:Search(db, search:GetText())) do
+	pm.resultButtons = {}
+	local _, cap = pm:getclamp()
+	for i, recipe in ipairs(pm:search(search:GetText())) do
 		if i > 8 then break end
 		local button = CreateFrame("Button", nil, results, "UIPanelButtonTemplate")
 		button:SetSize(140, 20)
 		button:SetPoint("TOPLEFT", 4, -4 - (i - 1) * 20)
 		button:SetText(recipe.name)
+		-- FIXME: also show required lvl next to name
+		-- item beyond cap should be in red, click on them not adding to wl, not closing the dropdown
 		button:SetScript("OnClick", function()
-			local state = Planner:State()
-			local skill, cap = ns.getTradeSkillRange(Planner.pk)
-			local nextTarget, err = ns.PlannerModel:ValidateWishlist(db, recipe.skill_id, state.target, cap)
-			if not nextTarget then ns.hint(err); return end
-			state.target = nextTarget
+			local st = pm.state
+			local required = db[recipe.skill_id].colors[1]
+			if required > cap then return end
+			pm:settarget(required)
 			editWishlist(recipe.skill_id)
 			results:Hide()
 		end)
 		button:Show()
-		Planner.resultButtons[i] = button
+		pm.resultButtons[i] = button
 	end
 	results:Show()
 end
 
 search:SetScript("OnTextChanged", showResults)
 
-function Planner:Refresh()
-	local state = self:State()
-	local result, message = ns.PlannerModel:Build(self.pk, state)
-	if not result then summary:SetText(message or "No plan"); return end
-	self.result = result
-	updating = true
-	target:SetValue(result.target)
-	updating = false
-	targetValue:SetText(tostring(result.target))
-	preferExisting:SetChecked(state.preferExisting)
-	noAH:SetChecked(state.noAH)
+local counter = 1
+function pm:Refresh()
+	local st = self.state
+	local db = pm:getdb()
+	if not db or not st then return end
 
-	clear(rows)
-	for _, action in ipairs(result.plan.actions) do
-		addRow(craftRows, rows, -28 - (#rows) * 20,
-			GetItemInfo(action.item) or tostring(action.item), math.ceil(action.count), "  " .. action.to)
-	end
-	local bomRowsList = self.bomRows or {}
-	clear(bomRowsList)
-	self.bomRows = bomRowsList
-	for id, required in pairs(result.plan.materials) do
-		addRow(bomRows, bomRowsList, -28 - (#bomRowsList) * 20,
-			GetItemInfo(id) or tostring(id), math.floor(result.existing[id] or 0), "/" .. math.ceil(required))
+	-- low cost refresh
+	target:SetValue(st.target)
+	targetValue:SetText(tostring(st.target))
+	preferExisting:SetChecked(st.preferExisting)
+	noAH:SetChecked(st.noAH)
+
+	counter = counter + 1
+	if counter % 5 == 0 or pm.replan_req then
+		pm.replan_req = nil
+		pm:replan()
+
+		clear(rows)
+		for _, a in ipairs(st.actions) do
+			addRow(craftRows, rows, -28 - (#rows) * 20,
+				GetItemInfo(a.item) or tostring(a.item), math.ceil(a.count), "  " .. a.to)
+		end
+		local bomRowsList = self.bomRows or {}
+		clear(bomRowsList)
+		self.bomRows = bomRowsList
+		local existing = ns.getExistingMaterials()
+		for id, n in pairs(st.materials) do
+			addRow(bomRows, bomRowsList, -28 - (#bomRowsList) * 20,
+				GetItemInfo(id) or tostring(id), math.floor(existing[id] or 0), "/" .. math.ceil(n))
+		end
+
+		clear(wishlistButtons)
+		local i = 0
+		for id, count in pairs(st.wishlist) do
+			i = i + 1
+			local button = CreateFrame("Button", nil, wishlist, "UIPanelButtonTemplate")
+			button:SetSize(72, 32)
+			button:SetPoint("TOPLEFT", (i - 1) * 76, 0)
+			local icon = button:CreateTexture(nil, "ARTWORK")
+			icon:SetSize(28, 28)
+			icon:SetPoint("LEFT", button, "LEFT", 2, 0)
+			icon:SetTexture(select(10, GetItemInfo(id)))
+			button.icon = icon
+			button:SetText((GetItemInfo(id) or tostring(id)) .. " " .. count)
+			button:SetScript("OnClick", function() editWishlist(id) end)
+			button:Show()
+			wishlistButtons[i] = button
+		end
 	end
 
-	clear(wishlistButtons)
-	local i = 0
-	for id, count in pairs(state.wishlist) do
-		i = i + 1
-		local button = CreateFrame("Button", nil, wishlist, "UIPanelButtonTemplate")
-		button:SetSize(72, 32)
-		button:SetPoint("TOPLEFT", (i - 1) * 76, 0)
-		local icon = button:CreateTexture(nil, "ARTWORK")
-		icon:SetSize(28, 28)
-		icon:SetPoint("LEFT", button, "LEFT", 2, 0)
-		icon:SetTexture(select(10, GetItemInfo(id)))
-		button.icon = icon
-		button:SetText((GetItemInfo(id) or tostring(id)) .. " " .. count)
-		button:SetScript("OnClick", function() editWishlist(id) end)
-		button:Show()
-		wishlistButtons[i] = button
-	end
-
-	local s = result.summary
+	local s = self.sum or self:resume()
+	local junk = st.noAH and s.junk + s.aaj or s.junk
+	local ah = st.noAH and 0 or s.ah
 	summary:SetText(string.format(
-		"Existing materials\t%s\nBuy materials\t%s\nJunk returns\t%s\nAH returns\t%s\n\nNet cost\t%s",
-		gold(s.existing), gold(s.buy), gold(s.junk), gold(s.ah), gold(s.net)))
+		"Existing materials\t%s\nBuy materials\t%s\nJunk returns\t%s\n"
+		.. "AH returns\t%s\n" .. "\nNet cost\t%s",
+		gold(s.existing),
+		gold(s.buy),
+		gold(junk),
+		gold(ah),
+		gold(s.buy - junk - ah)))
 end
 
-target:SetScript("OnValueChanged", function(_, value) setTarget(value) end)
+frame:SetScript("OnUpdate", function()
+	pm:Refresh()
+end)
+target:SetScript("OnValueChanged", function(_, value) pm:settarget(value) end)
 preferExisting:SetScript("OnClick", function(button)
-	Planner:State().preferExisting = button:GetChecked()
-	Planner:Refresh()
+	pm:State().preferExisting = button:GetChecked()
+	pm.replan_req = 1
 end)
 noAH:SetScript("OnClick", function(button)
-	Planner:State().noAH = button:GetChecked()
-	Planner:Refresh()
+	pm:State().noAH = button:GetChecked()
 end)
 start:SetScript("OnClick", function()
-	ns.store.cur_pk = Planner.pk
+	ns.store.cur_pk = pm.pk
+	pm:replan()
+	pm:Snapshot()
 	ns.CraftUI:Show()
 end)

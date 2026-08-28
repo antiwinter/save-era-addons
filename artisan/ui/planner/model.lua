@@ -1,9 +1,71 @@
 local _, ns = ...
 
-local Model = {}
+local pm = {
+	pk = nil,
+	active = false,
+	frame = CreateFrame("Frame", "artisanpm", UIParent, "BackdropTemplate")
+}
 
-function Model:Search(db, query)
+function pm:load(pk)
+	local prof = ns.getProfName(pk)
+	if not prof then return end
+
+	self.pk = pk
+	local lo, hi = self:getclamp()
+	self.state = ns.store.plans[self.pk] or {
+		start = lo,
+		target = hi,
+		wishlist = {},
+		preferExisting = true,
+		noAH = false,
+		actions = {},
+		materials = {}
+	}
+	ns.store.plans[self.pk] = self.state
+	return true
+end
+
+function pm:getclamp(target)
+	local _, _, cur = ns.openProfFrame(self.pk)
+	local lvl = GetUnitLevel('player')
+	local hardcap = lvl > 34 and 300 or
+		lvl > 19 and 225 or
+		lvl > 9 and 150 or
+		lvl > 4 and 75 or 1
+	if target then
+		return math.max(cur, math.min(hardcap, math.floor(target + 0.5)))
+	else
+		return cur or 1, hardcap
+	end
+end
+
+function pm:settarget(target)
+	local tar = self:getclamp(target)
+	if tar ~= self.state.target then
+		self.state.target = target
+		self.replan_req = 1
+	end
+end
+
+function pm:replan()
+	local st = self:State()
+	local actions, materials = ns.Planner.BuildPlan(db, {
+		start = st.start,
+		target= st.target,
+		wishlist = st.wishlist or {},
+		existing = st.preferExisting and ns.getExistingMaterials() or {}
+	})
+	st.actions = actions
+	st.materials = materials
+end
+
+function pm:getdb()
+	return ns.db[self.pk]
+end
+
+function pm:search(query)
 	query = (query or ""):lower()
+	local db = ns.db[ns.pmUI.pk]
 	local result = {}
 	for _, recipe in ipairs(db.data) do
 		if recipe.name and db[recipe.skill_id]
@@ -15,43 +77,7 @@ function Model:Search(db, query)
 	return result
 end
 
-function Model:ValidateWishlist(db, itemId, target, cap)
-	local recipe = db[itemId]
-	if not recipe then return nil, "Unknown recipe" end
-	local required = recipe.colors[1]
-	if required > cap then return nil, "Requires skill " .. required end
-	return math.max(target, required)
-end
-
-function Model:Build(pk, state)
-	local db = ns.db[pk]
-	if not db then return nil, "Invalid key: " .. pk end
-	state = state or {}
-	local skill, cap = ns.getTradeSkillRange(pk)
-	local target = math.max(skill, math.min(cap, state.target or cap))
-	state.target = target
-	local existing = ns.getExistingMaterials()
-	if target <= skill then return nil, "Target must be > " .. skill end
-	local actions, materials = ns.Planner.BuildPlan(db, {
-		start = skill,
-		target = target,
-		wishlist = state.wishlist,
-		existing = state.preferExisting and existing or nil,
-	})
-	local plan = { pk = pk, target = target, actions = {}, materials = materials }
-	for _, action in ipairs(actions) do plan.actions[#plan.actions + 1] = action end
-	local message = string.format("%s: %d -> %d, %d actions", pk, skill, target, #plan.actions)
-	return {
-		skill = skill,
-		cap = cap,
-		target = target,
-		plan = plan,
-		existing = existing,
-		summary = self:Summary(db, plan, existing, state.noAH),
-	}, message
-end
-
-function Model:Summary(db, plan, existing, noAH)
+function pm:resum()
 	local existingValue, buyValue = 0, 0
 	for id, required in pairs(plan.materials) do
 		local have = existing[id] or 0
@@ -76,23 +102,24 @@ function Model:Summary(db, plan, existing, noAH)
 		end
 	end
 
-	local ahReturns, junkReturns = 0, 0
+	local ahReturns, junkReturns, aaj = 0, 0, 0
 	for id, count in pairs(crafted) do
 		local buyout = db:price(id) or 0
 		local vendor = select(11, GetItemInfo(id)) or 0
-		if noAH then
+		if buyout < vendor then
 			junkReturns = junkReturns + count * vendor
 		else
+			aaj = aaj + count * vendor
 			ahReturns = ahReturns + count * buyout
 		end
 	end
-	return {
+	self.sum = {
 		existing = existingValue,
 		buy = buyValue,
 		junk = junkReturns,
 		ah = ahReturns,
-		net = buyValue - junkReturns - ahReturns,
+		aaj = aaj -- ah as junk
 	}
 end
 
-ns.PlannerModel = Model
+ns.pm = pm

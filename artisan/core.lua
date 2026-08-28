@@ -55,7 +55,7 @@ frame:SetScript("OnEvent", function(_, event, arg1)
 		return
 	end
 	if event == "TRADE_SKILL_SHOW" then
-		ns.PlannerUI:Attach()
+		ns.pm:Attach()
 		return
 	end
 	if event == "UPDATE_TRADESKILL_RECAST" and GetTradeskillRepeatCount() == 0 then

@@ -1,34 +1,16 @@
 local _, ns = ...
 
-local Planner = {
-	pk = nil,
-	active = false,
-	frame = CreateFrame("Frame", "artisanPlanner", UIParent, "BackdropTemplate")
-}
-
+local pm = ns.pm
 local function reparent(parent)
-	Planner.frame:SetParent(parent)
-	Planner.frame:ClearAllPoints()
+	pm.frame:SetParent(parent)
+	pm.frame:ClearAllPoints()
 end
 
-function Planner:State()
-	local state = ns.store.plans[self.pk]
-	if not state then
-		state = {
-			wishlist = {},
-			preferExisting = false,
-			noAH = false,
-		}
-		ns.store.plans[self.pk] = state
-	end
-	state.wishlist = state.wishlist or {}
-	return state
-end
-
-function Planner:Attach()
+function pm:Attach()
 	local parent = TradeSkillFrame
 	local name = GetTradeSkillLine()
-	self.pk = ns.getProfKey(name)
+	local pk = ns.getProfKey(name)
+	pm:load(pk)
 	reparent(parent)
 	self.frame:SetPoint("TOPLEFT", parent, "TOPLEFT", 8, -42)
 	self.frame:SetPoint("BOTTOMRIGHT", parent, "BOTTOMRIGHT", -8, 8)
@@ -67,28 +49,21 @@ function Planner:Attach()
 		PanelTemplates_SetTab(parent, skillTab:GetID())
 	end
 	self.active = false
-	if self.Refresh and self.pk then self:Refresh() end
 end
 
-function Planner:Close()
+function pm:Close()
 	CloseTradeSkill()
 	self.frame:Hide()
 end
 
-function Planner:Open(pk, active)
-	local prof = ns.getProfName(pk)
-	if not prof then return end
-
-	self.pk = pk
+function pm:Open(pk, active)
 	self.active = active
-
+	if not self:load(pk) then self.active = false; return end
 	local opened = ns.openProfFrame(pk)
 	if not opened then
 		reparent(UIParent)
 		self.frame:SetPoint("CENTER")
 		self.frame:Show()
-		if self.Refresh then self:Refresh() end
 	end
+	return true
 end
-
-ns.PlannerUI = Planner
