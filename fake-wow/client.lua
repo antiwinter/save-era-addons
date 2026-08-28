@@ -24,6 +24,7 @@ local function install(env)
 			SetSize = function(s, width, height) s.__width, s.__height = width, height end,
 			SetPoint = noop,
 			SetTexture = function(s, texture) s.__texture = texture end,
+			SetTexCoord = noop,
 			Show = function(s) s.__shown = true end,
 			Hide = function(s) s.__shown = false end,
 		}

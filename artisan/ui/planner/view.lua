@@ -32,6 +32,19 @@ artwork("Interface\\ClassTrainerFrame\\UI-ClassTrainer-TopRight", 128, 256, "TOP
 artwork("Interface\\TradeSkillFrame\\UI-TradeSkill-BotLeft", 256, 256, "BOTTOMLEFT")
 artwork("Interface\\ClassTrainerFrame\\UI-ClassTrainer-BotRight", 128, 256, "BOTTOMRIGHT")
 
+local function rockTile(width, height, x, y, right, bottom)
+	local tile = frame:CreateTexture(nil, "ARTWORK")
+	tile:SetTexture("Interface\\FrameGeneral\\UI-Background-Rock")
+	tile:SetSize(width, height)
+	tile:SetPoint("TOPLEFT", frame, "TOPLEFT", x, -y)
+	tile:SetTexCoord(0, right or 1, 0, bottom or 1)
+end
+
+rockTile(256, 256, 18, 95)
+rockTile(66, 256, 274, 95, 66 / 256)
+rockTile(256, 49, 18, 351, 1, 49 / 256)
+rockTile(66, 49, 274, 351, 66 / 256, 49 / 256)
+
 local function blackPanel(panel)
 	panel:SetBackdrop({
 		bgFile = "Interface\\ChatFrame\\ChatFrameBackground",
