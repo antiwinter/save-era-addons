@@ -40,7 +40,7 @@ local function install(env)
 			SetSize = function(s, width, height) s.__width, s.__height = width, height end,
 			GetWidth = function(s) return s.__width or 0 end,
 			GetHeight = function(s) return s.__height or 0 end,
-			SetPoint = noop, ClearAllPoints = noop,
+			SetPoint = noop, ClearAllPoints = noop, SetAllPoints = noop,
 			SetWidth = function(s, width) s.__width = width end,
 			SetHeight = function(s, height) s.__height = height end,
 			SetParent = function(s, parent) s.__parent = parent end,
