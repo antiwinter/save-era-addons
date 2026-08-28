@@ -17,7 +17,7 @@ local profession = ns.getProfName(pk)
 fw.GM.SetTradeSkillLine(profession, 1, target)
 assert(ns.pm:Open(pk, true))
 ns.pm:settarget(target)
-ns.pm:Refresh()
+ns.pm:UpdatePlan()
 ns.store.cur_pk = pk
 fw.click("Artisan_StartCrafting")
 local plan = ns.store.snaps[pk]

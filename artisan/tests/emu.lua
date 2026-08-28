@@ -31,7 +31,7 @@ fw.GM.SetTradeSkillLine(profession, startLvl, target)
 -- Persist/select the planner inputs as the slash command does.
 assert(ns.pm:Open(pk, true))
 ns.pm:settarget(target)
-ns.pm:Refresh()
+ns.pm:UpdatePlan()
 ns.store.cur_pk = pk
 fw.click("Artisan_StartCrafting")
 local plan = ns.store.snaps[pk]

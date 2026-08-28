@@ -64,9 +64,13 @@ local noAH = CreateFrame("CheckButton", "Artisan_NoAH", frame, "UICheckButtonTem
 noAH:SetPoint("TOPLEFT", 128, -496)
 local noAHLabel = text(frame, "GameFontDisableSmall", "TOPLEFT", 154, -499, "no AH")
 local summary = text(frame, "GameFontHighlightSmall", "TOPLEFT", 26, -524)
+local build = CreateFrame("Button", "Artisan_UpdatePlan", frame, "UIPanelButtonTemplate")
+build:SetSize(140, 24)
+build:SetPoint("TOPLEFT", 330, -496)
+build:SetText("Update plan")
 local start = CreateFrame("Button", "Artisan_StartCrafting", frame, "UIPanelButtonTemplate")
 start:SetSize(140, 24)
-start:SetPoint("TOPLEFT", 330, -496)
+start:SetPoint("TOPLEFT", 330, -596)
 start:SetText("Start crafting")
 
 local amount = CreateFrame("EditBox", "Artisan_WishlistAmount", frame, "InputBoxTemplate")
@@ -120,7 +124,7 @@ local function commitWishlist()
 	end
 
 	pm.state.wishlist[id] = value <= 0 and nil or value
-	pm.replan_req = 1
+	build:Enable()
 	pm.editing = nil
 	amount:Hide()
 end
@@ -146,8 +150,11 @@ local function showResults()
 		button:SetScript("OnClick", function()
 			local st = pm.state
 			local required = db[recipe.skill_id].colors[1]
-			if required > cap then return end
-			pm:settarget(required)
+			if required > cap then return
+			elseif required > st.target then
+				pm:settarget(required)
+				build:Enable()
+			end
 			editWishlist(recipe.skill_id)
 			results:Hide()
 		end)
@@ -159,57 +166,9 @@ end
 
 search:SetScript("OnTextChanged", showResults)
 
-local counter = 1
-function pm:Refresh()
-	local st = self.state
-	local db = pm:getdb()
-	if not db or not st then return end
-
-	-- low cost refresh
-	target:SetValue(st.target)
-	targetValue:SetText(tostring(st.target))
-	preferExisting:SetChecked(st.preferExisting)
-	noAH:SetChecked(st.noAH)
-
-	counter = counter + 1
-	if counter % 5 == 0 or pm.replan_req then
-		pm.replan_req = nil
-		pm:replan()
-
-		clear(rows)
-		for _, a in ipairs(st.actions) do
-			addRow(craftRows, rows, -28 - (#rows) * 20,
-				GetItemInfo(a.item) or tostring(a.item), math.ceil(a.count), "  " .. a.to)
-		end
-		local bomRowsList = self.bomRows or {}
-		clear(bomRowsList)
-		self.bomRows = bomRowsList
-		local existing = ns.getExistingMaterials()
-		for id, n in pairs(st.materials) do
-			addRow(bomRows, bomRowsList, -28 - (#bomRowsList) * 20,
-				GetItemInfo(id) or tostring(id), math.floor(existing[id] or 0), "/" .. math.ceil(n))
-		end
-
-		clear(wishlistButtons)
-		local i = 0
-		for id, count in pairs(st.wishlist) do
-			i = i + 1
-			local button = CreateFrame("Button", nil, wishlist, "UIPanelButtonTemplate")
-			button:SetSize(72, 32)
-			button:SetPoint("TOPLEFT", (i - 1) * 76, 0)
-			local icon = button:CreateTexture(nil, "ARTWORK")
-			icon:SetSize(28, 28)
-			icon:SetPoint("LEFT", button, "LEFT", 2, 0)
-			icon:SetTexture(select(10, GetItemInfo(id)))
-			button.icon = icon
-			button:SetText((GetItemInfo(id) or tostring(id)) .. " " .. count)
-			button:SetScript("OnClick", function() editWishlist(id) end)
-			button:Show()
-			wishlistButtons[i] = button
-		end
-	end
-
-	local s = self.sum or self:resume()
+local function updateSummary()
+	local st, s = pm.state, pm.sum
+	if not s then return end
 	local junk = st.noAH and s.junk + s.aaj or s.junk
 	local ah = st.noAH and 0 or s.ah
 	summary:SetText(string.format(
@@ -222,16 +181,65 @@ function pm:Refresh()
 		gold(s.buy - junk - ah)))
 end
 
-frame:SetScript("OnUpdate", function()
-	pm:Refresh()
+function pm:UpdatePlan()
+	local st = self.state
+	local db = pm:getdb()
+	if not db or not st then return end
+	pm:replan()
+
+	clear(rows)
+	for _, a in ipairs(st.actions) do
+		addRow(craftRows, rows, -28 - (#rows) * 20,
+			GetItemInfo(a.item) or tostring(a.item), math.ceil(a.count), "  " .. a.to)
+	end
+	local bomRowsList = self.bomRows or {}
+	clear(bomRowsList)
+	self.bomRows = bomRowsList
+	local existing = ns.getExistingMaterials()
+	for id, n in pairs(st.materials) do
+		addRow(bomRows, bomRowsList, -28 - (#bomRowsList) * 20,
+			GetItemInfo(id) or tostring(id), math.floor(existing[id] or 0), "/" .. math.ceil(n))
+	end
+
+	clear(wishlistButtons)
+	local i = 0
+	for id, count in pairs(st.wishlist) do
+		i = i + 1
+		local button = CreateFrame("Button", nil, wishlist, "UIPanelButtonTemplate")
+		button:SetSize(72, 32)
+		button:SetPoint("TOPLEFT", (i - 1) * 76, 0)
+		local icon = button:CreateTexture(nil, "ARTWORK")
+		icon:SetSize(28, 28)
+		icon:SetPoint("LEFT", button, "LEFT", 2, 0)
+		icon:SetTexture(select(10, GetItemInfo(id)))
+		button.icon = icon
+		button:SetText((GetItemInfo(id) or tostring(id)) .. " " .. count)
+		button:SetScript("OnClick", function() editWishlist(id) end)
+		button:Show()
+		wishlistButtons[i] = button
+	end
+
+	updateSummary()
+	build:Disable()
+end
+
+target:SetScript("OnValueChanged", function(_, value)
+	pm:settarget(value)
+	build:Enable()
+	targetValue:SetText(tostring(pm.state.target))
 end)
-target:SetScript("OnValueChanged", function(_, value) pm:settarget(value) end)
 preferExisting:SetScript("OnClick", function(button)
 	pm.state.preferExisting = button:GetChecked()
-	pm.replan_req = 1
+	build:Enable()
+	preferExisting:SetChecked(pm.state.preferExisting)
 end)
 noAH:SetScript("OnClick", function(button)
 	pm.state.noAH = button:GetChecked()
+	noAH:SetChecked(pm.state.noAH)
+	updateSummary()
+end)
+build:SetScript("OnClick", function()
+	pm:UpdatePlan()
 end)
 start:SetScript("OnClick", function()
 	ns.store.cur_pk = pm.pk

@@ -24,7 +24,6 @@ function pm:load(pk)
 
 	ns.store.plans[self.pk] = st
 	self.state = st
-	self.replan_req = 1
 	return true
 end
 
@@ -46,7 +45,6 @@ function pm:settarget(target)
 	local tar = self:getclamp(target)
 	if tar ~= self.state.target then
 		self.state.target = tar
-		self.replan_req = 1
 	end
 end
 
