@@ -4,8 +4,7 @@ local pm = ns.pm
 local frame = pm.frame
 frame:SetSize(384, 512)
 frame:SetPoint("CENTER")
-frame:SetBackdrop({ bgFile = "Interface\\ChatFrame\\ChatFrameBackground" })
-frame:SetBackdropColor(0, 0, 0, 0.5)
+frame:SetBackdrop(nil)
 frame:SetMovable(true)
 frame:EnableMouse(true)
 frame:RegisterForDrag("LeftButton")
@@ -20,20 +19,45 @@ local function text(parent, template, point, x, y, value)
 	return font
 end
 
-local title = text(frame, "GameFontNormal", "TOP", 0, -8, "Artisan planner")
-local targetLabel = text(frame, "GameFontNormal", "TOPLEFT", 18, -52, "Target level")
+local function artwork(texture, width, height, point, relativePoint, x, y)
+	local layer = frame:CreateTexture(nil, "BORDER")
+	layer:SetTexture(texture)
+	layer:SetSize(width, height)
+	layer:SetPoint(point, frame, relativePoint or point, x or 0, y or 0)
+	return layer
+end
+
+artwork("Interface\\ClassTrainerFrame\\UI-ClassTrainer-TopLeft", 256, 256, "TOPLEFT")
+artwork("Interface\\ClassTrainerFrame\\UI-ClassTrainer-TopRight", 128, 256, "TOPRIGHT")
+artwork("Interface\\TradeSkillFrame\\UI-TradeSkill-BotLeft", 256, 256, "BOTTOMLEFT")
+artwork("Interface\\ClassTrainerFrame\\UI-ClassTrainer-BotRight", 128, 256, "BOTTOMRIGHT")
+
+local function blackPanel(panel)
+	panel:SetBackdrop({
+		bgFile = "Interface\\ChatFrame\\ChatFrameBackground",
+		edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",
+		tile = true,
+		tileSize = 16,
+		edgeSize = 12,
+		insets = { left = 3, right = 3, top = 3, bottom = 3 },
+	})
+	panel:SetBackdropColor(0, 0, 0, 1)
+end
+
+local title = text(frame, "GameFontNormal", "TOP", 0, -17, "Artisan planner")
+local targetLabel = text(frame, "GameFontNormal", "TOPLEFT", 80, -40, "Target")
 local targetValue = text(frame, "GameFontHighlightSmall", "TOPLEFT", 338, -54)
 
 local target = CreateFrame("Slider", "Artisan_TargetSlider", frame, "OptionsSliderTemplate")
-target:SetPoint("TOPLEFT", 144, -48)
+target:SetPoint("TOPLEFT", 144, -40)
 target:SetSize(184, 18)
 target:SetMinMaxValues(1, 300)
 target:SetValueStep(5)
 
-local wishlistLabel = text(frame, "GameFontNormal", "TOPLEFT", 18, -92, "Wishlist")
+local wishlistLabel = text(frame, "GameFontNormal", "TOPLEFT", 23, -74, "Wishlist")
 local search = CreateFrame("EditBox", "Artisan_WishlistSearch", frame, "InputBoxTemplate")
 search:SetSize(138, 24)
-search:SetPoint("TOPLEFT", 230, -84)
+search:SetPoint("TOPLEFT", 200, -68)
 search:SetAutoFocus(false)
 search:SetTextInsets(8, 8, 0, 0)
 search:SetText("")
@@ -41,38 +65,44 @@ search:SetText("")
 local results = CreateFrame("Frame", "Artisan_WishlistResults", frame, "BackdropTemplate")
 results:SetSize(148, 160)
 results:SetPoint("TOPLEFT", search, "BOTTOMLEFT", 0, -2)
+blackPanel(results)
 results:Hide()
 
-local wishlist = CreateFrame("Frame", "Artisan_Wishlist", frame)
-wishlist:SetSize(350, 42)
-wishlist:SetPoint("TOPLEFT", 18, -118)
+local wishlist = CreateFrame("Frame", "Artisan_Wishlist", frame, "BackdropTemplate")
+wishlist:SetSize(325, 42)
+wishlist:SetPoint("TOPLEFT", 18, -95)
+blackPanel(wishlist)
 
-local craftLabel = text(frame, "GameFontNormal", "TOPLEFT", 18, -154, "Craft")
-local bomLabel = text(frame, "GameFontNormal", "TOPLEFT", 202, -154, "BOM")
+local craftLabel = text(frame, "GameFontNormal", "TOPLEFT", 23, -140, "Craft")
+local bomLabel = text(frame, "GameFontNormal", "TOPLEFT", 190, -140, "BOM")
 
 local preferExisting = CreateFrame("CheckButton", "Artisan_PreferExisting", frame, "UICheckButtonTemplate")
-preferExisting:SetPoint("TOPLEFT", 260, -152)
-local preferLabel = text(frame, "GameFontDisableSmall", "TOPLEFT", 286, -155, "prefer existing")
+preferExisting:SetSize(25, 25)
+preferExisting:SetPoint("TOPLEFT", 240, -137)
+local preferLabel = text(frame, "GameFontDisableSmall", "TOPLEFT", 265, -140, "u/ existing")
 
 local craftRows = CreateFrame("Frame", "Artisan_CraftRows", frame, "BackdropTemplate")
-craftRows:SetSize(174, 190)
-craftRows:SetPoint("TOPLEFT", 16, -177)
+craftRows:SetSize(154, 160)
+craftRows:SetPoint("TOPLEFT", 16, -157)
+blackPanel(craftRows)
 local bomRows = CreateFrame("Frame", "Artisan_BOMRows", frame, "BackdropTemplate")
-bomRows:SetSize(168, 190)
-bomRows:SetPoint("TOPLEFT", 200, -177)
+bomRows:SetSize(163, 160)
+bomRows:SetPoint("TOPLEFT", 180, -157)
+blackPanel(bomRows)
 
-local summaryLabel = text(frame, "GameFontNormal", "TOPLEFT", 18, -376, "Summary")
+local summaryLabel = text(frame, "GameFontNormal", "TOPLEFT", 23, -320, "Net cost")
 local noAH = CreateFrame("CheckButton", "Artisan_NoAH", frame, "UICheckButtonTemplate")
-noAH:SetPoint("TOPLEFT", 100, -372)
-local noAHLabel = text(frame, "GameFontDisableSmall", "TOPLEFT", 126, -375, "no AH")
+noAH:SetSize(25, 25)
+noAH:SetPoint("TOPLEFT", 100, -317)
+local noAHLabel = text(frame, "GameFontDisableSmall", "TOPLEFT", 126, -320, "no AH")
 local summary = text(frame, "GameFontHighlightSmall", "TOPLEFT", 18, -400)
 local build = CreateFrame("Button", "Artisan_UpdatePlan", frame, "UIPanelButtonTemplate")
-build:SetSize(130, 24)
-build:SetPoint("TOPLEFT", 238, -372)
+build:SetSize(160, 22)
+build:SetPoint("TOPLEFT", 19, -410)
 build:SetText("Update plan")
 local start = CreateFrame("Button", "Artisan_StartCrafting", frame, "UIPanelButtonTemplate")
-start:SetSize(130, 24)
-start:SetPoint("TOPLEFT", 238, -438)
+start:SetSize(160, 22)
+start:SetPoint("TOPLEFT", 180, -410)
 start:SetText("Start crafting")
 
 local amount = CreateFrame("EditBox", "Artisan_WishlistAmount", frame, "InputBoxTemplate")
@@ -135,11 +165,14 @@ amount:SetScript("OnEnterPressed", commitWishlist)
 amount:SetScript("OnEscapePressed", function() pm.editing = nil; amount:Hide() end)
 
 local function showResults()
-	local db = ns.db[pm.pk]
 	local old = pm.resultButtons or {}
-	-- fixme: shoud here be hide or remove?
 	for _, button in ipairs(old) do button:Hide() end
 	pm.resultButtons = {}
+	if search:GetText() == "" then
+		results:Hide()
+		return
+	end
+	local db = ns.db[pm.pk]
 	local _, cap = pm:getclamp()
 	for i, recipe in ipairs(pm:search(search:GetText())) do
 		if i > 8 then break end

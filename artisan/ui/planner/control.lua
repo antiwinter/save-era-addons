@@ -2,10 +2,10 @@ local _, ns = ...
 
 local pm = ns.pm
 local function attachPlanner(parent)
-	pm.frame:SetParent(UIParent)
+	pm.frame:SetParent(parent)
 	pm.frame:ClearAllPoints()
-	pm.frame:SetPoint("TOPLEFT", parent, "TOPRIGHT", 8, 0)
-	pm.frame:SetSize(492, 628)
+	pm.frame:SetAllPoints(parent)
+	pm.frame:SetFrameLevel(parent:GetFrameLevel() + 10)
 end
 
 function pm:Attach()
@@ -15,26 +15,48 @@ function pm:Attach()
 	pm:load(pk)
 	attachPlanner(parent)
 
-	local arrow = self.arrow
-	if not arrow then
-		arrow = CreateFrame("Button", "Artisan_PlannerArrow", parent)
-		arrow:SetSize(32, 32)
-		arrow:SetNormalTexture("Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up")
-		arrow:SetPushedTexture("Interface\\Buttons\\UI-SpellbookIcon-NextPage-Down")
-		arrow:SetHighlightTexture("Interface\\Buttons\\UI-SpellbookIcon-NextPage-Highlight")
-		arrow:SetScript("OnClick", function()
-			if self.frame:IsShown() then self.frame:Hide() else self.frame:Show() end
+	local skillTab = self.skillTab
+	if not skillTab then
+		skillTab = CreateFrame("Button", "Artisan_SkillTab", parent, "CharacterFrameTabButtonTemplate")
+		skillTab:SetText("Skill")
+		skillTab:SetID(1)
+		skillTab:SetScript("OnClick", function()
+			self.frame:Hide()
+			PanelTemplates_SetTab(parent, skillTab:GetID())
 		end)
-		self.arrow = arrow
+		self.skillTab = skillTab
 	end
-	arrow:ClearAllPoints()
-	arrow:SetPoint("LEFT", parent, "RIGHT", 0, 0)
-	arrow:Show()
+	skillTab:ClearAllPoints()
+	skillTab:SetPoint("TOPLEFT", parent, "BOTTOMLEFT", 40, 76)
+	skillTab:Show()
+
+	local plannerTab = self.tab
+	if not plannerTab then
+		plannerTab = CreateFrame("Button", "Artisan_PlannerTab", parent, "CharacterFrameTabButtonTemplate")
+		plannerTab:SetText("Plan")
+		plannerTab:SetID(2)
+		plannerTab:SetScript("OnClick", function()
+			self.frame:Show()
+			PanelTemplates_SetTab(parent, plannerTab:GetID())
+		end)
+		self.tab = plannerTab
+	end
+	plannerTab:ClearAllPoints()
+	plannerTab:SetPoint("TOPLEFT", parent, "BOTTOMLEFT", 100, 76)
+	plannerTab:Show()
+
+	parent.Tabs = parent.Tabs or {}
+	parent.Tabs[1] = skillTab
+	parent.Tabs[2] = plannerTab
+	parent.numTabs = 2
+	PanelTemplates_SetNumTabs(parent, parent.numTabs)
 
 	if self.active then
 		self.frame:Show()
+		PanelTemplates_SetTab(parent, plannerTab:GetID())
 	else
 		self.frame:Hide()
+		PanelTemplates_SetTab(parent, skillTab:GetID())
 	end
 	self.active = false
 end
