@@ -1,5 +1,13 @@
 local _, ns = ...
 
+function ns.copyObj(src)
+	local result = {}
+	for k, v in pairs(src) do
+		result[k] = type(v) == "table" and ns.copyObj(v) or v
+	end
+	return result
+end
+
 function ns.getProfName(pk)
 	local ids = profs[pk]
 	if not ids then return nil end
@@ -28,11 +36,6 @@ function ns.openProfFrame(pk)
 	end
 	if n ~= name then return nil end
 	return name, _, lvl, cap
-end
-
-function ns.getTradeSkillRange(pk)
-	local _, _, skill, cap = ns.openProfFrame(pk)
-	return skill or 1, cap or 150
 end
 
 function ns.getExistingMaterials()
@@ -95,6 +98,7 @@ function store:init()
 	artisanDB[char] = artisanDB[char] or {}
 	state = artisanDB[char]
 	state.plans = state.plans or {}
+	state.snaps = state.snaps or {}
 end
 
 setmetatable(store, {

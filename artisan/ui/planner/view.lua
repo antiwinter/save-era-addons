@@ -103,7 +103,7 @@ end
 
 local function editWishlist(id)
 	pm.editing = id
-	amount:SetText(tostring(pm:State().wishlist[id] or 0))
+	amount:SetText(tostring(pm.state.wishlist[id] or 0))
 	amount:Show()
 	amount:SetFocus()
 	amount:HighlightText()
@@ -227,15 +227,15 @@ frame:SetScript("OnUpdate", function()
 end)
 target:SetScript("OnValueChanged", function(_, value) pm:settarget(value) end)
 preferExisting:SetScript("OnClick", function(button)
-	pm:State().preferExisting = button:GetChecked()
+	pm.state.preferExisting = button:GetChecked()
 	pm.replan_req = 1
 end)
 noAH:SetScript("OnClick", function(button)
-	pm:State().noAH = button:GetChecked()
+	pm.state.noAH = button:GetChecked()
 end)
 start:SetScript("OnClick", function()
 	ns.store.cur_pk = pm.pk
 	pm:replan()
-	pm:Snapshot()
+	pm:snapshot()
 	ns.CraftUI:Show()
 end)

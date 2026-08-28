@@ -21,13 +21,19 @@ function pm:load(pk)
 		actions = {},
 		materials = {}
 	}
+	self.state.wishlist = self.state.wishlist or {}
+	self.state.actions = self.state.actions or {}
+	self.state.materials = self.state.materials or {}
+	self.state.start = self.state.start or lo
+	self.state.target = self:getclamp(self.state.target or hi)
 	ns.store.plans[self.pk] = self.state
+	self.replan_req = 1
 	return true
 end
 
 function pm:getclamp(target)
 	local _, _, cur = ns.openProfFrame(self.pk)
-	local lvl = GetUnitLevel('player')
+	local lvl = UnitLevel('player')
 	local hardcap = lvl > 34 and 300 or
 		lvl > 19 and 225 or
 		lvl > 9 and 150 or
@@ -42,21 +48,24 @@ end
 function pm:settarget(target)
 	local tar = self:getclamp(target)
 	if tar ~= self.state.target then
-		self.state.target = target
+		self.state.target = tar
 		self.replan_req = 1
 	end
 end
 
 function pm:replan()
-	local st = self:State()
-	local actions, materials = ns.Planner.BuildPlan(db, {
-		start = st.start,
+	local st = self.state
+	local start = self:getclamp()
+	st.start = start
+	local actions, materials = ns.Planner.BuildPlan(self:getdb(), {
+		start = start,
 		target= st.target,
 		wishlist = st.wishlist or {},
 		existing = st.preferExisting and ns.getExistingMaterials() or {}
 	})
 	st.actions = actions
 	st.materials = materials
+	self:resum()
 end
 
 function pm:getdb()
@@ -65,7 +74,8 @@ end
 
 function pm:search(query)
 	query = (query or ""):lower()
-	local db = ns.db[ns.pmUI.pk]
+	local db = self:getdb()
+	if not db then return {} end
 	local result = {}
 	for _, recipe in ipairs(db.data) do
 		if recipe.name and db[recipe.skill_id]
@@ -78,6 +88,8 @@ function pm:search(query)
 end
 
 function pm:resum()
+	local st, db = self.state, self:getdb()
+	local plan, existing = st, ns.getExistingMaterials()
 	local existingValue, buyValue = 0, 0
 	for id, required in pairs(plan.materials) do
 		local have = existing[id] or 0
@@ -118,8 +130,12 @@ function pm:resum()
 		buy = buyValue,
 		junk = junkReturns,
 		ah = ahReturns,
-		aaj = aaj -- ah as junk
+		aaj = aaj
 	}
+end
+
+function pm:snapshot()
+	ns.store.snaps[self.pk] = ns.copyObj(self.state)
 end
 
 ns.pm = pm

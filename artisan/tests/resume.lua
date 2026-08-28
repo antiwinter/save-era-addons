@@ -20,7 +20,7 @@ ns.pm:settarget(target)
 ns.pm:Refresh()
 ns.store.cur_pk = pk
 fw.click("Artisan_StartCrafting")
-local plan = ns.pm.state.snapshot
+local plan = ns.store.snaps[pk]
 assert(plan, "start crafting did not save a plan snapshot")
 ns.CraftUI:Show()
 

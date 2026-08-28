@@ -30,9 +30,13 @@ end)
 function Craft:Show()
 	local pk = ns.store.cur_pk
 	if not pk then return end
-	local saved = ns.store.plans[pk]
-	local result = ns.PlannerModel:Build(pk, saved)
-	ns.ss = result and ns.CreateSession(result.plan) or nil
+	if ns.pm.pk ~= pk and not ns.pm:load(pk) then return end
+	local snapshot = ns.store.snaps[pk]
+	if not snapshot then
+		ns.hint("Start a plan first")
+		return
+	end
+	ns.ss = ns.CreateSession(snapshot)
 	panel:Show()
 end
 

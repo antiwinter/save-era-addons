@@ -24,7 +24,7 @@ fw.click("Artisan_StartCrafting")
 assert(ns.store.cur_pk == pk, "start crafting did not select the profession")
 assert(artisanPanel:IsShown(), "start crafting did not show the craft panel")
 assert(ns.ss, "start crafting did not create a session")
-assert(ns.ss.plan == ns.pm.state.snapshot, "craft session did not use a snapshot")
+assert(ns.ss.plan == ns.store.snaps[pk], "craft session did not use a snapshot")
 
 for id, count in pairs(plan.materials) do
 	fw.GM.SetBag(id, math.ceil(count))
