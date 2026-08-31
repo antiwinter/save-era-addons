@@ -8,8 +8,16 @@ frame:SetBackdrop(nil)
 frame:SetMovable(true)
 frame:EnableMouse(true)
 frame:RegisterForDrag("LeftButton")
-frame:SetScript("OnDragStart", frame.StartMoving)
-frame:SetScript("OnDragStop", frame.StopMovingOrSizing)
+frame:SetScript("OnDragStart", function(self)
+	local parent = self:GetParent()
+	local mover = parent and parent ~= UIParent and parent or self
+	mover:StartMoving()
+end)
+frame:SetScript("OnDragStop", function(self)
+	local parent = self:GetParent()
+	local mover = parent and parent ~= UIParent and parent or self
+	mover:StopMovingOrSizing()
+end)
 frame:Hide()
 
 local function text(parent, template, point, x, y, value)
@@ -41,21 +49,82 @@ local function rockTile(width, height, x, y, right, bottom)
 end
 
 rockTile(256, 256, 18, 95)
-rockTile(66, 256, 274, 95, 66 / 256)
-rockTile(256, 49, 18, 351, 1, 49 / 256)
-rockTile(66, 49, 274, 351, 66 / 256, 49 / 256)
+rockTile(68, 256, 274, 95, 66 / 256)
+rockTile(256, 58, 18, 351, 1, 49 / 256)
+rockTile(66, 58, 274, 351, 66 / 256, 49 / 256)
 
-local function blackPanel(panel)
-	panel:SetBackdrop({
-		bgFile = "Interface\\ChatFrame\\ChatFrameBackground",
-		edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
-		tile = true,
-		tileSize = 16,
-		tileEdge = true,
-		edgeSize = 8,
-		insets = { left = 5, right = 5, top = 5, bottom = 5 },
-	})
-	panel:SetBackdropColor(0, 0, 0, 1)
+local insetPanels = {}
+
+local function insetPanel(name, width, height, point, relativeTo, relativePoint, x, y)
+	local panel = CreateFrame("Frame", name, frame)
+	panel:SetSize(width, height)
+	panel:SetPoint(point, relativeTo or frame, relativePoint or point, x or 0, y or 0)
+
+	local function piece(layer, file, w, h, left, right, top, bottom)
+		local texture = panel:CreateTexture(nil, layer)
+		texture:SetTexture(file)
+		texture:SetSize(w, h)
+		texture:SetTexCoord(left, right, top, bottom)
+		return texture
+	end
+
+	local bg = panel:CreateTexture(nil, "BACKGROUND")
+	bg:SetTexture("Interface\\FrameGeneral\\UI-Background-Marble")
+	bg:SetHorizTile(true)
+	bg:SetVertTile(true)
+	bg:SetPoint("TOPLEFT")
+	bg:SetPoint("BOTTOMRIGHT")
+
+	local topLeft = piece("BORDER", "Interface\\FrameGeneral\\UI-Frame", 6, 6,
+		0.6328125, 0.6796875, 0.546875, 0.59375)
+	local topRight = piece("BORDER", "Interface\\FrameGeneral\\UI-Frame", 6, 6,
+		0.90625, 0.953125, 0.21875, 0.265625)
+	local bottomLeft = piece("BORDER", "Interface\\FrameGeneral\\UI-Frame", 6, 6,
+		0.6953125, 0.7421875, 0.546875, 0.59375)
+	local bottomRight = piece("BORDER", "Interface\\FrameGeneral\\UI-Frame", 6, 6,
+		0.7578125, 0.8046875, 0.546875, 0.59375)
+	topLeft:SetPoint("TOPLEFT")
+	topRight:SetPoint("TOPRIGHT")
+	bottomLeft:SetPoint("BOTTOMLEFT", 0, -1)
+	bottomRight:SetPoint("BOTTOMRIGHT", 0, -1)
+
+	local top = piece("BORDER", "Interface\\FrameGeneral\\_UI-Frame", 256, 3,
+		0, 1, 0.0859375, 0.109375)
+	top:SetHorizTile(true)
+	top:SetTexCoord(0, 1, 0.0859375, 0.109375)
+	top:SetPoint("TOPLEFT", topLeft, "TOPRIGHT")
+	top:SetPoint("TOPRIGHT", topRight, "TOPLEFT")
+
+	local bottom = piece("BORDER", "Interface\\FrameGeneral\\_UI-Frame", 256, 3,
+		0, 1, 0.0078125, 0.03125)
+	bottom:SetHorizTile(true)
+	bottom:SetTexCoord(0, 1, 0.0078125, 0.03125)
+	bottom:SetPoint("BOTTOMLEFT", bottomLeft, "BOTTOMRIGHT")
+	bottom:SetPoint("BOTTOMRIGHT", bottomRight, "BOTTOMLEFT")
+
+	local left = piece("BORDER", "Interface\\FrameGeneral\\!UI-Frame", 3, 256,
+		0.09375, 0.140625, 0, 1)
+	left:SetVertTile(true)
+	left:SetTexCoord(0.09375, 0.140625, 0, 1)
+	left:SetPoint("TOPLEFT", topLeft, "BOTTOMLEFT")
+	left:SetPoint("BOTTOMLEFT", bottomLeft, "TOPLEFT")
+
+	local right = piece("BORDER", "Interface\\FrameGeneral\\!UI-Frame", 3, 256,
+		0.015625, 0.0625, 0, 1)
+	right:SetVertTile(true)
+	right:SetTexCoord(0.015625, 0.0625, 0, 1)
+	right:SetPoint("TOPRIGHT", topRight, "BOTTOMRIGHT")
+	right:SetPoint("BOTTOMRIGHT", bottomRight, "TOPRIGHT")
+
+	insetPanels[#insetPanels + 1] = panel
+	return panel
+end
+
+function frame:SyncInsetPanelLevels()
+	local level = self:GetFrameLevel() + 1
+	for _, panel in ipairs(insetPanels) do
+		panel:SetFrameLevel(level)
+	end
 end
 
 local title = text(frame, "GameFontNormal", "TOP", 0, -17, "Artisan planner")
@@ -76,16 +145,11 @@ search:SetAutoFocus(false)
 search:SetTextInsets(8, 8, 0, 0)
 search:SetText("")
 
-local results = CreateFrame("Frame", "Artisan_WishlistResults", frame, "BackdropTemplate")
-results:SetSize(148, 160)
-results:SetPoint("TOPLEFT", search, "BOTTOMLEFT", 0, -2)
-blackPanel(results)
+local results = insetPanel("Artisan_WishlistResults", 148, 160,
+	"TOPLEFT", search, "BOTTOMLEFT", 0, -2)
 results:Hide()
 
-local wishlist = CreateFrame("Frame", "Artisan_Wishlist", frame, "BackdropTemplate")
-wishlist:SetSize(325, 42)
-wishlist:SetPoint("TOPLEFT", 18, -95)
-blackPanel(wishlist)
+local wishlist = insetPanel("Artisan_Wishlist", 318, 42, "TOPLEFT", frame, "TOPLEFT", 20, -95)
 
 local craftLabel = text(frame, "GameFontNormal", "TOPLEFT", 23, -140, "Craft")
 local bomLabel = text(frame, "GameFontNormal", "TOPLEFT", 190, -140, "BOM")
@@ -95,14 +159,8 @@ preferExisting:SetSize(25, 25)
 preferExisting:SetPoint("TOPLEFT", 240, -137)
 local preferLabel = text(frame, "GameFontDisableSmall", "TOPLEFT", 265, -140, "u/ existing")
 
-local craftRows = CreateFrame("Frame", "Artisan_CraftRows", frame, "BackdropTemplate")
-craftRows:SetSize(154, 160)
-craftRows:SetPoint("TOPLEFT", 16, -157)
-blackPanel(craftRows)
-local bomRows = CreateFrame("Frame", "Artisan_BOMRows", frame, "BackdropTemplate")
-bomRows:SetSize(163, 160)
-bomRows:SetPoint("TOPLEFT", 180, -157)
-blackPanel(bomRows)
+local craftRows = insetPanel("Artisan_CraftRows", 154, 160, "TOPLEFT", frame, "TOPLEFT", 20, -157)
+local bomRows = insetPanel("Artisan_BOMRows", 158, 160, "TOPLEFT", frame, "TOPLEFT", 180, -157)
 
 local summaryLabel = text(frame, "GameFontNormal", "TOPLEFT", 23, -320, "Net cost")
 local noAH = CreateFrame("CheckButton", "Artisan_NoAH", frame, "UICheckButtonTemplate")

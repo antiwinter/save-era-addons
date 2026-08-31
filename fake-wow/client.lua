@@ -25,6 +25,7 @@ local function install(env)
 			SetPoint = noop,
 			SetTexture = function(s, texture) s.__texture = texture end,
 			SetTexCoord = noop,
+			SetHorizTile = noop, SetVertTile = noop,
 			Show = function(s) s.__shown = true end,
 			Hide = function(s) s.__shown = false end,
 		}
