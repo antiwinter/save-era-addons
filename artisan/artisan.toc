@@ -13,6 +13,7 @@ planner.lua
 format.lua
 utils.lua
 core.lua
+ui\lib.lua
 ui\craft.lua
 ui\planner\model.lua
 ui\planner\view.lua

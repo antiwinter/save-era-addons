@@ -73,8 +73,10 @@ function pm:search(query)
 	if not db then return {} end
 	local result = {}
 	for _, recipe in ipairs(db.data) do
-		if recipe.name and db[recipe.skill_id]
+		local craft = db[recipe.skill_id]
+		if recipe.name and craft
 			and recipe.name:lower():find(query, 1, true) then
+			recipe.req = craft.colors[1]
 			result[#result + 1] = recipe
 		end
 	end

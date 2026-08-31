@@ -22,7 +22,10 @@ local function install(env)
 	local function newTexture()
 		return {
 			SetSize = function(s, width, height) s.__width, s.__height = width, height end,
+			SetWidth = function(s, width) s.__width = width end,
+			SetHeight = function(s, height) s.__height = height end,
 			SetPoint = noop,
+			SetAllPoints = noop,
 			SetTexture = function(s, texture) s.__texture = texture end,
 			SetTexCoord = noop,
 			SetHorizTile = noop, SetVertTile = noop,

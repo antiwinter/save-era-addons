@@ -6,7 +6,6 @@ local function attachPlanner(parent)
 	pm.frame:ClearAllPoints()
 	pm.frame:SetAllPoints(parent)
 	pm.frame:SetFrameLevel(parent:GetFrameLevel() + 10)
-	pm.frame:SyncInsetPanelLevels()
 end
 
 function pm:Attach()
