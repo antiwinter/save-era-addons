@@ -1,15 +1,11 @@
 local addonName, ns = ...
-local PREFIX = "artisanSku"
-local MAIL_RETURN_DAYS = 30
-local MAX_MESSAGE = 180
+
+ns.MAIL_RETURN_DAYS = 30
 ns.defaults = { passcode = "" }
 ns.db = nil
 ns.cfg = nil
 ns.char = nil
 ns.sources = { bag = {}, bank = {}, mail = {} }
-ns.sync = {}
-ns.trade = nil
-ns.partyMembers = {}
 local function charKey() return UnitName("player") end
 local function setCount(target, itemID, count)
 	if itemID and count and count > 0 then target[itemID] = (target[itemID] or 0) + count end
@@ -33,7 +29,7 @@ local function mailSnapshot()
 		local daysLeft = header[7]
 		local wasReturned = header[10] == true or header[10] == 1
 		local days = math.max(0, math.ceil(daysLeft))
-		if wasReturned then days = days + MAIL_RETURN_DAYS end
+		if wasReturned then days = days + ns.MAIL_RETURN_DAYS end
 		local attachments = GetInboxNumAttachments(index)
 		for attachment = 1, attachments do
 			local _, itemID, count = GetInboxItem(index, attachment)
@@ -89,146 +85,6 @@ function ns.ScanMail()
 	local snapshot = mailSnapshot()
 	ns.sources.mail = snapshot; rebuild()
 end
-local function sortedItemIDs(data)
-	local ids = {}
-	for itemID in pairs(data) do if tonumber(itemID) then ids[#ids + 1] = tonumber(itemID) end end
-	table.sort(ids)
-	return ids
-end
-local function escape(value)
-	return tostring(value):gsub("%%", "%%25"):gsub("|", "%%7C")
-end
-local function unescape(value)
-	return (value:gsub("%%7C", "|"):gsub("%%25", "%%"))
-end
-local function encode(data)
-	local fields = {}
-	for _, itemID in ipairs(sortedItemIDs(data)) do
-		local record = data[itemID]
-		local mail = record.mail or {}
-		fields[#fields + 1] = table.concat({ itemID, record.bag or 0, record.bank or 0, mail.n or 0, mail.d or 0 }, ",")
-	end
-	return table.concat(fields, ";")
-end
-local function decode(payload)
-	local result = {}
-	for entry in payload:gmatch("[^;]+") do
-		local itemID, bag, bank, mailN, mailD = entry:match("^(%d+),([%d%.%-]+),([%d%.%-]+),([%d%.%-]+),([%d%.%-]+)$")
-		if itemID then
-			itemID, bag, bank, mailN, mailD = tonumber(itemID), tonumber(bag), tonumber(bank), tonumber(mailN), tonumber(mailD)
-			if bag > 0 or bank > 0 or mailN > 0 then
-				result[itemID] = { bag = bag, bank = bank, mail = mailN > 0 and { n = mailN, d = mailD } or nil }
-			end
-		end
-	end
-	return result
-end
-local function recordAuctionPurchase(itemID, quantity)
-	local record = ns.db[itemID] or { bag = 0, bank = 0 }
-	if record.mail then
-		record.mail.n = record.mail.n + quantity
-	else
-		record.mail = { n = quantity, d = MAIL_RETURN_DAYS }
-	end
-	ns.db[itemID] = record
-end
-local function addMailToCharacter(character, itemID, quantity)
-	local target = artisanSkuDB[character]
-	if not target then return end
-	local record = target[itemID] or { bag = 0, bank = 0 }
-	if record.mail then
-		record.mail.n = record.mail.n + quantity
-	else
-		record.mail = { n = quantity, d = MAIL_RETURN_DAYS }
-	end
-	target[itemID] = record
-end
-local function addBagToCharacter(character, itemID, quantity)
-	local target = artisanSkuDB[character]
-	if not target then return end
-	local record = target[itemID] or { bag = 0, bank = 0 }
-	record.bag = record.bag + quantity
-	target[itemID] = record
-end
-local function itemIDFromLink(link)
-	return tonumber(link:match("item:(%d+)"))
-end
-local function onSendMail(destination)
-	for index = 1, 12 do
-		local link = GetSendMailItemLink(index)
-		if link then
-			local _, _, _, quantity = GetSendMailItem(index)
-			addMailToCharacter(destination, itemIDFromLink(link), quantity)
-		end
-	end
-end
-local function captureTrade(playerAccepted, targetAccepted)
-	if playerAccepted ~= 1 and targetAccepted ~= 1 then ns.trade = nil; return end
-	ns.trade = { character = UnitName("NPC"), items = {} }
-	for index = 1, 6 do
-		local link = GetTradePlayerItemLink(index)
-		if link then
-			local _, _, quantity = GetTradePlayerItemInfo(index)
-			local itemID = itemIDFromLink(link)
-			ns.trade.items[itemID] = (ns.trade.items[itemID] or 0) + quantity
-		end
-	end
-end
-local function finishTrade()
-	if ns.trade then
-		for itemID, quantity in pairs(ns.trade.items) do addBagToCharacter(ns.trade.character, itemID, quantity) end
-		ns.trade = nil
-	end
-end
-
-local function send(message) C_ChatInfo.SendAddonMessage(PREFIX, message, "PARTY") end
-local function partyRosterChanged()
-	local current = {}
-	for index = 1, 4 do
-		local name = UnitName("party" .. index)
-		if name then current[name] = true end
-	end
-	local joined = false
-	for name in pairs(current) do
-		if not ns.partyMembers[name] then joined = true end
-	end
-	ns.partyMembers = current
-	return joined
-end
-function ns.Broadcast()
-	if ns.cfg.passcode == "" or ns.db.foreign then return end
-	local payload = encode(ns.db)
-	local pass = escape(ns.cfg.passcode)
-	local character = escape(ns.char)
-	local chunks = {}
-	for start = 1, #payload, MAX_MESSAGE do chunks[#chunks + 1] = payload:sub(start, start + MAX_MESSAGE - 1) end
-	if #chunks == 0 then chunks[1] = "" end
-	for index, chunk in ipairs(chunks) do
-		send(table.concat({ "1", pass, character, index, #chunks, chunk }, "|"))
-	end
-end
-local function merge(sender, message)
-	local version, pass, character, index, total, payload = message:match("^(%d+)|([^|]*)|([^|]*)|(%d+)|(%d+)|(.*)$")
-	if version ~= "1" or not pass or unescape(pass) ~= ns.cfg.passcode then return end
-	index, total = tonumber(index), tonumber(total)
-	if not index or not total then return end
-	local key = sender .. ":" .. character
-	local buffer = ns.sync[key] or { total = total, chunks = {} }
-	buffer.total, buffer.chunks[index] = total, payload
-	ns.sync[key] = buffer
-	local count = 0
-	for _ in pairs(buffer.chunks) do count = count + 1 end
-	if count < total then return end
-	local data = {}
-	for i = 1, total do data[#data + 1] = buffer.chunks[i] or "" end
-	local incoming = decode(table.concat(data))
-	local target = artisanSkuDB[unescape(character)] or {}
-	for itemID, record in pairs(incoming) do target[itemID] = record end
-	for itemID in pairs(target) do if not incoming[itemID] then target[itemID] = nil end end
-	artisanSkuDB[unescape(character)] = target
-	target.foreign = true
-	ns.sync[key] = nil
-end
 function ArtisanGetSku(itemID)
 	itemID = tonumber(itemID)
 	local result = { total = 0 }
@@ -273,8 +129,8 @@ frame:SetScript("OnEvent", function(_, event, arg1, arg2, arg3, arg4)
 		for key, value in pairs(ns.defaults) do if ns.cfg[key] == nil then ns.cfg[key] = value end end
 		artisanSkuDB.__config = ns.cfg
 		seedSources(); rebuild(); ns.ScanBags()
-		C_ChatInfo.RegisterAddonMessagePrefix(PREFIX)
-		hooksecurefunc("SendMail", onSendMail)
+		ns.Sync.Initialize()
+		ns.Exchange.Initialize()
 	elseif event == "PLAYER_LOGIN" then
 		GameTooltip:HookScript("OnTooltipSetItem", addTooltip)
 		ItemRefTooltip:HookScript("OnTooltipSetItem", addTooltip)
@@ -283,10 +139,10 @@ frame:SetScript("OnEvent", function(_, event, arg1, arg2, arg3, arg4)
 	elseif event == "PLAYERBANKSLOTS_CHANGED" then ns.ScanBank()
 	elseif event == "MAIL_SHOW" then ns.ScanMail()
 	elseif event == "MAIL_INBOX_UPDATE" then ns.ScanMail()
-	elseif event == "GROUP_ROSTER_UPDATE" and partyRosterChanged() then ns.Broadcast()
-	elseif event == "AUCTION_HOUSE_ITEM_PURCHASED" then recordAuctionPurchase(arg1, arg2)
-	elseif event == "TRADE_ACCEPT_UPDATE" then captureTrade(arg1, arg2)
-	elseif event == "UI_INFO_MESSAGE" and arg1 == LE_GAME_ERR_TRADE_COMPLETE then finishTrade()
-	elseif event == "TRADE_CLOSED" then ns.trade = nil
-	elseif event == "CHAT_MSG_ADDON" and arg1 == PREFIX then merge(arg4, arg2) end
+	elseif event == "GROUP_ROSTER_UPDATE" then ns.Sync.OnRosterUpdate()
+	elseif event == "AUCTION_HOUSE_ITEM_PURCHASED" then ns.Exchange.OnAuctionPurchase(arg1, arg2)
+	elseif event == "TRADE_ACCEPT_UPDATE" then ns.Exchange.OnTradeAcceptUpdate(arg1, arg2)
+	elseif event == "UI_INFO_MESSAGE" and arg1 == LE_GAME_ERR_TRADE_COMPLETE then ns.Exchange.OnTradeComplete()
+	elseif event == "TRADE_CLOSED" then ns.Exchange.OnTradeClosed()
+	elseif event == "CHAT_MSG_ADDON" and arg1 == ns.Sync.PREFIX then ns.Sync.OnAddonMessage(arg4, arg2) end
 end)

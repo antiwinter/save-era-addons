@@ -6,4 +6,6 @@
 ## SavedVariables: artisanSkuDB
 
 core.lua
+sync.lua
+exchange.lua
 settings.lua
