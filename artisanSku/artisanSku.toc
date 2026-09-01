@@ -1,0 +1,9 @@
+## Interface: 11507
+## Title: artisanSku
+## Notes: Tracks item quantities across bags, bank, and mail, with party sync.
+## Author: warits
+## Version: 0.1
+## SavedVariables: artisanSkuDB
+
+core.lua
+settings.lua
