@@ -8,6 +8,7 @@ ns.cfg = nil
 ns.char = nil
 ns.sources = { bag = {}, bank = {}, mail = {} }
 ns.sync = {}
+ns.trade = nil
 ns.partyMembers = {}
 local function charKey() return UnitName("player") end
 local function setCount(target, itemID, count)
@@ -122,6 +123,64 @@ local function decode(payload)
 	end
 	return result
 end
+local function recordAuctionPurchase(itemID, quantity)
+	local record = ns.db[itemID] or { bag = 0, bank = 0 }
+	if record.mail then
+		record.mail.n = record.mail.n + quantity
+	else
+		record.mail = { n = quantity, d = MAIL_RETURN_DAYS }
+	end
+	ns.db[itemID] = record
+end
+local function addMailToCharacter(character, itemID, quantity)
+	local target = artisanSkuDB[character]
+	if not target then return end
+	local record = target[itemID] or { bag = 0, bank = 0 }
+	if record.mail then
+		record.mail.n = record.mail.n + quantity
+	else
+		record.mail = { n = quantity, d = MAIL_RETURN_DAYS }
+	end
+	target[itemID] = record
+end
+local function addBagToCharacter(character, itemID, quantity)
+	local target = artisanSkuDB[character]
+	if not target then return end
+	local record = target[itemID] or { bag = 0, bank = 0 }
+	record.bag = record.bag + quantity
+	target[itemID] = record
+end
+local function itemIDFromLink(link)
+	return tonumber(link:match("item:(%d+)"))
+end
+local function onSendMail(destination)
+	for index = 1, 12 do
+		local link = GetSendMailItemLink(index)
+		if link then
+			local _, _, _, quantity = GetSendMailItem(index)
+			addMailToCharacter(destination, itemIDFromLink(link), quantity)
+		end
+	end
+end
+local function captureTrade(playerAccepted, targetAccepted)
+	if playerAccepted ~= 1 and targetAccepted ~= 1 then ns.trade = nil; return end
+	ns.trade = { character = UnitName("NPC"), items = {} }
+	for index = 1, 6 do
+		local link = GetTradePlayerItemLink(index)
+		if link then
+			local _, _, quantity = GetTradePlayerItemInfo(index)
+			local itemID = itemIDFromLink(link)
+			ns.trade.items[itemID] = (ns.trade.items[itemID] or 0) + quantity
+		end
+	end
+end
+local function finishTrade()
+	if ns.trade then
+		for itemID, quantity in pairs(ns.trade.items) do addBagToCharacter(ns.trade.character, itemID, quantity) end
+		ns.trade = nil
+	end
+end
+
 local function send(message) C_ChatInfo.SendAddonMessage(PREFIX, message, "PARTY") end
 local function partyRosterChanged()
 	local current = {}
@@ -201,7 +260,7 @@ end
 local frame = CreateFrame("Frame")
 for _, event in ipairs({
 	"ADDON_LOADED", "PLAYER_LOGIN", "BAG_OPEN", "BAG_UPDATE", "BAG_UPDATE_DELAYED", "PLAYERBANKSLOTS_CHANGED", "BANKFRAME_OPENED", "MAIL_INBOX_UPDATE", "MAIL_SHOW",
-	"GROUP_ROSTER_UPDATE",
+	"GROUP_ROSTER_UPDATE", "AUCTION_HOUSE_ITEM_PURCHASED", "TRADE_ACCEPT_UPDATE", "TRADE_CLOSED", "UI_INFO_MESSAGE",
 	"CHAT_MSG_ADDON",
 }) do frame:RegisterEvent(event) end
 frame:SetScript("OnEvent", function(_, event, arg1, arg2, arg3, arg4)
@@ -215,6 +274,7 @@ frame:SetScript("OnEvent", function(_, event, arg1, arg2, arg3, arg4)
 		artisanSkuDB.__config = ns.cfg
 		seedSources(); rebuild(); ns.ScanBags()
 		C_ChatInfo.RegisterAddonMessagePrefix(PREFIX)
+		hooksecurefunc("SendMail", onSendMail)
 	elseif event == "PLAYER_LOGIN" then
 		GameTooltip:HookScript("OnTooltipSetItem", addTooltip)
 		ItemRefTooltip:HookScript("OnTooltipSetItem", addTooltip)
@@ -224,5 +284,9 @@ frame:SetScript("OnEvent", function(_, event, arg1, arg2, arg3, arg4)
 	elseif event == "MAIL_SHOW" then ns.ScanMail()
 	elseif event == "MAIL_INBOX_UPDATE" then ns.ScanMail()
 	elseif event == "GROUP_ROSTER_UPDATE" and partyRosterChanged() then ns.Broadcast()
+	elseif event == "AUCTION_HOUSE_ITEM_PURCHASED" then recordAuctionPurchase(arg1, arg2)
+	elseif event == "TRADE_ACCEPT_UPDATE" then captureTrade(arg1, arg2)
+	elseif event == "UI_INFO_MESSAGE" and arg1 == LE_GAME_ERR_TRADE_COMPLETE then finishTrade()
+	elseif event == "TRADE_CLOSED" then ns.trade = nil
 	elseif event == "CHAT_MSG_ADDON" and arg1 == PREFIX then merge(arg4, arg2) end
 end)
