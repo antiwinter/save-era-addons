@@ -8,6 +8,7 @@ ns.cfg = nil
 ns.char = nil
 ns.sources = { bag = {}, bank = {}, mail = {} }
 ns.sync = {}
+ns.partyMembers = {}
 local function charKey() return UnitName("player") end
 local function setCount(target, itemID, count)
 	if itemID and count and count > 0 then target[itemID] = (target[itemID] or 0) + count end
@@ -122,6 +123,19 @@ local function decode(payload)
 	return result
 end
 local function send(message) C_ChatInfo.SendAddonMessage(PREFIX, message, "PARTY") end
+local function partyRosterChanged()
+	local current = {}
+	for index = 1, 4 do
+		local name = UnitName("party" .. index)
+		if name then current[name] = true end
+	end
+	local joined = false
+	for name in pairs(current) do
+		if not ns.partyMembers[name] then joined = true end
+	end
+	ns.partyMembers = current
+	return joined
+end
 function ns.Broadcast()
 	if ns.cfg.passcode == "" or ns.db.foreign then return end
 	local payload = encode(ns.db)
@@ -186,8 +200,8 @@ local function addTooltip(tooltip)
 end
 local frame = CreateFrame("Frame")
 for _, event in ipairs({
-	"ADDON_LOADED", "PLAYER_LOGIN", "BAG_UPDATE", "BAG_UPDATE_DELAYED", "PLAYERBANKSLOTS_CHANGED", "BANKFRAME_OPENED", "MAIL_INBOX_UPDATE", "MAIL_SHOW", "MAIL_SEND_SUCCESS",
-	"AUCTION_HOUSE_ITEM_PURCHASED", "GROUP_ROSTER_UPDATE",
+	"ADDON_LOADED", "PLAYER_LOGIN", "BAG_OPEN", "BAG_UPDATE", "BAG_UPDATE_DELAYED", "PLAYERBANKSLOTS_CHANGED", "BANKFRAME_OPENED", "MAIL_INBOX_UPDATE", "MAIL_SHOW",
+	"GROUP_ROSTER_UPDATE",
 	"CHAT_MSG_ADDON",
 }) do frame:RegisterEvent(event) end
 frame:SetScript("OnEvent", function(_, event, arg1, arg2, arg3, arg4)
@@ -204,13 +218,11 @@ frame:SetScript("OnEvent", function(_, event, arg1, arg2, arg3, arg4)
 	elseif event == "PLAYER_LOGIN" then
 		GameTooltip:HookScript("OnTooltipSetItem", addTooltip)
 		ItemRefTooltip:HookScript("OnTooltipSetItem", addTooltip)
-	elseif event == "BAG_UPDATE" or event == "BAG_UPDATE_DELAYED" then ns.ScanBags()
+	elseif event == "BAG_OPEN" or event == "BAG_UPDATE" or event == "BAG_UPDATE_DELAYED" then ns.ScanBags()
 	elseif event == "BANKFRAME_OPENED" then ns.ScanBank()
 	elseif event == "PLAYERBANKSLOTS_CHANGED" then ns.ScanBank()
 	elseif event == "MAIL_SHOW" then ns.ScanMail()
 	elseif event == "MAIL_INBOX_UPDATE" then ns.ScanMail()
-	elseif event == "MAIL_SEND_SUCCESS" then ns.ScanMail()
-	elseif event == "AUCTION_HOUSE_ITEM_PURCHASED" then ns.ScanBags()
-	elseif event == "GROUP_ROSTER_UPDATE" then ns.Broadcast()
+	elseif event == "GROUP_ROSTER_UPDATE" and partyRosterChanged() then ns.Broadcast()
 	elseif event == "CHAT_MSG_ADDON" and arg1 == PREFIX then merge(arg4, arg2) end
 end)
