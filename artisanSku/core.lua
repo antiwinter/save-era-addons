@@ -101,21 +101,9 @@ function ArtisanGetSku(itemID)
 	return result
 end
 ns.ArtisanGetSku = ArtisanGetSku
-local function addTooltip(tooltip)
-	local _, link = tooltip:GetItem()
-	local itemID = link and tonumber(link:match("item:(%d+)"))
-	if not itemID then return end
-	local sku = ArtisanGetSku(itemID)
-	if sku.total <= 0 then return end
-	local bag, bank, mail = 0, 0, 0
-	for character, record in pairs(sku) do
-		if character ~= "total" then bag, bank, mail = bag + record.bag, bank + record.bank, mail + record.mail end
-	end
-	tooltip:AddLine(("artisanSku: %d total (bag %d, bank %d, mail %d)"):format(sku.total, bag, bank, mail), 0.6, 0.8, 1)
-end
 local frame = CreateFrame("Frame")
 for _, event in ipairs({
-	"ADDON_LOADED", "PLAYER_LOGIN", "BAG_OPEN", "BAG_UPDATE", "BAG_UPDATE_DELAYED", "PLAYERBANKSLOTS_CHANGED", "BANKFRAME_OPENED", "MAIL_INBOX_UPDATE", "MAIL_SHOW",
+	"ADDON_LOADED", "BAG_OPEN", "BAG_UPDATE", "BAG_UPDATE_DELAYED", "PLAYERBANKSLOTS_CHANGED", "BANKFRAME_OPENED", "MAIL_INBOX_UPDATE", "MAIL_SHOW",
 	"GROUP_ROSTER_UPDATE", "AUCTION_HOUSE_ITEM_PURCHASED", "TRADE_ACCEPT_UPDATE", "TRADE_CLOSED", "UI_INFO_MESSAGE",
 	"CHAT_MSG_ADDON",
 }) do frame:RegisterEvent(event) end
@@ -126,14 +114,12 @@ frame:SetScript("OnEvent", function(_, event, arg1, arg2, arg3, arg4)
 		ns.char = charKey()
 		artisanSkuDB[ns.char] = artisanSkuDB[ns.char] or {}
 		ns.db, ns.cfg = artisanSkuDB[ns.char], artisanSkuDB.__config or {}
+		ns.db.class = select(2, UnitClass("player"))
 		for key, value in pairs(ns.defaults) do if ns.cfg[key] == nil then ns.cfg[key] = value end end
 		artisanSkuDB.__config = ns.cfg
 		seedSources(); rebuild(); ns.ScanBags()
 		ns.Sync.Initialize()
 		ns.Exchange.Initialize()
-	elseif event == "PLAYER_LOGIN" then
-		GameTooltip:HookScript("OnTooltipSetItem", addTooltip)
-		ItemRefTooltip:HookScript("OnTooltipSetItem", addTooltip)
 	elseif event == "BAG_OPEN" or event == "BAG_UPDATE" or event == "BAG_UPDATE_DELAYED" then ns.ScanBags()
 	elseif event == "BANKFRAME_OPENED" then ns.ScanBank()
 	elseif event == "PLAYERBANKSLOTS_CHANGED" then ns.ScanBank()

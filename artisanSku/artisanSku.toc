@@ -8,4 +8,5 @@
 core.lua
 sync.lua
 exchange.lua
+tooltip.lua
 settings.lua

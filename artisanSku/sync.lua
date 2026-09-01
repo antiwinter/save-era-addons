@@ -76,7 +76,7 @@ function sync.Broadcast()
 	for start = 1, #payload, MAX_MESSAGE do chunks[#chunks + 1] = payload:sub(start, start + MAX_MESSAGE - 1) end
 	if #chunks == 0 then chunks[1] = "" end
 	for index, chunk in ipairs(chunks) do
-		send(table.concat({ "1", pass, character, index, #chunks, chunk }, "|"))
+		send(table.concat({ "1", pass, character, ns.db.class, index, #chunks, chunk }, "|"))
 	end
 end
 
@@ -85,7 +85,7 @@ function sync.OnRosterUpdate()
 end
 
 function sync.OnAddonMessage(sender, message)
-	local version, pass, character, index, total, payload = message:match("^(%d+)|([^|]*)|([^|]*)|(%d+)|(%d+)|(.*)$")
+	local version, pass, character, classToken, index, total, payload = message:match("^(%d+)|([^|]*)|([^|]*)|([^|]*)|(%d+)|(%d+)|(.*)$")
 	if version ~= "1" or not pass or unescape(pass) ~= ns.cfg.passcode then return end
 	index, total = tonumber(index), tonumber(total)
 	if not index or not total then return end
@@ -103,6 +103,7 @@ function sync.OnAddonMessage(sender, message)
 	local target = artisanSkuDB[characterName] or {}
 	for itemID, record in pairs(incoming) do target[itemID] = record end
 	for itemID in pairs(target) do if not incoming[itemID] then target[itemID] = nil end end
+	target.class = classToken
 	target.foreign = true
 	artisanSkuDB[characterName] = target
 	sync.chunks[key] = nil
