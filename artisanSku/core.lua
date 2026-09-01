@@ -5,11 +5,9 @@ local MAX_MESSAGE = 180
 ns.defaults = { passcode = "" }
 ns.db = nil
 ns.cfg = nil
-ns.account = nil
 ns.char = nil
 ns.sources = { bag = {}, bank = {}, mail = {} }
 ns.sync = {}
-local function accountKey() return "account" end
 local function charKey() return UnitName("player") end
 local function setCount(target, itemID, count)
 	if itemID and count and count > 0 then target[itemID] = (target[itemID] or 0) + count end
@@ -125,7 +123,7 @@ local function decode(payload)
 end
 local function send(message) C_ChatInfo.SendAddonMessage(PREFIX, message, "PARTY") end
 function ns.Broadcast()
-	if ns.cfg.passcode == "" then return end
+	if ns.cfg.passcode == "" or ns.db.foreign then return end
 	local payload = encode(ns.db)
 	local pass = escape(ns.cfg.passcode)
 	local character = escape(ns.char)
@@ -151,19 +149,20 @@ local function merge(sender, message)
 	local data = {}
 	for i = 1, total do data[#data + 1] = buffer.chunks[i] or "" end
 	local incoming = decode(table.concat(data))
-	local target = artisanSkuDB[ns.account][unescape(character)] or {}
+	local target = artisanSkuDB[unescape(character)] or {}
 	for itemID, record in pairs(incoming) do target[itemID] = record end
 	for itemID in pairs(target) do if not incoming[itemID] then target[itemID] = nil end end
-	artisanSkuDB[ns.account][unescape(character)] = target
+	artisanSkuDB[unescape(character)] = target
+	target.foreign = true
 	ns.sync[key] = nil
 end
 function ArtisanGetSku(itemID)
 	itemID = tonumber(itemID)
 	local result = { total = 0 }
 	if not itemID then return result end
-	local account = artisanSkuDB[ns.account]
-	for character, data in pairs(account) do
-		if type(data) == "table" and type(data[itemID]) == "table" then
+	local characters = artisanSkuDB
+	for character, data in pairs(characters) do
+		if character ~= "__config" and type(data) == "table" and type(data[itemID]) == "table" then
 			local record = data[itemID]
 			local mail = record.mail and (record.mail.n or 0) or 0
 			result[character] = { bag = record.bag or 0, bank = record.bank or 0, mail = mail }
@@ -195,10 +194,9 @@ frame:SetScript("OnEvent", function(_, event, arg1, arg2, arg3, arg4)
 	if event == "ADDON_LOADED" then
 		if arg1 ~= addonName then return end
 		artisanSkuDB = artisanSkuDB or {}
-		ns.account, ns.char = accountKey(), charKey()
-		artisanSkuDB[ns.account] = artisanSkuDB[ns.account] or {}
-		artisanSkuDB[ns.account][ns.char] = artisanSkuDB[ns.account][ns.char] or {}
-		ns.db, ns.cfg = artisanSkuDB[ns.account][ns.char], artisanSkuDB.__config or {}
+		ns.char = charKey()
+		artisanSkuDB[ns.char] = artisanSkuDB[ns.char] or {}
+		ns.db, ns.cfg = artisanSkuDB[ns.char], artisanSkuDB.__config or {}
 		for key, value in pairs(ns.defaults) do if ns.cfg[key] == nil then ns.cfg[key] = value end end
 		artisanSkuDB.__config = ns.cfg
 		seedSources(); rebuild(); ns.ScanBags()
