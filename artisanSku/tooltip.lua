@@ -12,10 +12,16 @@ local function colorCode(classToken)
 	if not color then return "|cffffffff" end
 	return ("|cff%02x%02x%02x"):format(math.floor(color.r * 255 + 0.5), math.floor(color.g * 255 + 0.5), math.floor(color.b * 255 + 0.5))
 end
+local odd = false
 local function addTooltip(tooltip)
 	local _, link = tooltip:GetItem()
 	local itemID = link and tonumber(link:match("item:(%d+)"))
 	if not itemID then return end
+	local _, _, _, _, _, classID = C_Item.GetItemInfoInstant(itemID)
+	if classID == 9 then
+		odd = not odd
+		if odd then return end
+	end
 	local sku = ArtisanGetSku(itemID)
 	if sku.total <= 0 then return end
 	tooltip:AddLine('\n')
