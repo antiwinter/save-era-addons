@@ -10,9 +10,11 @@ local function charKey() return UnitName("player") end
 local function setCount(target, itemID, count)
 	if itemID and count and count > 0 then target[itemID] = (target[itemID] or 0) + count end
 end
-local function bagSnapshot(firstBag, lastBag)
+local BAG_IDS = { 0, 1, 2, 3, 4 }
+local BANK_IDS = { -1, 5, 6, 7, 8, 9, 10, 11 }
+local function bagSnapshot(bags)
 	local result = {}
-	for bag = firstBag, lastBag do
+	for _, bag in ipairs(bags) do
 		local slots = C_Container.GetContainerNumSlots(bag)
 		for slot = 1, slots do
 			local info = C_Container.GetContainerItemInfo(bag, slot)
@@ -74,11 +76,11 @@ local function seedSources()
 	end
 end
 function ns.ScanBags()
-	local snapshot = bagSnapshot(0, 4)
+	local snapshot = bagSnapshot(BAG_IDS)
 	ns.sources.bag = snapshot; rebuild()
 end
 function ns.ScanBank()
-	local snapshot = bagSnapshot(-1, 11)
+	local snapshot = bagSnapshot(BANK_IDS)
 	ns.sources.bank = snapshot; rebuild()
 end
 function ns.ScanMail()
