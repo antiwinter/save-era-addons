@@ -1,3 +1,4 @@
+local _, ns = ...
 local PREFIX = "artisanSku"
 local MAX_MESSAGE = 180
 local sync = { chunks = {}, partyMembers = {} }

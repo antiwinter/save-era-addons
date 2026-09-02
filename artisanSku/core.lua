@@ -104,7 +104,7 @@ ns.ArtisanGetSku = ArtisanGetSku
 local frame = CreateFrame("Frame")
 for _, event in ipairs({
 	"ADDON_LOADED", "BAG_OPEN", "BAG_UPDATE", "BAG_UPDATE_DELAYED", "PLAYERBANKSLOTS_CHANGED", "BANKFRAME_OPENED", "MAIL_INBOX_UPDATE", "MAIL_SHOW",
-	"GROUP_ROSTER_UPDATE", "AUCTION_HOUSE_ITEM_PURCHASED", "TRADE_ACCEPT_UPDATE", "TRADE_CLOSED", "UI_INFO_MESSAGE",
+	"GROUP_ROSTER_UPDATE", "TRADE_ACCEPT_UPDATE", "TRADE_CLOSED", "UI_INFO_MESSAGE",
 	"CHAT_MSG_ADDON",
 }) do frame:RegisterEvent(event) end
 frame:SetScript("OnEvent", function(_, event, arg1, arg2, arg3, arg4)
@@ -126,7 +126,6 @@ frame:SetScript("OnEvent", function(_, event, arg1, arg2, arg3, arg4)
 	elseif event == "MAIL_SHOW" then ns.ScanMail()
 	elseif event == "MAIL_INBOX_UPDATE" then ns.ScanMail()
 	elseif event == "GROUP_ROSTER_UPDATE" then ns.Sync.OnRosterUpdate()
-	elseif event == "AUCTION_HOUSE_ITEM_PURCHASED" then ns.Exchange.OnAuctionPurchase(arg1, arg2)
 	elseif event == "TRADE_ACCEPT_UPDATE" then ns.Exchange.OnTradeAcceptUpdate(arg1, arg2)
 	elseif event == "UI_INFO_MESSAGE" and arg1 == LE_GAME_ERR_TRADE_COMPLETE then ns.Exchange.OnTradeComplete()
 	elseif event == "TRADE_CLOSED" then ns.Exchange.OnTradeClosed()

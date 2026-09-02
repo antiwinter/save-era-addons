@@ -1,3 +1,4 @@
+local _, ns = ...
 local exchange = {}
 ns.trade = nil
 ns.Exchange = exchange
