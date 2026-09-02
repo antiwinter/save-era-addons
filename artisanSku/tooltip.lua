@@ -18,7 +18,9 @@ local function addTooltip(tooltip)
 	local itemID = link and tonumber(link:match("item:(%d+)"))
 	if not itemID then return end
 	local _, _, _, _, _, classID = C_Item.GetItemInfoInstant(itemID)
-	if classID == 9 then
+	if classID > 11 then
+		return
+	elseif classID == 9 then
 		odd = not odd
 		if odd then return end
 	end
