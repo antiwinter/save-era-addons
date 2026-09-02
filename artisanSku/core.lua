@@ -18,7 +18,10 @@ local function bagSnapshot(bags)
 		local slots = C_Container.GetContainerNumSlots(bag)
 		for slot = 1, slots do
 			local info = C_Container.GetContainerItemInfo(bag, slot)
-			if info then setCount(result, info.itemID, info.stackCount) end
+			if info and not info.isBound then
+				local classId = select(6, C_Item.GetItemInfoInstant(info.itemID))
+				if classId <= 11 then setCount(result, info.itemID, info.stackCount) end
+			end
 		end
 	end
 	return result
