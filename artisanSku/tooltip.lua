@@ -1,7 +1,12 @@
 local _, ns = ...
-local BAG_ICON = "|TInterface\\ContainerFrame\\UI-Icon-Backpack:14|t"
-local BANK_ICON = "|TInterface\\Icons\\INV_Misc_Bag_10:14|t"
+local BAG_ICON = "|TInterface\\Buttons\\Button-Backpack-Up:14|t"
+local BANK_ICON = "|TInterface\\Icons\\INV_Box_03:14|t"
 local MAIL_ICON = "|TInterface\\Icons\\INV_Letter_15:14|t"
+local BLUE = "|cff90ccff"
+local WHITE = "|cffffffff"
+local GRAY = "|cff606060"
+local RED = "|cffff0000"
+local CLOSE = "|r"
 local function colorCode(classToken)
 	local color = RAID_CLASS_COLORS[classToken]
 	if not color then return "|cffffffff" end
@@ -13,7 +18,9 @@ local function addTooltip(tooltip)
 	if not itemID then return end
 	local sku = ArtisanGetSku(itemID)
 	if sku.total <= 0 then return end
-	tooltip:AddLine("Artisan SKU", 1, 1, 0)
+	tooltip:AddLine('\n')
+	tooltip:AddDoubleLine("Artisan SKU " .. WHITE .. sku.total .. CLOSE,
+		BAG_ICON .. " " .. BANK_ICON .. " " .. MAIL_ICON, 1, 1, 0, 1, 1, 1)
 	local characters = {}
 	for character in pairs(sku) do
 		if character ~= "total" then characters[#characters + 1] = character end
@@ -22,10 +29,13 @@ local function addTooltip(tooltip)
 	for _, character in ipairs(characters) do
 		local data = sku[character]
 		local record = artisanSkuDB[character][itemID]
-		local mailText = MAIL_ICON .. " " .. data.mail
-		if record.mail and record.mail.d < 10 then mailText = "|cffff0000" .. mailText .. "|r" end
 		local name = colorCode(artisanSkuDB[character].class) .. character .. "|r"
-		tooltip:AddLine(name .. "    " .. BAG_ICON .. " " .. data.bag .. "  " .. BANK_ICON .. " " .. data.bank .. "  " .. mailText, 1, 1, 1)
+		local total = data.bag + data.bank + data.mail
+		local mailColor = record.mail and record.mail.d < 10 and RED or BLUE
+		local counts = BLUE .. data.bag .. CLOSE .. GRAY .. "/" .. CLOSE
+			.. BLUE .. data.bank .. CLOSE .. GRAY .. "/" .. CLOSE
+			.. mailColor .. data.mail .. CLOSE
+		tooltip:AddDoubleLine(name .. " " .. WHITE .. total .. CLOSE, counts, 1, 1, 1, 1, 1, 1)
 	end
 end
 local frame = CreateFrame("Frame")
