@@ -25,24 +25,33 @@ local function Build(pk)
 		-- planner probes that to decide buy-vs-craft for a reagent.
 		if #r.colors > 0 then db[r.skill_id] = r end
 	end
-	db.price = function(_, id) return item_prices[id] end
-	local memo = {}
-	local function cost(sid)
-		if memo[sid] then return memo[sid] end
-		local r = all[sid]
-		if not r then return 0 end
-		memo[sid] = -1
-		local total = 0
-		for _, rg in ipairs(r.recipe) do
-			local sub = all[rg.id]
-			total = total + rg.count * (sub and cost(rg.id) or (item_prices[rg.id] or 0))
-		end
-		memo[sid] = total
-		return total
+	db.price = function(_, id)
+		local market = ns.Market and ns.Market:GetUnitPrice(ns.Market:RealmKey(), id)
+		return market or item_prices[id]
 	end
-	for _, r in ipairs(db.data) do
-		r.avgbuyout = item_prices[r.skill_id] or 0
-		r.cost = cost(r.skill_id)
+	function db:refreshCost()
+		local memo = {}
+		local function cost(sid, visiting)
+			if memo[sid] ~= nil then return memo[sid] end
+			local r = all[sid]
+			if not r then return self:price(sid) end
+			visiting = visiting or {}
+			if visiting[sid] then return 0 end
+			visiting[sid] = true
+			local total = 0
+			for _, rg in ipairs(r.recipe) do
+				local value = all[rg.id] and cost(rg.id, visiting) or self:price(rg.id)
+				if value == nil then return math.huge end
+				total = total + rg.count * value
+			end
+			visiting[sid] = nil
+			memo[sid] = total
+			return total
+		end
+		for _, r in ipairs(self.data) do
+			r.avgbuyout = self:price(r.skill_id) or 0
+			r.cost = cost(r.skill_id)
+		end
 	end
 	return db
 end

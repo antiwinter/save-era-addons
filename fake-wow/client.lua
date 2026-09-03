@@ -7,6 +7,15 @@
 local function install(env)
 	-- Every frame registers here so __fire can dispatch an event to all listeners.
 	local frames = {}
+	local timers = {}
+
+	local function runTimers()
+		local pending = timers
+		timers = {}
+		for _, timer in ipairs(pending) do
+			if not timer.cancelled then timer.callback() end
+		end
+	end
 
 	-- Chainable no-op for the many cosmetic widget methods addons call. Returns
 	-- the frame so `frame:SetSize(..):SetPoint(..)` styles keep working.
@@ -110,6 +119,15 @@ local function install(env)
 
 	env.CreateFrame = CreateFrame
 	env.__fire = fire
+	env.__runTimers = runTimers
+	env.C_Timer = {
+		NewTimer = function(_, callback)
+			local timer = { callback = callback }
+			function timer:Cancel() self.cancelled = true end
+			timers[#timers + 1] = timer
+			return timer
+		end,
+	}
 	env.__frames = frames
 	env.__beginAddon = function(name) env.__loadingAddon = name end
 	env.__endAddon = function() env.__loadingAddon = nil end
@@ -172,7 +190,11 @@ local function install(env)
 	env.GetBuildInfo = function() return "1.15.7", "60000", nil, 11507 end
 	env.GetLocale = function() return "enUS" end
 	env.UnitLevel = function(unit) return unit == "player" and env.__playerLevel or nil end
+	env.UnitName = function(unit) return unit == "player" and "player" or nil end
 	env.date = function(fmt) return os.date(fmt) end
+	env.time = os.time
+	env.GetRealmName = function() return "TestRealm" end
+	env.UnitFactionGroup = function() return "Alliance" end
 	env.print = print
 end
 

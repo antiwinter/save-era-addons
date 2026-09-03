@@ -40,6 +40,7 @@ local function loadAddon(tocPath)
 	end
 	env.__endAddon()
 	env.__fire("ADDON_LOADED", addonName)
+	env.__runTimers()
 	return ns
 end
 
@@ -49,6 +50,7 @@ local M = {
 	fire = env.__fire,
 	slash = env.__slash,
 	click = function(name) env[name]:Click() end,
+	flushTimers = env.__runTimers,
 	world = world,
 	env = env,
 }
