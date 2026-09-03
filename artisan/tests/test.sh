@@ -5,5 +5,6 @@ cd "$(dirname "$0")/.."
 LUA="${LUA:-lua}"
 
 "$LUA" tests/model.lua
+"$LUA" tests/market.lua
 "$LUA" tests/window.lua
 ARTISAN_SEED="${ARTISAN_SEED:-8}" "$LUA" tests/resume.lua eng 300
