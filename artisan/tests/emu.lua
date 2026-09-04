@@ -50,8 +50,7 @@ local budget = 0
 for id, count in pairs(plan.materials) do
 	local c = math.ceil(count)
 	fw.GM.SetBag(id, c)
-	local _, buyout = db:price(id)
-	budget = budget + (buyout or 0) * c
+	budget = budget + (db[id] and db[id].buyout or 0) * c
 end
 local world = fw.world
 local start_lvl = world.skill.lvl
@@ -70,9 +69,8 @@ end
 -- Tally leftover materials (waste) vs crafted value.
 local remain_val = 0
 for k, c in pairs(world.bag) do
-	local _, buyout = db:price(k)
 	if c > 0 and (not db[k] or #db[k].colors == 0) then
-		remain_val = remain_val + (buyout or 0) * c
+		remain_val = remain_val + (db[k] and db[k].buyout or 0) * c
 	end
 end
 

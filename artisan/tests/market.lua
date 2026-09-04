@@ -22,12 +22,12 @@ assert(not ns.Scanner:scan("tailor"), "a concurrent scan was accepted")
 while ns.Scanner.busy do fw.flushTimers() end
 ns.Market.Collect = collect
 
-local record = ns.Market:Get(nil, itemID)
+local record = ns.Market:Get(itemID)
 assert(record and record.source == "scan")
 assert(record.price[1] == 90, "minimum unit buyout was not normalized")
 assert(record.price[2] == 100, "maximum unit buyout was not normalized")
 assert(record.price[3] == 5, "minimum listing stack count was not retained")
-local _, buyout, cost = ns.db:price(itemID)
+local buyout, cost = ns.db[itemID].buyout, ns.db[itemID].cost
 assert(buyout == 90 and cost == 90, "market price was not wired through the DB")
 
 print("native auction scan OK")

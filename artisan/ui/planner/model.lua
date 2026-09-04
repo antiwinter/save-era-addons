@@ -92,8 +92,7 @@ function pm:resum()
 	local existingValue, buyValue = 0, 0
 	for id, required in pairs(plan.materials) do
 		local have = existing[id] or 0
-		local _, price = db:price(id)
-		price = price or 0
+		local price = db[id] and db[id].buyout or 0
 		existingValue = existingValue + math.min(have, required) * price
 		buyValue = buyValue + math.max(0, required - have) * price
 	end
@@ -116,8 +115,8 @@ function pm:resum()
 
 	local ahReturns, junkReturns, aaj = 0, 0, 0
 	for id, count in pairs(crafted) do
-		local vendor, buyout = db:price(id)
-		vendor, buyout = vendor or 0, buyout or 0
+		local item = db[id]
+		local vendor, buyout = item and item.vendor or 0, item and item.buyout or 0
 		if buyout < vendor then
 			junkReturns = junkReturns + count * vendor
 		else

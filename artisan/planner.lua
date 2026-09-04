@@ -49,8 +49,7 @@ local function BuildPlan(db, opts)
 			if p ~= 0 and r.phaseId <= PHASE then
 				local m, n = r.colors[i - 1], r.colors[i]
 				local p1 = (n - m) / rolls(m, n, p)
-				local _, buyout, cost = db:price(r.skill_id)
-				buyout, cost = buyout or 0, cost or math.huge
+				local buyout, cost = r.buyout or 0, r.cost or math.huge
 				if existing[r.skill_id] then buyout = buyout * 0.8 end
 				local roi = (buyout * p_gain - cost) / p1
 				local perf = roi * pow(#r.recipe, 0.5)

@@ -5,12 +5,12 @@
 ## Version: 0.1
 ## SavedVariables: artisanDB
 
+data\era\item_prices.lua
+data\era\skills.lua
+data\era\profs.lua
 utils.lua
 market.lua
 scanner.lua
-data\era\skills.lua
-data\era\item_prices.lua
-data\era\profs.lua
 data.lua
 planner.lua
 format.lua

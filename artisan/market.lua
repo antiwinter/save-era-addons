@@ -42,32 +42,30 @@ function Market:Init()
 	return self
 end
 
-function Market:Put(realm, itemID, record)
-	if type(realm) ~= "string" or realm == "" or not validID(itemID) or not validRecord(record) then
+function Market:Put(itemID, record)
+	if not validID(itemID) or not validRecord(record) then
 		return false, "invalid"
 	end
-	local old = artisanDB.market[realm][itemID]
+	local old = artisanDB.market[ns.realm][itemID]
 	if old and record.updatedAt <= old.updatedAt then return false, "older" end
 
-	artisanDB.market[realm][itemID] = {
+	artisanDB.market[ns.realm][itemID] = {
 		price = { record.price[1], record.price[2], record.price[3] },
 		source = record.source,
 		updatedAt = record.updatedAt,
 	}
-	if realm == ns.realm then
-		self.records = artisanDB.market[realm]
+		self.records = artisanDB.market[ns.realm]
 		self:deferRefresh()
-	end
 	return true, "updated"
 end
 
-function Market:Get(realm, itemID)
-	local bucket = artisanDB.market[realm or ns.realm]
+function Market:Get(itemID)
+	local bucket = artisanDB.market[ns.realm]
 	return bucket and bucket[itemID]
 end
 
-function Market:GetUnitPrice(realm, itemID, now)
-	local record = self:Get(realm, itemID)
+function Market:GetUnitPrice(itemID, now)
+	local record = self:Get(itemID)
 	if not record then return nil end
 	return record.price[1], record.source, record.updatedAt, (now or time()) - record.updatedAt
 end
@@ -129,7 +127,7 @@ function Market:LoadCached(itemIDs)
 	}
 	for _, itemID in ipairs(itemIDs or {}) do
 		local record = auctionatorValue(itemID) or tsmValue(itemID)
-		if record and self:Put(ns.realm, itemID, record) then
+		if record and self:Put(itemID, record) then
 			result.updated = result.updated + 1
 		end
 	end

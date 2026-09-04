@@ -148,7 +148,7 @@ function Scanner:scan(scope)
 	print(string.format("|cff00b4ff[art]|r scanning %s (%d items)", scope, #itemIDs))
 	return self:Start(itemIDs, function(result)
 		if result.min then
-			local updated = ns.Market:Put(ns.realm, result.itemID, {
+			local updated = ns.Market:Put(result.itemID, {
 				price = { result.min, result.max, result.stackCount }, source = "scan", updatedAt = result.updatedAt,
 			})
 			local status = updated and "updated" or "skipped"
