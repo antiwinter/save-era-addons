@@ -1,5 +1,9 @@
 local _, ns = ...
 
+local realm = GetRealmName()
+local faction = UnitFactionGroup("player")
+ns.realm = faction and faction ~= "" and realm .. "-" .. faction or realm
+
 function ns.copyObj(src)
 	local result = {}
 	for k, v in pairs(src) do

@@ -26,7 +26,7 @@ local function Build(pk)
 		if #r.colors > 0 then db[r.skill_id] = r end
 	end
 	db.price = function(_, id)
-		local market = ns.Market and ns.Market:GetUnitPrice(ns.Market:RealmKey(), id)
+		local market = ns.Market and ns.Market:GetUnitPrice(ns.realm, id)
 		return market or item_prices[id]
 	end
 	function db:refreshCost()

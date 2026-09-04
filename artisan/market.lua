@@ -3,12 +3,6 @@ local addonName, ns = ...
 local Market = {}
 Market.__index = Market
 
-local function realmKey()
-	local realm = GetRealmName()
-	local faction = UnitFactionGroup("player")
-	return faction and faction ~= "" and realm .. "-" .. faction or realm
-end
-
 local function validID(id)
 	return type(id) == "number" and id > 0 and id % 1 == 0
 end
@@ -40,10 +34,9 @@ end
 
 function Market:Init()
 	artisanDB.market = type(artisanDB.market) == "table" and artisanDB.market or {}
-	self.realm = realmKey()
-	artisanDB.market[self.realm] = type(artisanDB.market[self.realm]) == "table"
-		and artisanDB.market[self.realm] or {}
-	self.records = artisanDB.market[self.realm]
+	artisanDB.market[ns.realm] = type(artisanDB.market[ns.realm]) == "table"
+		and artisanDB.market[ns.realm] or {}
+	self.records = artisanDB.market[ns.realm]
 
 	local ids = self:Collect(professionKeys())
 	local result = self:LoadCached(ids)
@@ -56,16 +49,10 @@ function Market:Init()
 	return self
 end
 
-function Market:RealmKey()
-	return self.realm or realmKey()
-end
-
 function Market:Put(realm, itemID, record)
 	if type(realm) ~= "string" or realm == "" or not validID(itemID) or not validRecord(record) then
 		return false, "invalid"
 	end
-	artisanDB.market = artisanDB.market or {}
-	artisanDB.market[realm] = artisanDB.market[realm] or {}
 	local old = artisanDB.market[realm][itemID]
 	if old and record.updatedAt <= old.updatedAt then return false, "older" end
 
@@ -74,7 +61,7 @@ function Market:Put(realm, itemID, record)
 		source = record.source,
 		updatedAt = record.updatedAt,
 	}
-	if realm == self.realm then
+	if realm == ns.realm then
 		self.records = artisanDB.market[realm]
 		self:deferRefreshCost()
 	end
@@ -82,7 +69,7 @@ function Market:Put(realm, itemID, record)
 end
 
 function Market:Get(realm, itemID)
-	local bucket = artisanDB and artisanDB.market and artisanDB.market[realm or self:RealmKey()]
+	local bucket = artisanDB.market[realm or ns.realm]
 	return bucket and bucket[itemID]
 end
 
@@ -156,7 +143,7 @@ function Market:LoadCached(itemIDs)
 	}
 	for _, itemID in ipairs(itemIDs or {}) do
 		local record = auctionatorValue(itemID) or tsmValue(itemID)
-		if record and self:Put(self:RealmKey(), itemID, record) then
+		if record and self:Put(ns.realm, itemID, record) then
 			result.updated = result.updated + 1
 		end
 	end
@@ -164,4 +151,3 @@ function Market:LoadCached(itemIDs)
 end
 
 ns.Market = setmetatable({}, Market)
-ns.realmKey = realmKey

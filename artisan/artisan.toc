@@ -5,6 +5,7 @@
 ## Version: 0.1
 ## SavedVariables: artisanDB
 
+utils.lua
 market.lua
 scanner.lua
 data\era\skills.lua
@@ -13,7 +14,6 @@ data\era\profs.lua
 data.lua
 planner.lua
 format.lua
-utils.lua
 core.lua
 ui\lib.lua
 ui\craft.lua
