@@ -17,18 +17,11 @@ local function validRecord(record)
 	return type(record.updatedAt) == "number" and record.updatedAt > 0 and record.updatedAt % 1 == 0
 end
 
-local function professionKeys()
-	local keys = {}
-	for pk in pairs(ns.db) do keys[#keys + 1] = pk end
-	table.sort(keys)
-	return keys
-end
-
-function Market:deferRefreshCost()
+function Market:deferRefresh()
 	if self.refreshTimer then self.refreshTimer:Cancel() end
 	self.refreshTimer = C_Timer.NewTimer(1, function()
 		self.refreshTimer = nil
-		for _, pk in ipairs(professionKeys()) do ns.db[pk]:refreshCost() end
+		ns.db:refresh()
 	end)
 end
 
@@ -38,9 +31,9 @@ function Market:Init()
 		and artisanDB.market[ns.realm] or {}
 	self.records = artisanDB.market[ns.realm]
 
-	local ids = self:Collect(professionKeys())
+	local ids = self:Collect("all")
 	local result = self:LoadCached(ids)
-	self:deferRefreshCost()
+	self:deferRefresh()
 
 	if ns.DEBUG then
 		print(string.format("[art] market: Auctionator=%s TSM=%s imported=%d",
@@ -63,7 +56,7 @@ function Market:Put(realm, itemID, record)
 	}
 	if realm == ns.realm then
 		self.records = artisanDB.market[realm]
-		self:deferRefreshCost()
+		self:deferRefresh()
 	end
 	return true, "updated"
 end
@@ -79,32 +72,25 @@ function Market:GetUnitPrice(realm, itemID, now)
 	return record.price[1], record.source, record.updatedAt, (now or time()) - record.updatedAt
 end
 
-function Market:Collect(keys)
-	local ids, seen, rows = {}, {}, {}
-	for _, pk in ipairs(keys or {}) do
-		rows[pk] = {}
-		for _, row in ipairs(skills[pk] or {}) do rows[pk][row[1]] = row end
-	end
-
+function Market:Collect(pk)
+	local ids, seen = {}, {}
 	local function add(id)
 		if validID(id) and not seen[id] then
 			seen[id] = true
 			ids[#ids + 1] = id
 		end
 	end
-	local function walk(pk, itemID, active)
+	local function walk(itemID, active)
 		add(itemID)
-		local row = rows[pk] and rows[pk][itemID]
+		local row = ns.db[itemID]
 		if not row or active[itemID] then return end
 		active[itemID] = true
-		if row[5] and row[5] > 0 then add(row[5]) end
-		for _, reagent in ipairs(row[6] or {}) do walk(pk, reagent[1], active) end
+		if row.scroll_id and row.scroll_id > 0 then add(row.scroll_id) end
+		for _, reagent in ipairs(row.recipe) do walk(reagent.id, active) end
 		active[itemID] = nil
 	end
 
-	for _, pk in ipairs(keys or {}) do
-		for _, row in ipairs(skills[pk] or {}) do walk(pk, row[1], {}) end
-	end
+	for _, row in ipairs(ns.db:iterate(pk)) do walk(row.skill_id, {}) end
 	return ids
 end
 

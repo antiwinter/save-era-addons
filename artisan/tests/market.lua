@@ -27,5 +27,7 @@ assert(record and record.source == "scan")
 assert(record.price[1] == 90, "minimum unit buyout was not normalized")
 assert(record.price[2] == 100, "maximum unit buyout was not normalized")
 assert(record.price[3] == 5, "minimum listing stack count was not retained")
+local _, buyout, cost = ns.db:price(itemID)
+assert(buyout == 90 and cost == 90, "market price was not wired through the DB")
 
 print("native auction scan OK")

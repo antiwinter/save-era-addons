@@ -125,19 +125,12 @@ function Scanner:Start(itemIDs, callback, done)
 	return true
 end
 
-local function selectedKeys(scope)
-	if scope == "all" then
-		local keys = {}
-		for pk in pairs(ns.db) do keys[#keys + 1] = pk end
-		table.sort(keys)
-		return keys
-	end
-	if ns.db[scope] then return { scope } end
+local function validScope(scope)
+	return pcall(ns.db.iterate, ns.db, scope)
 end
 
 function Scanner:scan(scope)
-	local keys = selectedKeys(scope)
-	if not keys then
+	if not validScope(scope) then
 		print("|cff00b4ff[art]|r usage: /art scan [all|profession]")
 		return false, "invalid"
 	end
@@ -150,9 +143,9 @@ function Scanner:scan(scope)
 		return false, "unavailable"
 	end
 
-	local itemIDs = ns.Market:Collect(keys)
+	local itemIDs = ns.Market:Collect(scope)
 	local totals = { updated = 0, skipped = 0, ["no-auction"] = 0, failed = 0 }
-	print(string.format("|cff00b4ff[art]|r scanning %s (%d items)", table.concat(keys, ","), #itemIDs))
+	print(string.format("|cff00b4ff[art]|r scanning %s (%d items)", scope, #itemIDs))
 	return self:Start(itemIDs, function(result)
 		if result.min then
 			local updated = ns.Market:Put(ns.realm, result.itemID, {

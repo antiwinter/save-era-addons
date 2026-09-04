@@ -22,6 +22,7 @@ local function BuildPlan(db, opts)
 	local p_gain = opts.pGain or 0
 	local wishlist = opts.wishlist or {}
 	local existing = opts.existing or {}
+	local pk = assert(opts.pk, "missing profession")
 	-- END grows as recipes get pushed to higher levels; seed from target/cap.
 	local END = opts.target or 0
 
@@ -43,14 +44,15 @@ local function BuildPlan(db, opts)
 	-- Pick the best recipe to spam at skill `lvl`, scored by ROI per skill-up.
 	local function find(lvl)
 		local res, best, frac
-		for _, r in ipairs(db.data) do
+		for _, r in ipairs(db:iterate(pk)) do
 			local p, i = chance(r.skill_id, lvl)
 			if p ~= 0 and r.phaseId <= PHASE then
 				local m, n = r.colors[i - 1], r.colors[i]
 				local p1 = (n - m) / rolls(m, n, p)
-				local buyout = r.avgbuyout
+				local _, buyout, cost = db:price(r.skill_id)
+				buyout, cost = buyout or 0, cost or math.huge
 				if existing[r.skill_id] then buyout = buyout * 0.8 end
-				local roi = (buyout * p_gain - r.cost) / p1
+				local roi = (buyout * p_gain - cost) / p1
 				local perf = roi * pow(#r.recipe, 0.5)
 				if not best or perf > best then
 					best, res, frac = perf, r, 1 / p
@@ -97,7 +99,7 @@ local function BuildPlan(db, opts)
 			if placed > 0 then
 				for _, reagent in ipairs(r.recipe) do
 					local rg = db[reagent.id]
-					if rg then
+					if rg and rg.pk == pk and #rg.colors > 0 then
 						-- a sub-craft whose color floor sits below the planning
 						-- window must be budgeted at the window floor, else its
 						-- own reagents never reach the shopping list
@@ -129,7 +131,7 @@ local function BuildPlan(db, opts)
 			end
 			for _, rg in ipairs(r.recipe) do
 				local _r = db[rg.id]
-				if _r then
+				if _r and _r.pk == pk and #_r.colors > 0 then
 					add(_r, m * rg.count / (_r.craft_count or 1))
 				else
 					material[rg.id] = (material[rg.id] or 0) + m * rg.count
@@ -151,7 +153,7 @@ local function BuildPlan(db, opts)
 	-- Seed the wishlist (make N of each requested item regardless of ROI).
 	for item, count in pairs(wishlist) do
 		local r = db[item]
-		if r then
+		if r and r.pk == pk and #r.colors > 0 then
 			for _ = 1, count do
 				try_push(r.colors[1], r, 1, true, 0)
 			end

@@ -75,8 +75,7 @@ function ns.craft(itemId, count)
 end
 
 function ns.learnScrollFor(itemId)
-    local db = ns.db[ns.store.cur_pk]
-	local recipe = db and db[itemId]
+	local recipe = ns.db[itemId]
 	local sid = recipe and recipe.scroll_id
 	if not sid then return ns.hint("Goto trainer") end
 

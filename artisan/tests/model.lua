@@ -16,7 +16,14 @@ assert(artisanDB.player.plans.eng == direct, "profession plan is not stored dire
 assert(artisanDB.player.eng == nil, "profession plan leaked outside SavedVariables plans")
 assert(artisanDB.player.state == nil, "nested SavedVariables state table was created")
 
-local db = ns.db.eng
+local db = ns.db
+assert(db.data == nil, "internal data leaked through the DB API")
+local eng = db:iterate("eng")
+local all = db:iterate("all")
+assert(#eng > 0 and #all > #eng, "profession iteration did not select rows")
+assert(db[eng[1].skill_id] == eng[1], "item lookup did not resolve through the DB metatable")
+local _, buyout, cost = db:price(eng[1].skill_id)
+assert(buyout and cost, "price did not return buyout and cost")
 fw.GM.SetTradeSkillLine(ns.getProfName("eng"), 1, 150)
 assert(ns.pm:load("eng"))
 local matches = ns.pm:search("dummy")

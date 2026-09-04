@@ -45,12 +45,13 @@ end
 
 -- Stock the bag with the planned shopping list, tracking budget, then rescan.
 -- SetBag fires BAG_UPDATE itself, so no manual pump is needed.
-local db = ns.db[pk]
+local db = ns.db
 local budget = 0
 for id, count in pairs(plan.materials) do
 	local c = math.ceil(count)
 	fw.GM.SetBag(id, c)
-	budget = budget + (db:price(id) or 0) * c
+	local _, buyout = db:price(id)
+	budget = budget + (buyout or 0) * c
 end
 local world = fw.world
 local start_lvl = world.skill.lvl
@@ -69,7 +70,10 @@ end
 -- Tally leftover materials (waste) vs crafted value.
 local remain_val = 0
 for k, c in pairs(world.bag) do
-	if c > 0 and not db[k] then remain_val = remain_val + (db:price(k) or 0) * c end
+	local _, buyout = db:price(k)
+	if c > 0 and (not db[k] or #db[k].colors == 0) then
+		remain_val = remain_val + (buyout or 0) * c
+	end
 end
 
 local rc = world.skill.lvl >= target

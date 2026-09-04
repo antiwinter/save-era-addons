@@ -52,7 +52,10 @@ function pm:replan()
 	local st = self.state
 	local start = self:getclamp()
 	st.start = start
-	local actions, materials = ns.Planner.BuildPlan(self:getdb(), {
+	local db = self:getdb()
+	db:refresh()
+	local actions, materials = ns.Planner.BuildPlan(db, {
+		pk = self.pk,
 		start = start,
 		target= st.target,
 		wishlist = st.wishlist or {},
@@ -64,7 +67,7 @@ function pm:replan()
 end
 
 function pm:getdb()
-	return ns.db[self.pk]
+	return ns.db
 end
 
 function pm:search(query)
@@ -72,11 +75,10 @@ function pm:search(query)
 	local db = self:getdb()
 	if not db then return {} end
 	local result = {}
-	for _, recipe in ipairs(db.data) do
-		local craft = db[recipe.skill_id]
-		if recipe.name and craft
+	for _, recipe in ipairs(db:iterate(self.pk)) do
+		if recipe.name and #recipe.colors > 0
 			and recipe.name:lower():find(query, 1, true) then
-			recipe.req = craft.colors[1]
+			recipe.req = recipe.colors[1]
 			result[#result + 1] = recipe
 		end
 	end
@@ -90,7 +92,8 @@ function pm:resum()
 	local existingValue, buyValue = 0, 0
 	for id, required in pairs(plan.materials) do
 		local have = existing[id] or 0
-		local price = db:price(id) or 0
+		local _, price = db:price(id)
+		price = price or 0
 		existingValue = existingValue + math.min(have, required) * price
 		buyValue = buyValue + math.max(0, required - have) * price
 	end
@@ -113,8 +116,8 @@ function pm:resum()
 
 	local ahReturns, junkReturns, aaj = 0, 0, 0
 	for id, count in pairs(crafted) do
-		local buyout = db:price(id) or 0
-		local vendor = select(11, GetItemInfo(id)) or 0
+		local vendor, buyout = db:price(id)
+		vendor, buyout = vendor or 0, buyout or 0
 		if buyout < vendor then
 			junkReturns = junkReturns + count * vendor
 		else
